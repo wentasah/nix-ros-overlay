@@ -38,6 +38,9 @@ buildPythonPackage rec {
                  and not transform_wgs84_to_alaska \
                  and not repr' \
             --ignore=test/test_doctest_wrapper.py \
+            --ignore=test/test_transformer.py \
+            --ignore=test/test_crs_cf.py \
+            --ignore=test/test_datum.py \
             --ignore=test/test_datadir.py
   '';
 
