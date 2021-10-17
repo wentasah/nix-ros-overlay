@@ -37,6 +37,9 @@ self: super: with super.lib; let
       vcstools = pySelf.callPackage ./vcstools { };
 
       wstool = pySelf.callPackage ./wstool { };
+
+      pyproj = pySelf.callPackage ./pyproj { };
+
     } // optionalAttrs pySuper.isPy3k {
       # This has to be done here (rather than in rosPackages) because
       # packageOverrides doesn't compose
