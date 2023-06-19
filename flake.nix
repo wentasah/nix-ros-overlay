@@ -26,6 +26,13 @@
             pkgs.python3Packages.rosdep
           ];
           ROSDEP_SOURCE_PATH = "rosdep-sources";
+          shellHook = ''
+            mkdir -p "$ROSDEP_SOURCE_PATH"
+            curl https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/sources.list.d/20-default.list -o "$ROSDEP_SOURCE_PATH/20-default.list"
+            rosdep update
+
+            echo 'Now run: superflore-gen-nix --output-repository-path . --dry-run --ros-distro humble --no-branch --tar-archive-dir .tar --only derived_object_msgs'
+          '';
         };
       };
     }) // {
