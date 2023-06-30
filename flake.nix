@@ -31,6 +31,28 @@
       nixosModule = nixpkgs.lib.warn
         "'nix-ros-overlay.nixosModule' is deprecated, use 'nix-ros-overlay.nixosModules.default' instead"
         self.nixosModules.default;
+
+      hydraJobs = let
+        releasePackages = p: mapAttrs (_: a: removeAttrs a [
+          "lib"
+          "python"
+          "python3"
+          "python2"
+          "pythonPackages"
+          "python2Packages"
+          "python3Packages"
+          "boost"
+        ]) p;
+
+        jobsFor = distro: releasePackages self.legacyPackages.x86_64-linux."${distro}";
+      in {
+        melodic = jobsFor "melodicPython3";
+        noetic = jobsFor "noetic";
+
+        foxy = jobsFor "foxy";
+        humble = jobsFor "humble";
+        rolling = jobsFor "rolling";
+      };
     };
 
   nixConfig = {
