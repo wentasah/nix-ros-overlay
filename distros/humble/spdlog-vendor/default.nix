@@ -10,7 +10,7 @@ buildRosPackage {
   src = fetchurl {
     url = "https://github.com/ros2-gbp/spdlog_vendor-release/archive/release/humble/spdlog_vendor/1.3.1-1.tar.gz";
     name = "1.3.1-1.tar.gz";
-    sha256 = "57bcbc3bfef2ea7406d20835765fe583ecc62f0df82ddfeb640f3765a1336c0b";
+    sha256 = "sha256-V7y8O/7y6nQG0gg1dl/lg+zGLw34Ld/rZA83ZaEzbAs=";
   };
 
   buildType = "ament_cmake";
