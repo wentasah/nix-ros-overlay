@@ -57,12 +57,12 @@ let
           if [[ "$(basename "$link")" == .*-wrapped ]]; then continue; fi
 
           makeWrapper "$file" "$link" \
-            --prefix PATH : "$out/bin" \
-            --prefix LD_LIBRARY_PATH : "$out/lib" \
-            --prefix PYTHONPATH : "$out/${python.sitePackages}" \
-            --prefix CMAKE_PREFIX_PATH : "$out" \
-            --prefix AMENT_PREFIX_PATH : "$out" \
-            --prefix ROS_PACKAGE_PATH : "$out/share" \
+            --suffix PATH : "$out/bin" \
+            --suffix LD_LIBRARY_PATH : "$out/lib" \
+            --suffix PYTHONPATH : "$out/${python.sitePackages}" \
+            --suffix CMAKE_PREFIX_PATH : "$out" \
+            --suffix AMENT_PREFIX_PATH : "$out" \
+            --suffix ROS_PACKAGE_PATH : "$out/share" \
             --set ROS_DISTRO '${ros-environment.rosDistro}' \
             --set ROS_VERSION '${toString ros-environment.rosVersion}' \
             --set ROS_PYTHON_VERSION '${lib.versions.major python.version}' \
