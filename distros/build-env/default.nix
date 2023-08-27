@@ -61,8 +61,8 @@ let
             --prefix LD_LIBRARY_PATH : "$out/lib" \
             --prefix PYTHONPATH : "$out/${python.sitePackages}" \
             --prefix CMAKE_PREFIX_PATH : "$out" \
-            --prefix AMENT_PREFIX_PATH : "$out" \
-            --prefix ROS_PACKAGE_PATH : "$out/share" \
+            --suffix AMENT_PREFIX_PATH : "$out" \
+            --suffix ROS_PACKAGE_PATH : "$out/share" \
             ''${rosWrapperArgs[@]}
         done
       fi
