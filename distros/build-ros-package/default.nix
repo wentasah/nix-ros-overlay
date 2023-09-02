@@ -9,8 +9,10 @@
 # applications are broken, but allows all libraries that depend on Qt5 to build
 # correctly.
 , dontWrapQtApps ? true
+, nativeBuildInputs ? [ ]
 , CXXFLAGS ? ""
-, passthru ? {}
+, postFixup ? ""
+, passthru ? { }
 , ...
 }@args:
 
@@ -28,4 +30,38 @@ else stdenv.mkDerivation) (args // {
   };
 } // lib.optionalAttrs (buildType == "ament_python") {
   dontUseCmakeConfigure = true;
+
+  # Modelled after colcon.
+  # As of 0.12.1, colcon uses the legacy distutils install.py script, so we do
+  # the same. Using modern techniques, such as "pip install" with setuptools,
+  # causes issues due to differences in setup.cfg interpretation.
+  # https://github.com/colcon/colcon-core/blob/0.12.1/colcon_core/task/python/build.py#L84
+  format = "other";
+
+  nativeBuildInputs = nativeBuildInputs ++ [ pythonPackages.setuptools ];
+
+  buildPhase = ''
+    runHook preBuild
+
+    python setup.py build
+
+    runHook postBuild
+  '';
+
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p "$out/${pythonPackages.python.sitePackages}"
+    export PYTHONPATH="$out/${pythonPackages.python.sitePackages}:$PYTHONPATH"
+    python setup.py install --prefix="$out" --single-version-externally-managed --record /dev/null
+
+    runHook postInstall
+  '';
+
+  postFixup = ''
+    ${postFixup}
+    find "$out/lib" -mindepth 1 -maxdepth 1 -type d ! -name '${pythonPackages.python.libPrefix}' -print0 | while read -d "" libpkgdir; do
+      wrapPythonProgramsIn "$libpkgdir" "$out $pythonPath"
+    done
+  '';
 })
