@@ -32,6 +32,8 @@ let
       python = rosSelf.python;
       enablePython = true;
     };
+
+    wxGTK = self.wxGTK32;
   };
 
   overrides = rosSelf: rosSuper: with rosSelf.lib; {
@@ -139,6 +141,17 @@ let
       postPatch = postPatch + ''
         patchShebangs scripts
       '';
+    });
+
+    mrpt2 = rosSuper.mrpt2.overrideAttrs ({
+      nativeBuildInputs ? [],
+      buildInputs ? [], ...
+    }: {
+      nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
+      buildInputs = buildInputs ++ [
+        self.libGLU
+        self.libfyaml
+      ];
     });
 
     novatel-oem7-driver = (patchVendorGit rosSuper.novatel-oem7-driver {
