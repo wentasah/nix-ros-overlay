@@ -1,7 +1,9 @@
 # Top level package set
 self:
 # Distro package set
-rosSelf: rosSuper: with rosSelf.lib; {
+rosSelf: rosSuper: let
+  inherit (rosSelf) lib;
+in with lib; {
   cyclonedds = rosSuper.cyclonedds.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -29,7 +31,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
-  iceoryx-posh = (patchVendorGit rosSuper.iceoryx-posh {
+  iceoryx-posh = (patchExternalProjectGit rosSuper.iceoryx-posh {
     url = "https://github.com/skystrife/cpptoml.git";
     file = "cmake/cpptoml/cpptoml.cmake.in";
     fetchgitArgs = {
@@ -53,7 +55,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     sha256 = "sha256-HQeVEQUX6xjIBkcoh8r8hh3QtqHBBFJGxVW8R/a9d+M=";
   };
 
-  libyaml-vendor = patchVendorGit rosSuper.libyaml-vendor {
+  libyaml-vendor = patchExternalProjectGit rosSuper.libyaml-vendor {
     url = "https://github.com/yaml/libyaml.git";
     fetchgitArgs = {
       rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
@@ -61,7 +63,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     };
   };
 
-  mcap-vendor = patchVendorGit (patchVendorUrl rosSuper.mcap-vendor {
+  mcap-vendor = patchExternalProjectGit (patchVendorUrl rosSuper.mcap-vendor {
     url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v0.8.0.tar.gz";
     sha256 = "sha256-KDP3I0QwjqWGOfOzY6DPF2aVgK56tDX0PzsQTP9u9Ug=";
   }) {
@@ -72,10 +74,39 @@ rosSelf: rosSuper: with rosSelf.lib; {
     };
   };
 
-  rviz-ogre-vendor = patchVendorUrl rosSuper.rviz-ogre-vendor {
-    url = "https://github.com/OGRECave/ogre/archive/v1.12.10.zip";
-    sha256 = "sha256-lZDLywgShlWeWah7oTnyKBTqzN505LJKbQbgXRfJXlk=";
-  };
+  rviz-ogre-vendor = rosSuper.rviz-ogre-vendor.overrideAttrs ({
+    postPatch ? "", ...
+  }: let
+    ogre = self.fetchFromGitHub rec {
+      name = "${repo}-${rev}";
+      owner = "OGRECave";
+      repo = "ogre";
+      rev = "v1.12.10";
+      hash = "sha256-Z0ixdSmkV93coBBVZ5R3lPLfVMXRfWsFz/RsSyqPWFY=";
+    };
+    ogreTar = let
+      version = "1.79";
+      imgui = self.fetchFromGitHub rec {
+        name = "${repo}-${version}";
+        owner = "ocornut";
+        repo = "imgui";
+        rev = "v${version}";
+        hash = "sha256-GIVhZ8Q7WebfHeKeJdVABXrTT26FOS7updncbv2LRnQ=";
+      };
+      imguiTar = lib.tarSource { } imgui;
+    in lib.tarSource {
+      hook = ''
+        substituteInPlace Components/Overlay/CMakeLists.txt \
+          --replace ${lib.escapeShellArg imgui.url} file://${lib.escapeShellArg imguiTar}
+      '';
+    } ogre;
+  in {
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt \
+        --replace 'https://github.com/${ogre.owner}/${ogre.repo}/archive/${ogre.rev}.zip' ${lib.escapeShellArg ogreTar} \
+        --replace c1b870955efddf539385094e9034e7f7 22a120dfa4d8783b2da24e0dd4a650eb
+    '';
+  });
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({
     patches ? [], ...

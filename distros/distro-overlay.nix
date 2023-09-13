@@ -141,7 +141,7 @@ let
       '';
     });
 
-    novatel-oem7-driver = (patchVendorGit rosSuper.novatel-oem7-driver {
+    novatel-oem7-driver = (patchExternalProjectGit rosSuper.novatel-oem7-driver {
       url = "https://github.com/novatel/novatel_edie";
       fetchgitArgs = {
         rev = "d02ccc2dfe531d642c1e2ca8a8c0f8205c856f23";
@@ -166,6 +166,9 @@ let
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = ''
+        wrapQtApp "$out/lib/plotjuggler/plotjuggler"
+      '';
     });
 
     pr2-tilt-laser-interface = patchBoostSignals rosSuper.pr2-tilt-laser-interface;
@@ -205,6 +208,7 @@ let
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
       postFixup = postFixup + ''
+        wrapQtApp "$out/bin/rqt_graph"
         wrapQtApp "$out/lib/rqt_graph/rqt_graph"
       '';
     });
@@ -216,6 +220,7 @@ let
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
       postFixup = postFixup + ''
         wrapQtApp "$out/bin/rqt"
+        wrapQtApp "$out/lib/rqt_gui/rqt_gui"
       '';
     });
 
@@ -230,10 +235,13 @@ let
     });
 
     rqt-msg = rosSuper.rqt-msg.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_msg/rqt_msg"
+      '';
     });
 
     rqt-plot = rosSuper.rqt-plot.overrideAttrs ({
@@ -247,38 +255,53 @@ let
     });
     
     rqt-publisher = rosSuper.rqt-publisher.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_publisher/rqt_publisher"
+      '';
     });
 
     rqt-py-console = rosSuper.rqt-py-console.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_py_console/rqt_py_console"
+      '';
     });
 
     rqt-reconfigure = rosSuper.rqt-reconfigure.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_reconfigure/rqt_reconfigure"
+      '';
     });
 
     rqt-robot-monitor = rosSuper.rqt-robot-monitor.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_robot_monitor/rqt_robot_monitor"
+      '';
     });
 
     rqt-service-caller = rosSuper.rqt-service-caller.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_service_caller/rqt_service_caller"
+      '';
     });
 
     rqt-shell = rosSuper.rqt-shell.overrideAttrs ({
@@ -296,20 +319,19 @@ let
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
-    });
-
-    rqt-top = rosSuper.rqt-top.overrideAttrs ({
-      nativeBuildInputs ? [], ...
-    }: {
-      dontWrapQtApps = false;
-      nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_srv/rqt_srv"
+      '';
     });
 
     rqt-topic = rosSuper.rqt-topic.overrideAttrs ({
-      nativeBuildInputs ? [], ...
+      nativeBuildInputs ? [], postFixup ? "", ...
     }: {
       dontWrapQtApps = false;
       nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+      postFixup = postFixup + ''
+        wrapQtApp "$out/lib/rqt_topic/rqt_topic"
+      '';
     });
 
     rxcpp-vendor = patchVendorUrl rosSuper.rxcpp-vendor {

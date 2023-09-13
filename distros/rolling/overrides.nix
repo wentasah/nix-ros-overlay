@@ -1,7 +1,9 @@
 # Top level package set
 self:
 # Distro package set
-rosSelf: rosSuper: with rosSelf.lib; {
+rosSelf: rosSuper: let
+  inherit (rosSelf) lib;
+in {
   cyclonedds = rosSuper.cyclonedds.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -29,7 +31,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
-  iceoryx-posh = (patchVendorGit rosSuper.iceoryx-posh {
+  iceoryx-posh = (lib.patchExternalProjectGit rosSuper.iceoryx-posh {
     url = "https://github.com/skystrife/cpptoml.git";
     file = "cmake/cpptoml/cpptoml.cmake.in";
     fetchgitArgs = {
@@ -48,7 +50,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
-  lely-core-libraries = patchVendorGit rosSuper.lely-core-libraries {
+  lely-core-libraries = lib.patchExternalProjectGit rosSuper.lely-core-libraries {
     url = "https://gitlab.com/lely_industries/lely-core.git";
     fetchgitArgs = {
       rev = "7824cbb2ac08d091c4fa2fb397669b938de9e3f5";
@@ -57,12 +59,12 @@ rosSelf: rosSuper: with rosSelf.lib; {
     };
   };
 
-  libphidget22 = patchVendorUrl rosSuper.libphidget22 {
+  libphidget22 = lib.patchVendorUrl rosSuper.libphidget22 {
     url = "https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.13.20230224.tar.gz";
     sha256 = "sha256-HQeVEQUX6xjIBkcoh8r8hh3QtqHBBFJGxVW8R/a9d+M=";
   };
 
-  mcap-vendor = patchVendorGit (patchVendorUrl rosSuper.mcap-vendor {
+  mcap-vendor = lib.patchExternalProjectGit (lib.patchVendorUrl rosSuper.mcap-vendor {
     url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.1.0.tar.gz";
     hash = "sha256-HLKuny6RDusuk7OrcidE0YBbnaRXZOT9iHA7ZpQTNQ0=";
   }) {
@@ -73,23 +75,23 @@ rosSelf: rosSuper: with rosSelf.lib; {
     };
   };
 
-  rviz-ogre-vendor = patchAmentVendorGit rosSuper.rviz-ogre-vendor {
+  rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     url = "https://github.com/OGRECave/ogre.git";
     rev = "v1.12.10";
     fetchgitArgs.hash = "sha256-Z0ixdSmkV93coBBVZ5R3lPLfVMXRfWsFz/RsSyqPWFY=";
     tarSourceArgs.hook = let
       version = "1.79";
-      imgui = (self.fetchFromGitHub rec {
+      imgui = self.fetchFromGitHub rec {
         name = "${repo}-${version}";
         owner = "ocornut";
         repo = "imgui";
         rev = "v${version}";
         hash = "sha256-GIVhZ8Q7WebfHeKeJdVABXrTT26FOS7updncbv2LRnQ=";
-      });
-      imguiTar = tarSource { } imgui;
+      };
+      imguiTar = lib.tarSource { } imgui;
     in ''
       substituteInPlace Components/Overlay/CMakeLists.txt \
-        --replace ${escapeShellArg imgui.url} file://${escapeShellArg imguiTar}
+        --replace ${lib.escapeShellArg imgui.url} file://${lib.escapeShellArg imguiTar}
     '';
   };
 

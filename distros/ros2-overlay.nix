@@ -33,7 +33,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     );
   });
 
-  fmilibrary-vendor = patchVendorGit rosSuper.fmilibrary-vendor {
+  fmilibrary-vendor = patchExternalProjectGit rosSuper.fmilibrary-vendor {
     url = "https://github.com/modelon-community/fmi-library.git";
     fetchgitArgs = {
       rev = "2.1";
@@ -43,7 +43,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
 
   # This is a newer version than the build system tries to download, but this
   # version doesn't try run host platform binaries on the build platform.
-  foonathan-memory-vendor = patchVendorGit rosSuper.foonathan-memory-vendor {
+  foonathan-memory-vendor = patchExternalProjectGit rosSuper.foonathan-memory-vendor {
     url = "https://github.com/foonathan/memory.git";
     fetchgitArgs = {
       rev = "v0.7-2";
@@ -97,7 +97,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
-  rig-reconfigure = patchVendorGit rosSuper.rig-reconfigure {
+  rig-reconfigure = patchExternalProjectGit rosSuper.rig-reconfigure {
     url = "https://github.com/ocornut/imgui.git";
     fetchgitArgs = {
       rev = "3ea0fad204e994d669f79ed29dcaf61cd5cb571d";
@@ -153,10 +153,15 @@ rosSelf: rosSuper: with rosSelf.lib; {
   });
 
   rviz2 = rosSuper.rviz2.overrideAttrs ({
-    nativeBuildInputs ? [], postFixup ? "", meta ? {}, ...
+    nativeBuildInputs ? [], qtWrapperArgs ? [], postFixup ? "", meta ? {}, ...
   }: {
     dontWrapQtApps = false;
     nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+    qtWrapperArgs = qtWrapperArgs ++ [
+      # Use X11 by default in RViz2.
+      # https://github.com/ros-visualization/rviz/issues/1442
+      "--set-default QT_QPA_PLATFORM xcb"
+    ];
     postFixup = postFixup + ''
       wrapQtApp "$out/lib/rviz2/rviz2"
     '';

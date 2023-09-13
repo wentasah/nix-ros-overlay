@@ -82,6 +82,16 @@ mkDerivation rec {
     ignition-fuel-tools
   ];
 
+  qtWrapperArgs = [
+    # Let the gazebo binary see neighboring binaries.
+    # It attempts to run gzclient from PATH.
+    "--prefix PATH : ${placeholder "out"}/bin"
+
+    # Prevent Gazebo from attempting to use Wayland.
+    # As is the case with RViz2, OGRE does not yet support it.
+    "--set WAYLAND_DISPLAY dummy" # "dummy" is arbitrary - it just doesn't exist.
+  ];
+
   meta = {
     homepage = "http://gazebosim.org/";
     description = "Multi-robot simulator for outdoor environments";

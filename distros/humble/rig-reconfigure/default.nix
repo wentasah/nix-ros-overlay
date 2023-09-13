@@ -10,7 +10,7 @@ buildRosPackage {
   src = fetchurl {
     url = "https://github.com/ros2-gbp/rig_reconfigure-release/archive/release/humble/rig_reconfigure/1.3.2-1.tar.gz";
     name = "1.3.2-1.tar.gz";
-    sha256 = "sha256-rqDB0J/lVVI8bTxjnlNx5/9f4800GWHsYvwbqio5sjk=";
+    sha256 = "aea0c1d09fe555523c6d3c639e5371e7ff5fe3cd341961ec62fc1baa2a39b239";
   };
 
   buildType = "ament_cmake";
