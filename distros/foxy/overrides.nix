@@ -38,6 +38,19 @@ rosSelf: rosSuper: with rosSelf.lib; {
     };
   };
 
+  pendulum-control = rosSuper.pendulum-control.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Remove the malloc_hook from the pendulum_demo (for glibc 2.34).
+      (self.fetchpatch {
+        url = "https://github.com/ros2/demos/commit/754612348e408675f526174c5f03786e08ad8a70.patch";
+        hash = "sha256-B+UW1OL0SOs7mOEOtpu5CSo8zSk5ifJdwC/deY/7zTg=";
+        stripLen = 1;
+      })
+    ];
+  });
+
   python-qt-binding = rosSuper.python-qt-binding.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -62,6 +75,17 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
+  ros2cli = rosSuper.ros2cli.overrideAttrs ({
+    propagatedBuildInputs ? [], ...
+  }: {
+    propagatedBuildInputs = propagatedBuildInputs ++ [
+      # Add argcomplete as a propagated ros2cli dependency.
+      # https://github.com/ros2/ros2cli/pull/564
+      # https://github.com/ros2/ros2cli/blob/26715cbb0948258d6f04b94c909d035c5130456a/ros2cli/ros2cli/cli.py#L45
+      rosSelf.python3Packages.argcomplete
+    ];
+  });
+
   rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -76,10 +100,24 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
-  rviz-ogre-vendor = patchVendorUrl rosSuper.rviz-ogre-vendor {
+  rviz-ogre-vendor = (patchVendorUrl rosSuper.rviz-ogre-vendor {
     url = "https://github.com/OGRECave/ogre/archive/v1.12.1.zip";
     sha256 = "1iv6k0dwdzg5nnzw2mcgcl663q4f7p2kj7nhs8afnsikrzxxgsi4";
-  };
+  }).overrideAttrs ({ patches ? [], preFixup ? "", ... }: {
+      patches = patches ++ [
+        # Fix AArch64 builds.
+        (self.fetchpatch {
+          url = "https://github.com/ros2/rviz/pull/828.patch";
+          hash = "sha256-KpY9+oOsFxH+zhIxyP6UTOXTLaaUdCRzUMZnM7+uRAk=";
+          stripLen = 1;
+        })
+      ];
+
+      preFixup = ''
+        # Prevent /build RPATH references
+        rm -r ogre_install
+      '' + preFixup;
+  });
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({
     patches ? [], ...

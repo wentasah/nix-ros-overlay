@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, costmap-queue, dwb-core, dwb-critics, dwb-msgs, dwb-plugins, nav-2d-msgs, nav-2d-utils }:
 buildRosPackage {
   pname = "ros-iron-nav2-dwb-controller";
-  version = "1.2.2-r1";
+  version = "1.2.5-r2";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_dwb_controller/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "6d7aac05341052695e868e0959f8d0771b41b9fd0df15bd81aa9fa6e2bc5bb26";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_dwb_controller/1.2.5-2.tar.gz";
+    name = "1.2.5-2.tar.gz";
+    sha256 = "f38216d7284b04501fd83cfef160ffcf8d522c6fc07b7f58cff51107b32b8c46";
   };
 
   buildType = "ament_cmake";

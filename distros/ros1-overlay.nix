@@ -14,6 +14,20 @@ rosSelf: rosSuper: with rosSelf.lib; {
     }) ];
   });
 
+  canopen-master = rosSuper.canopen-master.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # fix: error: 'set' in namespace 'std' does not name a template type
+      # https://github.com/ros-industrial/ros_canopen/pull/480
+      (self.fetchpatch {
+        url = "https://github.com/ros-industrial/ros_canopen/commit/44b80b08ec0aa5e3bab8fd50bba785c3d8765e3c.patch";
+        hash = "sha256-yMhkDpQq9RNC4CEd516n1PJivfTEeWFKuGtggm0UMpQ=";
+        stripLen = 1;
+      })
+    ];
+  });
+
   catkin = rosSuper.catkin.overrideAttrs ({
     propagatedBuildInputs ? [],
     patches ? [],
@@ -70,6 +84,18 @@ rosSelf: rosSuper: with rosSelf.lib; {
     url = "https://github.com/flexible-collision-library/fcl/archive/v0.6.1.zip";
     sha256 = "0nryr4hg3lha1aaz35wbqr42lb6l8alfcy6slj2yn2dgb5syrmn2";
   };
+
+  libphidgets = patchVendorUrl rosSuper.libphidgets {
+    url = "https://www.phidgets.com/downloads/phidget21/libraries/linux/libphidget/libphidget_2.1.8.20151217.tar.gz";
+    sha256 = "0lpaskqxpklm05050wwvdqwhw30f2hpzss8sgyvczdpvvqzjg4vk";
+  };
+
+  libg2o = rosSuper.libg2o.overrideAttrs ({
+    nativeBuildInputs ? [], ...
+  }: {
+    # Missing from package.xml; propagated by other dependencies in Ubuntu
+    nativeBuildInputs = nativeBuildInputs ++ [ self.openblas ];
+  });
 
   map-server = rosSuper.map-server.overrideAttrs ({
     nativeBuildInputs ? [], ...
@@ -175,5 +201,22 @@ rosSelf: rosSuper: with rosSelf.lib; {
     CXXFLAGS ? "", ...
   }: {
     CXXFLAGS = CXXFLAGS + " -DACCEPT_USE_OF_DEPRECATED_PROJ_API_H";
+  });
+
+  teb-local-planner = rosSuper.teb-local-planner.overrideAttrs ({
+    patches ? [], cmakeFlags ? [], ...
+  }: {
+    patches = patches ++ [
+      # fix: undefined reference to `int boost::math::sign<double>(double const&)'
+      # https://github.com/rst-tu-dortmund/teb_local_planner/pull/413
+      (self.fetchpatch {
+        url = "https://github.com/rst-tu-dortmund/teb_local_planner/commit/c6e0990105811cba87747e87ec878d6610ee2ac5.patch";
+        hash = "sha256-td4yejakcXUH6b6wUa2d85R4dyegc5pbZLDEzTTz/x8=";
+      })
+    ];
+    # FindSUITESPARSE.cmake uses find_path() to search for the directory
+    # containing libcholmod.so, but this is primarily designed to find include
+    # directories and doesn't search ${CMAKE_PREFIX_PATH}/lib.
+    cmakeFlags = cmakeFlags ++ [ "-DSUITESPARSE_LIBRARY_DIR=${self.suitesparse}/lib" ];
   });
 }

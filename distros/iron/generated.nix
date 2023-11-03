@@ -232,6 +232,8 @@ self: super: {
 
  class-loader = self.callPackage ./class-loader {};
 
+ classic-bags = self.callPackage ./classic-bags {};
+
  color-names = self.callPackage ./color-names {};
 
  color-util = self.callPackage ./color-util {};
@@ -898,11 +900,25 @@ self: super: {
 
  mola-common = self.callPackage ./mola-common {};
 
+ mola-demos = self.callPackage ./mola-demos {};
+
+ mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
+
  mola-input-euroc-dataset = self.callPackage ./mola-input-euroc-dataset {};
 
  mola-input-kitti-dataset = self.callPackage ./mola-input-kitti-dataset {};
 
+ mola-input-rawlog = self.callPackage ./mola-input-rawlog {};
+
+ mola-input-ros2 = self.callPackage ./mola-input-ros2 {};
+
  mola-kernel = self.callPackage ./mola-kernel {};
+
+ mola-launcher = self.callPackage ./mola-launcher {};
+
+ mola-test-datasets = self.callPackage ./mola-test-datasets {};
+
+ mola-viz = self.callPackage ./mola-viz {};
 
  mola-yaml = self.callPackage ./mola-yaml {};
 
@@ -999,6 +1015,8 @@ self: super: {
  moveit-visual-tools = self.callPackage ./moveit-visual-tools {};
 
  mp2p-icp = self.callPackage ./mp2p-icp {};
+
+ mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
 
@@ -1148,6 +1166,8 @@ self: super: {
 
  ouster-msgs = self.callPackage ./ouster-msgs {};
 
+ ouster-ros = self.callPackage ./ouster-ros {};
+
  ouxt-common = self.callPackage ./ouxt-common {};
 
  ouxt-lint-common = self.callPackage ./ouxt-lint-common {};
@@ -1252,7 +1272,15 @@ self: super: {
 
  pluginlib = self.callPackage ./pluginlib {};
 
+ point-cloud-interfaces = self.callPackage ./point-cloud-interfaces {};
+
  point-cloud-msg-wrapper = self.callPackage ./point-cloud-msg-wrapper {};
+
+ point-cloud-transport = self.callPackage ./point-cloud-transport {};
+
+ point-cloud-transport-plugins = self.callPackage ./point-cloud-transport-plugins {};
+
+ point-cloud-transport-py = self.callPackage ./point-cloud-transport-py {};
 
  pointcloud-to-laserscan = self.callPackage ./pointcloud-to-laserscan {};
 
@@ -1313,6 +1341,8 @@ self: super: {
  radar-msgs = self.callPackage ./radar-msgs {};
 
  random-numbers = self.callPackage ./random-numbers {};
+
+ range-sensor-broadcaster = self.callPackage ./range-sensor-broadcaster {};
 
  rc-common-msgs = self.callPackage ./rc-common-msgs {};
 
@@ -1519,6 +1549,8 @@ self: super: {
  robotiq-controllers = self.callPackage ./robotiq-controllers {};
 
  robotiq-description = self.callPackage ./robotiq-description {};
+
+ robotraconteur = self.callPackage ./robotraconteur {};
 
  ros2-control = self.callPackage ./ros2-control {};
 
@@ -1960,6 +1992,8 @@ self: super: {
 
  stubborn-buddies-msgs = self.callPackage ./stubborn-buddies-msgs {};
 
+ swri-cli-tools = self.callPackage ./swri-cli-tools {};
+
  swri-console = self.callPackage ./swri-console {};
 
  swri-console-util = self.callPackage ./swri-console-util {};
@@ -2256,7 +2290,11 @@ self: super: {
 
  zenoh-bridge-dds = self.callPackage ./zenoh-bridge-dds {};
 
+ zlib-point-cloud-transport = self.callPackage ./zlib-point-cloud-transport {};
+
  zmqpp-vendor = self.callPackage ./zmqpp-vendor {};
+
+ zstd-point-cloud-transport = self.callPackage ./zstd-point-cloud-transport {};
 
  zstd-vendor = self.callPackage ./zstd-vendor {};
 

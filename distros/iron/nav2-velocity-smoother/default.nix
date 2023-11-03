@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, geometry-msgs, nav2-common, nav2-util, rclcpp, rclcpp-components }:
 buildRosPackage {
   pname = "ros-iron-nav2-velocity-smoother";
-  version = "1.2.2-r1";
+  version = "1.2.5-r2";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_velocity_smoother/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "038a443fe7062155f6fbd61a2c37f9cf6a9ef5b11a884af8b4253560d9d56717";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_velocity_smoother/1.2.5-2.tar.gz";
+    name = "1.2.5-2.tar.gz";
+    sha256 = "c1e5a9fc8d65a5bc02965bd47a0c1b6a1a4d690f50e032bf883069cc18a6d0e9";
   };
 
   buildType = "ament_cmake";
