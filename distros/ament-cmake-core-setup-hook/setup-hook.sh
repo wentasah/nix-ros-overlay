@@ -14,6 +14,11 @@ _findAmentPackages() {
     # ROS scripts use unbound variables
     set +u
     for setup in "$pkg"/share/*/local_setup.sh; do
+      if [[ -e $pkg/nix-support/ros-buildenv ]]; then
+        # Override the prefix set at package configure time, i.e., its
+        # $out with buildEnv's $out
+        AMENT_CURRENT_PREFIX=$pkg
+      fi
       source "$setup"
     done
     set -u

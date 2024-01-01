@@ -10,7 +10,7 @@
 #
 # By default, all binaries in the environment are wrapped, setting the relevant
 # ROS environment variables, allowing use outside of nix-shell.
-{ lib, stdenv, buildPackages, writeText, buildEnv, makeWrapper, python }:
+{ lib, stdenv, buildPackages, writeText, buildEnv, makeWrapper, python, ament-cmake-core-setup-hook }:
 { paths ? [], wrapPrograms ? true, postBuild ? "", passthru ? { }, ... }@args:
 
 with lib;
@@ -47,6 +47,8 @@ let
 
     postBuild = postBuild + ''
       "${buildPackages.perl}/bin/perl" "${./setup-hook-builder.pl}"
+      # Tell ament-cmake-core-setup-hook that this is a buildEnv
+      touch $out/nix-support/ros-buildenv
     '' + optionalString wrapPrograms ''
       if [ -d "$out/bin" ]; then
         find -L "$out/bin" -executable -type f -xtype l -print0 | \
@@ -88,7 +90,9 @@ let
     oldBuildCommand = buildCommand;
     passAsFile = (if passAsFile == null then [] else passAsFile) ++ [ "oldBuildCommand" ];
 
-    propagatedBuildInputs = propagatedPaths.otherPackages;
+    propagatedBuildInputs =
+      [ ament-cmake-core-setup-hook ]
+      ++ propagatedPaths.otherPackages;
 
     buildPhase = ''
       runHook preBuild
