@@ -4,13 +4,13 @@ rosSelf: rosSuper: with rosSelf.lib; {
   ament-cmake-core = rosSuper.ament-cmake-core.overrideAttrs ({
     propagatedBuildInputs ? [],
     nativeBuildInputs ? [], ...
-  }: let
-    setupHook = rosSelf.callPackage ./ament-cmake-core-setup-hook { };
-  in {
-    propagatedBuildInputs = [ setupHook ] ++ propagatedBuildInputs;
-    nativeBuildInputs = [ setupHook ] ++ nativeBuildInputs;
+  }: {
+    propagatedBuildInputs = [ rosSelf.ament-cmake-core-setup-hook ] ++ propagatedBuildInputs;
+    nativeBuildInputs = [ rosSelf.ament-cmake-core-setup-hook ] ++ nativeBuildInputs;
     outputs = [ "out" "dev" ];
   });
+
+  ament-cmake-core-setup-hook = rosSelf.callPackage ./ament-cmake-core-setup-hook { };
 
   cyclonedds = rosSuper.cyclonedds.overrideAttrs ({
     cmakeFlags ? [], ...
