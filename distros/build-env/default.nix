@@ -47,6 +47,8 @@ let
 
     postBuild = postBuild + ''
       "${buildPackages.perl}/bin/perl" "${./setup-hook-builder.pl}"
+      # Tell ament-cmake-core-setup-hook that this is a buildEnv
+      touch $out/nix-support/ros-buildenv
     '' + optionalString wrapPrograms ''
       if [ -d "$out/bin" ]; then
         find -L "$out/bin" -executable -type f -xtype l -print0 | \
