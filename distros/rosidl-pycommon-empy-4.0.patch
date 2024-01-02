@@ -1,0 +1,25 @@
+diff --git a/rosidl_pycommon/__init__.py b/rosidl_pycommon/__init__.py
+index deae9bc..ecac88b 100644
+--- a/rosidl_pycommon/__init__.py
++++ b/rosidl_pycommon/__init__.py
+@@ -148,12 +148,16 @@ def expand_template(
+ 
+     global interpreter
+     output = StringIO()
++    config = em.Configuration()
++    config.deleteOnError = True
++    config.rawErrors = True
+     interpreter = em.Interpreter(
+         output=output,
+-        options={
+-            em.BUFFERED_OPT: True,
+-            em.RAW_OPT: True,
+-        },
++        config=config,
++#         options={
++#             em.BUFFERED_OPT: True,
++#             em.RAW_OPT: True,
++#         },
+     )
+ 
+     global template_prefix_path

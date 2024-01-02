@@ -115,6 +115,24 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ] ++ propagatedBuildInputs;
   });
 
+  rosidl-adapter = rosSuper.rosidl-adapter.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [ ./rosidl-adapter-empy-4.0.patch ];
+  });
+
+  rosidl-cmake = rosSuper.rosidl-cmake.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [ ./rosidl-cmake-empy-4.0.patch ];
+  });
+
+  rosidl-pycommon = rosSuper.rosidl-pycommon.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [ ./rosidl-pycommon-empy-4.0.patch ];
+  });
+
   rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
     postPatch ? "", ...
   }: let
