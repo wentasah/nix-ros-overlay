@@ -128,6 +128,18 @@ let
       })
     ];
 
+    mrpt2 = rosSuper.mrpt2.overrideAttrs ({
+      postFixup ? "", ...
+    }: {
+      # lib64 symlink pointing to lib prevents putting this package
+      # into a buildEnv. buildEnv creation fails in move-lib64.sh hook with:
+      # > moving /nix/store/9z3rnm6fmrjbh1yhg9p6yjrr80rpfidp-ros-env/lib64/* to /nix/store/9z3rnm6fmrjbh1yhg9p6yjrr80rpfidp-ros-env/lib
+      # > mv: not replacing '/nix/store/9z3rnm6fmrjbh1yhg9p6yjrr80rpfidp-ros-env/lib/cmake'
+      postFixup = postFixup + ''
+        rm $out/lib64
+      '';
+    });
+
     ompl = rosSuper.ompl.overrideAttrs ({
       patches ? [], ...
     }: {
