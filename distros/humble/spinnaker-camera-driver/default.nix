@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-clang-format, ament-lint-auto, ament-lint-common, camera-info-manager, curl, dpkg, ffmpeg, flir-camera-msgs, image-transport, libusb1, python3Packages, rclcpp, rclcpp-components, sensor-msgs, std-msgs, yaml-cpp }:
 buildRosPackage {
   pname = "ros-humble-spinnaker-camera-driver";
-  version = "2.0.7-r1";
+  version = "2.0.8-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros-drivers-gbp/flir_camera_driver-release/archive/release/humble/spinnaker_camera_driver/2.0.7-1.tar.gz";
-    name = "2.0.7-1.tar.gz";
-    sha256 = "2eb152e919b595bc5d83f093aee910f03af412814424de25d96847d954b66525";
+    url = "https://github.com/ros-drivers-gbp/flir_camera_driver-release/archive/release/humble/spinnaker_camera_driver/2.0.8-2.tar.gz";
+    name = "2.0.8-2.tar.gz";
+    sha256 = "9c7bd829f655b91a08350d3c1a9803ba225453112f640613ec0caabb4147b7a7";
   };
 
   buildType = "ament_cmake";
@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = ''ROS2 driver for flir spinnaker sdk'';
-    license = with lib.licenses; [ "Apache-2" ];
+    license = with lib.licenses; [ "Apache-2" bsdOriginal ];
   };
 }

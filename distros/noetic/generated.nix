@@ -236,6 +236,32 @@ self: super: {
 
  clear-costmap-recovery = self.callPackage ./clear-costmap-recovery {};
 
+ clearpath-configuration-msgs = self.callPackage ./clearpath-configuration-msgs {};
+
+ clearpath-control-msgs = self.callPackage ./clearpath-control-msgs {};
+
+ clearpath-dock-msgs = self.callPackage ./clearpath-dock-msgs {};
+
+ clearpath-localization-msgs = self.callPackage ./clearpath-localization-msgs {};
+
+ clearpath-mission-manager-msgs = self.callPackage ./clearpath-mission-manager-msgs {};
+
+ clearpath-mission-scheduler-msgs = self.callPackage ./clearpath-mission-scheduler-msgs {};
+
+ clearpath-msgs = self.callPackage ./clearpath-msgs {};
+
+ clearpath-navigation-msgs = self.callPackage ./clearpath-navigation-msgs {};
+
+ clearpath-onav-api-examples = self.callPackage ./clearpath-onav-api-examples {};
+
+ clearpath-onav-api-examples-lib = self.callPackage ./clearpath-onav-api-examples-lib {};
+
+ clearpath-onav-examples = self.callPackage ./clearpath-onav-examples {};
+
+ clearpath-platform-msgs = self.callPackage ./clearpath-platform-msgs {};
+
+ clearpath-safety-msgs = self.callPackage ./clearpath-safety-msgs {};
+
  clober-msgs = self.callPackage ./clober-msgs {};
 
  clpe = self.callPackage ./clpe {};
@@ -832,6 +858,8 @@ self: super: {
 
  ergodic-exploration = self.callPackage ./ergodic-exploration {};
 
+ ess-imu-driver = self.callPackage ./ess-imu-driver {};
+
  ess-imu-ros1-uart-driver = self.callPackage ./ess-imu-ros1-uart-driver {};
 
  ethercat-grant = self.callPackage ./ethercat-grant {};
@@ -960,6 +988,8 @@ self: super: {
 
  fiducials = self.callPackage ./fiducials {};
 
+ fields2cover = self.callPackage ./fields2cover {};
+
  filters = self.callPackage ./filters {};
 
  find-object-2d = self.callPackage ./find-object-2d {};
@@ -1082,6 +1112,8 @@ self: super: {
 
  gazebo-dev = self.callPackage ./gazebo-dev {};
 
+ gazebo-model-attachment-plugin = self.callPackage ./gazebo-model-attachment-plugin {};
+
  gazebo-msgs = self.callPackage ./gazebo-msgs {};
 
  gazebo-plugins = self.callPackage ./gazebo-plugins {};
@@ -1145,6 +1177,8 @@ self: super: {
  gmapping = self.callPackage ./gmapping {};
 
  gmcl = self.callPackage ./gmcl {};
+
+ gnsstk = self.callPackage ./gnsstk {};
 
  goal-passer = self.callPackage ./goal-passer {};
 
@@ -1500,13 +1534,17 @@ self: super: {
 
  jsk-network-tools = self.callPackage ./jsk-network-tools {};
 
+ jsk-pcl-ros = self.callPackage ./jsk-pcl-ros {};
+
+ jsk-pcl-ros-utils = self.callPackage ./jsk-pcl-ros-utils {};
+
+ jsk-planning = self.callPackage ./jsk-planning {};
+
  jsk-pr2eus = self.callPackage ./jsk-pr2eus {};
 
  jsk-recognition = self.callPackage ./jsk-recognition {};
 
  jsk-recognition-msgs = self.callPackage ./jsk-recognition-msgs {};
-
- jsk-recognition-utils = self.callPackage ./jsk-recognition-utils {};
 
  jsk-roseus = self.callPackage ./jsk-roseus {};
 
@@ -1948,6 +1986,8 @@ self: super: {
 
  moveit-resources = self.callPackage ./moveit-resources {};
 
+ moveit-resources-dual-panda-moveit-config = self.callPackage ./moveit-resources-dual-panda-moveit-config {};
+
  moveit-resources-fanuc-description = self.callPackage ./moveit-resources-fanuc-description {};
 
  moveit-resources-fanuc-moveit-config = self.callPackage ./moveit-resources-fanuc-moveit-config {};
@@ -2306,6 +2346,12 @@ self: super: {
 
  pcl-ros = self.callPackage ./pcl-ros {};
 
+ pddl-msgs = self.callPackage ./pddl-msgs {};
+
+ pddl-planner = self.callPackage ./pddl-planner {};
+
+ pddl-planner-viewer = self.callPackage ./pddl-planner-viewer {};
+
  people = self.callPackage ./people {};
 
  people-msgs = self.callPackage ./people-msgs {};
@@ -2565,6 +2611,8 @@ self: super: {
  pr2-tuckarm = self.callPackage ./pr2-tuckarm {};
 
  pr2eus = self.callPackage ./pr2eus {};
+
+ pr2eus-moveit = self.callPackage ./pr2eus-moveit {};
 
  prbt-gazebo = self.callPackage ./prbt-gazebo {};
 
@@ -2909,6 +2957,8 @@ self: super: {
  rosbag-migration-rule = self.callPackage ./rosbag-migration-rule {};
 
  rosbag-pandas = self.callPackage ./rosbag-pandas {};
+
+ rosbag-rviz-panel = self.callPackage ./rosbag-rviz-panel {};
 
  rosbag-snapshot = self.callPackage ./rosbag-snapshot {};
 
@@ -3324,9 +3374,19 @@ self: super: {
 
  sick-safetyscanners = self.callPackage ./sick-safetyscanners {};
 
+ sick-safevisionary-base = self.callPackage ./sick-safevisionary-base {};
+
+ sick-safevisionary-driver = self.callPackage ./sick-safevisionary-driver {};
+
+ sick-safevisionary-msgs = self.callPackage ./sick-safevisionary-msgs {};
+
  sick-scan = self.callPackage ./sick-scan {};
 
+ sick-scan-xd = self.callPackage ./sick-scan-xd {};
+
  sick-tim = self.callPackage ./sick-tim {};
+
+ sick-visionary-ros = self.callPackage ./sick-visionary-ros {};
 
  simple-grasping = self.callPackage ./simple-grasping {};
 
@@ -3389,6 +3449,8 @@ self: super: {
  sot-dynamic-pinocchio = self.callPackage ./sot-dynamic-pinocchio {};
 
  sot-tools = self.callPackage ./sot-tools {};
+
+ sound-classification = self.callPackage ./sound-classification {};
 
  spacenav-node = self.callPackage ./spacenav-node {};
 
@@ -3475,6 +3537,8 @@ self: super: {
  system-fingerprint = self.callPackage ./system-fingerprint {};
 
  tablet-socket-msgs = self.callPackage ./tablet-socket-msgs {};
+
+ task-compiler = self.callPackage ./task-compiler {};
 
  taskflow = self.callPackage ./taskflow {};
 
@@ -3654,6 +3718,8 @@ self: super: {
 
  udp-com = self.callPackage ./udp-com {};
 
+ udp-msgs = self.callPackage ./udp-msgs {};
+
  um6 = self.callPackage ./um6 {};
 
  um7 = self.callPackage ./um7 {};
@@ -3669,6 +3735,8 @@ self: super: {
  ur10e-moveit-config = self.callPackage ./ur10e-moveit-config {};
 
  ur16e-moveit-config = self.callPackage ./ur16e-moveit-config {};
+
+ ur20-moveit-config = self.callPackage ./ur20-moveit-config {};
 
  ur3-moveit-config = self.callPackage ./ur3-moveit-config {};
 

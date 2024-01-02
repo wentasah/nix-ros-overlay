@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, ament-lint-auto, asio, nlohmann_json, openssl, rclcpp, rclcpp-components, resource-retriever, ros-environment, rosgraph-msgs, std-msgs, std-srvs, websocketpp, zlib }:
 buildRosPackage {
   pname = "ros-iron-foxglove-bridge";
-  version = "0.7.2-r1";
+  version = "0.7.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/foxglove_bridge-release/archive/release/iron/foxglove_bridge/0.7.2-1.tar.gz";
-    name = "0.7.2-1.tar.gz";
-    sha256 = "2fed4ecbbf77b3ff902922a9ae059f182f919b4ad2e65f8d358f93a55dc167a8";
+    url = "https://github.com/ros2-gbp/foxglove_bridge-release/archive/release/iron/foxglove_bridge/0.7.4-1.tar.gz";
+    name = "0.7.4-1.tar.gz";
+    sha256 = "ddc7e42469f4de6b9a2509411a66533ae67709378196cd79c2b19758818f7a5e";
   };
 
   buildType = "ament_cmake";

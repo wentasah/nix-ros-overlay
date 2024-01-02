@@ -28,6 +28,8 @@ self: super: {
 
  ament-acceleration = self.callPackage ./ament-acceleration {};
 
+ ament-black = self.callPackage ./ament-black {};
+
  ament-clang-format = self.callPackage ./ament-clang-format {};
 
  ament-clang-tidy = self.callPackage ./ament-clang-tidy {};
@@ -35,6 +37,8 @@ self: super: {
  ament-cmake = self.callPackage ./ament-cmake {};
 
  ament-cmake-auto = self.callPackage ./ament-cmake-auto {};
+
+ ament-cmake-black = self.callPackage ./ament-cmake-black {};
 
  ament-cmake-catch2 = self.callPackage ./ament-cmake-catch2 {};
 
@@ -151,8 +155,6 @@ self: super: {
  ament-xmllint = self.callPackage ./ament-xmllint {};
 
  angles = self.callPackage ./angles {};
-
- apex-containers = self.callPackage ./apex-containers {};
 
  apex-test-tools = self.callPackage ./apex-test-tools {};
 
@@ -438,6 +440,36 @@ self: super: {
 
  eigenpy = self.callPackage ./eigenpy {};
 
+ etsi-its-cam-coding = self.callPackage ./etsi-its-cam-coding {};
+
+ etsi-its-cam-conversion = self.callPackage ./etsi-its-cam-conversion {};
+
+ etsi-its-cam-msgs = self.callPackage ./etsi-its-cam-msgs {};
+
+ etsi-its-coding = self.callPackage ./etsi-its-coding {};
+
+ etsi-its-conversion = self.callPackage ./etsi-its-conversion {};
+
+ etsi-its-denm-coding = self.callPackage ./etsi-its-denm-coding {};
+
+ etsi-its-denm-conversion = self.callPackage ./etsi-its-denm-conversion {};
+
+ etsi-its-denm-msgs = self.callPackage ./etsi-its-denm-msgs {};
+
+ etsi-its-messages = self.callPackage ./etsi-its-messages {};
+
+ etsi-its-msgs = self.callPackage ./etsi-its-msgs {};
+
+ etsi-its-primitives-conversion = self.callPackage ./etsi-its-primitives-conversion {};
+
+ etsi-its-rviz-plugins = self.callPackage ./etsi-its-rviz-plugins {};
+
+ event-camera-codecs = self.callPackage ./event-camera-codecs {};
+
+ event-camera-msgs = self.callPackage ./event-camera-msgs {};
+
+ event-camera-renderer = self.callPackage ./event-camera-renderer {};
+
  example-interfaces = self.callPackage ./example-interfaces {};
 
  examples-rclcpp-async-client = self.callPackage ./examples-rclcpp-async-client {};
@@ -492,6 +524,8 @@ self: super: {
 
  fastrtps-cmake-module = self.callPackage ./fastrtps-cmake-module {};
 
+ fields2cover = self.callPackage ./fields2cover {};
+
  filters = self.callPackage ./filters {};
 
  find-object-2d = self.callPackage ./find-object-2d {};
@@ -513,6 +547,10 @@ self: super: {
  flexbe-testing = self.callPackage ./flexbe-testing {};
 
  flexbe-widget = self.callPackage ./flexbe-widget {};
+
+ flir-camera-description = self.callPackage ./flir-camera-description {};
+
+ flir-camera-msgs = self.callPackage ./flir-camera-msgs {};
 
  fluent-rviz = self.callPackage ./fluent-rviz {};
 
@@ -574,6 +612,14 @@ self: super: {
 
  gazebo-ros-pkgs = self.callPackage ./gazebo-ros-pkgs {};
 
+ gazebo-video-monitor-interfaces = self.callPackage ./gazebo-video-monitor-interfaces {};
+
+ gazebo-video-monitor-plugins = self.callPackage ./gazebo-video-monitor-plugins {};
+
+ gazebo-video-monitor-utils = self.callPackage ./gazebo-video-monitor-utils {};
+
+ gazebo-video-monitors = self.callPackage ./gazebo-video-monitors {};
+
  gc-spl-2022 = self.callPackage ./gc-spl-2022 {};
 
  generate-parameter-library = self.callPackage ./generate-parameter-library {};
@@ -611,6 +657,8 @@ self: super: {
  gpsd-client = self.callPackage ./gpsd-client {};
 
  graph-msgs = self.callPackage ./graph-msgs {};
+
+ grasping-msgs = self.callPackage ./grasping-msgs {};
 
  grbl-msgs = self.callPackage ./grbl-msgs {};
 
@@ -670,6 +718,8 @@ self: super: {
 
  iceoryx-hoofs = self.callPackage ./iceoryx-hoofs {};
 
+ iceoryx-introspection = self.callPackage ./iceoryx-introspection {};
+
  iceoryx-posh = self.callPackage ./iceoryx-posh {};
 
  ifm3d-core = self.callPackage ./ifm3d-core {};
@@ -705,6 +755,8 @@ self: super: {
  imu-sensor-broadcaster = self.callPackage ./imu-sensor-broadcaster {};
 
  imu-tools = self.callPackage ./imu-tools {};
+
+ interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
  interactive-markers = self.callPackage ./interactive-markers {};
 
@@ -808,6 +860,24 @@ self: super: {
 
  launch-yaml = self.callPackage ./launch-yaml {};
 
+ leo = self.callPackage ./leo {};
+
+ leo-bringup = self.callPackage ./leo-bringup {};
+
+ leo-description = self.callPackage ./leo-description {};
+
+ leo-desktop = self.callPackage ./leo-desktop {};
+
+ leo-fw = self.callPackage ./leo-fw {};
+
+ leo-msgs = self.callPackage ./leo-msgs {};
+
+ leo-robot = self.callPackage ./leo-robot {};
+
+ leo-teleop = self.callPackage ./leo-teleop {};
+
+ leo-viz = self.callPackage ./leo-viz {};
+
  lgsvl-msgs = self.callPackage ./lgsvl-msgs {};
 
  libcreate = self.callPackage ./libcreate {};
@@ -882,6 +952,8 @@ self: super: {
 
  message-tf-frame-transformer = self.callPackage ./message-tf-frame-transformer {};
 
+ metavision-driver = self.callPackage ./metavision-driver {};
+
  micro-ros-diagnostic-bridge = self.callPackage ./micro-ros-diagnostic-bridge {};
 
  micro-ros-diagnostic-msgs = self.callPackage ./micro-ros-diagnostic-msgs {};
@@ -897,30 +969,6 @@ self: super: {
  microstrain-inertial-rqt = self.callPackage ./microstrain-inertial-rqt {};
 
  mimick-vendor = self.callPackage ./mimick-vendor {};
-
- mola-common = self.callPackage ./mola-common {};
-
- mola-demos = self.callPackage ./mola-demos {};
-
- mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
-
- mola-input-euroc-dataset = self.callPackage ./mola-input-euroc-dataset {};
-
- mola-input-kitti-dataset = self.callPackage ./mola-input-kitti-dataset {};
-
- mola-input-rawlog = self.callPackage ./mola-input-rawlog {};
-
- mola-input-ros2 = self.callPackage ./mola-input-ros2 {};
-
- mola-kernel = self.callPackage ./mola-kernel {};
-
- mola-launcher = self.callPackage ./mola-launcher {};
-
- mola-test-datasets = self.callPackage ./mola-test-datasets {};
-
- mola-viz = self.callPackage ./mola-viz {};
-
- mola-yaml = self.callPackage ./mola-yaml {};
 
  mouse-teleop = self.callPackage ./mouse-teleop {};
 
@@ -1014,8 +1062,6 @@ self: super: {
 
  moveit-visual-tools = self.callPackage ./moveit-visual-tools {};
 
- mp2p-icp = self.callPackage ./mp2p-icp {};
-
  mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
@@ -1038,7 +1084,17 @@ self: super: {
 
  nao-lola = self.callPackage ./nao-lola {};
 
+ nao-meshes = self.callPackage ./nao-meshes {};
+
  nao-sensor-msgs = self.callPackage ./nao-sensor-msgs {};
+
+ naoqi-bridge-msgs = self.callPackage ./naoqi-bridge-msgs {};
+
+ naoqi-driver = self.callPackage ./naoqi-driver {};
+
+ naoqi-libqi = self.callPackage ./naoqi-libqi {};
+
+ naoqi-libqicore = self.callPackage ./naoqi-libqicore {};
 
  nav2-amcl = self.callPackage ./nav2-amcl {};
 
@@ -1184,6 +1240,8 @@ self: super: {
 
  pendulum-msgs = self.callPackage ./pendulum-msgs {};
 
+ pepper-meshes = self.callPackage ./pepper-meshes {};
+
  perception = self.callPackage ./perception {};
 
  perception-pcl = self.callPackage ./perception-pcl {};
@@ -1301,6 +1359,8 @@ self: super: {
  proxsuite = self.callPackage ./proxsuite {};
 
  py-trees = self.callPackage ./py-trees {};
+
+ py-trees-js = self.callPackage ./py-trees-js {};
 
  py-trees-ros = self.callPackage ./py-trees-ros {};
 
@@ -1443,6 +1503,8 @@ self: super: {
  rmf-building-sim-gz-classic-plugins = self.callPackage ./rmf-building-sim-gz-classic-plugins {};
 
  rmf-charger-msgs = self.callPackage ./rmf-charger-msgs {};
+
+ rmf-charging-schedule = self.callPackage ./rmf-charging-schedule {};
 
  rmf-cmake-uncrustify = self.callPackage ./rmf-cmake-uncrustify {};
 
@@ -1912,6 +1974,14 @@ self: super: {
 
  sick-safetyscanners-base = self.callPackage ./sick-safetyscanners-base {};
 
+ sick-safevisionary-base = self.callPackage ./sick-safevisionary-base {};
+
+ sick-safevisionary-driver = self.callPackage ./sick-safevisionary-driver {};
+
+ sick-safevisionary-interfaces = self.callPackage ./sick-safevisionary-interfaces {};
+
+ sick-safevisionary-tests = self.callPackage ./sick-safevisionary-tests {};
+
  simple-actions = self.callPackage ./simple-actions {};
 
  simple-launch = self.callPackage ./simple-launch {};
@@ -1961,6 +2031,8 @@ self: super: {
  spacenav = self.callPackage ./spacenav {};
 
  spdlog-vendor = self.callPackage ./spdlog-vendor {};
+
+ spinnaker-camera-driver = self.callPackage ./spinnaker-camera-driver {};
 
  splsm-7 = self.callPackage ./splsm-7 {};
 
@@ -2197,6 +2269,8 @@ self: super: {
  urdf-launch = self.callPackage ./urdf-launch {};
 
  urdf-parser-plugin = self.callPackage ./urdf-parser-plugin {};
+
+ urdf-sim-tutorial = self.callPackage ./urdf-sim-tutorial {};
 
  urdf-tutorial = self.callPackage ./urdf-tutorial {};
 

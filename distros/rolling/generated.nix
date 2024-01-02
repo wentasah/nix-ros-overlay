@@ -28,6 +28,8 @@ self: super: {
 
  ament-acceleration = self.callPackage ./ament-acceleration {};
 
+ ament-black = self.callPackage ./ament-black {};
+
  ament-clang-format = self.callPackage ./ament-clang-format {};
 
  ament-clang-tidy = self.callPackage ./ament-clang-tidy {};
@@ -35,6 +37,8 @@ self: super: {
  ament-cmake = self.callPackage ./ament-cmake {};
 
  ament-cmake-auto = self.callPackage ./ament-cmake-auto {};
+
+ ament-cmake-black = self.callPackage ./ament-cmake-black {};
 
  ament-cmake-catch2 = self.callPackage ./ament-cmake-catch2 {};
 
@@ -149,8 +153,6 @@ self: super: {
  ament-xmllint = self.callPackage ./ament-xmllint {};
 
  angles = self.callPackage ./angles {};
-
- apex-containers = self.callPackage ./apex-containers {};
 
  apex-test-tools = self.callPackage ./apex-test-tools {};
 
@@ -504,6 +506,8 @@ self: super: {
 
  fastrtps-cmake-module = self.callPackage ./fastrtps-cmake-module {};
 
+ fields2cover = self.callPackage ./fields2cover {};
+
  filters = self.callPackage ./filters {};
 
  find-object-2d = self.callPackage ./find-object-2d {};
@@ -636,6 +640,8 @@ self: super: {
 
  iceoryx-hoofs = self.callPackage ./iceoryx-hoofs {};
 
+ iceoryx-introspection = self.callPackage ./iceoryx-introspection {};
+
  iceoryx-posh = self.callPackage ./iceoryx-posh {};
 
  ifm3d-core = self.callPackage ./ifm3d-core {};
@@ -671,6 +677,8 @@ self: super: {
  imu-sensor-broadcaster = self.callPackage ./imu-sensor-broadcaster {};
 
  imu-tools = self.callPackage ./imu-tools {};
+
+ interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
  interactive-markers = self.callPackage ./interactive-markers {};
 
@@ -780,6 +788,24 @@ self: super: {
 
  lely-core-libraries = self.callPackage ./lely-core-libraries {};
 
+ leo = self.callPackage ./leo {};
+
+ leo-bringup = self.callPackage ./leo-bringup {};
+
+ leo-description = self.callPackage ./leo-description {};
+
+ leo-desktop = self.callPackage ./leo-desktop {};
+
+ leo-fw = self.callPackage ./leo-fw {};
+
+ leo-msgs = self.callPackage ./leo-msgs {};
+
+ leo-robot = self.callPackage ./leo-robot {};
+
+ leo-teleop = self.callPackage ./leo-teleop {};
+
+ leo-viz = self.callPackage ./leo-viz {};
+
  lgsvl-msgs = self.callPackage ./lgsvl-msgs {};
 
  libcurl-vendor = self.callPackage ./libcurl-vendor {};
@@ -869,30 +895,6 @@ self: super: {
  mimick-vendor = self.callPackage ./mimick-vendor {};
 
  mobileye-560-660-msgs = self.callPackage ./mobileye-560-660-msgs {};
-
- mola-common = self.callPackage ./mola-common {};
-
- mola-demos = self.callPackage ./mola-demos {};
-
- mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
-
- mola-input-euroc-dataset = self.callPackage ./mola-input-euroc-dataset {};
-
- mola-input-kitti-dataset = self.callPackage ./mola-input-kitti-dataset {};
-
- mola-input-rawlog = self.callPackage ./mola-input-rawlog {};
-
- mola-input-ros2 = self.callPackage ./mola-input-ros2 {};
-
- mola-kernel = self.callPackage ./mola-kernel {};
-
- mola-launcher = self.callPackage ./mola-launcher {};
-
- mola-test-datasets = self.callPackage ./mola-test-datasets {};
-
- mola-viz = self.callPackage ./mola-viz {};
-
- mola-yaml = self.callPackage ./mola-yaml {};
 
  mouse-teleop = self.callPackage ./mouse-teleop {};
 
@@ -986,8 +988,6 @@ self: super: {
 
  moveit-visual-tools = self.callPackage ./moveit-visual-tools {};
 
- mp2p-icp = self.callPackage ./mp2p-icp {};
-
  mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
@@ -1013,8 +1013,6 @@ self: super: {
  nao-lola-client = self.callPackage ./nao-lola-client {};
 
  nao-lola-command-msgs = self.callPackage ./nao-lola-command-msgs {};
-
- nao-lola-conversion = self.callPackage ./nao-lola-conversion {};
 
  nao-lola-sensor-msgs = self.callPackage ./nao-lola-sensor-msgs {};
 
@@ -1079,6 +1077,10 @@ self: super: {
  osrf-testing-tools-cpp = self.callPackage ./osrf-testing-tools-cpp {};
 
  ouster-msgs = self.callPackage ./ouster-msgs {};
+
+ ouster-ros = self.callPackage ./ouster-ros {};
+
+ ouster-sensor-msgs = self.callPackage ./ouster-sensor-msgs {};
 
  ouxt-common = self.callPackage ./ouxt-common {};
 
@@ -1146,6 +1148,8 @@ self: super: {
 
  picknik-twist-controller = self.callPackage ./picknik-twist-controller {};
 
+ pid-controller = self.callPackage ./pid-controller {};
+
  pilz-industrial-motion-planner = self.callPackage ./pilz-industrial-motion-planner {};
 
  pilz-industrial-motion-planner-testutils = self.callPackage ./pilz-industrial-motion-planner-testutils {};
@@ -1170,6 +1174,8 @@ self: super: {
 
  point-cloud-transport-py = self.callPackage ./point-cloud-transport-py {};
 
+ point-cloud-transport-tutorial = self.callPackage ./point-cloud-transport-tutorial {};
+
  pointcloud-to-laserscan = self.callPackage ./pointcloud-to-laserscan {};
 
  polygon-demos = self.callPackage ./polygon-demos {};
@@ -1185,6 +1191,8 @@ self: super: {
  position-controllers = self.callPackage ./position-controllers {};
 
  py-trees = self.callPackage ./py-trees {};
+
+ py-trees-js = self.callPackage ./py-trees-js {};
 
  py-trees-ros = self.callPackage ./py-trees-ros {};
 
@@ -1321,6 +1329,8 @@ self: super: {
  rmf-building-sim-gz-classic-plugins = self.callPackage ./rmf-building-sim-gz-classic-plugins {};
 
  rmf-charger-msgs = self.callPackage ./rmf-charger-msgs {};
+
+ rmf-charging-schedule = self.callPackage ./rmf-charging-schedule {};
 
  rmf-cmake-uncrustify = self.callPackage ./rmf-cmake-uncrustify {};
 
@@ -1753,6 +1763,14 @@ self: super: {
  shape-msgs = self.callPackage ./shape-msgs {};
 
  shared-queues-vendor = self.callPackage ./shared-queues-vendor {};
+
+ sick-safevisionary-base = self.callPackage ./sick-safevisionary-base {};
+
+ sick-safevisionary-driver = self.callPackage ./sick-safevisionary-driver {};
+
+ sick-safevisionary-interfaces = self.callPackage ./sick-safevisionary-interfaces {};
+
+ sick-safevisionary-tests = self.callPackage ./sick-safevisionary-tests {};
 
  simple-actions = self.callPackage ./simple-actions {};
 

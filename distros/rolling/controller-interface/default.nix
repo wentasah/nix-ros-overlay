@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, hardware-interface, rclcpp-lifecycle, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-controller-interface";
-  version = "3.19.1-r1";
+  version = "4.2.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/rolling/controller_interface/3.19.1-1.tar.gz";
-    name = "3.19.1-1.tar.gz";
-    sha256 = "678dcd99c7dd14a74eb0720f24fd13ea9fe470d45853e0328febe63a2d12a1a4";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/rolling/controller_interface/4.2.0-1.tar.gz";
+    name = "4.2.0-1.tar.gz";
+    sha256 = "14c47ce10f06d408ce444e95dae69aa8a2e70d022304d1deb4c6ee188fc4362f";
   };
 
   buildType = "ament_cmake";

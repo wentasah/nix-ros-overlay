@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, lifecycle-msgs, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-iron-controller-manager-msgs";
-  version = "3.19.1-r1";
+  version = "3.21.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/controller_manager_msgs/3.19.1-1.tar.gz";
-    name = "3.19.1-1.tar.gz";
-    sha256 = "dc44054ad5ef6590c9472a6537a09487a7108f5064ad494ed2a7083a7c59268b";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/controller_manager_msgs/3.21.2-1.tar.gz";
+    name = "3.21.2-1.tar.gz";
+    sha256 = "737889d6aa324702fc0abdc8f7a84a227df98fb09edd0882147562b5200f8f25";
   };
 
   buildType = "ament_cmake";

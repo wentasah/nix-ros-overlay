@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-clang-format, ament-cmake-cppcheck, ament-cmake-gtest, ament-lint-auto, ament-lint-common, as2-core, as2-msgs, geometry-msgs, nav-msgs, rclcpp, sensor-msgs, std-msgs, std-srvs }:
 buildRosPackage {
   pname = "ros-humble-as2-platform-dji-osdk";
-  version = "1.0.4-r1";
+  version = "1.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/aerostack2-release/archive/release/humble/as2_platform_dji_osdk/1.0.4-1.tar.gz";
-    name = "1.0.4-1.tar.gz";
-    sha256 = "6db579851f9d7e85d55a404f542f91ed22ce984a9558d4e3cd7a5940e7ac0f25";
+    url = "https://github.com/ros2-gbp/aerostack2-release/archive/release/humble/as2_platform_dji_osdk/1.0.6-1.tar.gz";
+    name = "1.0.6-1.tar.gz";
+    sha256 = "cd864b34ae39ea1ffd7896f83992f2a413a7f0cc57315cf25967b6093b29e126";
   };
 
   buildType = "ament_cmake";
