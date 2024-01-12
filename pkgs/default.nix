@@ -89,6 +89,8 @@ self: super: with self.lib; {
 
       colcon-cargo = pyFinal.callPackage ./colcon/cargo.nix { };
 
+      colcon-clean = pyFinal.callPackage ./colcon/clean.nix { };
+
       colcon-cmake = pyFinal.callPackage ./colcon/cmake.nix { };
 
       colcon-core = pyFinal.callPackage ./colcon/core.nix { };
@@ -148,6 +150,8 @@ self: super: with self.lib; {
       rosinstall-generator = pyFinal.callPackage ./rosinstall-generator { };
 
       rospkg = pyFinal.callPackage ./rospkg { };
+
+      scantree = pyFinal.callPackage ./scantree { };
 
       vcstools = pyFinal.callPackage ./vcstools { };
     })
