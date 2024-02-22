@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-index-cpp, binutils, boost, cppzmq, fastcdr, lz4, protobuf, qt5, rclcpp, zstd }:
 buildRosPackage {
   pname = "ros-iron-plotjuggler";
-  version = "3.8.3-r1";
+  version = "3.9.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/plotjuggler-release/archive/release/iron/plotjuggler/3.8.3-1.tar.gz";
-    name = "3.8.3-1.tar.gz";
-    sha256 = "aa7b749bff54a040112643cae9e8edaf230684b07c26378ecb6d30af06e3b1b3";
+    url = "https://github.com/ros2-gbp/plotjuggler-release/archive/release/iron/plotjuggler/3.9.0-1.tar.gz";
+    name = "3.9.0-1.tar.gz";
+    sha256 = "d8ffae331afa4491428eaacecdcf19120ca4f1f676f5422bb84361b6688e038d";
   };
 
   buildType = "ament_cmake";

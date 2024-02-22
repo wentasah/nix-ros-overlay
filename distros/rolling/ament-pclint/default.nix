@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, pythonPackages }:
 buildRosPackage {
   pname = "ros-rolling-ament-pclint";
-  version = "0.16.1-r1";
+  version = "0.16.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_pclint/0.16.1-1.tar.gz";
-    name = "0.16.1-1.tar.gz";
-    sha256 = "71eb669d0a2089515c7cd2b02c971a58811272d3816ff247b49666aa3a75fded";
+    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_pclint/0.16.3-1.tar.gz";
+    name = "0.16.3-1.tar.gz";
+    sha256 = "cf8d1fe485a76d09a3f955d6560c63991c62e18022eea7e297e8e56a804fb913";
   };
 
   buildType = "ament_python";

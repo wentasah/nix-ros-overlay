@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, pythonPackages, rclpy, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-iron-ros2-controllers-test-nodes";
-  version = "3.19.2-r1";
+  version = "3.21.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/iron/ros2_controllers_test_nodes/3.19.2-1.tar.gz";
-    name = "3.19.2-1.tar.gz";
-    sha256 = "fe2ed9589eddbad33fa64d0d765b9d30c570845e40a2641b92c9c93d4a69f972";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/iron/ros2_controllers_test_nodes/3.21.0-1.tar.gz";
+    name = "3.21.0-1.tar.gz";
+    sha256 = "cd1667cd07ec3aeee6f39b6e07d5a64e443b96e9c5f49ae55e938964c4c8571c";
   };
 
   buildType = "ament_python";

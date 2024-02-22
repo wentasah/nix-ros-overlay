@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, cppzmq, rclcpp, ros-environment, sqlite }:
 buildRosPackage {
   pname = "ros-humble-behaviortree-cpp";
-  version = "4.4.3-r2";
+  version = "4.5.1-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/behaviortree_cpp_v4-release/archive/release/humble/behaviortree_cpp/4.4.3-2.tar.gz";
-    name = "4.4.3-2.tar.gz";
-    sha256 = "205050398ea081816f299396d3873a4e585445319a3729c4bc764349ed16f9f7";
+    url = "https://github.com/ros2-gbp/behaviortree_cpp_v4-release/archive/release/humble/behaviortree_cpp/4.5.1-2.tar.gz";
+    name = "4.5.1-2.tar.gz";
+    sha256 = "f695113e11f98d46727a722387e817dc3c85e304f15b0ae468d865bb70b98482";
   };
 
   buildType = "ament_cmake";

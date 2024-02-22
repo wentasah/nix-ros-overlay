@@ -1,5 +1,5 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 self: super: {
@@ -204,8 +204,6 @@ self: super: {
 
  boost-geometry-util = self.callPackage ./boost-geometry-util {};
 
- bosch-locator-bridge = self.callPackage ./bosch-locator-bridge {};
-
  builtin-interfaces = self.callPackage ./builtin-interfaces {};
 
  camera-calibration = self.callPackage ./camera-calibration {};
@@ -291,6 +289,10 @@ self: super: {
  cv-bridge = self.callPackage ./cv-bridge {};
 
  cyclonedds = self.callPackage ./cyclonedds {};
+
+ data-tamer-cpp = self.callPackage ./data-tamer-cpp {};
+
+ data-tamer-msgs = self.callPackage ./data-tamer-msgs {};
 
  delphi-esr-msgs = self.callPackage ./delphi-esr-msgs {};
 
@@ -506,6 +508,8 @@ self: super: {
 
  fastrtps-cmake-module = self.callPackage ./fastrtps-cmake-module {};
 
+ ffmpeg-image-transport-msgs = self.callPackage ./ffmpeg-image-transport-msgs {};
+
  fields2cover = self.callPackage ./fields2cover {};
 
  filters = self.callPackage ./filters {};
@@ -558,6 +562,10 @@ self: super: {
 
  fuse-viz = self.callPackage ./fuse-viz {};
 
+ game-controller-spl = self.callPackage ./game-controller-spl {};
+
+ game-controller-spl-interfaces = self.callPackage ./game-controller-spl-interfaces {};
+
  gazebo-dev = self.callPackage ./gazebo-dev {};
 
  gazebo-msgs = self.callPackage ./gazebo-msgs {};
@@ -572,15 +580,15 @@ self: super: {
 
  gazebo-ros-pkgs = self.callPackage ./gazebo-ros-pkgs {};
 
+ gc-spl = self.callPackage ./gc-spl {};
+
  gc-spl-2022 = self.callPackage ./gc-spl-2022 {};
+
+ gc-spl-interfaces = self.callPackage ./gc-spl-interfaces {};
 
  generate-parameter-library = self.callPackage ./generate-parameter-library {};
 
- generate-parameter-library-example = self.callPackage ./generate-parameter-library-example {};
-
  generate-parameter-library-py = self.callPackage ./generate-parameter-library-py {};
-
- generate-parameter-module-example = self.callPackage ./generate-parameter-module-example {};
 
  geodesy = self.callPackage ./geodesy {};
 
@@ -625,6 +633,8 @@ self: super: {
  gz-ros2-control-demos = self.callPackage ./gz-ros2-control-demos {};
 
  hardware-interface = self.callPackage ./hardware-interface {};
+
+ hardware-interface-testing = self.callPackage ./hardware-interface-testing {};
 
  hash-library-vendor = self.callPackage ./hash-library-vendor {};
 
@@ -674,9 +684,15 @@ self: super: {
 
  imu-filter-madgwick = self.callPackage ./imu-filter-madgwick {};
 
+ imu-pipeline = self.callPackage ./imu-pipeline {};
+
+ imu-processors = self.callPackage ./imu-processors {};
+
  imu-sensor-broadcaster = self.callPackage ./imu-sensor-broadcaster {};
 
  imu-tools = self.callPackage ./imu-tools {};
+
+ imu-transformer = self.callPackage ./imu-transformer {};
 
  interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
@@ -808,6 +824,10 @@ self: super: {
 
  lgsvl-msgs = self.callPackage ./lgsvl-msgs {};
 
+ libcaer = self.callPackage ./libcaer {};
+
+ libcaer-driver = self.callPackage ./libcaer-driver {};
+
  libcurl-vendor = self.callPackage ./libcurl-vendor {};
 
  libg2o = self.callPackage ./libg2o {};
@@ -829,6 +849,8 @@ self: super: {
  lifecycle-msgs = self.callPackage ./lifecycle-msgs {};
 
  lifecycle-py = self.callPackage ./lifecycle-py {};
+
+ linux-isolate-process = self.callPackage ./linux-isolate-process {};
 
  logging-demo = self.callPackage ./logging-demo {};
 
@@ -896,11 +918,17 @@ self: super: {
 
  mobileye-560-660-msgs = self.callPackage ./mobileye-560-660-msgs {};
 
+ mola-common = self.callPackage ./mola-common {};
+
+ mola-test-datasets = self.callPackage ./mola-test-datasets {};
+
+ motion-capture-tracking = self.callPackage ./motion-capture-tracking {};
+
+ motion-capture-tracking-interfaces = self.callPackage ./motion-capture-tracking-interfaces {};
+
  mouse-teleop = self.callPackage ./mouse-teleop {};
 
  moveit = self.callPackage ./moveit {};
-
- moveit-chomp-optimizer-adapter = self.callPackage ./moveit-chomp-optimizer-adapter {};
 
  moveit-common = self.callPackage ./moveit-common {};
 
@@ -988,6 +1016,8 @@ self: super: {
 
  moveit-visual-tools = self.callPackage ./moveit-visual-tools {};
 
+ mp2p-icp = self.callPackage ./mp2p-icp {};
+
  mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
@@ -1063,6 +1093,8 @@ self: super: {
  octovis = self.callPackage ./octovis {};
 
  odom-to-tf-ros2 = self.callPackage ./odom-to-tf-ros2 {};
+
+ odri-master-board-sdk = self.callPackage ./odri-master-board-sdk {};
 
  ompl = self.callPackage ./ompl {};
 
@@ -1658,6 +1690,8 @@ self: super: {
 
  rqt-controller-manager = self.callPackage ./rqt-controller-manager {};
 
+ rqt-gauges = self.callPackage ./rqt-gauges {};
+
  rqt-graph = self.callPackage ./rqt-graph {};
 
  rqt-gui = self.callPackage ./rqt-gui {};
@@ -1969,6 +2003,8 @@ self: super: {
  tracetools-launch = self.callPackage ./tracetools-launch {};
 
  tracetools-test = self.callPackage ./tracetools-test {};
+
+ tracetools-trace = self.callPackage ./tracetools-trace {};
 
  trajectory-msgs = self.callPackage ./trajectory-msgs {};
 

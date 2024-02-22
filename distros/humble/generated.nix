@@ -1,5 +1,5 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 self: super: {
@@ -25,6 +25,8 @@ self: super: {
  actuator-msgs = self.callPackage ./actuator-msgs {};
 
  adaptive-component = self.callPackage ./adaptive-component {};
+
+ adi-tmcl = self.callPackage ./adi-tmcl {};
 
  admittance-controller = self.callPackage ./admittance-controller {};
 
@@ -232,7 +234,7 @@ self: super: {
 
  as2-platform-dji-osdk = self.callPackage ./as2-platform-dji-osdk {};
 
- as2-platform-ign-gazebo = self.callPackage ./as2-platform-ign-gazebo {};
+ as2-platform-gazebo = self.callPackage ./as2-platform-gazebo {};
 
  as2-platform-tello = self.callPackage ./as2-platform-tello {};
 
@@ -268,6 +270,8 @@ self: super: {
 
  base2d-kinematics-msgs = self.callPackage ./base2d-kinematics-msgs {};
 
+ bcr-bot = self.callPackage ./bcr-bot {};
+
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
 
  behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
@@ -299,6 +303,10 @@ self: super: {
  camera-ros = self.callPackage ./camera-ros {};
 
  can-msgs = self.callPackage ./can-msgs {};
+
+ caret-analyze-cpp-impl = self.callPackage ./caret-analyze-cpp-impl {};
+
+ caret-msgs = self.callPackage ./caret-msgs {};
 
  cartographer = self.callPackage ./cartographer {};
 
@@ -419,6 +427,10 @@ self: super: {
  cv-bridge = self.callPackage ./cv-bridge {};
 
  cyclonedds = self.callPackage ./cyclonedds {};
+
+ data-tamer-cpp = self.callPackage ./data-tamer-cpp {};
+
+ data-tamer-msgs = self.callPackage ./data-tamer-msgs {};
 
  dataspeed-can = self.callPackage ./dataspeed-can {};
 
@@ -574,6 +586,8 @@ self: super: {
 
  eigenpy = self.callPackage ./eigenpy {};
 
+ ess-imu-driver2 = self.callPackage ./ess-imu-driver2 {};
+
  etsi-its-cam-coding = self.callPackage ./etsi-its-cam-coding {};
 
  etsi-its-cam-conversion = self.callPackage ./etsi-its-cam-conversion {};
@@ -593,6 +607,8 @@ self: super: {
  etsi-its-messages = self.callPackage ./etsi-its-messages {};
 
  etsi-its-msgs = self.callPackage ./etsi-its-msgs {};
+
+ etsi-its-msgs-utils = self.callPackage ./etsi-its-msgs-utils {};
 
  etsi-its-primitives-conversion = self.callPackage ./etsi-its-primitives-conversion {};
 
@@ -664,6 +680,8 @@ self: super: {
 
  fastrtps-cmake-module = self.callPackage ./fastrtps-cmake-module {};
 
+ ffmpeg-image-transport-msgs = self.callPackage ./ffmpeg-image-transport-msgs {};
+
  fields2cover = self.callPackage ./fields2cover {};
 
  filters = self.callPackage ./filters {};
@@ -724,6 +742,10 @@ self: super: {
 
  foxglove-msgs = self.callPackage ./foxglove-msgs {};
 
+ game-controller-spl = self.callPackage ./game-controller-spl {};
+
+ game-controller-spl-interfaces = self.callPackage ./game-controller-spl-interfaces {};
+
  gazebo-dev = self.callPackage ./gazebo-dev {};
 
  gazebo-model-attachment-plugin = self.callPackage ./gazebo-model-attachment-plugin {};
@@ -750,15 +772,15 @@ self: super: {
 
  gazebo-video-monitors = self.callPackage ./gazebo-video-monitors {};
 
+ gc-spl = self.callPackage ./gc-spl {};
+
  gc-spl-2022 = self.callPackage ./gc-spl-2022 {};
+
+ gc-spl-interfaces = self.callPackage ./gc-spl-interfaces {};
 
  generate-parameter-library = self.callPackage ./generate-parameter-library {};
 
- generate-parameter-library-example = self.callPackage ./generate-parameter-library-example {};
-
  generate-parameter-library-py = self.callPackage ./generate-parameter-library-py {};
-
- generate-parameter-module-example = self.callPackage ./generate-parameter-module-example {};
 
  geodesy = self.callPackage ./geodesy {};
 
@@ -844,6 +866,8 @@ self: super: {
 
  hpp-fcl = self.callPackage ./hpp-fcl {};
 
+ hri-msgs = self.callPackage ./hri-msgs {};
+
  ibeo-msgs = self.callPackage ./ibeo-msgs {};
 
  iceoryx-binding-c = self.callPackage ./iceoryx-binding-c {};
@@ -886,9 +910,15 @@ self: super: {
 
  imu-filter-madgwick = self.callPackage ./imu-filter-madgwick {};
 
+ imu-pipeline = self.callPackage ./imu-pipeline {};
+
+ imu-processors = self.callPackage ./imu-processors {};
+
  imu-sensor-broadcaster = self.callPackage ./imu-sensor-broadcaster {};
 
  imu-tools = self.callPackage ./imu-tools {};
+
+ imu-transformer = self.callPackage ./imu-transformer {};
 
  interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
@@ -1046,6 +1076,10 @@ self: super: {
 
  lgsvl-msgs = self.callPackage ./lgsvl-msgs {};
 
+ libcaer = self.callPackage ./libcaer {};
+
+ libcaer-driver = self.callPackage ./libcaer-driver {};
+
  libcamera = self.callPackage ./libcamera {};
 
  libcreate = self.callPackage ./libcreate {};
@@ -1156,7 +1190,35 @@ self: super: {
 
  mobileye-560-660-msgs = self.callPackage ./mobileye-560-660-msgs {};
 
+ mocap4r2-control = self.callPackage ./mocap4r2-control {};
+
+ mocap4r2-control-msgs = self.callPackage ./mocap4r2-control-msgs {};
+
+ mocap4r2-dummy-driver = self.callPackage ./mocap4r2-dummy-driver {};
+
+ mocap4r2-marker-publisher = self.callPackage ./mocap4r2-marker-publisher {};
+
+ mocap4r2-marker-viz = self.callPackage ./mocap4r2-marker-viz {};
+
+ mocap4r2-marker-viz-srvs = self.callPackage ./mocap4r2-marker-viz-srvs {};
+
+ mocap4r2-msgs = self.callPackage ./mocap4r2-msgs {};
+
+ mocap4r2-robot-gt = self.callPackage ./mocap4r2-robot-gt {};
+
+ mocap4r2-robot-gt-msgs = self.callPackage ./mocap4r2-robot-gt-msgs {};
+
+ mocap-optitrack = self.callPackage ./mocap-optitrack {};
+
  mod = self.callPackage ./mod {};
+
+ mola-common = self.callPackage ./mola-common {};
+
+ mola-test-datasets = self.callPackage ./mola-test-datasets {};
+
+ motion-capture-tracking = self.callPackage ./motion-capture-tracking {};
+
+ motion-capture-tracking-interfaces = self.callPackage ./motion-capture-tracking-interfaces {};
 
  mouse-teleop = self.callPackage ./mouse-teleop {};
 
@@ -1245,6 +1307,8 @@ self: super: {
  moveit-simple-controller-manager = self.callPackage ./moveit-simple-controller-manager {};
 
  moveit-visual-tools = self.callPackage ./moveit-visual-tools {};
+
+ mp2p-icp = self.callPackage ./mp2p-icp {};
 
  mqtt-client = self.callPackage ./mqtt-client {};
 
@@ -1440,6 +1504,12 @@ self: super: {
 
  pal-navigation-cfg-params = self.callPackage ./pal-navigation-cfg-params {};
 
+ pal-robotiq-controller-configuration = self.callPackage ./pal-robotiq-controller-configuration {};
+
+ pal-robotiq-description = self.callPackage ./pal-robotiq-description {};
+
+ pal-robotiq-gripper = self.callPackage ./pal-robotiq-gripper {};
+
  pal-statistics = self.callPackage ./pal-statistics {};
 
  pal-statistics-msgs = self.callPackage ./pal-statistics-msgs {};
@@ -1596,6 +1666,10 @@ self: super: {
 
  position-controllers = self.callPackage ./position-controllers {};
 
+ psdk-interfaces = self.callPackage ./psdk-interfaces {};
+
+ psdk-wrapper = self.callPackage ./psdk-wrapper {};
+
  py-trees = self.callPackage ./py-trees {};
 
  py-trees-js = self.callPackage ./py-trees-js {};
@@ -1613,6 +1687,18 @@ self: super: {
  python-orocos-kdl-vendor = self.callPackage ./python-orocos-kdl-vendor {};
 
  python-qt-binding = self.callPackage ./python-qt-binding {};
+
+ qb-softhand-industry = self.callPackage ./qb-softhand-industry {};
+
+ qb-softhand-industry-description = self.callPackage ./qb-softhand-industry-description {};
+
+ qb-softhand-industry-driver = self.callPackage ./qb-softhand-industry-driver {};
+
+ qb-softhand-industry-msgs = self.callPackage ./qb-softhand-industry-msgs {};
+
+ qb-softhand-industry-ros2-control = self.callPackage ./qb-softhand-industry-ros2-control {};
+
+ qb-softhand-industry-srvs = self.callPackage ./qb-softhand-industry-srvs {};
 
  qpoases-vendor = self.callPackage ./qpoases-vendor {};
 
@@ -1896,6 +1982,8 @@ self: super: {
 
  ros2bag = self.callPackage ./ros2bag {};
 
+ ros2caret = self.callPackage ./ros2caret {};
+
  ros2cli = self.callPackage ./ros2cli {};
 
  ros2cli-common-extensions = self.callPackage ./ros2cli-common-extensions {};
@@ -2076,6 +2164,8 @@ self: super: {
 
  rqt-controller-manager = self.callPackage ./rqt-controller-manager {};
 
+ rqt-gauges = self.callPackage ./rqt-gauges {};
+
  rqt-graph = self.callPackage ./rqt-graph {};
 
  rqt-gui = self.callPackage ./rqt-gui {};
@@ -2091,6 +2181,8 @@ self: super: {
  rqt-image-view = self.callPackage ./rqt-image-view {};
 
  rqt-joint-trajectory-controller = self.callPackage ./rqt-joint-trajectory-controller {};
+
+ rqt-mocap4r2-control = self.callPackage ./rqt-mocap4r2-control {};
 
  rqt-moveit = self.callPackage ./rqt-moveit {};
 
@@ -2131,6 +2223,8 @@ self: super: {
  rt-manipulators-examples = self.callPackage ./rt-manipulators-examples {};
 
  rt-usb-9axisimu-driver = self.callPackage ./rt-usb-9axisimu-driver {};
+
+ rtabmap = self.callPackage ./rtabmap {};
 
  rtabmap-conversions = self.callPackage ./rtabmap-conversions {};
 
@@ -2231,6 +2325,8 @@ self: super: {
  sick-safevisionary-interfaces = self.callPackage ./sick-safevisionary-interfaces {};
 
  sick-safevisionary-tests = self.callPackage ./sick-safevisionary-tests {};
+
+ sick-scan-xd = self.callPackage ./sick-scan-xd {};
 
  simple-actions = self.callPackage ./simple-actions {};
 
@@ -2341,6 +2437,8 @@ self: super: {
  swri-system-util = self.callPackage ./swri-system-util {};
 
  swri-transform-util = self.callPackage ./swri-transform-util {};
+
+ sync-parameter-server = self.callPackage ./sync-parameter-server {};
 
  system-fingerprint = self.callPackage ./system-fingerprint {};
 
@@ -2709,6 +2807,8 @@ self: super: {
  wireless-msgs = self.callPackage ./wireless-msgs {};
 
  wireless-watcher = self.callPackage ./wireless-watcher {};
+
+ wrapyfi-ros2-interfaces = self.callPackage ./wrapyfi-ros2-interfaces {};
 
  xacro = self.callPackage ./xacro {};
 

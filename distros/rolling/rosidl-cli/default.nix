@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, ament-xmllint, python3Packages, pythonPackages }:
 buildRosPackage {
   pname = "ros-rolling-rosidl-cli";
-  version = "4.4.2-r1";
+  version = "4.5.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/rolling/rosidl_cli/4.4.2-1.tar.gz";
-    name = "4.4.2-1.tar.gz";
-    sha256 = "26ec1c6963074c63e438a4b113293b46bdcfa395dbb00fa7e09fa73c17fc4047";
+    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/rolling/rosidl_cli/4.5.1-1.tar.gz";
+    name = "4.5.1-1.tar.gz";
+    sha256 = "8fd68aea9650533bb48a945823d6863ae677acaaf9fe07d251ecf26f4d1dc8b5";
   };
 
   buildType = "ament_python";

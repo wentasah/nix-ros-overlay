@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, hardware-interface, rclcpp-lifecycle, sensor-msgs }:
 buildRosPackage {
   pname = "ros-humble-controller-interface";
-  version = "2.36.0-r1";
+  version = "2.38.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_interface/2.36.0-1.tar.gz";
-    name = "2.36.0-1.tar.gz";
-    sha256 = "cc40eb9d6612c8bf7667823384eb3a4a4fa01867cc84630501f8a112a39c102d";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_interface/2.38.0-1.tar.gz";
+    name = "2.38.0-1.tar.gz";
+    sha256 = "1b351aefebd321e4687be5afe81c65b00e712103689aea6bebe6370c5a6573b6";
   };
 
   buildType = "ament_cmake";

@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, geometry-msgs, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-diagnostic-msgs";
-  version = "5.2.1-r1";
+  version = "5.3.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/diagnostic_msgs/5.2.1-1.tar.gz";
-    name = "5.2.1-1.tar.gz";
-    sha256 = "2a4ac08d5890822590e7c24c29bce2d9a0a70d37b5c2a97bfdaadfcd9bbccf33";
+    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/diagnostic_msgs/5.3.0-1.tar.gz";
+    name = "5.3.0-1.tar.gz";
+    sha256 = "820d5e341652e0942f7dc6a8909f0d28b1aad8783868e009e3b3046f1fc18494";
   };
 
   buildType = "ament_cmake";

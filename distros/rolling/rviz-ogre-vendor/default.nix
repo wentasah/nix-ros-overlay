@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-vendor-package, ament-cmake-xmllint, ament-lint-auto, freetype, libGL, libGLU, xorg }:
 buildRosPackage {
   pname = "ros-rolling-rviz-ogre-vendor";
-  version = "13.2.0-r1";
+  version = "13.3.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_ogre_vendor/13.2.0-1.tar.gz";
-    name = "13.2.0-1.tar.gz";
-    sha256 = "a6d06d651cfdba2f0aa978fb0e85e183efe1eb4795a4a92b1a5f79141f585967";
+    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_ogre_vendor/13.3.1-1.tar.gz";
+    name = "13.3.1-1.tar.gz";
+    sha256 = "cd781b2f232c96035d4fe17354205854b9a1a4b61babd0bdf50aeef6a277e0a3";
   };
 
   buildType = "ament_cmake";

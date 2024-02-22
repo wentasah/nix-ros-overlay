@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, pythonPackages, rclpy, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-quality-of-service-demo-py";
-  version = "0.32.0-r1";
+  version = "0.33.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/quality_of_service_demo_py/0.32.0-1.tar.gz";
-    name = "0.32.0-1.tar.gz";
-    sha256 = "4b0d39167d3b18cff35ac97b39258badddc79b184e5d96cf8f712be6d685bcd6";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/quality_of_service_demo_py/0.33.1-1.tar.gz";
+    name = "0.33.1-1.tar.gz";
+    sha256 = "b95fa7bf1bcaa38d4da45845d6212d74f6dc12e3aff3c373f31d5febcc55bbd5";
   };
 
   buildType = "ament_python";

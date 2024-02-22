@@ -77,7 +77,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
   python-cmake-module = rosSuper.python-cmake-module.overrideAttrs ({ ... }: let
     python = rosSelf.python;
   in {
-    pythonExecutable = python.pythonForBuild.interpreter;
+    pythonExecutable = python.pythonOnBuildForHost.interpreter;
     pythonLibrary = "${python}/lib/lib${python.libPrefix}.so";
     pythonIncludeDir = "${python}/include/${python.libPrefix}";
     setupHook = ./python-cmake-module-setup-hook.sh;
@@ -113,6 +113,19 @@ rosSelf: rosSuper: with rosSelf.lib; {
     propagatedBuildInputs = with rosSelf; [
       rmw-fastrtps-cpp
     ] ++ propagatedBuildInputs;
+  });
+
+  rosbag2-compression = rosSuper.rosbag2-compression.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      (self.fetchpatch {
+        # Add in a missing cstdint include
+        url = "https://github.com/ros2/rosbag2/commit/65c889e1fa55dd85a148b27b8c27dadc73238e67.patch";
+        hash = "sha256-EzfOqI08roSSqpo3hEUFxoImxKJGi1wUN4ZxwhYszUY=";
+        stripLen = 1;
+      })
+    ];
   });
 
   rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({

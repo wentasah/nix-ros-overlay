@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-lint-auto, ament-lint-common, launch, launch-testing, launch-testing-ament-cmake, opencv, rclcpp, rmw-implementation-cmake, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-intra-process-demo";
-  version = "0.32.0-r1";
+  version = "0.33.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/intra_process_demo/0.32.0-1.tar.gz";
-    name = "0.32.0-1.tar.gz";
-    sha256 = "1fc4265f7f7a78f43fea29d86dfd3cc2767c512921ad61af36c78e227f2116ff";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/intra_process_demo/0.33.1-1.tar.gz";
+    name = "0.33.1-1.tar.gz";
+    sha256 = "36535641d57c990532ad027037f9938f3dc188dba6549b5363c06d9cadb71544";
   };
 
   buildType = "ament_cmake";

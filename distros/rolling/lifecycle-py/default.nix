@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-lint-auto, ament-lint-common, lifecycle, lifecycle-msgs, rclpy, ros-testing, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-lifecycle-py";
-  version = "0.32.0-r1";
+  version = "0.33.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/lifecycle_py/0.32.0-1.tar.gz";
-    name = "0.32.0-1.tar.gz";
-    sha256 = "9db97aba277fbf6e5a177d058a9b777c6252d47bae60330a28528d867ed24637";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/lifecycle_py/0.33.1-1.tar.gz";
+    name = "0.33.1-1.tar.gz";
+    sha256 = "1cb56d04e92304514eaa8c130c5826d7e452db8e18c81d53ae0ac84a6fe183d1";
   };
 
   buildType = "ament_python";

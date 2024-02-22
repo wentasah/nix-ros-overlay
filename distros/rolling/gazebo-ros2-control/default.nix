@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, angles, controller-manager, gazebo-dev, gazebo-ros, hardware-interface, pluginlib, rclcpp, std-msgs, yaml-cpp-vendor }:
 buildRosPackage {
   pname = "ros-rolling-gazebo-ros2-control";
-  version = "0.6.2-r1";
+  version = "0.7.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/release/rolling/gazebo_ros2_control/0.6.2-1.tar.gz";
-    name = "0.6.2-1.tar.gz";
-    sha256 = "8d32f49af0863f7af093480b0b3052995986e85256cc76eb5ba2d59023ef2469";
+    url = "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/release/rolling/gazebo_ros2_control/0.7.1-1.tar.gz";
+    name = "0.7.1-1.tar.gz";
+    sha256 = "709058d699e92fa64ea614db301babed1e36646df88e0d27c4215df097ed1f96";
   };
 
   buildType = "ament_cmake";

@@ -1,16 +1,16 @@
 
-# Copyright 2023 Open Source Robotics Foundation
+# Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, tiago-bringup, tiago-controller-configuration, tiago-description }:
 buildRosPackage {
   pname = "ros-humble-tiago-robot";
-  version = "4.0.27-r1";
+  version = "4.1.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/pal-gbp/tiago_robot-release/archive/release/humble/tiago_robot/4.0.27-1.tar.gz";
-    name = "4.0.27-1.tar.gz";
-    sha256 = "13231f3d87ab94cc116c59dbb036775a67cb1ce01a1318e6611fe4606789547d";
+    url = "https://github.com/pal-gbp/tiago_robot-release/archive/release/humble/tiago_robot/4.1.2-1.tar.gz";
+    name = "4.1.2-1.tar.gz";
+    sha256 = "d87729c7e2f267602261de4a86c8aacc9450674d433b6aa8b0e683d9835bb28f";
   };
 
   buildType = "ament_cmake";
