@@ -50,14 +50,16 @@ self: super: with self.lib; let
 
       colcon-zsh = pyFinal.callPackage ./colcon/zsh.nix { };
 
-      empy = pyPrev.empy.overrideAttrs rec {
-        pname = "empy";
+      # ROS is not compatible with empy 4
+      empy = pyPrev.empy.overrideAttrs ({
+        pname, ...
+      }: rec {
         version = "3.3.4";
-        src = self.fetchPypi {
+        src = pyFinal.fetchPypi {
           inherit pname version;
-          sha256 = "c6xJeFtgFHnfTqGKfHm8EwSop8NMArlHLPEgauiPAbM=";
+          hash = "sha256-c6xJeFtgFHnfTqGKfHm8EwSop8NMArlHLPEgauiPAbM=";
         };
-      };
+      });
 
       osrf-pycommon = pyFinal.callPackage ./osrf-pycommon {};
 
