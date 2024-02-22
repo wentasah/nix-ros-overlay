@@ -115,6 +115,19 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ] ++ propagatedBuildInputs;
   });
 
+  rosbag2-compression = rosSuper.rosbag2-compression.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      (self.fetchpatch {
+        # Add in a missing cstdint include
+        url = "https://github.com/ros2/rosbag2/commit/65c889e1fa55dd85a148b27b8c27dadc73238e67.patch";
+        hash = "sha256-EzfOqI08roSSqpo3hEUFxoImxKJGi1wUN4ZxwhYszUY=";
+        stripLen = 1;
+      })
+    ];
+  });
+
   rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
     postPatch ? "", ...
   }: let
