@@ -94,6 +94,18 @@ in with lib; {
     };
   };
 
+  plotjuggler-ros = rosSuper.plotjuggler-ros.overrideAttrs ({
+    patches ? [], nativeBuildInputs ? [], ...
+  }: {
+    patches = patches ++ [
+      (self.fetchpatch {
+        url = "https://patch-diff.githubusercontent.com/raw/PlotJuggler/plotjuggler-ros-plugins/pull/82.patch";
+        hash = "sha256-ojZ/ErZZkGIB89O0u2ocU6Gcdu/JhowUqkdsulcArHY=";
+      })
+    ];
+    nativeBuildInputs = nativeBuildInputs ++ [ rosSelf.ros-environment ];
+  });
+
   rcpputils = rosSuper.rcpputils.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -102,6 +114,19 @@ in with lib; {
       (self.fetchpatch {
         url = "https://github.com/ros2/rcpputils/commit/f96811a9047fa6a084a885219c88b415bc544487.patch";
         hash = "sha256-NwKFHiRlvy6E3WjaJYykOqafLTEw75OUm+id540AcRQ=";
+      })
+    ];
+  });
+
+  rosbag2-compression = rosSuper.rosbag2-compression.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      (self.fetchpatch {
+        # Add in a missing cstdint include
+        url = "https://github.com/ros2/rosbag2/commit/65c889e1fa55dd85a148b27b8c27dadc73238e67.patch";
+        hash = "sha256-EzfOqI08roSSqpo3hEUFxoImxKJGi1wUN4ZxwhYszUY=";
+        stripLen = 1;
       })
     ];
   });
