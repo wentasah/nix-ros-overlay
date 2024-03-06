@@ -42,7 +42,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
   };
 
   # This is a newer version than the build system tries to download, but this
-  # version doesn't try run host platform binaries on the build platform.
+  # version doesn't try to run host platform binaries on the build platform.
   foonathan-memory-vendor = patchExternalProjectGit rosSuper.foonathan-memory-vendor {
     url = "https://github.com/foonathan/memory.git";
     fetchgitArgs = {
@@ -63,6 +63,18 @@ rosSelf: rosSuper: with rosSelf.lib; {
   }: {
     buildInputs = [];
     nativeBuildInputs = nativeBuildInputs ++ [ self.buildPackages.cmake ];
+  });
+
+  librealsense2 = rosSuper.librealsense2.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Fix missing cstdint include
+      (self.fetchpatch {
+        url = "https://github.com/IntelRealSense/librealsense/commit/847b74d3dcade2842ba138f321474159315ab8c2.patch";
+        hash = "sha256-zaW8HG8rfsApI5S/3x+x9Fx8xhyTIPNn/fJVFtkmlEA=";
+      })
+    ];
   });
 
   popf = rosSuper.popf.overrideAttrs ({
@@ -113,19 +125,6 @@ rosSelf: rosSuper: with rosSelf.lib; {
     propagatedBuildInputs = with rosSelf; [
       rmw-fastrtps-cpp
     ] ++ propagatedBuildInputs;
-  });
-
-  rosbag2-compression = rosSuper.rosbag2-compression.overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      (self.fetchpatch {
-        # Add in a missing cstdint include
-        url = "https://github.com/ros2/rosbag2/commit/65c889e1fa55dd85a148b27b8c27dadc73238e67.patch";
-        hash = "sha256-EzfOqI08roSSqpo3hEUFxoImxKJGi1wUN4ZxwhYszUY=";
-        stripLen = 1;
-      })
-    ];
   });
 
   rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({

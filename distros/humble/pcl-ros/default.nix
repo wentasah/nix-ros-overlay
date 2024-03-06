@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, eigen, geometry-msgs, pcl, pcl-conversions, rclcpp, sensor-msgs, tf2, tf2-geometry-msgs, tf2-ros }:
 buildRosPackage {
   pname = "ros-humble-pcl-ros";
-  version = "2.4.0-r4";
+  version = "2.4.0-r6";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/perception_pcl-release/archive/release/humble/pcl_ros/2.4.0-4.tar.gz";
-    name = "2.4.0-4.tar.gz";
-    sha256 = "1bf600634be4e90bf828217c936e395e2369f9c9e2dd0272013c6d82e200de82";
+    url = "https://github.com/ros2-gbp/perception_pcl-release/archive/release/humble/pcl_ros/2.4.0-6.tar.gz";
+    name = "2.4.0-6.tar.gz";
+    sha256 = "c05c0597712030197c8b1c5266e6587038c86694823565e8aaa89c275c2565dc";
   };
 
   buildType = "ament_cmake";

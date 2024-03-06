@@ -160,6 +160,8 @@ self: super: {
 
  apriltag = self.callPackage ./apriltag {};
 
+ apriltag-detector = self.callPackage ./apriltag-detector {};
+
  apriltag-msgs = self.callPackage ./apriltag-msgs {};
 
  apriltag-ros = self.callPackage ./apriltag-ros {};
@@ -197,8 +199,6 @@ self: super: {
  behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
 
  bicycle-steering-controller = self.callPackage ./bicycle-steering-controller {};
-
- bno055 = self.callPackage ./bno055 {};
 
  bond = self.callPackage ./bond {};
 
@@ -2239,6 +2239,8 @@ self: super: {
  tracetools-launch = self.callPackage ./tracetools-launch {};
 
  tracetools-test = self.callPackage ./tracetools-test {};
+
+ tracetools-trace = self.callPackage ./tracetools-trace {};
 
  trajectory-msgs = self.callPackage ./trajectory-msgs {};
 

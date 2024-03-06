@@ -50,8 +50,7 @@ self: super: with self.lib; let
 
       colcon-zsh = pyFinal.callPackage ./colcon/zsh.nix { };
 
-      # ROS is not compatible with empy 4
-      empy = pyPrev.empy.overrideAttrs ({
+      empy_3 = pyPrev.empy.overrideAttrs ({
         pname, ...
       }: rec {
         version = "3.3.4";

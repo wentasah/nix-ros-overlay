@@ -4,6 +4,9 @@ let
   pythonOverridesFor = with self.lib; prevPython: prevPython // {
     pkgs = prevPython.pkgs.overrideScope (pyFinal: pyPrev: {
       wxPython = pyFinal.wxPython_4_2;
+
+      # ROS is not compatible with empy 4
+      empy = pyFinal.empy_3;
     });
   };
 
