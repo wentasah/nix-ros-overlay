@@ -1,0 +1,19 @@
+name: "CERTICAR"
+on:
+  push:
+    branches:
+      - certicar
+jobs:
+  update-history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: certicar-history
+      - name: Update history
+        run: |
+          git config --global user.email bot@github
+          git config --global user.name "Github Action"
+          git fetch origin $GITHUB_SHA --depth=1
+          git merge --strategy-option=theirs --allow-unrelated-histories $GITHUB_SHA
+          git push
