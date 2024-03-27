@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-index-cpp, git, glfw3, rclcpp }:
 buildRosPackage {
   pname = "ros-rolling-rig-reconfigure";
-  version = "1.4.0-r1";
+  version = "1.4.0-r3";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rig_reconfigure-release/archive/release/rolling/rig_reconfigure/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "51af91d66f2ccfe04a215720d4f8b61af660327bef1ca2779555374f056ea048";
+    url = "https://github.com/ros2-gbp/rig_reconfigure-release/archive/release/rolling/rig_reconfigure/1.4.0-3.tar.gz";
+    name = "1.4.0-3.tar.gz";
+    sha256 = "9b3147d3f57fa9d13cfb1d28be2b566fad9fddc4d14395a3bdda92a1be3bb556";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake git ];
 
   meta = {
-    description = ''Standalone GUI tool for editing node parameters at runtime.'';
+    description = "Standalone GUI tool for editing node parameters at runtime.";
     license = with lib.licenses; [ mit ];
   };
 }

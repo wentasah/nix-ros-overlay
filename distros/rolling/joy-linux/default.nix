@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, diagnostic-msgs, diagnostic-updater, rclcpp, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-joy-linux";
-  version = "3.3.0-r1";
+  version = "3.3.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/joystick_drivers-release/archive/release/rolling/joy_linux/3.3.0-1.tar.gz";
-    name = "3.3.0-1.tar.gz";
-    sha256 = "8d6e155a8a5f9235edd47d2d74383d4cfb2356d2b8d4c103fdb054c148a739cd";
+    url = "https://github.com/ros2-gbp/joystick_drivers-release/archive/release/rolling/joy_linux/3.3.0-2.tar.gz";
+    name = "3.3.0-2.tar.gz";
+    sha256 = "e112d211ada581b5952afac5d58c77744f24b26d11c2e0e86adf8dc29db44df3";
   };
 
   buildType = "ament_cmake";
@@ -20,12 +20,12 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''ROS2 driver for a generic Linux joystick.
+    description = "ROS2 driver for a generic Linux joystick.
     Will contain a MacOS and Windows version later.
     The joy package contains joy_node, a node that interfaces a
     generic Linux joystick to ROS2. This node publishes a &quot;Joy&quot;
     message, which contains the current state of each one of the
-    joystick's buttons and axes.'';
+    joystick's buttons and axes.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

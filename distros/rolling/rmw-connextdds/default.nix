@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-ros, ament-lint-auto, ament-lint-common, rmw-connextdds-common }:
 buildRosPackage {
   pname = "ros-rolling-rmw-connextdds";
-  version = "0.20.0-r1";
+  version = "0.20.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rmw_connextdds-release/archive/release/rolling/rmw_connextdds/0.20.0-1.tar.gz";
-    name = "0.20.0-1.tar.gz";
-    sha256 = "3150f65cf77f83d572adc77d94c0408a42a805f7217eac2bbdce43430bbab9a5";
+    url = "https://github.com/ros2-gbp/rmw_connextdds-release/archive/release/rolling/rmw_connextdds/0.20.1-1.tar.gz";
+    name = "0.20.1-1.tar.gz";
+    sha256 = "2e259b78b3260deb8279c4870790d4cfddeabb9d2d03a31402d901c982935420";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
 
   meta = {
-    description = ''A ROS 2 RMW implementation built with RTI Connext DDS Professional.'';
+    description = "A ROS 2 RMW implementation built with RTI Connext DDS Professional.";
     license = with lib.licenses; [ asl20 ];
   };
 }

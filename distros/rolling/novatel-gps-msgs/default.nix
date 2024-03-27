@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-novatel-gps-msgs";
-  version = "4.1.0-r3";
+  version = "4.1.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/novatel_gps_driver-release/archive/release/rolling/novatel_gps_msgs/4.1.0-3.tar.gz";
-    name = "4.1.0-3.tar.gz";
-    sha256 = "6c6d7e7299f3994fe3d3e06f32303e9bc62d4d7c29204a90701537f74e50c9b7";
+    url = "https://github.com/ros2-gbp/novatel_gps_driver-release/archive/release/rolling/novatel_gps_msgs/4.1.2-1.tar.gz";
+    name = "4.1.2-1.tar.gz";
+    sha256 = "c3d1c631ec60c90303ab52aa4d2d8d9199529aaae2d831208a68ea291f83ac7a";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
 
   meta = {
-    description = ''Messages for proprietary (non-NMEA) sentences from Novatel GPS receivers.'';
+    description = "Messages for proprietary (non-NMEA) sentences from Novatel GPS receivers.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

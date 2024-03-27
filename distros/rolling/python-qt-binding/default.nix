@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-lint-auto, ament-lint-common, python3Packages, qt5 }:
 buildRosPackage {
   pname = "ros-rolling-python-qt-binding";
-  version = "2.1.1-r1";
+  version = "2.1.1-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/python_qt_binding-release/archive/release/rolling/python_qt_binding/2.1.1-1.tar.gz";
-    name = "2.1.1-1.tar.gz";
-    sha256 = "3c1ceb82aa762be959a563da4f9f922a76d659eb566799f9c31c9451005973f0";
+    url = "https://github.com/ros2-gbp/python_qt_binding-release/archive/release/rolling/python_qt_binding/2.1.1-2.tar.gz";
+    name = "2.1.1-2.tar.gz";
+    sha256 = "5e8367363a3cc1bc4520a5119ff1054199cc1854becfdc08bd3bb9cde27882f3";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''This stack provides Python bindings for Qt.
+    description = "This stack provides Python bindings for Qt.
     There are two providers: pyside and pyqt.  PySide2 is available under
     the GPL, LGPL and a commercial license.  PyQt is released under the GPL.
 
@@ -30,7 +30,7 @@ buildRosPackage {
 
     Also provided is adapter code to make the user's Python code
     independent of which binding provider was actually used which makes
-    it very easy to switch between these.'';
+    it very easy to switch between these.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

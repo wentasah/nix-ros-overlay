@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, tango-icon-theme }:
 buildRosPackage {
   pname = "ros-rolling-tango-icons-vendor";
-  version = "0.3.0-r1";
+  version = "0.3.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/tango_icons_vendor-release/archive/release/rolling/tango_icons_vendor/0.3.0-1.tar.gz";
-    name = "0.3.0-1.tar.gz";
-    sha256 = "ac18880ad98bba2ebff9ef88e67f7837a49a62d18f90b7c10fc75d0e4d8aed26";
+    url = "https://github.com/ros2-gbp/tango_icons_vendor-release/archive/release/rolling/tango_icons_vendor/0.3.0-2.tar.gz";
+    name = "0.3.0-2.tar.gz";
+    sha256 = "80ed49af50bd364628bc0b9cfbf5a21aa3c60af2aa481a7eb4b626ad0a3ba7e5";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''tango_icons_vendor provides the public domain Tango icons for non-linux systems (<a href="http://tango-project.org/Tango_Icon_Library/">Tango Icon Library</a>) from the <a href="http://tango-project.org/Tango_Desktop_Project/">Tango Desktop Project</a>'';
+    description = "tango_icons_vendor provides the public domain Tango icons for non-linux systems (<a href=\"http://tango-project.org/Tango_Icon_Library/\">Tango Icon Library</a>) from the <a href=\"http://tango-project.org/Tango_Desktop_Project/\">Tango Desktop Project</a>";
     license = with lib.licenses; [ asl20 publicDomain ];
   };
 }

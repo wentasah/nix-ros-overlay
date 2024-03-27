@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-core, gtest, lanelet2-core, mrt-cmake-modules }:
 buildRosPackage {
   pname = "ros-rolling-lanelet2-traffic-rules";
-  version = "1.2.1-r4";
+  version = "1.2.1-r6";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/lanelet2-release/archive/release/rolling/lanelet2_traffic_rules/1.2.1-4.tar.gz";
-    name = "1.2.1-4.tar.gz";
-    sha256 = "575f9beb283339617d1b27f908c74b82a4948a0a7a49ab69785934cc52d3dd46";
+    url = "https://github.com/ros2-gbp/lanelet2-release/archive/release/rolling/lanelet2_traffic_rules/1.2.1-6.tar.gz";
+    name = "1.2.1-6.tar.gz";
+    sha256 = "80bb835dc042d7f6f0b72ee31cb9e0e158b0265bcd6f9a1266b5ffee93b62bd6";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
 
   meta = {
-    description = ''Package for interpreting traffic rules in a lanelet map'';
+    description = "Package for interpreting traffic rules in a lanelet map";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

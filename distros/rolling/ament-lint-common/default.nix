@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-copyright, ament-cmake-core, ament-cmake-cppcheck, ament-cmake-cpplint, ament-cmake-export-dependencies, ament-cmake-flake8, ament-cmake-lint-cmake, ament-cmake-pep257, ament-cmake-uncrustify, ament-cmake-xmllint }:
 buildRosPackage {
   pname = "ros-rolling-ament-lint-common";
-  version = "0.16.3-r1";
+  version = "0.16.3-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_lint_common/0.16.3-1.tar.gz";
-    name = "0.16.3-1.tar.gz";
-    sha256 = "fc500c03f0735d8565e68a464fbebc52018ce85cbc14dbe62fe4599f1191b6e8";
+    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_lint_common/0.16.3-2.tar.gz";
+    name = "0.16.3-2.tar.gz";
+    sha256 = "044b92867333530b64225515173613f570dc37b89ce050e220804f4c9ff30454";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ];
 
   meta = {
-    description = ''The list of commonly used linters in the ament build system in CMake.'';
+    description = "The list of commonly used linters in the ament build system in CMake.";
     license = with lib.licenses; [ asl20 ];
   };
 }

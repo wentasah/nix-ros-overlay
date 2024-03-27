@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, bzip2, cmake, doxygen, eigen, libjpeg, liblapack, libpng, libv4l, libxml2, opencv, xorg }:
 buildRosPackage {
   pname = "ros-rolling-visp";
-  version = "3.5.0-r2";
+  version = "3.5.0-r3";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/visp-release/archive/release/rolling/visp/3.5.0-2.tar.gz";
-    name = "3.5.0-2.tar.gz";
-    sha256 = "b353cce0a1e3c03d28a2cd83644a45559d4dd1d6c81209c5c1a8680a1d7f35db";
+    url = "https://github.com/ros2-gbp/visp-release/archive/release/rolling/visp/3.5.0-3.tar.gz";
+    name = "3.5.0-3.tar.gz";
+    sha256 = "859aa713d9b99525a02260156b94752636f9bd9d436c33149d6245f97c368e88";
   };
 
   buildType = "cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ cmake ];
 
   meta = {
-    description = ''ViSP standing for Visual Servoing Platform is a modular cross
+    description = "ViSP standing for Visual Servoing Platform is a modular cross
     platform library that allows prototyping and developing applications
     using visual tracking and visual servoing technics at the heart of the
     researches done by Inria Lagadic team. ViSP is able to compute control
@@ -28,7 +28,7 @@ buildRosPackage {
     vision algorithms. ViSP provides also simulation capabilities.
 
     ViSP can be useful in robotics, computer vision, augmented reality
-    and computer animation.'';
+    and computer animation.";
     license = with lib.licenses; [ "GPL-2.0-only" ];
   };
 }

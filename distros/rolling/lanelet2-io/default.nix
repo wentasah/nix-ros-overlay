@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-core, boost, gtest, lanelet2-core, mrt-cmake-modules, pugixml }:
 buildRosPackage {
   pname = "ros-rolling-lanelet2-io";
-  version = "1.2.1-r4";
+  version = "1.2.1-r6";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/lanelet2-release/archive/release/rolling/lanelet2_io/1.2.1-4.tar.gz";
-    name = "1.2.1-4.tar.gz";
-    sha256 = "f6f2aae08da65617f718806ab7565c6b84dc36df0e91b118f550c3bc84a3ac8c";
+    url = "https://github.com/ros2-gbp/lanelet2-release/archive/release/rolling/lanelet2_io/1.2.1-6.tar.gz";
+    name = "1.2.1-6.tar.gz";
+    sha256 = "5a18c9a793957874dda93d2389025ba9c21a967e310ea33472711888684f6dc6";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
 
   meta = {
-    description = ''Parser/Writer module for lanelet2'';
+    description = "Parser/Writer module for lanelet2";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

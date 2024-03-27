@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake }:
 buildRosPackage {
   pname = "ros-rolling-rcdiscover";
-  version = "1.1.6-r2";
+  version = "1.1.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rcdiscover-release/archive/release/rolling/rcdiscover/1.1.6-2.tar.gz";
-    name = "1.1.6-2.tar.gz";
-    sha256 = "d8fef8a8f0e8735f6f2954daa86af7b4e61a68bcc2eb5ec4554e2ff4fb7d7252";
+    url = "https://github.com/ros2-gbp/rcdiscover-release/archive/release/rolling/rcdiscover/1.1.7-1.tar.gz";
+    name = "1.1.7-1.tar.gz";
+    sha256 = "adb577bf90a75e984895ddaad462744e9ff35b5c92d4209d02aa81b800db6b1f";
   };
 
   buildType = "cmake";
@@ -18,7 +18,7 @@ buildRosPackage {
   nativeBuildInputs = [ cmake ];
 
   meta = {
-    description = ''This package contains tools for the discovery of Roboception devices via GigE Vision.'';
+    description = "This package contains tools for the discovery of Roboception devices via GigE Vision.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-auto, ament-lint-auto, ament-lint-common, class-loader, cv-bridge, geometry-msgs, image-transport, opencv, rcl-interfaces, rclcpp, rclcpp-components, sensor-msgs, tf2, tf2-geometry-msgs, tf2-ros }:
 buildRosPackage {
   pname = "ros-rolling-image-rotate";
-  version = "5.0.0-r1";
+  version = "5.0.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_pipeline-release/archive/release/rolling/image_rotate/5.0.0-1.tar.gz";
-    name = "5.0.0-1.tar.gz";
-    sha256 = "cb7d1088a8afe59b80360f8cc08b27df9e9704c5cc52927884f324869b415c32";
+    url = "https://github.com/ros2-gbp/image_pipeline-release/archive/release/rolling/image_rotate/5.0.0-2.tar.gz";
+    name = "5.0.0-2.tar.gz";
+    sha256 = "a4ab455c201aa48eb1fa8beefe41443faa15b423c86f01f4f8c124957a9090cb";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-auto ];
 
   meta = {
-    description = ''<p>
+    description = "<p>
       Contains a node that rotates an image stream in a way that minimizes
       the angle between a vector in some arbitrary frame and a vector in the
       camera frame. The frame of the outgoing image is published by the node.
@@ -37,7 +37,7 @@ buildRosPackage {
       It is not recommended to use the output from this node for further
       computation, as it interpolates the source image, introduces black
       borders, and does not output a camera_info.
-    </p>'';
+    </p>";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

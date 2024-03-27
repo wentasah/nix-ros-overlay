@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-python, gps-msgs, nav-msgs, rclcpp, rclcpp-components, rclpy, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-gps-tools";
-  version = "1.0.4-r4";
+  version = "2.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/gps_umd-release/archive/release/rolling/gps_tools/1.0.4-4.tar.gz";
-    name = "1.0.4-4.tar.gz";
-    sha256 = "0866f1ba88cf78adcfd31f66afaedb56f304f4eacf4b51564f23124793994bb8";
+    url = "https://github.com/ros2-gbp/gps_umd-release/archive/release/rolling/gps_tools/2.0.3-1.tar.gz";
+    name = "2.0.3-1.tar.gz";
+    sha256 = "8aa0f72d17f2f6bfaeb1be6a17dc3dfe74685d8fc4992233a6a5a6c14149c3cd";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
 
   meta = {
-    description = ''GPS routines for use in GPS drivers'';
+    description = "GPS routines for use in GPS drivers";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

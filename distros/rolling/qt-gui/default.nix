@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-index-python, ament-lint-auto, ament-lint-common, python-qt-binding, python3Packages, qt5, tango-icons-vendor }:
 buildRosPackage {
   pname = "ros-rolling-qt-gui";
-  version = "2.7.2-r1";
+  version = "2.7.2-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/qt_gui_core-release/archive/release/rolling/qt_gui/2.7.2-1.tar.gz";
-    name = "2.7.2-1.tar.gz";
-    sha256 = "b5e3256a08ee4325ad5c54783915e18e272b1c93e35a584e6d1c6f2094053a3a";
+    url = "https://github.com/ros2-gbp/qt_gui_core-release/archive/release/rolling/qt_gui/2.7.2-2.tar.gz";
+    name = "2.7.2-2.tar.gz";
+    sha256 = "cbd7ed957f0aa5ee3bbaab52fb853bea2020052dca24e5fed2cbc45ac3fb686a";
   };
 
   buildType = "ament_cmake";
@@ -20,9 +20,9 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''qt_gui provides the infrastructure for an integrated graphical user interface based on Qt.
+    description = "qt_gui provides the infrastructure for an integrated graphical user interface based on Qt.
     It is extensible with Python- and C++-based plugins (implemented in separate packages) which can contribute arbitrary widgets.
-    It requires either PyQt or PySide bindings.'';
+    It requires either PyQt or PySide bindings.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

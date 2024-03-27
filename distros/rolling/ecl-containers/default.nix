@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-gtest, ament-cmake-ros, ament-lint-auto, ament-lint-common, ecl-build, ecl-config, ecl-converters, ecl-errors, ecl-exceptions, ecl-formatters, ecl-license, ecl-mpl, ecl-type-traits, ecl-utilities }:
 buildRosPackage {
   pname = "ros-rolling-ecl-containers";
-  version = "1.2.1-r3";
+  version = "1.2.1-r4";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ecl_core-release/archive/release/rolling/ecl_containers/1.2.1-3.tar.gz";
-    name = "1.2.1-3.tar.gz";
-    sha256 = "6b09d714fe9dd083c2a2e8b29da3e321d57cba23098737f3c45a29327fbf1b8f";
+    url = "https://github.com/ros2-gbp/ecl_core-release/archive/release/rolling/ecl_containers/1.2.1-4.tar.gz";
+    name = "1.2.1-4.tar.gz";
+    sha256 = "cf2de6435766145e4cffe568fabe6aa22c91aaddc4da2d5f29ef1790e4d8dada";
   };
 
   buildType = "ament_cmake";
@@ -20,12 +20,12 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-ros ];
 
   meta = {
-    description = ''The containers included here are intended to extend the stl containers.
+    description = "The containers included here are intended to extend the stl containers.
     In all cases, these implementations are designed to implement
     c++ conveniences and safety where speed is not sacrificed.
 
     Also includes techniques for memory debugging of common problems such
-    as buffer overruns.'';
+    as buffer overruns.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

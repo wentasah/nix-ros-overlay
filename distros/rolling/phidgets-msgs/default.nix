@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-phidgets-msgs";
-  version = "2.3.2-r1";
+  version = "2.3.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/phidgets_drivers-release/archive/release/rolling/phidgets_msgs/2.3.2-1.tar.gz";
-    name = "2.3.2-1.tar.gz";
-    sha256 = "9638d4a6ec0fc572e5546357d449e8d03e35d91765845265e127bce0087faa2a";
+    url = "https://github.com/ros2-gbp/phidgets_drivers-release/archive/release/rolling/phidgets_msgs/2.3.3-1.tar.gz";
+    name = "2.3.3-1.tar.gz";
+    sha256 = "1fa389a996fadfe992fdf2fd24debab2fbd30f1c0117cc8784fe71122dc09737";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''Custom ROS messages for Phidgets drivers'';
+    description = "Custom ROS messages for Phidgets drivers";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

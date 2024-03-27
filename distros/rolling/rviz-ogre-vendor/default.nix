@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-vendor-package, ament-cmake-xmllint, ament-lint-auto, freetype, libGL, libGLU, xorg }:
 buildRosPackage {
   pname = "ros-rolling-rviz-ogre-vendor";
-  version = "13.3.1-r1";
+  version = "13.4.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_ogre_vendor/13.3.1-1.tar.gz";
-    name = "13.3.1-1.tar.gz";
-    sha256 = "cd781b2f232c96035d4fe17354205854b9a1a4b61babd0bdf50aeef6a277e0a3";
+    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_ogre_vendor/13.4.0-2.tar.gz";
+    name = "13.4.0-2.tar.gz";
+    sha256 = "ce583f5c2deac7af762f46c57a199fe9f901c68a22223f7b49ac500ad3dce762";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-vendor-package ];
 
   meta = {
-    description = ''Wrapper around ogre3d, it provides a fixed CMake module and an ExternalProject build of ogre.'';
+    description = "Wrapper around ogre3d, it provides a fixed CMake module and an ExternalProject build of ogre.";
     license = with lib.licenses; [ asl20 mit ];
   };
 }

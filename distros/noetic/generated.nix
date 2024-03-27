@@ -76,6 +76,20 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
+ atf = self.callPackage ./atf {};
+
+ atf-metrics = self.callPackage ./atf-metrics {};
+
+ atf-msgs = self.callPackage ./atf-msgs {};
+
+ atf-plotter = self.callPackage ./atf-plotter {};
+
+ atf-recorder-plugins = self.callPackage ./atf-recorder-plugins {};
+
+ atf-test = self.callPackage ./atf-test {};
+
+ atf-test-tools = self.callPackage ./atf-test-tools {};
+
  audibot = self.callPackage ./audibot {};
 
  audibot-description = self.callPackage ./audibot-description {};
@@ -347,6 +361,8 @@ self: super: {
  cob-environments = self.callPackage ./cob-environments {};
 
  cob-extern = self.callPackage ./cob-extern {};
+
+ cob-fiducials = self.callPackage ./cob-fiducials {};
 
  cob-footprint-observer = self.callPackage ./cob-footprint-observer {};
 
@@ -2418,6 +2434,8 @@ self: super: {
 
  phidgets-high-speed-encoder = self.callPackage ./phidgets-high-speed-encoder {};
 
+ phidgets-humidity = self.callPackage ./phidgets-humidity {};
+
  phidgets-ik = self.callPackage ./phidgets-ik {};
 
  phidgets-magnetometer = self.callPackage ./phidgets-magnetometer {};
@@ -2665,6 +2683,8 @@ self: super: {
  prosilica-gige-sdk = self.callPackage ./prosilica-gige-sdk {};
 
  psen-scan-v2 = self.callPackage ./psen-scan-v2 {};
+
+ py-binding-tools = self.callPackage ./py-binding-tools {};
 
  py-trees = self.callPackage ./py-trees {};
 

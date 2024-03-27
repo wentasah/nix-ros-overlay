@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, rclcpp, rclcpp-components }:
 buildRosPackage {
   pname = "ros-rolling-adaptive-component";
-  version = "0.2.1-r3";
+  version = "0.2.1-r4";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/adaptive_component-release/archive/release/rolling/adaptive_component/0.2.1-3.tar.gz";
-    name = "0.2.1-3.tar.gz";
-    sha256 = "f70b20afbf449794cd26b3c0c8220c6ba65b7f70dd59ec4112ca95812b3a06dc";
+    url = "https://github.com/ros2-gbp/adaptive_component-release/archive/release/rolling/adaptive_component/0.2.1-4.tar.gz";
+    name = "0.2.1-4.tar.gz";
+    sha256 = "77b1b6df77050d5510eb8419054ede2411647e8d67c19654768350f2080379e6";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''A composable container for Adaptive ROS 2 Node computations.
+    description = "A composable container for Adaptive ROS 2 Node computations.
     Allows building Nodes that can select between FPGA, CPU or
     GPU, at run-time. Stateless by default, can be made stateful
     to meet use-case specific needs. Refer to examples in README.
@@ -30,7 +30,7 @@ buildRosPackage {
     to build adaptive computations. Adaptive ROS 2 Nodes are able to
     perform computations in the CPU, the FPGA or the GPU, adaptively.
     Adaptive behavior is controlled through the &quot;adaptive&quot; ROS 2
-    parameter.'';
+    parameter.";
     license = with lib.licenses; [ asl20 ];
   };
 }

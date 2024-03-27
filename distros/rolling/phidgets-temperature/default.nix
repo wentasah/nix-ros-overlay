@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-ros, launch, phidgets-api, rclcpp, rclcpp-components, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-phidgets-temperature";
-  version = "2.3.2-r1";
+  version = "2.3.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/phidgets_drivers-release/archive/release/rolling/phidgets_temperature/2.3.2-1.tar.gz";
-    name = "2.3.2-1.tar.gz";
-    sha256 = "9203dfe859fc72f266c90449cf8f63cdb40ae1b06775aa4b8abe4786bd79362d";
+    url = "https://github.com/ros2-gbp/phidgets_drivers-release/archive/release/rolling/phidgets_temperature/2.3.3-1.tar.gz";
+    name = "2.3.3-1.tar.gz";
+    sha256 = "2785618af4aa6da265e1625fda585a3171dd07d87825189854e6be95c243b399";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-ros ];
 
   meta = {
-    description = ''Driver for the Phidgets Temperature devices'';
+    description = "Driver for the Phidgets Temperature devices";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

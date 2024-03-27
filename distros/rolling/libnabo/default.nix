@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, boost, cmake, eigen }:
 buildRosPackage {
   pname = "ros-rolling-libnabo";
-  version = "1.0.7-r3";
+  version = "1.1.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/libnabo-release/archive/release/rolling/libnabo/1.0.7-3.tar.gz";
-    name = "1.0.7-3.tar.gz";
-    sha256 = "ccd35392bf761f8821413d2f5e333d1ae14102959200104265d98fb66c3dfbfa";
+    url = "https://github.com/ros2-gbp/libnabo-release/archive/release/rolling/libnabo/1.1.1-1.tar.gz";
+    name = "1.1.1-1.tar.gz";
+    sha256 = "3cfcdfa3eba6cfd5e2cc817813619e77e7d0663ee464bee07ab8b4820b17e65d";
   };
 
   buildType = "cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ cmake ];
 
   meta = {
-    description = ''libnabo is a fast K Nearest Neighbour library for low-dimensional spaces.'';
+    description = "libnabo is a fast K Nearest Neighbour library for low-dimensional spaces.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

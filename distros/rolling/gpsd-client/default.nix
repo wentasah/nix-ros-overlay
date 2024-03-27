@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, gps-msgs, gpsd, pkg-config, rclcpp, rclcpp-components, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-gpsd-client";
-  version = "1.0.4-r4";
+  version = "2.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/gps_umd-release/archive/release/rolling/gpsd_client/1.0.4-4.tar.gz";
-    name = "1.0.4-4.tar.gz";
-    sha256 = "1811625ffc601bc9337742207cca0e2d660f36a2e67e8f0702c650401fb7bfba";
+    url = "https://github.com/ros2-gbp/gps_umd-release/archive/release/rolling/gpsd_client/2.0.3-1.tar.gz";
+    name = "2.0.3-1.tar.gz";
+    sha256 = "1e30dc0586e76721f412bc21756c79306b12f1995c147bc609f49cc7bd6c7f54";
   };
 
   buildType = "ament_cmake";
@@ -19,8 +19,8 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''connects to a GPSd server and broadcasts GPS fixes 
-   using the NavSatFix message'';
+    description = "connects to a GPSd server and broadcasts GPS fixes 
+   using the NavSatFix message";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

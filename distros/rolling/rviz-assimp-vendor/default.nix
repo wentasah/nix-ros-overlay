@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-lint-cmake, ament-cmake-vendor-package, ament-cmake-xmllint, ament-lint-auto, assimp }:
 buildRosPackage {
   pname = "ros-rolling-rviz-assimp-vendor";
-  version = "13.3.1-r1";
+  version = "13.4.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_assimp_vendor/13.3.1-1.tar.gz";
-    name = "13.3.1-1.tar.gz";
-    sha256 = "81e8deb270de2fc9b4e95b3f5145b2e173ff20e1eae5209d81080493ba23ca49";
+    url = "https://github.com/ros2-gbp/rviz-release/archive/release/rolling/rviz_assimp_vendor/13.4.0-2.tar.gz";
+    name = "13.4.0-2.tar.gz";
+    sha256 = "1e0b81888cd9dd591bc651963d84315f275b7ef7eeb74df5c287ae7e5091680c";
   };
 
   buildType = "ament_cmake";
@@ -20,8 +20,8 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-vendor-package ];
 
   meta = {
-    description = ''Wrapper around assimp, providing nothing but a dependency on assimp, on some systems.
-    On others, it provides a fixed CMake module or even an ExternalProject build of assimp.'';
+    description = "Wrapper around assimp, providing nothing but a dependency on assimp, on some systems.
+    On others, it provides a fixed CMake module or even an ExternalProject build of assimp.";
     license = with lib.licenses; [ asl20 bsdOriginal ];
   };
 }

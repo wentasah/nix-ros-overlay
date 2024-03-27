@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-actionlib-msgs";
-  version = "5.3.0-r1";
+  version = "5.3.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/actionlib_msgs/5.3.0-1.tar.gz";
-    name = "5.3.0-1.tar.gz";
-    sha256 = "44332329128cb01b263f28505fc507458ebbc3f8011d1d39e57e9870882194e1";
+    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/actionlib_msgs/5.3.0-2.tar.gz";
+    name = "5.3.0-2.tar.gz";
+    sha256 = "67d5cd144371316a87ef438043234b4961448b830cecbe0090518e98e3aaa03f";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
 
   meta = {
-    description = ''A package containing some message definitions used in the implementation of ROS 1 actions.'';
+    description = "A package containing some message definitions used in the implementation of ROS 1 actions.";
     license = with lib.licenses; [ asl20 ];
   };
 }

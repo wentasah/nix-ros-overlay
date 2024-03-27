@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common }:
 buildRosPackage {
   pname = "ros-rolling-rti-connext-dds-cmake-module";
-  version = "0.20.0-r1";
+  version = "0.20.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rmw_connextdds-release/archive/release/rolling/rti_connext_dds_cmake_module/0.20.0-1.tar.gz";
-    name = "0.20.0-1.tar.gz";
-    sha256 = "06bd0fbb99684e2585ca0ea411c264a448e6b0722a9f264f9c42fbf493446a71";
+    url = "https://github.com/ros2-gbp/rmw_connextdds-release/archive/release/rolling/rti_connext_dds_cmake_module/0.20.1-1.tar.gz";
+    name = "0.20.1-1.tar.gz";
+    sha256 = "5b3b9a88e1a1ea439e88e4feeb161a18a838f84a8beb00d5dbe09ef16951f0f2";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''Helper module to provide access to RTI products like Connext DDS Professional'';
+    description = "Helper module to provide access to RTI products like Connext DDS Professional";
     license = with lib.licenses; [ asl20 ];
   };
 }

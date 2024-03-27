@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, python3Packages, pythonPackages }:
 buildRosPackage {
   pname = "ros-rolling-ament-package";
-  version = "0.16.3-r1";
+  version = "0.16.3-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_package-release/archive/release/rolling/ament_package/0.16.3-1.tar.gz";
-    name = "0.16.3-1.tar.gz";
-    sha256 = "4e35883b4cabf41fd5328811750d99327b70a0920e07003c8696210424a4411d";
+    url = "https://github.com/ros2-gbp/ament_package-release/archive/release/rolling/ament_package/0.16.3-2.tar.gz";
+    name = "0.16.3-2.tar.gz";
+    sha256 = "a66c5241a8645b215a18386844945979d173376a085aa36d55a0a06e77bdfc3c";
   };
 
   buildType = "ament_python";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ python3Packages.setuptools ];
 
   meta = {
-    description = ''The parser for the manifest files in the ament buildsystem.'';
+    description = "The parser for the manifest files in the ament buildsystem.";
     license = with lib.licenses; [ asl20 ];
   };
 }

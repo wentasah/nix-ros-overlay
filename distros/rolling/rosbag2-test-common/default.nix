@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-python, ament-lint-auto, ament-lint-common, python-cmake-module, rclcpp, rcutils }:
 buildRosPackage {
   pname = "ros-rolling-rosbag2-test-common";
-  version = "0.24.0-r1";
+  version = "0.24.0-r3";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rosbag2-release/archive/release/rolling/rosbag2_test_common/0.24.0-1.tar.gz";
-    name = "0.24.0-1.tar.gz";
-    sha256 = "e27949fd916bc3b31266eaa68376a87c106f82b0f46ecdc5a46c04c76f39eecf";
+    url = "https://github.com/ros2-gbp/rosbag2-release/archive/release/rolling/rosbag2_test_common/0.24.0-3.tar.gz";
+    name = "0.24.0-3.tar.gz";
+    sha256 = "381c2345d5d95b8c17c568805dce363998682c9c950ead9b5f2c2dff853d7285";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
 
   meta = {
-    description = ''Commonly used test helper classes and fixtures for rosbag2'';
+    description = "Commonly used test helper classes and fixtures for rosbag2";
     license = with lib.licenses; [ asl20 ];
   };
 }

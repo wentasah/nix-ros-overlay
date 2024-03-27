@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, eigen, eigen3-cmake-module }:
 buildRosPackage {
   pname = "ros-rolling-rot-conv";
-  version = "1.1.0-r1";
+  version = "1.1.0-r3";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rot_conv_lib-release/archive/release/rolling/rot_conv/1.1.0-1.tar.gz";
-    name = "1.1.0-1.tar.gz";
-    sha256 = "d5a87a643880d7d31d5f1f5856db8d53c9bcb0587c468de94143fcc7a9112417";
+    url = "https://github.com/ros2-gbp/rot_conv_lib-release/archive/release/rolling/rot_conv/1.1.0-3.tar.gz";
+    name = "1.1.0-3.tar.gz";
+    sha256 = "fc8fc8d953695d041ad3b6e7cbbec2d43e9b5923b978878a2f34ad1b7f913e5d";
   };
 
   buildType = "ament_cmake";
@@ -19,7 +19,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
 
   meta = {
-    description = ''A collection of functions that address common computations and numerical handling of rotations in 3D Euclidean space'';
+    description = "A collection of functions that address common computations and numerical handling of rotations in 3D Euclidean space";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

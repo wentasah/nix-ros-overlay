@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-clang-tidy, ament-cmake-copyright, ament-cmake-core, ament-cmake-lint-cmake, ament-cmake-test }:
 buildRosPackage {
   pname = "ros-rolling-ament-cmake-clang-tidy";
-  version = "0.16.3-r1";
+  version = "0.16.3-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_cmake_clang_tidy/0.16.3-1.tar.gz";
-    name = "0.16.3-1.tar.gz";
-    sha256 = "60324463691497b1ced2e878b2ee880f8f5d454619fac15ae1cbb16f39b4996d";
+    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_cmake_clang_tidy/0.16.3-2.tar.gz";
+    name = "0.16.3-2.tar.gz";
+    sha256 = "92e5114371deba28d570da85d0310d42d5ab1263b04bf4b7b697ac82b309f369";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-clang-tidy ament-cmake-core ament-cmake-test ];
 
   meta = {
-    description = ''The CMake API for ament_clang_tidy to lint C / C++ code using clang tidy.'';
+    description = "The CMake API for ament_clang_tidy to lint C / C++ code using clang tidy.";
     license = with lib.licenses; [ asl20 ];
   };
 }

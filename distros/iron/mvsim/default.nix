@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, ament-cmake-gtest, ament-cmake-xmllint, ament-lint-auto, ament-lint-common, boost, cmake, cppzmq, mrpt2, nav-msgs, protobuf, python3, python3Packages, pythonPackages, ros-environment, ros2launch, sensor-msgs, tf2, tf2-geometry-msgs, unzip, visualization-msgs, wget }:
 buildRosPackage {
   pname = "ros-iron-mvsim";
-  version = "0.8.3-r1";
+  version = "0.9.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mvsim-release/archive/release/iron/mvsim/0.8.3-1.tar.gz";
-    name = "0.8.3-1.tar.gz";
-    sha256 = "2a0d2ea02006bf0f52a411b3ed941d1ad3f16e74a8f76420e4b5d555917add39";
+    url = "https://github.com/ros2-gbp/mvsim-release/archive/release/iron/mvsim/0.9.2-1.tar.gz";
+    name = "0.9.2-1.tar.gz";
+    sha256 = "1c1f1650c414c738417f3a4a3a256fbe3989cbf09afc7a09f9f05d4c8e0c33a0";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest cmake ];
 
   meta = {
-    description = ''A lightweight multivehicle simulation framework.'';
+    description = "A lightweight multivehicle simulation framework.";
     license = with lib.licenses; [ bsdOriginal ];
   };
 }

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-copyright, ament-cmake-cppcheck, ament-cmake-uncrustify, ament-lint-auto, ament-lint-common, libcurl-vendor, pkg-config, rclcpp, rclcpp-components, rtcm-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-ntrip-client-node";
-  version = "0.5.2-r1";
+  version = "0.5.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ublox_dgnss-release/archive/release/rolling/ntrip_client_node/0.5.2-1.tar.gz";
-    name = "0.5.2-1.tar.gz";
-    sha256 = "62372cd035fdf3bc43a861800c44c8c55176adcbca7f3a326946b370012d9477";
+    url = "https://github.com/ros2-gbp/ublox_dgnss-release/archive/release/rolling/ntrip_client_node/0.5.3-1.tar.gz";
+    name = "0.5.3-1.tar.gz";
+    sha256 = "5cf470ad82e456780343be727034e495532f0377891a233468cda5479bea695f";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''Publishes RTCM ntrip messages from an external mountpoint'';
+    description = "Publishes RTCM ntrip messages from an external mountpoint";
     license = with lib.licenses; [ asl20 ];
   };
 }
