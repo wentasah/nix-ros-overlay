@@ -77,6 +77,20 @@ rosSelf: rosSuper: with rosSelf.lib; {
     ];
   });
 
+  nav2-lifecycle-manager = rosSuper.nav2-lifecycle-manager.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Fix compiler warning ‘error_level’ may be used uninitialized
+      # https://github.com/open-navigation/navigation2/pull/4253
+      (self.fetchpatch {
+        url = "https://github.com/open-navigation/navigation2/commit/b292894066f62a211da9e36eca242465ad92bf40.patch";
+        stripLen = 1;
+        hash = "sha256-U+ATKskz5DNWEsMnefBT9fCAXH8Uu9i7koCbwTA1FEo=";
+      })
+    ];
+  });
+
   popf = rosSuper.popf.overrideAttrs ({
     nativeBuildInputs ? [], postPatch ? "", ...
   }: {
