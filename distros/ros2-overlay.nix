@@ -35,20 +35,10 @@ rosSelf: rosSuper: with rosSelf.lib; {
 
   fmilibrary-vendor = patchExternalProjectGit rosSuper.fmilibrary-vendor {
     url = "https://github.com/modelon-community/fmi-library.git";
-    fetchgitArgs = {
-      rev = "2.1";
-      sha256 = "177rlw1ba1y0ahi8qfpg0sflh8mjdl6fmffwjg2a5vxyxwdwrjvh";
-    };
-  };
-
-  # This is a newer version than the build system tries to download, but this
-  # version doesn't try to run host platform binaries on the build platform.
-  foonathan-memory-vendor = patchExternalProjectGit rosSuper.foonathan-memory-vendor {
-    url = "https://github.com/foonathan/memory.git";
-    fetchgitArgs = {
-      rev = "v0.7-2";
-      sha256 = "sha256-5nJNW0xwjSCc0Egq1zv0tIsGvAh1Xbnu8190A1ZP+VA=";
-    };
+    # Uses ${fmilibrary_version}, so can't match
+    originalRev = "";
+    rev = "2.2.3";
+    fetchgitArgs.hash = "sha256-i8EtjPMg39S/3RyoUaXm5A8Nu/NbgAwjxRCdyh2elyU=";
   };
 
   gmock-vendor = rosSuper.gmock-vendor.overrideAttrs ({
@@ -65,16 +55,32 @@ rosSelf: rosSuper: with rosSelf.lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ self.buildPackages.cmake ];
   });
 
-  librealsense2 = rosSuper.librealsense2.overrideAttrs ({
-    patches ? [], ...
+  iceoryx-posh = rosSuper.iceoryx-posh.overrideAttrs ({
+    patches ? [],
+    buildInputs ? [],
+    cmakeFlags ? [], ...
   }: {
     patches = patches ++ [
-      # Fix missing cstdint include
       (self.fetchpatch {
-        url = "https://github.com/IntelRealSense/librealsense/commit/847b74d3dcade2842ba138f321474159315ab8c2.patch";
-        hash = "sha256-zaW8HG8rfsApI5S/3x+x9Fx8xhyTIPNn/fJVFtkmlEA=";
+        url = "https://github.com/eclipse-iceoryx/iceoryx/commit/d4519632964794553791ef3f951ed47ca52ebbb6.patch";
+        hash = "sha256-f4kITUql8uFSptFmu7LZGChlfDG63b0gmsRyHp1NsWw=";
+        stripLen = 1;
       })
     ];
+
+    buildInputs = buildInputs ++ [ self.cpptoml ];
+    cmakeFlags = cmakeFlags ++ [ "-DDOWNLOAD_TOML_LIB=OFF" ];
+  });
+
+  # Get rid of nlohmann_json vendoring
+  librealsense2 = rosSuper.librealsense2.overrideAttrs ({
+    buildInputs ? [], postPatch ? "", ...
+  }: {
+    buildInputs = buildInputs ++ [ self.nlohmann_json ];
+    postPatch = postPatch + ''
+      substituteInPlace third-party/CMakeLists.txt \
+        --replace-fail 'include(CMake/external_json.cmake)' ""
+    '';
   });
 
   popf = rosSuper.popf.overrideAttrs ({
@@ -88,9 +94,10 @@ rosSelf: rosSuper: with rosSelf.lib; {
 
   python-cmake-module = rosSuper.python-cmake-module.overrideAttrs ({ ... }: let
     python = rosSelf.python;
+    libExt = self.stdenv.hostPlatform.extensions.sharedLibrary;
   in {
     pythonExecutable = python.pythonOnBuildForHost.interpreter;
-    pythonLibrary = "${python}/lib/lib${python.libPrefix}.so";
+    pythonLibrary = "${python}/lib/lib${python.libPrefix}${libExt}";
     pythonIncludeDir = "${python}/include/${python.libPrefix}";
     setupHook = ./python-cmake-module-setup-hook.sh;
     outputs = [ "out" "dev" ];
@@ -111,33 +118,26 @@ rosSelf: rosSuper: with rosSelf.lib; {
 
   rig-reconfigure = patchExternalProjectGit rosSuper.rig-reconfigure {
     url = "https://github.com/ocornut/imgui.git";
-    fetchgitArgs = {
-      rev = "3ea0fad204e994d669f79ed29dcaf61cd5cb571d";
-      sha256 = "sha256-v9FP9zJvul+2zRGaIugNDBCR9xZqCY8U90Dfe6fXpJM=";
-    };
+    rev = "v1.89.8-docking";
+    fetchgitArgs.hash = "sha256-eY8lRsonPfDRTMCPhInT9rQ6lSaJPsXpkh428OKpTnA=";
   };
 
   rmw-implementation = rosSuper.rmw-implementation.overrideAttrs ({
-    propagatedBuildInputs ? [], ...
+    propagatedBuildInputs ? [], buildInputs ? [], ...
   }: {
     # The default implementation must be available to all dependent packages
     # at build time.
     propagatedBuildInputs = with rosSelf; [
       rmw-fastrtps-cpp
     ] ++ propagatedBuildInputs;
+    # rmw-cyclonedds-cpp fails to build on MacOS.
+    buildInputs = if self.stdenv.isDarwin then
+      builtins.filter (p: p.pname != "ros-${p.rosDistro}-rmw-cyclonedds-cpp") buildInputs
+    else
+      buildInputs;
   });
 
-  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
-    postPatch ? "", ...
-  }: let
-    python = rosSelf.python;
-  in {
-    # Fix finding NumPy headers
-    postPatch = postPatch + ''
-      substituteInPlace cmake/rosidl_generator_py_generate_interfaces.cmake \
-       --replace '"import numpy"' "" \
-       --replace 'numpy.get_include()' "'${python.pkgs.numpy}/${python.sitePackages}/numpy/core/include'"
-    '';
+  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({ ... }: {
     setupHook = ./rosidl-generator-py-setup-hook.sh;
   });
 
@@ -150,6 +150,16 @@ rosSelf: rosSuper: with rosSelf.lib; {
   });
 
   rosidl-generator-rs = rosSelf.callPackage ../pkgs/rosidl-generator-rs { };
+
+  rosx-introspection = rosSuper.rosx-introspection.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Don't download CPM, which is never needed because all
+    # dependencies are provided by Nix.
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail 'include(cmake/CPM.cmake)' ""
+    '';
+  });
 
   rqt-robot-monitor = rosSuper.rqt-robot-monitor.overrideAttrs ({
     postFixup ? "", ...
@@ -192,10 +202,4 @@ rosSelf: rosSuper: with rosSelf.lib; {
       broken = true;
     };
   });
-
-  yaml-cpp-vendor = patchVendorUrl rosSuper.yaml-cpp-vendor {
-    url = "https://github.com/jbeder/yaml-cpp/archive/0f9a586ca1dc29c2ecb8dd715a315b93e3f40f79.zip";
-    sha256 = "1g45f71mk4gyca550177qf70v5cvavlsalmg7x8bi59j6z6f0mgz";
-  };
-
 }

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-index-python, ament-pep257, ament-xmllint, composition-interfaces, python3Packages, pythonPackages, rcl-interfaces, rclcpp-components, rclpy, ros2cli, ros2node, ros2param, ros2pkg }:
 buildRosPackage {
   pname = "ros-iron-ros2component";
-  version = "0.25.5-r1";
+  version = "0.25.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2cli-release/archive/release/iron/ros2component/0.25.5-1.tar.gz";
-    name = "0.25.5-1.tar.gz";
-    sha256 = "f005316fc530a2b9bd4527f89b7fdad1ef8ee76cb575882f3645fd002c4328eb";
+    url = "https://github.com/ros2-gbp/ros2cli-release/archive/release/iron/ros2component/0.25.7-1.tar.gz";
+    name = "0.25.7-1.tar.gz";
+    sha256 = "6ab380cdd6498605b03e8d4f37775d9aa51c640b634ff6563284a7e3283bd721";
   };
 
   buildType = "ament_python";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, cppzmq, rclcpp, ros-environment, sqlite }:
 buildRosPackage {
   pname = "ros-iron-behaviortree-cpp";
-  version = "4.5.1-r2";
+  version = "4.6.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/behaviortree_cpp_v4-release/archive/release/iron/behaviortree_cpp/4.5.1-2.tar.gz";
-    name = "4.5.1-2.tar.gz";
-    sha256 = "a15ad4bc3500432a3448757550a08c342c2f46debdb081c18992d3db005356f5";
+    url = "https://github.com/ros2-gbp/behaviortree_cpp_v4-release/archive/release/iron/behaviortree_cpp/4.6.2-1.tar.gz";
+    name = "4.6.2-1.tar.gz";
+    sha256 = "26d5f8e905c68ace5626733aa351d9f77bc4f630da8f61c26a3e388e5cf2f7e8";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, mola-kernel, mrpt2 }:
 buildRosPackage {
   pname = "ros-rolling-mola-viz";
-  version = "1.0.2-r1";
+  version = "1.0.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/rolling/mola_viz/1.0.2-1.tar.gz";
-    name = "1.0.2-1.tar.gz";
-    sha256 = "5bf2d30f641b1a357f7fb647fbc1080ce719544f36cea69c5f17d184388823e9";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/rolling/mola_viz/1.0.8-1.tar.gz";
+    name = "1.0.8-1.tar.gz";
+    sha256 = "9d0bcb9d96a7ea2453bed80a39d0d4a038938b7354f80203af96d90e8953ff3e";
   };
 
   buildType = "cmake";

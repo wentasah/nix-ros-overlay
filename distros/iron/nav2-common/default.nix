@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-core, ament-cmake-python, launch, launch-ros, osrf-pycommon, python3Packages, rclpy }:
 buildRosPackage {
   pname = "ros-iron-nav2-common";
-  version = "1.2.6-r1";
+  version = "1.2.9-r1";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_common/1.2.6-1.tar.gz";
-    name = "1.2.6-1.tar.gz";
-    sha256 = "8b6aeda6294f46b3bc74a067d665c3e9c73e6a4e4afa7973599a525b5b540fa9";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/iron/nav2_common/1.2.9-1.tar.gz";
+    name = "1.2.9-1.tar.gz";
+    sha256 = "3577b1c6fff1c8c622fdcc6a2d3ff129863ec8c99e734d2c55bcd4623324b15f";
   };
 
   buildType = "ament_cmake";

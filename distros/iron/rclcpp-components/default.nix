@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-google-benchmark, ament-cmake-gtest, ament-cmake-ros, ament-index-cpp, ament-lint-auto, ament-lint-common, class-loader, composition-interfaces, launch-testing, rclcpp, rcpputils, std-msgs }:
 buildRosPackage {
   pname = "ros-iron-rclcpp-components";
-  version = "21.0.5-r1";
+  version = "21.0.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rclcpp-release/archive/release/iron/rclcpp_components/21.0.5-1.tar.gz";
-    name = "21.0.5-1.tar.gz";
-    sha256 = "28f29fe3412f89a41bb4a069387e2c3fd2767bd83bd5e110f75b661828466ac4";
+    url = "https://github.com/ros2-gbp/rclcpp-release/archive/release/iron/rclcpp_components/21.0.7-1.tar.gz";
+    name = "21.0.7-1.tar.gz";
+    sha256 = "3a7479a6a865f5d4bd48e9039a0d2f6d660255bfb6d672d03fbc33169574a730";
   };
 
   buildType = "ament_cmake";

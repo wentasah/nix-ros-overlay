@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, catkin, cmake }:
 buildRosPackage {
   pname = "ros-noetic-ur-client-library";
-  version = "1.3.5-r1";
+  version = "1.3.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/UniversalRobots/Universal_Robots_Client_Library-release/archive/release/noetic/ur_client_library/1.3.5-1.tar.gz";
-    name = "1.3.5-1.tar.gz";
-    sha256 = "4ae5278bf8c1731ba04066a9947220b5f78c2d1f55eb4a35b557f93eed8b2b45";
+    url = "https://github.com/UniversalRobots/Universal_Robots_Client_Library-release/archive/release/noetic/ur_client_library/1.3.7-1.tar.gz";
+    name = "1.3.7-1.tar.gz";
+    sha256 = "b46bd5ed9e389b935a98c24ee30baa38ee900c9fa1e4ab84ab6c23c0ea25291b";
   };
 
   buildType = "cmake";

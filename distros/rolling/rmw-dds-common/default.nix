@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, ament-lint-auto, ament-lint-common, osrf-testing-tools-cpp, performance-test-fixture, rcpputils, rcutils, rmw, rosidl-default-generators, rosidl-default-runtime, rosidl-runtime-c, rosidl-runtime-cpp }:
 buildRosPackage {
   pname = "ros-rolling-rmw-dds-common";
-  version = "3.0.0-r2";
+  version = "3.2.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rmw_dds_common-release/archive/release/rolling/rmw_dds_common/3.0.0-2.tar.gz";
-    name = "3.0.0-2.tar.gz";
-    sha256 = "15730a08a52693a1dea77e3dd7dcc0f8327a46307e35987d6133ddc061b40327";
+    url = "https://github.com/ros2-gbp/rmw_dds_common-release/archive/release/rolling/rmw_dds_common/3.2.0-1.tar.gz";
+    name = "3.2.0-1.tar.gz";
+    sha256 = "e7a79f60b3d08471dac6a608cc46af295a6e8dd61307e174cbda3cca7c08e2eb";
   };
 
   buildType = "ament_cmake";

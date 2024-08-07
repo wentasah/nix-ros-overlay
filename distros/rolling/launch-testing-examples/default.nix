@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, demo-nodes-cpp, launch, launch-ros, launch-testing, launch-testing-ros, pythonPackages, rcl-interfaces, rclpy, ros2bag, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-launch-testing-examples";
-  version = "0.19.2-r1";
+  version = "0.20.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/examples-release/archive/release/rolling/launch_testing_examples/0.19.2-1.tar.gz";
-    name = "0.19.2-1.tar.gz";
-    sha256 = "3d03451f5a53f077af02ea4219b85b34ce547d3c2767b2833d08bbc339a941f6";
+    url = "https://github.com/ros2-gbp/examples-release/archive/release/rolling/launch_testing_examples/0.20.2-1.tar.gz";
+    name = "0.20.2-1.tar.gz";
+    sha256 = "17795ad6e074221c909014f3240062fe97e9a7f91cfc5e2605e8dbf1c835052f";
   };
 
   buildType = "ament_python";

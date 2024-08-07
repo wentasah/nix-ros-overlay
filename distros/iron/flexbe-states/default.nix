@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, flexbe-core, flexbe-msgs, flexbe-testing, geometry-msgs, pythonPackages, rclpy }:
 buildRosPackage {
   pname = "ros-iron-flexbe-states";
-  version = "2.3.3-r1";
+  version = "3.0.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_states/2.3.3-1.tar.gz";
-    name = "2.3.3-1.tar.gz";
-    sha256 = "aa6d0ec9aea6ea5df2a1ab8e13eaacc633ebe885c7bad50f8670ca25b212eb4c";
+    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_states/3.0.2-1.tar.gz";
+    name = "3.0.2-1.tar.gz";
+    sha256 = "f6be9eb888f60a4dcc22e237910a30c09b3a71e74801cad72eea885f5b0c3450";
   };
 
   buildType = "ament_python";

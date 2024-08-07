@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-core, ament-cmake-gtest, ament-cmake-test, gmock-vendor, gtest }:
 buildRosPackage {
   pname = "ros-humble-ament-cmake-gmock";
-  version = "1.3.8-r1";
+  version = "1.3.10-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_gmock/1.3.8-1.tar.gz";
-    name = "1.3.8-1.tar.gz";
-    sha256 = "e0215d815946d163b578f6e3cc1e4537e5771f24ec67802571868813b0e3bf43";
+    url = "https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_gmock/1.3.10-1.tar.gz";
+    name = "1.3.10-1.tar.gz";
+    sha256 = "494f3bfc95ec6ee5f3ec91b16023090af17bda0f143c5438cbd8adc4494baae2";
   };
 
   buildType = "ament_cmake";

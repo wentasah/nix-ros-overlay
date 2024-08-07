@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, gtest-vendor }:
 buildRosPackage {
   pname = "ros-rolling-gmock-vendor";
-  version = "1.11.9000-r2";
+  version = "1.15.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/googletest-release/archive/release/rolling/gmock_vendor/1.11.9000-2.tar.gz";
-    name = "1.11.9000-2.tar.gz";
-    sha256 = "4bbcee514276e50cf1293ba0ec4ff9e09620962ad9ce3022a94565795e7557f0";
+    url = "https://github.com/ros2-gbp/googletest-release/archive/release/rolling/gmock_vendor/1.15.0-1.tar.gz";
+    name = "1.15.0-1.tar.gz";
+    sha256 = "3cb90e84adb7d460e70c3a6686bbf3742f4c8e76a75e27b29465cbffdcc09d1d";
   };
 
   buildType = "cmake";

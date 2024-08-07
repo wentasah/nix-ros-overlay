@@ -17,14 +17,21 @@ in with lib; {
     ];
   });
 
+  # This is a newer version than the build system tries to download, but this
+  # version doesn't try to run host platform binaries on the build platform.
+  foonathan-memory-vendor = patchExternalProjectGit rosSuper.foonathan-memory-vendor {
+    url = "https://github.com/foonathan/memory.git";
+    originalRev = "v0.7-1";
+    rev = "v0.7-2";
+    fetchgitArgs.hash = "sha256-5nJNW0xwjSCc0Egq1zv0tIsGvAh1Xbnu8190A1ZP+VA=";
+  };
+
   gazebo = self.gazebo_11;
 
   google-benchmark-vendor = lib.patchExternalProjectGit rosSuper.google-benchmark-vendor {
     url = "https://github.com/google/benchmark.git";
-    fetchgitArgs = {
-      rev = "c05843a9f622db08ad59804c190f98879b76beba";
-      hash = "sha256-h/e2vJacUp7PITez9HPzGc5+ofz7Oplso44VibECmsI=";
-    };
+    rev = "c05843a9f622db08ad59804c190f98879b76beba";
+    fetchgitArgs.hash = "sha256-h/e2vJacUp7PITez9HPzGc5+ofz7Oplso44VibECmsI=";
   };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
@@ -39,48 +46,24 @@ in with lib; {
     ];
   });
 
-  iceoryx-posh = (patchExternalProjectGit rosSuper.iceoryx-posh {
-    url = "https://github.com/skystrife/cpptoml.git";
-    file = "cmake/cpptoml/cpptoml.cmake.in";
+  lely-core-libraries = lib.patchExternalProjectGit rosSuper.lely-core-libraries {
+    url = "https://gitlab.com/lely_industries/lely-core.git";
+    rev = "b63a0b6f79d3ea91dc221724b42dae49894449fc";
     fetchgitArgs = {
-      rev = "v0.1.1";
-      sha256 = "0gxzzi4xbjszzlvmzaniayrd190kag1pmkn1h384s80cvqphbr00";
+      hash = "sha256-x9JCU2Ryssq424n90IzVOxixnvsoYTukyCOL3zNbwt4=";
+      leaveDotGit = true;
     };
-  }).overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      (self.fetchpatch {
-        url = "https://github.com/eclipse-iceoryx/iceoryx/commit/d4519632964794553791ef3f951ed47ca52ebbb6.patch";
-        hash = "sha256-f4kITUql8uFSptFmu7LZGChlfDG63b0gmsRyHp1NsWw=";
-        stripLen = 1;
-      })
-    ];
-  });
+  };
 
   libphidget22 = patchVendorUrl rosSuper.libphidget22 {
     url = "https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
     hash = "sha256-GpzGMpQ02s/X/XEcGoozzMjigrbqvAu81bcb7QG+36E=";
   };
 
-  libstatistics-collector = rosSuper.libstatistics-collector.overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      # Add missing cstdint include
-      (self.fetchpatch {
-        url = "https://github.com/ros-tooling/libstatistics_collector/commit/1c340c97c731019d0c7b40f8c167b0ef666bcf75.patch";
-        hash = "sha256-zGCvIs/1CcqLyiLWZ+e3rCBJmNbGkkUs96dnPfHpjdE=";
-      })
-    ];
-  });
-
   libyaml-vendor = patchExternalProjectGit rosSuper.libyaml-vendor {
     url = "https://github.com/yaml/libyaml.git";
-    fetchgitArgs = {
-      rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
-      hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";
-    };
+    rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
+    fetchgitArgs.hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";
   };
 
   mcap-vendor = patchExternalProjectGit (patchVendorUrl rosSuper.mcap-vendor {
@@ -88,10 +71,8 @@ in with lib; {
     sha256 = "sha256-KDP3I0QwjqWGOfOzY6DPF2aVgK56tDX0PzsQTP9u9Ug=";
   }) {
     url = "https://github.com/lz4/lz4.git";
-    fetchgitArgs = {
-      rev = "d44371841a2f1728a3f36839fd4b7e872d0927d3";
-      hash = "sha256-f7GZgOzUrkAfw1mqwlIKQQqDvkvIahGlHvq6AL+aAvA=";
-    };
+    rev = "d44371841a2f1728a3f36839fd4b7e872d0927d3";
+    fetchgitArgs.hash = "sha256-f7GZgOzUrkAfw1mqwlIKQQqDvkvIahGlHvq6AL+aAvA=";
   };
 
   moveit-kinematics = rosSuper.moveit-kinematics.overrideAttrs ({
@@ -100,6 +81,14 @@ in with lib; {
     # Added upstream in 2.7.2
     # https://github.com/ros-planning/moveit2/pull/2109
     propagatedBuildInputs = propagatedBuildInputs ++ [ rosSelf.moveit-ros-planning ];
+  });
+
+  novatel-oem7-driver = (patchExternalProjectGit rosSuper.novatel-oem7-driver {
+    url = "https://github.com/novatel/novatel_edie";
+    rev = "d02ccc2dfe531d642c1e2ca8a8c0f8205c856f23";
+    fetchgitArgs.hash = "sha256-ZQ7z9vQ8quI+SoNhB93tTw5LQe07UAKdbJJpaMj1C6I=";
+  }).overrideAttrs ({ ... }: {
+    dontFixCmake = true;
   });
 
   plotjuggler-ros = rosSuper.plotjuggler-ros.overrideAttrs ({
@@ -116,17 +105,17 @@ in with lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ rosSelf.ros-environment ];
   });
 
-  rosbag2-compression = rosSuper.rosbag2-compression.overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      (self.fetchpatch {
-        # Add in a missing cstdint include
-        url = "https://github.com/ros2/rosbag2/commit/65c889e1fa55dd85a148b27b8c27dadc73238e67.patch";
-        hash = "sha256-EzfOqI08roSSqpo3hEUFxoImxKJGi1wUN4ZxwhYszUY=";
-        stripLen = 1;
-      })
-    ];
+  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
+    postPatch ? "", ...
+  }: let
+    python = rosSelf.python;
+  in {
+    # Fix finding NumPy headers
+    postPatch = postPatch + ''
+      substituteInPlace cmake/rosidl_generator_py_generate_interfaces.cmake \
+       --replace-fail '"import numpy"' "" \
+       --replace-fail 'numpy.get_include()' "'${python.pkgs.numpy}/${python.sitePackages}/numpy/core/include'"
+    '';
   });
 
   rviz-ogre-vendor = patchVendorUrl rosSuper.rviz-ogre-vendor {

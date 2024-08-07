@@ -17,6 +17,12 @@ in with lib; {
     ];
   });
 
+  foonathan-memory-vendor = patchExternalProjectGit rosSuper.foonathan-memory-vendor {
+    url = "https://github.com/foonathan/memory.git";
+    rev = "v0.7-3";
+    fetchgitArgs.hash = "sha256-nLBnxPbPKiLCFF2TJgD/eJKJJfzktVBW3SRW2m3WK/s=";
+  };
+
   fastrtps = rosSuper.fastrtps.overrideAttrs ({
     patches ? [], nativeBuildInputs ? [], buildInputs ? [], ...
   }: {
@@ -34,10 +40,8 @@ in with lib; {
 
   google-benchmark-vendor = lib.patchExternalProjectGit rosSuper.google-benchmark-vendor {
     url = "https://github.com/google/benchmark.git";
-    fetchgitArgs = {
-      rev = "0d98dba29d66e93259db7daa53a9327df767a415";
-      hash = "sha256-yUiFxi80FWBmTZgqmqTMf9oqcBeg3o4I4vKd4djyRWY=";
-    };
+    rev = "0d98dba29d66e93259db7daa53a9327df767a415";
+    fetchgitArgs.hash = "sha256-yUiFxi80FWBmTZgqmqTMf9oqcBeg3o4I4vKd4djyRWY=";
   };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
@@ -52,25 +56,6 @@ in with lib; {
     ];
   });
 
-  iceoryx-posh = (patchExternalProjectGit rosSuper.iceoryx-posh {
-    url = "https://github.com/skystrife/cpptoml.git";
-    file = "cmake/cpptoml/cpptoml.cmake.in";
-    fetchgitArgs = {
-      rev = "v0.1.1";
-      sha256 = "0gxzzi4xbjszzlvmzaniayrd190kag1pmkn1h384s80cvqphbr00";
-    };
-  }).overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      (self.fetchpatch {
-        url = "https://github.com/eclipse-iceoryx/iceoryx/commit/d4519632964794553791ef3f951ed47ca52ebbb6.patch";
-        hash = "sha256-f4kITUql8uFSptFmu7LZGChlfDG63b0gmsRyHp1NsWw=";
-        stripLen = 1;
-      })
-    ];
-  });
-
   libphidget22 = patchVendorUrl rosSuper.libphidget22 {
     url = "https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
     hash = "sha256-GpzGMpQ02s/X/XEcGoozzMjigrbqvAu81bcb7QG+36E=";
@@ -78,10 +63,8 @@ in with lib; {
 
   libyaml-vendor = patchExternalProjectGit rosSuper.libyaml-vendor {
     url = "https://github.com/yaml/libyaml.git";
-    fetchgitArgs = {
-      rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
-      hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";
-    };
+    rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
+    fetchgitArgs.hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";
   };
 
   mcap-vendor = patchExternalProjectGit (patchVendorUrl rosSuper.mcap-vendor {
@@ -89,11 +72,22 @@ in with lib; {
     sha256 = "sha256-KDP3I0QwjqWGOfOzY6DPF2aVgK56tDX0PzsQTP9u9Ug=";
   }) {
     url = "https://github.com/lz4/lz4.git";
-    fetchgitArgs = {
-      rev = "d44371841a2f1728a3f36839fd4b7e872d0927d3";
-      hash = "sha256-f7GZgOzUrkAfw1mqwlIKQQqDvkvIahGlHvq6AL+aAvA=";
-    };
+    rev = "d44371841a2f1728a3f36839fd4b7e872d0927d3";
+    fetchgitArgs.hash = "sha256-f7GZgOzUrkAfw1mqwlIKQQqDvkvIahGlHvq6AL+aAvA=";
   };
+
+  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
+    postPatch ? "", ...
+  }: let
+    python = rosSelf.python;
+  in {
+    # Fix finding NumPy headers
+    postPatch = postPatch + ''
+      substituteInPlace cmake/rosidl_generator_py_generate_interfaces.cmake \
+       --replace-fail '"import numpy"' "" \
+       --replace-fail 'numpy.get_include()' "'${python.pkgs.numpy}/${python.sitePackages}/numpy/core/include'"
+    '';
+  });
 
   rviz-ogre-vendor = rosSuper.rviz-ogre-vendor.overrideAttrs ({
     postPatch ? "", ...
@@ -120,14 +114,14 @@ in with lib; {
     in lib.tarSource {
       hook = ''
         substituteInPlace Components/Overlay/CMakeLists.txt \
-          --replace ${lib.escapeShellArg imgui.url} file://${lib.escapeShellArg imguiTar}
+          --replace-fail ${lib.escapeShellArg imgui.url} file://${lib.escapeShellArg imguiTar}
       '';
     } ogre;
   in {
     postPatch = postPatch + ''
       substituteInPlace CMakeLists.txt \
-        --replace 'https://github.com/${ogre.owner}/${ogre.repo}/archive/${ogre.rev}.zip' ${lib.escapeShellArg ogreTar} \
-        --replace c1b870955efddf539385094e9034e7f7 fcc1176585a7feb9f23c7900182a1f32
+        --replace-fail 'https://github.com/${ogre.owner}/${ogre.repo}/archive/${ogre.rev}.zip' ${lib.escapeShellArg ogreTar} \
+        --replace-fail c1b870955efddf539385094e9034e7f7 fcc1176585a7feb9f23c7900182a1f32
     '';
   });
 

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, ros-gz-bridge, ros-gz-image, ros-gz-sim, ros-gz-sim-demos }:
 buildRosPackage {
   pname = "ros-rolling-ros-gz";
-  version = "0.245.0-r1";
+  version = "2.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/rolling/ros_gz/0.245.0-1.tar.gz";
-    name = "0.245.0-1.tar.gz";
-    sha256 = "b90f87063615f5ad3ce5874577ba2618b118051bb79664f5c866564669fd4d7a";
+    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/rolling/ros_gz/2.0.0-1.tar.gz";
+    name = "2.0.0-1.tar.gz";
+    sha256 = "a006fc14e6c25832acc48adfb1be65c5c2d3c769fb46bce5be44520bdd79954f";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {
-    description = ''Meta-package containing interfaces for using ROS 2 with <a href="https://gazebosim.org">Gazebo</a> simulation.'';
+    description = "Meta-package containing interfaces for using ROS 2 with <a href=\"https://gazebosim.org\">Gazebo</a> simulation.";
     license = with lib.licenses; [ asl20 ];
   };
 }

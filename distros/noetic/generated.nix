@@ -150,6 +150,12 @@ self: super: {
 
  behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
 
+ beluga = self.callPackage ./beluga {};
+
+ beluga-amcl = self.callPackage ./beluga-amcl {};
+
+ beluga-ros = self.callPackage ./beluga-ros {};
+
  bond = self.callPackage ./bond {};
 
  bond-core = self.callPackage ./bond-core {};
@@ -895,6 +901,12 @@ self: super: {
  etsi-its-coding = self.callPackage ./etsi-its-coding {};
 
  etsi-its-conversion = self.callPackage ./etsi-its-conversion {};
+
+ etsi-its-cpm-ts-coding = self.callPackage ./etsi-its-cpm-ts-coding {};
+
+ etsi-its-cpm-ts-conversion = self.callPackage ./etsi-its-cpm-ts-conversion {};
+
+ etsi-its-cpm-ts-msgs = self.callPackage ./etsi-its-cpm-ts-msgs {};
 
  etsi-its-denm-coding = self.callPackage ./etsi-its-denm-coding {};
 
@@ -1820,6 +1832,8 @@ self: super: {
 
  lusb = self.callPackage ./lusb {};
 
+ lvr2 = self.callPackage ./lvr2 {};
+
  magic-enum = self.callPackage ./magic-enum {};
 
  magical-ros2-conversion-tool = self.callPackage ./magical-ros2-conversion-tool {};
@@ -2262,6 +2276,8 @@ self: super: {
 
  nfc-ros = self.callPackage ./nfc-ros {};
 
+ nicla-vision-ros = self.callPackage ./nicla-vision-ros {};
+
  nmea-comms = self.callPackage ./nmea-comms {};
 
  nmea-msgs = self.callPackage ./nmea-msgs {};
@@ -2351,6 +2367,8 @@ self: super: {
  opt-camera = self.callPackage ./opt-camera {};
 
  opw-kinematics = self.callPackage ./opw-kinematics {};
+
+ ortools-vendor = self.callPackage ./ortools-vendor {};
 
  osm-cartography = self.callPackage ./osm-cartography {};
 
@@ -3324,6 +3342,8 @@ self: super: {
 
  rviz-imu-plugin = self.callPackage ./rviz-imu-plugin {};
 
+ rviz-map-plugin = self.callPackage ./rviz-map-plugin {};
+
  rviz-marker-tools = self.callPackage ./rviz-marker-tools {};
 
  rviz-plugin-tutorials = self.callPackage ./rviz-plugin-tutorials {};
@@ -3793,6 +3813,8 @@ self: super: {
  ur16e-moveit-config = self.callPackage ./ur16e-moveit-config {};
 
  ur20-moveit-config = self.callPackage ./ur20-moveit-config {};
+
+ ur30-moveit-config = self.callPackage ./ur30-moveit-config {};
 
  ur3-moveit-config = self.callPackage ./ur3-moveit-config {};
 

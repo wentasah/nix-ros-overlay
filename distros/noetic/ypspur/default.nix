@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, catkin, cmake, readline }:
 buildRosPackage {
   pname = "ros-noetic-ypspur";
-  version = "1.22.0-r1";
+  version = "1.22.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/openspur/yp-spur-release/archive/release/noetic/ypspur/1.22.0-1.tar.gz";
-    name = "1.22.0-1.tar.gz";
-    sha256 = "e21f4016be794ee812912bf881e9ca6c3e3e4b932429e5487837a84bce1e3035";
+    url = "https://github.com/openspur/yp-spur-release/archive/release/noetic/ypspur/1.22.5-1.tar.gz";
+    name = "1.22.5-1.tar.gz";
+    sha256 = "63aa6341ae40361f1c8e3d9efb2c57ec319141c7a4c64ffe2f3cff4a3947362d";
   };
 
   buildType = "cmake";

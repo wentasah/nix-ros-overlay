@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, mola-common, mrpt2 }:
 buildRosPackage {
   pname = "ros-iron-mola-pose-list";
-  version = "1.0.1-r1";
+  version = "1.0.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/iron/mola_pose_list/1.0.1-1.tar.gz";
-    name = "1.0.1-1.tar.gz";
-    sha256 = "83dbfb0caed89be8788363b5e0e1bbdc09b1f2fb09e18bc26651ff9b8e6675b2";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/iron/mola_pose_list/1.0.8-1.tar.gz";
+    name = "1.0.8-1.tar.gz";
+    sha256 = "5633ce6008fa8f2e48ae8654d72ef36ac251e5717e72d31a5f70facd7183e02f";
   };
 
   buildType = "cmake";

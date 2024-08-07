@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-lint-cmake, ament-cmake-xmllint, ament-lint-auto, builtin-interfaces, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-humble-leo-msgs";
-  version = "1.2.1-r1";
+  version = "1.2.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/leo_common-release/archive/release/humble/leo_msgs/1.2.1-1.tar.gz";
-    name = "1.2.1-1.tar.gz";
-    sha256 = "911273d1ac7dcf9bd3d89a7064be0a078beadf36afeb76db08498e81ffc4b8f1";
+    url = "https://github.com/ros2-gbp/leo_common-release/archive/release/humble/leo_msgs/1.2.3-1.tar.gz";
+    name = "1.2.3-1.tar.gz";
+    sha256 = "9b7852096a72ac8477f1984e960a51c147f0834336673f51b45bc8c587b27fbd";
   };
 
   buildType = "ament_cmake";

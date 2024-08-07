@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, controller-interface, controller-manager, controller-manager-msgs, hardware-interface, joint-limits, ros2-control-test-assets, ros2controlcli, transmission-interface }:
 buildRosPackage {
   pname = "ros-iron-ros2-control";
-  version = "3.24.0-r1";
+  version = "3.27.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/ros2_control/3.24.0-1.tar.gz";
-    name = "3.24.0-1.tar.gz";
-    sha256 = "1747b47f77b8f2e8bcfbde4c44a489a96ce8f417b57b4e732970cabd9f1d41b2";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/ros2_control/3.27.0-1.tar.gz";
+    name = "3.27.0-1.tar.gz";
+    sha256 = "636f0cccf37890d68a0d7f417c421939ee754711b73d792a2e603a64adb0bb5b";
   };
 
   buildType = "ament_cmake";

@@ -2,21 +2,21 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, cmake, eigen, gdal, git, gtest, lcov, python3, python3Packages, tbb_2021_8 }:
+{ lib, buildRosPackage, fetchurl, boost, cmake, eigen, gdal, geos, git, gtest, lcov, protobuf, python3, python3Packages, swig, tbb_2021_11, tinyxml-2 }:
 buildRosPackage {
   pname = "ros-humble-fields2cover";
-  version = "1.2.1-r3";
+  version = "2.0.0-r10";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/fields2cover-release/archive/release/humble/fields2cover/1.2.1-3.tar.gz";
-    name = "1.2.1-3.tar.gz";
-    sha256 = "11ca6ae60cd6c395f357cfa4d29f79bce7efbea2defb4b1bc9696f749e02fdfd";
+    url = "https://github.com/ros2-gbp/fields2cover-release/archive/release/humble/fields2cover/2.0.0-10.tar.gz";
+    name = "2.0.0-10.tar.gz";
+    sha256 = "d8ab838f5f4ae552b6793076e7b74ad4ba745a09c36566ab3a8068b932dc58f2";
   };
 
   buildType = "cmake";
   buildInputs = [ cmake ];
   checkInputs = [ gtest lcov ];
-  propagatedBuildInputs = [ eigen gdal git gtest python3 python3Packages.matplotlib python3Packages.tkinter tbb_2021_8 ];
+  propagatedBuildInputs = [ boost eigen gdal geos git gtest protobuf python3 python3Packages.matplotlib python3Packages.tkinter swig tbb_2021_11 tinyxml-2 ];
   nativeBuildInputs = [ cmake ];
 
   meta = {

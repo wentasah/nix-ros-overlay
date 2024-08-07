@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, flexbe-msgs, launch-ros, launch-testing, pythonPackages, rclpy, std-msgs, std-srvs, tf2-ros-py }:
 buildRosPackage {
   pname = "ros-iron-flexbe-core";
-  version = "2.3.3-r1";
+  version = "3.0.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_core/2.3.3-1.tar.gz";
-    name = "2.3.3-1.tar.gz";
-    sha256 = "c81c3c03bf8690d4e737455a14faad721523b826bf5b2de026fd4144571bfab1";
+    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_core/3.0.2-1.tar.gz";
+    name = "3.0.2-1.tar.gz";
+    sha256 = "111783351404fcc7620d0475613f2f2db642bda313cbc7a30f74b38e96e9fea3";
   };
 
   buildType = "ament_python";

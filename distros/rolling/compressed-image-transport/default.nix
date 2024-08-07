@@ -2,19 +2,20 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, cv-bridge, image-transport }:
+{ lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, cv-bridge, image-transport }:
 buildRosPackage {
   pname = "ros-rolling-compressed-image-transport";
-  version = "3.2.0-r2";
+  version = "5.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/rolling/compressed_image_transport/3.2.0-2.tar.gz";
-    name = "3.2.0-2.tar.gz";
-    sha256 = "43d5a89bc5631447eca3f4a15f546fbc61386d4ff0b866c0c7bd6f6431d90537";
+    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/rolling/compressed_image_transport/5.0.0-1.tar.gz";
+    name = "5.0.0-1.tar.gz";
+    sha256 = "27b2968708d472a0bd8802095a37a26a8ce0e44b2c873c0f5b86a19b5e16da41";
   };
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
+  checkInputs = [ ament-lint-auto ament-lint-common ];
   propagatedBuildInputs = [ cv-bridge image-transport ];
   nativeBuildInputs = [ ament-cmake ];
 

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, actionlib, boost, cartesian-trajectory-controller, catkin, control-msgs, controller-manager, controller-manager-msgs, force-torque-sensor-controller, geometry-msgs, hardware-interface, industrial-robot-status-controller, industrial-robot-status-interface, joint-state-controller, joint-trajectory-controller, kdl-parser, pass-through-controllers, pluginlib, robot-state-publisher, roscpp, rostest, scaled-joint-trajectory-controller, sensor-msgs, socat, speed-scaling-interface, speed-scaling-state-controller, std-srvs, tf, tf2-geometry-msgs, tf2-msgs, trajectory-msgs, twist-controller, ur-client-library, ur-dashboard-msgs, ur-description, ur-msgs, velocity-controllers }:
 buildRosPackage {
   pname = "ros-noetic-ur-robot-driver";
-  version = "2.1.3-r1";
+  version = "2.1.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver-release/archive/release/noetic/ur_robot_driver/2.1.3-1.tar.gz";
-    name = "2.1.3-1.tar.gz";
-    sha256 = "30e970fbf77f500094fdb39c780eac809068161d0f9a8cc214ddd1289f792019";
+    url = "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver-release/archive/release/noetic/ur_robot_driver/2.1.5-1.tar.gz";
+    name = "2.1.5-1.tar.gz";
+    sha256 = "660d9f14dab3b1930c5f2ca42e4684ddbf82273df0be257497876d048e3f1152";
   };
 
   buildType = "catkin";

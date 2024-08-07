@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-index-python, ament-pep257, launch, launch-testing, osrf-pycommon, pythonPackages }:
 buildRosPackage {
   pname = "ros-iron-launch-pytest";
-  version = "2.0.2-r1";
+  version = "2.0.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/launch-release/archive/release/iron/launch_pytest/2.0.2-1.tar.gz";
-    name = "2.0.2-1.tar.gz";
-    sha256 = "3f1836849f744751d6d2216c2074228ada81cba70e587824e5c033c85ce37d40";
+    url = "https://github.com/ros2-gbp/launch-release/archive/release/iron/launch_pytest/2.0.4-1.tar.gz";
+    name = "2.0.4-1.tar.gz";
+    sha256 = "12774614c6652fc67b68a01a06ec615c103b8c970bbe51cc48a4ed04bad94f1f";
   };
 
   buildType = "ament_python";

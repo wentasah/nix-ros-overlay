@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, hardware-interface, rclcpp-lifecycle, sensor-msgs }:
 buildRosPackage {
   pname = "ros-iron-controller-interface";
-  version = "3.24.0-r1";
+  version = "3.27.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/controller_interface/3.24.0-1.tar.gz";
-    name = "3.24.0-1.tar.gz";
-    sha256 = "9183c2c115028256122af7ee52a6e5a9963abb225cbe2ab64f652be7b566f90a";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/controller_interface/3.27.0-1.tar.gz";
+    name = "3.27.0-1.tar.gz";
+    sha256 = "013e1df2d27e09431fefa7055b0097c4e0ece3580fe80710bd56498646c3351d";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, git, zstd }:
 buildRosPackage {
   pname = "ros-humble-zstd-vendor";
-  version = "0.15.9-r1";
+  version = "0.15.12-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rosbag2-release/archive/release/humble/zstd_vendor/0.15.9-1.tar.gz";
-    name = "0.15.9-1.tar.gz";
-    sha256 = "279e22048f9b948dcbc7f685fa6a8c7d1cf6105731471387174da4c773ca42bc";
+    url = "https://github.com/ros2-gbp/rosbag2-release/archive/release/humble/zstd_vendor/0.15.12-1.tar.gz";
+    name = "0.15.12-1.tar.gz";
+    sha256 = "ae0f346bc737684811d160337dce694878ef6b0f69ab57ca1951dae76e4e59fc";
   };
 
   buildType = "ament_cmake";

@@ -38,6 +38,17 @@ rosSelf: rosSuper: with rosSelf.lib; {
   });
 
 
+  mavros-extras = rosSuper.mavros-extras.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    # Fix compile error when compiling with gcc 13
+    patches = patches ++ [ (self.fetchpatch {
+      url = "https://github.com/mavlink/mavros/commit/640e916127167029e5be3e86c5f43b05baf52e16.patch";
+      hash = "sha256-IpCeQeeUKTweCTdsP9m07i+q2fNosFP4Y5SVX+wMeP8=";
+      stripLen = 1;
+    }) ];
+  });
+
   moveit-core = rosSuper.moveit-core.overrideAttrs ({
     buildInputs ? [], patches ? [], ...
   }: {
@@ -48,6 +59,15 @@ rosSelf: rosSuper: with rosSelf.lib; {
       hash = "sha256-ZduyFhnl5WH07TEkfF1DwTUBZNd5CbZ3wHN7JHJb1XI=";
       stripLen = 1;
     }) ];
+  });
+
+  novatel-oem7-driver = (patchExternalProjectGit rosSuper.novatel-oem7-driver {
+    url = "https://github.com/novatel/novatel_edie";
+    originalRev = "origin/dev-ros_install_prefix";
+    rev = "d02ccc2dfe531d642c1e2ca8a8c0f8205c856f23";
+    fetchgitArgs.hash = "sha256-ZQ7z9vQ8quI+SoNhB93tTw5LQe07UAKdbJJpaMj1C6I=";
+  }).overrideAttrs ({ ... }: {
+    dontFixCmake = true;
   });
 
   pcl-ros = rosSuper.pcl-ros.overrideAttrs ({

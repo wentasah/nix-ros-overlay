@@ -2,19 +2,19 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, controller-manager-msgs, rclpy, rqt-gui, rqt-gui-py }:
+{ lib, buildRosPackage, fetchurl, controller-manager, controller-manager-msgs, rclpy, rqt-gui, rqt-gui-py }:
 buildRosPackage {
   pname = "ros-iron-rqt-controller-manager";
-  version = "3.24.0-r1";
+  version = "3.27.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/rqt_controller_manager/3.24.0-1.tar.gz";
-    name = "3.24.0-1.tar.gz";
-    sha256 = "6261446f8e490a7ee220ab08cdf1c3d2f8deb134288f81d8b57ead7e4c424848";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/iron/rqt_controller_manager/3.27.0-1.tar.gz";
+    name = "3.27.0-1.tar.gz";
+    sha256 = "f4baaf23f6beea10e350947c81dca3869022a65811cfcd9ca89fadf6b5862100";
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ controller-manager-msgs rclpy rqt-gui rqt-gui-py ];
+  propagatedBuildInputs = [ controller-manager controller-manager-msgs rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "Graphical frontend for interacting with the controller manager.";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, flexbe-core, flexbe-input, flexbe-mirror, flexbe-msgs, flexbe-onboard, flexbe-states, flexbe-testing, flexbe-widget }:
 buildRosPackage {
   pname = "ros-iron-flexbe-behavior-engine";
-  version = "2.3.3-r1";
+  version = "3.0.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_behavior_engine/2.3.3-1.tar.gz";
-    name = "2.3.3-1.tar.gz";
-    sha256 = "b8788784cc97b389d54b6e472e5094e56a7345e52c3e3419cd7f5c59b00974fb";
+    url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release/archive/release/iron/flexbe_behavior_engine/3.0.2-1.tar.gz";
+    name = "3.0.2-1.tar.gz";
+    sha256 = "8312458694395bceef7cb62e72c18e750aa5bfadfbb3cf22019d9af479e9af5b";
   };
 
   buildType = "ament_cmake";

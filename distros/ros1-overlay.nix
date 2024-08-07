@@ -49,7 +49,7 @@ rosSelf: rosSuper: with rosSelf.lib; {
     postPatch = postPatch + ''
       patchShebangs cmake
       substituteInPlace cmake/templates/python_distutils_install.sh.in \
-        --replace /usr/bin/env "${self.coreutils}/bin/env"
+        --replace-fail /usr/bin/env "${self.coreutils}/bin/env"
     '';
   });
 
@@ -70,6 +70,19 @@ rosSelf: rosSuper: with rosSelf.lib; {
     url = "https://github.com/flexible-collision-library/fcl/archive/v0.6.1.zip";
     sha256 = "0nryr4hg3lha1aaz35wbqr42lb6l8alfcy6slj2yn2dgb5syrmn2";
   };
+
+  jsk-recognition-msgs = rosSuper.jsk-recognition-msgs.overrideAttrs ({
+    buildInputs ? [], postPatch ? "", ...
+  }: {
+    # Merged upstream
+    # https://github.com/jsk-ros-pkg/jsk_recognition/pull/2836
+    buildInputs = buildInputs ++ [ rosSelf.ros-environment ];
+    # Part of upstream PR
+    # https://github.com/jsk-ros-pkg/jsk_recognition/pull/2829
+    postPatch = ''
+      substituteInPlace CMakeLists.txt --replace-fail "catkin_python_setup()" ""
+    '';
+  });
 
   libphidgets = patchVendorUrl rosSuper.libphidgets {
     url = "https://www.phidgets.com/downloads/phidget21/libraries/linux/libphidget/libphidget_2.1.8.20151217.tar.gz";

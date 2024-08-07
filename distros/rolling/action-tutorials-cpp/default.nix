@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, action-tutorials-interfaces, ament-cmake, ament-lint-auto, ament-lint-common, rclcpp, rclcpp-action, rclcpp-components }:
 buildRosPackage {
   pname = "ros-rolling-action-tutorials-cpp";
-  version = "0.33.2-r1";
+  version = "0.34.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/action_tutorials_cpp/0.33.2-1.tar.gz";
-    name = "0.33.2-1.tar.gz";
-    sha256 = "acd6ed2cd10d64b2341505261f9df1885ff30c4f6f8b1d5cf3a65f29c3a9cc45";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/action_tutorials_cpp/0.34.2-1.tar.gz";
+    name = "0.34.2-1.tar.gz";
+    sha256 = "5f858a223547045fb0a3edaee4414f0cab3eec1c2069c3c898647466ccb48187";
   };
 
   buildType = "ament_cmake";

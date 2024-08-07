@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, action-msgs, ament-cmake, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-humble-ur-dashboard-msgs";
-  version = "2.2.10-r1";
+  version = "2.2.15-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/humble/ur_dashboard_msgs/2.2.10-1.tar.gz";
-    name = "2.2.10-1.tar.gz";
-    sha256 = "22d90dc17958b274d9db99666afb043a62f8825d4eb0315e8dc785c6d43d680d";
+    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/humble/ur_dashboard_msgs/2.2.15-1.tar.gz";
+    name = "2.2.15-1.tar.gz";
+    sha256 = "6c670e55cc04346fa09b16743c112e7bb155479904167e72489ee306d2c9f409";
   };
 
   buildType = "ament_cmake";

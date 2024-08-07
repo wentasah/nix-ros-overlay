@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, ament-cmake-gtest, ament-lint-auto, ament-lint-common, eigen, rclcpp, ur-client-library, ur-robot-driver, yaml-cpp }:
 buildRosPackage {
   pname = "ros-humble-ur-calibration";
-  version = "2.2.10-r1";
+  version = "2.2.15-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/humble/ur_calibration/2.2.10-1.tar.gz";
-    name = "2.2.10-1.tar.gz";
-    sha256 = "8de475042d321442bac093a8cb0ff6f15ce5d615de9493024dd8543cd6f9c48a";
+    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/humble/ur_calibration/2.2.15-1.tar.gz";
+    name = "2.2.15-1.tar.gz";
+    sha256 = "cdfbd4b86b30c137fefd4d9fe053e0861661875b8a1cd030442fa1ccbfa7f593";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-lint-auto, ament-lint-common, builtin-interfaces, geometry-msgs, python-cmake-module, rclpy, rpyutils, tf2 }:
 buildRosPackage {
   pname = "ros-iron-tf2-py";
-  version = "0.31.5-r1";
+  version = "0.31.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/iron/tf2_py/0.31.5-1.tar.gz";
-    name = "0.31.5-1.tar.gz";
-    sha256 = "610d75a7b851a1bc44d6b9c307d3f7c98925af77a614fca376adaeb3cb7a537b";
+    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/iron/tf2_py/0.31.7-1.tar.gz";
+    name = "0.31.7-1.tar.gz";
+    sha256 = "ea91af3a2f4ac562273fe6b8a8e828a084725e0790cfeefc963745a02648ad78";
   };
 
   buildType = "ament_cmake";
