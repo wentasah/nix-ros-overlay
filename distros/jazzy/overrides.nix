@@ -31,6 +31,108 @@ in {
     fetchgitArgs.hash = "sha256-gztnxui9Fe/FTieMjdvfJjWHjkImtlsHn6fM1FruyME=";
   };
 
+  gz-cmake-vendor = lib.patchGzAmentVendorGit rosSuper.gz-cmake-vendor {
+    version = "3.5.3";
+    hash = "sha256-fnN3Fmp7F5W0JixJUEp2v/OnXzmRidS5ujmSYxIRWto=";
+  };
+
+  gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor {
+    version = "5.6.0";
+    hash = "sha256-vM+/V2F+Nr/LReqcMAmAbgAyaph/vMZVb0BO0MAUp6I=";
+  }).overrideAttrs ({
+    nativeBuildInputs ? [], ...
+  }: {
+    # https://github.com/gazebo-release/gz_common_vendor/pull/2
+    nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
+  });
+
+  gz-dartsim-vendor = lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor {
+    url = "https://github.com/dartsim/dart.git";
+    rev = "v6.13.2";
+    fetchgitArgs.hash = "sha256-AfKPqUiW6BsM98TIzTY2ZcFP1WvURs8/dGOzanIiB9g=";
+  };
+
+  gz-fuel-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-fuel-tools-vendor {
+    version = "9.0.3";
+    hash = "sha256-36WwY3YUeCAUDBY8N+Mbw7FuNRn1fQUifLZvoGhXtcc=";
+  };
+
+  gz-gui-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-gui-vendor {
+    version = "8.3.0";
+    hash = "sha256-V0zaL6qrd510hMECCr3/mMkyqf4yu2aaKLRZ6Rw0s/4=";
+  }).overrideAttrs ({
+    postInstall ? "", ...
+  }: {
+    # "RPATH of binary libGrid3D.so contains a forbidden reference to
+    # /build/" (see https://github.com/gazebosim/gz-gui/issues/627).
+    postInstall = postInstall + ''
+      ${self.patchelf}/bin/patchelf --remove-rpath $out/opt/gz_gui_vendor/lib64/gz-gui-8/plugins/libGrid3D.so
+    '';
+  });
+
+  gz-launch-vendor = lib.patchGzAmentVendorGit rosSuper.gz-launch-vendor {
+    version = "7.1.0";
+    hash = "sha256-En3V8i/Ie8+KnSHGlm9Bap7REdLhYBaVHVbOM+/Pzno=";
+  };
+
+  gz-math-vendor = lib.patchGzAmentVendorGit rosSuper.gz-math-vendor {
+    version = "7.5.0";
+    hash = "sha256-TEadejtPCR3FAUbyAAME28tmqaxypPTJDYidjZ3FPIY=";
+  };
+
+  gz-msgs-vendor = lib.patchGzAmentVendorGit rosSuper.gz-msgs-vendor {
+    version = "10.3.0";
+    hash = "sha256-PQT8EpTxafldnKG3hDSXw2P22gLRg2EfMllrzaTaDEw=";
+  };
+
+  gz-ogre-next-vendor = (lib.patchAmentVendorGit rosSuper.gz-ogre-next-vendor {
+    url = "https://github.com/OGRECave/ogre-next.git";
+    rev = "v2.3.3";
+    fetchgitArgs.hash = "sha256-elSj35LwsLzj1ssDPsk9NW/KSXfiOGYmw9hQSAWdpFM=";
+  }).overrideAttrs({ ... }: {
+    dontFixCmake = true;
+  });
+
+  gz-physics-vendor = lib.patchGzAmentVendorGit rosSuper.gz-physics-vendor {
+    version = "7.3.0";
+    hash = "sha256-PTalEQc9C/QsYMO+XK7aOzZUzC01jxiW6bjdItB5hlM=";
+  };
+
+  gz-plugin-vendor = lib.patchGzAmentVendorGit rosSuper.gz-plugin-vendor {
+    version = "2.0.3";
+    hash = "sha256-9t6vcnBbfRWu6ptmqYAhmWKDoKAaK631JD9u1C0G0mY=";
+  };
+
+  gz-rendering-vendor = lib.patchGzAmentVendorGit rosSuper.gz-rendering-vendor {
+    version = "8.2.0";
+    hash = "sha256-eaWkZKHu566Rub7YSO2lnKdj8YQbhl86v+JR4zrgtjs=";
+  };
+
+  gz-sensors-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sensors-vendor {
+    version = "8.2.0";
+    hash = "sha256-j/8kS+Bvaim2gtsZcp+/u8CAE+N24/5qZhciFR0Q8+M=";
+  };
+
+  gz-sim-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sim-vendor {
+    version = "8.5.0";
+    hash = "sha256-10U8H3/EneLv+zQUGr3mkMPKctDlvtMfMhyQp6lacus=";
+  };
+
+  gz-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor {
+    version = "2.0.1";
+    hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";
+  };
+
+  gz-transport-vendor = lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
+    version = "13.4.0";
+    hash = "sha256-2Akd3vKr07IdgoJppvUV1nZlHE4RdQfI2R18ihHTDHk=";
+  };
+
+  gz-utils-vendor = lib.patchGzAmentVendorGit rosSuper.gz-utils-vendor {
+    version = "2.2.0";
+    hash = "sha256-dNoDOZtk/zseHuOM5mOPHkXKU7wqxxKrFnh7e09bjRA=";
+  };
+
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
     patches ? [], ...
   }: {
@@ -62,19 +164,6 @@ in {
     hash = "sha256-Qaz26F11VWxkQH8HfgVJLTHbHwmeByQu8ENkuyk5rPE=";
   };
 
-  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({
-    postPatch ? "", ...
-  }: let
-    python = rosSelf.python;
-  in {
-    # Fix finding NumPy headers
-    postPatch = postPatch + ''
-      substituteInPlace cmake/rosidl_generator_py_generate_interfaces.cmake \
-       --replace-fail '"import numpy"' "" \
-       --replace-fail 'numpy.get_include()' "'${python.pkgs.numpy}/${python.sitePackages}/numpy/core/include'"
-    '';
-  });
-
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     url = "https://github.com/OGRECave/ogre.git";
     rev = "v1.12.10";
@@ -93,6 +182,16 @@ in {
       substituteInPlace Components/Overlay/CMakeLists.txt \
         --replace-fail ${lib.escapeShellArg imgui.url} file://${lib.escapeShellArg imguiTar}
     '';
+  };
+
+  sdformat-vendor = lib.patchGzAmentVendorGit rosSuper.sdformat-vendor {
+    version = "14.4.0";
+    hash = "sha256-7JZ8YGk+GLzG22nl9QHUg6aqn5mcrBy3cvzBbG4Ih0w=";
+  };
+
+  shared-queues-vendor = lib.patchVendorUrl rosSuper.shared-queues-vendor {
+    url = "https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
+    sha256 = "sha256-TyFt3d78GidhDGD17KgjAaZl/qvAcGJP8lmu4EOxpYg=";
   };
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({
