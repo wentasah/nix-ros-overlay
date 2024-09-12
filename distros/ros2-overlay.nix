@@ -137,6 +137,27 @@ rosSelf: rosSuper: with rosSelf.lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ self.ninja ];
   });
 
+  ffmpeg-image-transport-tools = rosSuper.ffmpeg-image-transport-tools.overrideAttrs ({
+    postPatch ? "",
+    buildInputs ? [], ...
+  }: {
+    postPatch = postPatch + ''
+      sed -i -e /^project/r<(echo 'find_package(PkgConfig REQUIRED)
+
+      pkg_check_modules(LIBAV REQUIRED IMPORTED_TARGET
+          libavcodec
+          libswresample
+          libswscale
+          libavutil)
+      ') CMakeLists.txt
+    '';
+    buildInputs = buildInputs ++ [
+      self.pkg-config # FIXME should be in nativeBuildInputs (needed only for humble)
+      self.ffmpeg
+      rosSelf.image-transport
+    ];
+  });
+
   # Get rid of nlohmann_json vendoring
   librealsense2 = rosSuper.librealsense2.overrideAttrs ({
     buildInputs ? [], postPatch ? "", ...
