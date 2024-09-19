@@ -15,7 +15,8 @@
         overlays = [ self.overlays.default ];
       };
     in {
-      legacyPackages = pkgs.rosPackages;
+      legacyPackages = (intersectAttrs (self.overlays.default null pkgs) pkgs)
+                       // pkgs.rosPackages;
       packages.update-overlay = pkgs.callPackage ./maintainers/scripts/update-overlay.nix { };
 
       devShells = {
