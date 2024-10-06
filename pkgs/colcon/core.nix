@@ -1,13 +1,13 @@
 { lib, buildPythonApplication, buildPythonPackage, makeWrapper, fetchPypi
 , python, distlib, empy_3, pytest, pytest-cov, pytest-repeat
 , pytest-rerunfailures, setuptools, pytestCheckHook, flake8, flake8-blind-except
-, flake8-docstrings, flake8-import-order, pep8-naming, pylint
+, flake8-docstrings, flake8-import-order, pep8-naming, pylint, colcon-core
 }:
 
 let
   withExtensions = extensions: buildPythonApplication {
     pname = "colcon";
-    inherit (package) version;
+    inherit (colcon-core) version;
     format = "other";
 
     dontUnpack = true;
@@ -15,14 +15,14 @@ let
     doCheck = false;
 
     nativeBuildInputs = [ makeWrapper ];
-    buildInputs = [ package ] ++ extensions;
+    buildInputs = [ colcon-core ] ++ extensions;
 
     installPhase = ''
-      makeWrapper '${package}/bin/colcon' "$out/bin/colcon" \
+      makeWrapper '${colcon-core}/bin/colcon' "$out/bin/colcon" \
         --prefix PYTHONPATH : "$PYTHONPATH"
     '';
 
-    passthru = package.passthru // {
+    passthru = colcon-core.passthru // {
       withExtensions = moreExtensions: withExtensions (moreExtensions ++ extensions);
     };
   };
