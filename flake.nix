@@ -32,6 +32,15 @@
       nixosModule = nixpkgs.lib.warn
         "'nix-ros-overlay.nixosModule' is deprecated, use 'nix-ros-overlay.nixosModules.default' instead"
         self.nixosModules.default;
+      herculesCI = { ... }: {
+        onPush.default = {
+          outputs = { ... }: {
+            # Attributes here will be built for each push.
+            humble = self.legacyPackages.x86_64-linux.humble;
+            jazzy = self.legacyPackages.x86_64-linux.jazzy;
+          };
+        };
+      };
     };
 
   nixConfig = {
