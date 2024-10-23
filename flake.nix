@@ -32,6 +32,9 @@
       nixosModule = nixpkgs.lib.warn
         "'nix-ros-overlay.nixosModule' is deprecated, use 'nix-ros-overlay.nixosModules.default' instead"
         self.nixosModules.default;
+      checks = {
+        x86_64-linux = self.legacyPackages.x86_64-linux;
+      };
     };
 
   nixConfig = {
