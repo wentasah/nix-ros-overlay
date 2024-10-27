@@ -85,7 +85,9 @@ You can use the following command to use the above template easily:
 ## Current status
 
 What works:
-1. More than 1400 packages successfully built for ROS Noetic
+1. More than 1400 packages successfully built for ROS Noetic (for
+   up-to-date numbers and other distros, look at our experimental
+   [Hydra instance](https://hydra.iid.ciirc.cvut.cz/project/nix-ros-overlay))
 2. Fully functional ROS development environment using `nix-shell`
 3. Automated generation of Nix package definitions using standard ROS tools ([superflore](https://github.com/lopsided98/superflore))
 
