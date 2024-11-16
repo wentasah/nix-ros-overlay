@@ -1,0 +1,17 @@
+name: Rebase on upstream
+on:
+  schedule:
+  - cron: "0 * * * *"  # run hourly
+  workflow_dispatch:   # run manually
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 30  # greater than the number of commits you made
+        token: ${{ secrets.WORKFLOW_TOKEN }}
+    - uses: wentasah/rebase-upstream-action@master
+      with:
+        branch: master
