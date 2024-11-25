@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, turtlebot4-gz-bringup, turtlebot4-gz-gui-plugins, turtlebot4-gz-toolbox }:
 buildRosPackage {
   pname = "ros-jazzy-turtlebot4-simulator";
-  version = "2.0.0-r1";
+  version = "2.0.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/turtlebot4_simulator-release/archive/release/jazzy/turtlebot4_simulator/2.0.0-1.tar.gz";
-    name = "2.0.0-1.tar.gz";
-    sha256 = "a14c9b19854b0e87e5626530c1bf8a4154c13dc5c12daaeac61503829956797b";
+    url = "https://github.com/ros2-gbp/turtlebot4_simulator-release/archive/release/jazzy/turtlebot4_simulator/2.0.2-1.tar.gz";
+    name = "2.0.2-1.tar.gz";
+    sha256 = "766fa235831f5894768824fe7f25a83db5a7c02e4e2daecd2c6971f6e3e30b14";
   };
 
   buildType = "ament_cmake";

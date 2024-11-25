@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, assimp, cmake, cv-bridge, ffmpeg, freeglut, freenect, glfw3, libGL, libGLU, libjpeg, libpcap, libusb1, mrpt-libgui, mrpt-libmaps, mrpt-libslam, octomap, opencv, openni2, pkg-config, python3Packages, pythonPackages, rclcpp, ros-environment, rosbag2-storage, tinyxml-2, udev, wxGTK32, xorg, zlib }:
 buildRosPackage {
   pname = "ros-iron-mrpt-libhwdrivers";
-  version = "2.13.8-r1";
+  version = "2.14.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mrpt_ros-release/archive/release/iron/mrpt_libhwdrivers/2.13.8-1.tar.gz";
-    name = "2.13.8-1.tar.gz";
-    sha256 = "ad18c1681ceefed07313a5f1d886e2ec7a8eba26fb3219876dd63170212bd952";
+    url = "https://github.com/ros2-gbp/mrpt_ros-release/archive/release/iron/mrpt_libhwdrivers/2.14.5-1.tar.gz";
+    name = "2.14.5-1.tar.gz";
+    sha256 = "63d2b22b2bc7866c6ff8c9a77ad90f0459f47136f14b7b511cab246c8de1645d";
   };
 
   buildType = "cmake";

@@ -2,19 +2,19 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, pythonPackages, rclpy, sensor-msgs, std-msgs }:
+{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, ament-xmllint, pythonPackages, rclpy, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-quality-of-service-demo-py";
-  version = "0.34.2-r1";
+  version = "0.35.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/quality_of_service_demo_py/0.34.2-1.tar.gz";
-    name = "0.34.2-1.tar.gz";
-    sha256 = "1a7b3ca7e68ff721280f407bf79dd9d8328f30301e4e3baf0b36c26b52783160";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/quality_of_service_demo_py/0.35.1-1.tar.gz";
+    name = "0.35.1-1.tar.gz";
+    sha256 = "d0161a521a9ea08edd5ceff6b20ce0050d83e38cb6f7e1950c2176867dd512a9";
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 pythonPackages.pytest ];
+  checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint pythonPackages.pytest ];
   propagatedBuildInputs = [ rclpy sensor-msgs std-msgs ];
 
   meta = {

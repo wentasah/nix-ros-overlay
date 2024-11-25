@@ -2,19 +2,19 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, graphviz, python3Packages, pythonPackages, rclpy, tf2-msgs, tf2-py, tf2-ros-py }:
+{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, ament-xmllint, graphviz, python3Packages, pythonPackages, rclpy, tf2-msgs, tf2-py, tf2-ros-py }:
 buildRosPackage {
   pname = "ros-rolling-tf2-tools";
-  version = "0.38.2-r1";
+  version = "0.39.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/rolling/tf2_tools/0.38.2-1.tar.gz";
-    name = "0.38.2-1.tar.gz";
-    sha256 = "9bc11d611daf387433f4ea5c0448a21e7d51e40ff7ac7b6f524023ad87351a5c";
+    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/rolling/tf2_tools/0.39.2-1.tar.gz";
+    name = "0.39.2-1.tar.gz";
+    sha256 = "a5811a56e8fc17c3755dc1f3192a4ea0e2f1adce74177e84924e17d72567fe6e";
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 pythonPackages.pytest ];
+  checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint pythonPackages.pytest ];
   propagatedBuildInputs = [ graphviz python3Packages.pyyaml rclpy tf2-msgs tf2-py tf2-ros-py ];
 
   meta = {

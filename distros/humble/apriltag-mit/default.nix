@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, boost, clang, cmake, eigen, opencv }:
 buildRosPackage {
   pname = "ros-humble-apriltag-mit";
-  version = "1.1.2-r1";
+  version = "2.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/apriltag_mit-release/archive/release/humble/apriltag_mit/1.1.2-1.tar.gz";
-    name = "1.1.2-1.tar.gz";
-    sha256 = "f55a4ffd90eb80e0f2448b9eb58c76c5afb4cc86d1eb61e46444f10f8c18231b";
+    url = "https://github.com/ros2-gbp/apriltag_mit-release/archive/release/humble/apriltag_mit/2.0.0-1.tar.gz";
+    name = "2.0.0-1.tar.gz";
+    sha256 = "f35fc3b64af7c4b1183576871aafd30d6fffc47506e401acbbb71d601bcf2372";
   };
 
   buildType = "cmake";

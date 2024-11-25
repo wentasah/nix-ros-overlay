@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-core }:
 buildRosPackage {
   pname = "ros-rolling-ament-cmake-include-directories";
-  version = "2.7.0-r1";
+  version = "2.7.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_cmake-release/archive/release/rolling/ament_cmake_include_directories/2.7.0-1.tar.gz";
-    name = "2.7.0-1.tar.gz";
-    sha256 = "a99cbcfa3ee71bd1eadccf108a72e636aab9b25b45165c6c282c9360df9469e0";
+    url = "https://github.com/ros2-gbp/ament_cmake-release/archive/release/rolling/ament_cmake_include_directories/2.7.2-1.tar.gz";
+    name = "2.7.2-1.tar.gz";
+    sha256 = "5faffcc9fbbc3393c3283b1735ece82d2b383711da5d35029f155f39c9fb1d64";
   };
 
   buildType = "ament_cmake";

@@ -318,6 +318,8 @@ self: super: {
 
  autoware-utils = self.callPackage ./autoware-utils {};
 
+ autoware-v2x-msgs = self.callPackage ./autoware-v2x-msgs {};
+
  autoware-vehicle-msgs = self.callPackage ./autoware-vehicle-msgs {};
 
  avt-vimba-camera = self.callPackage ./avt-vimba-camera {};
@@ -448,6 +450,10 @@ self: super: {
 
  clearpath-gz = self.callPackage ./clearpath-gz {};
 
+ clearpath-manipulators = self.callPackage ./clearpath-manipulators {};
+
+ clearpath-manipulators-description = self.callPackage ./clearpath-manipulators-description {};
+
  clearpath-mecanum-drive-controller = self.callPackage ./clearpath-mecanum-drive-controller {};
 
  clearpath-mounts-description = self.callPackage ./clearpath-mounts-description {};
@@ -461,6 +467,8 @@ self: super: {
  clearpath-platform-description = self.callPackage ./clearpath-platform-description {};
 
  clearpath-platform-msgs = self.callPackage ./clearpath-platform-msgs {};
+
+ clearpath-ros2-socketcan-interface = self.callPackage ./clearpath-ros2-socketcan-interface {};
 
  clearpath-sensors-description = self.callPackage ./clearpath-sensors-description {};
 
@@ -824,6 +832,12 @@ self: super: {
 
  etsi-its-rviz-plugins = self.callPackage ./etsi-its-rviz-plugins {};
 
+ etsi-its-vam-ts-coding = self.callPackage ./etsi-its-vam-ts-coding {};
+
+ etsi-its-vam-ts-conversion = self.callPackage ./etsi-its-vam-ts-conversion {};
+
+ etsi-its-vam-ts-msgs = self.callPackage ./etsi-its-vam-ts-msgs {};
+
  event-camera-codecs = self.callPackage ./event-camera-codecs {};
 
  event-camera-msgs = self.callPackage ./event-camera-msgs {};
@@ -959,6 +973,8 @@ self: super: {
  four-wheel-steering-msgs = self.callPackage ./four-wheel-steering-msgs {};
 
  foxglove-bridge = self.callPackage ./foxglove-bridge {};
+
+ foxglove-compressed-video-transport = self.callPackage ./foxglove-compressed-video-transport {};
 
  foxglove-msgs = self.callPackage ./foxglove-msgs {};
 
@@ -1112,7 +1128,11 @@ self: super: {
 
  hri-actions-msgs = self.callPackage ./hri-actions-msgs {};
 
+ hri-face-body-matcher = self.callPackage ./hri-face-body-matcher {};
+
  hri-msgs = self.callPackage ./hri-msgs {};
+
+ hri-privacy-msgs = self.callPackage ./hri-privacy-msgs {};
 
  hri-rviz = self.callPackage ./hri-rviz {};
 
@@ -1274,6 +1294,8 @@ self: super: {
 
  kuka-event-broadcaster = self.callPackage ./kuka-event-broadcaster {};
 
+ kuka-external-control-sdk = self.callPackage ./kuka-external-control-sdk {};
+
  kuka-external-control-sdk-examples = self.callPackage ./kuka-external-control-sdk-examples {};
 
  kuka-fortec-support = self.callPackage ./kuka-fortec-support {};
@@ -1333,6 +1355,8 @@ self: super: {
  laser-geometry = self.callPackage ./laser-geometry {};
 
  laser-proc = self.callPackage ./laser-proc {};
+
+ laser-segmentation = self.callPackage ./laser-segmentation {};
 
  launch = self.callPackage ./launch {};
 
@@ -1397,6 +1421,8 @@ self: super: {
  libcreate = self.callPackage ./libcreate {};
 
  libcurl-vendor = self.callPackage ./libcurl-vendor {};
+
+ libfranka = self.callPackage ./libfranka {};
 
  libg2o = self.callPackage ./libg2o {};
 
@@ -1681,8 +1707,6 @@ self: super: {
  mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
-
- mrpt2 = self.callPackage ./mrpt2 {};
 
  mrpt-apps = self.callPackage ./mrpt-apps {};
 
@@ -2164,6 +2188,8 @@ self: super: {
 
  popf = self.callPackage ./popf {};
 
+ pose-broadcaster = self.callPackage ./pose-broadcaster {};
+
  pose-cov-ops = self.callPackage ./pose-cov-ops {};
 
  position-controllers = self.callPackage ./position-controllers {};
@@ -2173,6 +2199,8 @@ self: super: {
  psdk-interfaces = self.callPackage ./psdk-interfaces {};
 
  psdk-wrapper = self.callPackage ./psdk-wrapper {};
+
+ ptz-action-server-msgs = self.callPackage ./ptz-action-server-msgs {};
 
  puma-motor-driver = self.callPackage ./puma-motor-driver {};
 
@@ -2830,6 +2858,26 @@ self: super: {
 
  rviz-visual-tools = self.callPackage ./rviz-visual-tools {};
 
+ sbg-driver = self.callPackage ./sbg-driver {};
+
+ scenario-execution-control = self.callPackage ./scenario-execution-control {};
+
+ scenario-execution-gazebo = self.callPackage ./scenario-execution-gazebo {};
+
+ scenario-execution-interfaces = self.callPackage ./scenario-execution-interfaces {};
+
+ scenario-execution-nav2 = self.callPackage ./scenario-execution-nav2 {};
+
+ scenario-execution-os = self.callPackage ./scenario-execution-os {};
+
+ scenario-execution-py-trees-ros = self.callPackage ./scenario-execution-py-trees-ros {};
+
+ scenario-execution-ros = self.callPackage ./scenario-execution-ros {};
+
+ scenario-execution-rviz = self.callPackage ./scenario-execution-rviz {};
+
+ scenario-execution-x11 = self.callPackage ./scenario-execution-x11 {};
+
  schunk-svh-description = self.callPackage ./schunk-svh-description {};
 
  schunk-svh-driver = self.callPackage ./schunk-svh-driver {};
@@ -2874,6 +2922,8 @@ self: super: {
 
  simple-actions = self.callPackage ./simple-actions {};
 
+ simple-grasping = self.callPackage ./simple-grasping {};
+
  simple-launch = self.callPackage ./simple-launch {};
 
  simple-term-menu-vendor = self.callPackage ./simple-term-menu-vendor {};
@@ -2889,6 +2939,8 @@ self: super: {
  situational-graphs-wrapper = self.callPackage ./situational-graphs-wrapper {};
 
  slam-toolbox = self.callPackage ./slam-toolbox {};
+
+ slg-msgs = self.callPackage ./slg-msgs {};
 
  slider-publisher = self.callPackage ./slider-publisher {};
 
@@ -3005,6 +3057,22 @@ self: super: {
  system-modes-examples = self.callPackage ./system-modes-examples {};
 
  system-modes-msgs = self.callPackage ./system-modes-msgs {};
+
+ talos-bringup = self.callPackage ./talos-bringup {};
+
+ talos-controller-configuration = self.callPackage ./talos-controller-configuration {};
+
+ talos-description = self.callPackage ./talos-description {};
+
+ talos-description-calibration = self.callPackage ./talos-description-calibration {};
+
+ talos-description-inertial = self.callPackage ./talos-description-inertial {};
+
+ talos-gazebo = self.callPackage ./talos-gazebo {};
+
+ talos-moveit-config = self.callPackage ./talos-moveit-config {};
+
+ talos-robot = self.callPackage ./talos-robot {};
 
  tango-icons-vendor = self.callPackage ./tango-icons-vendor {};
 
@@ -3359,6 +3427,8 @@ self: super: {
  warehouse-ros = self.callPackage ./warehouse-ros {};
 
  warehouse-ros-sqlite = self.callPackage ./warehouse-ros-sqlite {};
+
+ web-video-server = self.callPackage ./web-video-server {};
 
  webots-ros2 = self.callPackage ./webots-ros2 {};
 

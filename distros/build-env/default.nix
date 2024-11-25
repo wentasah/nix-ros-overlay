@@ -63,6 +63,7 @@ let
             --suffix CMAKE_PREFIX_PATH : "$out" \
             --suffix AMENT_PREFIX_PATH : "$out" \
             --suffix ROS_PACKAGE_PATH : "$out/share" \
+            --prefix GZ_CONFIG_PATH : "$out/share/gz" \
             --set ROS_DISTRO '${ros-environment.rosDistro}' \
             --set ROS_VERSION '${toString ros-environment.rosVersion}' \
             --set ROS_PYTHON_VERSION '${lib.versions.major python.version}' \

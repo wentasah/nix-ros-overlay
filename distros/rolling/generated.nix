@@ -14,8 +14,6 @@ self: super: {
 
  action-tutorials-cpp = self.callPackage ./action-tutorials-cpp {};
 
- action-tutorials-interfaces = self.callPackage ./action-tutorials-interfaces {};
-
  action-tutorials-py = self.callPackage ./action-tutorials-py {};
 
  actionlib-msgs = self.callPackage ./actionlib-msgs {};
@@ -119,8 +117,6 @@ self: super: {
  ament-cpplint = self.callPackage ./ament-cpplint {};
 
  ament-download = self.callPackage ./ament-download {};
-
- ament-flake8 = self.callPackage ./ament-flake8 {};
 
  ament-index-cpp = self.callPackage ./ament-index-cpp {};
 
@@ -227,6 +223,8 @@ self: super: {
  autoware-system-msgs = self.callPackage ./autoware-system-msgs {};
 
  autoware-utils = self.callPackage ./autoware-utils {};
+
+ autoware-v2x-msgs = self.callPackage ./autoware-v2x-msgs {};
 
  autoware-vehicle-msgs = self.callPackage ./autoware-vehicle-msgs {};
 
@@ -620,6 +618,8 @@ self: super: {
 
  foxglove-bridge = self.callPackage ./foxglove-bridge {};
 
+ foxglove-compressed-video-transport = self.callPackage ./foxglove-compressed-video-transport {};
+
  foxglove-msgs = self.callPackage ./foxglove-msgs {};
 
  fuse = self.callPackage ./fuse {};
@@ -693,6 +693,8 @@ self: super: {
  gpsd-client = self.callPackage ./gpsd-client {};
 
  graph-msgs = self.callPackage ./graph-msgs {};
+
+ grasping-msgs = self.callPackage ./grasping-msgs {};
 
  grbl-msgs = self.callPackage ./grbl-msgs {};
 
@@ -785,6 +787,8 @@ self: super: {
  image-transport = self.callPackage ./image-transport {};
 
  image-transport-plugins = self.callPackage ./image-transport-plugins {};
+
+ image-transport-py = self.callPackage ./image-transport-py {};
 
  image-view = self.callPackage ./image-view {};
 
@@ -887,6 +891,8 @@ self: super: {
  laser-geometry = self.callPackage ./laser-geometry {};
 
  laser-proc = self.callPackage ./laser-proc {};
+
+ laser-segmentation = self.callPackage ./laser-segmentation {};
 
  launch = self.callPackage ./launch {};
 
@@ -1170,6 +1176,8 @@ self: super: {
 
  moveit-ros-tests = self.callPackage ./moveit-ros-tests {};
 
+ moveit-ros-trajectory-cache = self.callPackage ./moveit-ros-trajectory-cache {};
+
  moveit-ros-visualization = self.callPackage ./moveit-ros-visualization {};
 
  moveit-ros-warehouse = self.callPackage ./moveit-ros-warehouse {};
@@ -1199,8 +1207,6 @@ self: super: {
  mqtt-client = self.callPackage ./mqtt-client {};
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
-
- mrpt2 = self.callPackage ./mrpt2 {};
 
  mrpt-apps = self.callPackage ./mrpt-apps {};
 
@@ -1466,6 +1472,8 @@ self: super: {
 
  polygon-utils = self.callPackage ./polygon-utils {};
 
+ pose-broadcaster = self.callPackage ./pose-broadcaster {};
+
  pose-cov-ops = self.callPackage ./pose-cov-ops {};
 
  position-controllers = self.callPackage ./position-controllers {};
@@ -1524,6 +1532,10 @@ self: super: {
 
  range-sensor-broadcaster = self.callPackage ./range-sensor-broadcaster {};
 
+ raspimouse = self.callPackage ./raspimouse {};
+
+ raspimouse-msgs = self.callPackage ./raspimouse-msgs {};
+
  rc-common-msgs = self.callPackage ./rc-common-msgs {};
 
  rc-dynamics-api = self.callPackage ./rc-dynamics-api {};
@@ -1579,8 +1591,6 @@ self: super: {
  rclcpp-components = self.callPackage ./rclcpp-components {};
 
  rclcpp-lifecycle = self.callPackage ./rclcpp-lifecycle {};
-
- rclpy = self.callPackage ./rclpy {};
 
  rclpy-message-converter = self.callPackage ./rclpy-message-converter {};
 
@@ -1653,6 +1663,8 @@ self: super: {
  rmf-lift-msgs = self.callPackage ./rmf-lift-msgs {};
 
  rmf-obstacle-msgs = self.callPackage ./rmf-obstacle-msgs {};
+
+ rmf-reservation-msgs = self.callPackage ./rmf-reservation-msgs {};
 
  rmf-robot-sim-common = self.callPackage ./rmf-robot-sim-common {};
 
@@ -2018,6 +2030,8 @@ self: super: {
 
  rt-manipulators-examples = self.callPackage ./rt-manipulators-examples {};
 
+ rt-usb-9axisimu-driver = self.callPackage ./rt-usb-9axisimu-driver {};
+
  rtabmap = self.callPackage ./rtabmap {};
 
  rtcm-msgs = self.callPackage ./rtcm-msgs {};
@@ -2076,6 +2090,12 @@ self: super: {
 
  shared-queues-vendor = self.callPackage ./shared-queues-vendor {};
 
+ sick-safetyscanners2 = self.callPackage ./sick-safetyscanners2 {};
+
+ sick-safetyscanners2-interfaces = self.callPackage ./sick-safetyscanners2-interfaces {};
+
+ sick-safetyscanners-base = self.callPackage ./sick-safetyscanners-base {};
+
  sick-safevisionary-base = self.callPackage ./sick-safevisionary-base {};
 
  sick-safevisionary-driver = self.callPackage ./sick-safevisionary-driver {};
@@ -2084,11 +2104,13 @@ self: super: {
 
  sick-safevisionary-tests = self.callPackage ./sick-safevisionary-tests {};
 
- simple-actions = self.callPackage ./simple-actions {};
+ simple-grasping = self.callPackage ./simple-grasping {};
 
  simple-launch = self.callPackage ./simple-launch {};
 
  simulation = self.callPackage ./simulation {};
+
+ slg-msgs = self.callPackage ./slg-msgs {};
 
  slider-publisher = self.callPackage ./slider-publisher {};
 
@@ -2147,6 +2169,8 @@ self: super: {
  std-srvs = self.callPackage ./std-srvs {};
 
  steering-controllers-library = self.callPackage ./steering-controllers-library {};
+
+ steering-functions = self.callPackage ./steering-functions {};
 
  stereo-image-proc = self.callPackage ./stereo-image-proc {};
 
@@ -2429,6 +2453,8 @@ self: super: {
  warehouse-ros = self.callPackage ./warehouse-ros {};
 
  warehouse-ros-sqlite = self.callPackage ./warehouse-ros-sqlite {};
+
+ web-video-server = self.callPackage ./web-video-server {};
 
  webots-ros2 = self.callPackage ./webots-ros2 {};
 

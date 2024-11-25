@@ -162,6 +162,8 @@ self: super: {
 
  apriltag-detector = self.callPackage ./apriltag-detector {};
 
+ apriltag-mit = self.callPackage ./apriltag-mit {};
+
  apriltag-msgs = self.callPackage ./apriltag-msgs {};
 
  apriltag-ros = self.callPackage ./apriltag-ros {};
@@ -219,6 +221,8 @@ self: super: {
  autoware-system-msgs = self.callPackage ./autoware-system-msgs {};
 
  autoware-utils = self.callPackage ./autoware-utils {};
+
+ autoware-v2x-msgs = self.callPackage ./autoware-v2x-msgs {};
 
  autoware-vehicle-msgs = self.callPackage ./autoware-vehicle-msgs {};
 
@@ -347,6 +351,18 @@ self: super: {
  controller-manager-msgs = self.callPackage ./controller-manager-msgs {};
 
  costmap-queue = self.callPackage ./costmap-queue {};
+
+ create3-coverage = self.callPackage ./create3-coverage {};
+
+ create3-examples-msgs = self.callPackage ./create3-examples-msgs {};
+
+ create3-examples-py = self.callPackage ./create3-examples-py {};
+
+ create3-lidar-slam = self.callPackage ./create3-lidar-slam {};
+
+ create3-republisher = self.callPackage ./create3-republisher {};
+
+ create3-teleop = self.callPackage ./create3-teleop {};
 
  cudnn-cmake-module = self.callPackage ./cudnn-cmake-module {};
 
@@ -548,6 +564,8 @@ self: super: {
 
  eigenpy = self.callPackage ./eigenpy {};
 
+ ess-imu-driver2 = self.callPackage ./ess-imu-driver2 {};
+
  etsi-its-cam-coding = self.callPackage ./etsi-its-cam-coding {};
 
  etsi-its-cam-conversion = self.callPackage ./etsi-its-cam-conversion {};
@@ -585,6 +603,12 @@ self: super: {
  etsi-its-primitives-conversion = self.callPackage ./etsi-its-primitives-conversion {};
 
  etsi-its-rviz-plugins = self.callPackage ./etsi-its-rviz-plugins {};
+
+ etsi-its-vam-ts-coding = self.callPackage ./etsi-its-vam-ts-coding {};
+
+ etsi-its-vam-ts-conversion = self.callPackage ./etsi-its-vam-ts-conversion {};
+
+ etsi-its-vam-ts-msgs = self.callPackage ./etsi-its-vam-ts-msgs {};
 
  event-camera-codecs = self.callPackage ./event-camera-codecs {};
 
@@ -704,6 +728,8 @@ self: super: {
 
  foxglove-bridge = self.callPackage ./foxglove-bridge {};
 
+ foxglove-compressed-video-transport = self.callPackage ./foxglove-compressed-video-transport {};
+
  foxglove-msgs = self.callPackage ./foxglove-msgs {};
 
  fuse = self.callPackage ./fuse {};
@@ -779,6 +805,8 @@ self: super: {
  gpsd-client = self.callPackage ./gpsd-client {};
 
  graph-msgs = self.callPackage ./graph-msgs {};
+
+ grasping-msgs = self.callPackage ./grasping-msgs {};
 
  grbl-msgs = self.callPackage ./grbl-msgs {};
 
@@ -1110,6 +1138,12 @@ self: super: {
 
  map-msgs = self.callPackage ./map-msgs {};
 
+ mapviz = self.callPackage ./mapviz {};
+
+ mapviz-interfaces = self.callPackage ./mapviz-interfaces {};
+
+ mapviz-plugins = self.callPackage ./mapviz-plugins {};
+
  marine-acoustic-msgs = self.callPackage ./marine-acoustic-msgs {};
 
  marine-sensor-msgs = self.callPackage ./marine-sensor-msgs {};
@@ -1322,8 +1356,6 @@ self: super: {
 
  mqtt-client-interfaces = self.callPackage ./mqtt-client-interfaces {};
 
- mrpt2 = self.callPackage ./mrpt2 {};
-
  mrpt-apps = self.callPackage ./mrpt-apps {};
 
  mrpt-generic-sensor = self.callPackage ./mrpt-generic-sensor {};
@@ -1391,6 +1423,8 @@ self: super: {
  mrpt-tutorials = self.callPackage ./mrpt-tutorials {};
 
  mrt-cmake-modules = self.callPackage ./mrt-cmake-modules {};
+
+ multires-image = self.callPackage ./multires-image {};
 
  mvsim = self.callPackage ./mvsim {};
 
@@ -1642,6 +1676,36 @@ self: super: {
 
  pinocchio = self.callPackage ./pinocchio {};
 
+ plansys2-bringup = self.callPackage ./plansys2-bringup {};
+
+ plansys2-bt-actions = self.callPackage ./plansys2-bt-actions {};
+
+ plansys2-core = self.callPackage ./plansys2-core {};
+
+ plansys2-domain-expert = self.callPackage ./plansys2-domain-expert {};
+
+ plansys2-executor = self.callPackage ./plansys2-executor {};
+
+ plansys2-lifecycle-manager = self.callPackage ./plansys2-lifecycle-manager {};
+
+ plansys2-msgs = self.callPackage ./plansys2-msgs {};
+
+ plansys2-pddl-parser = self.callPackage ./plansys2-pddl-parser {};
+
+ plansys2-planner = self.callPackage ./plansys2-planner {};
+
+ plansys2-popf-plan-solver = self.callPackage ./plansys2-popf-plan-solver {};
+
+ plansys2-problem-expert = self.callPackage ./plansys2-problem-expert {};
+
+ plansys2-support-py = self.callPackage ./plansys2-support-py {};
+
+ plansys2-terminal = self.callPackage ./plansys2-terminal {};
+
+ plansys2-tests = self.callPackage ./plansys2-tests {};
+
+ plansys2-tools = self.callPackage ./plansys2-tools {};
+
  plotjuggler = self.callPackage ./plotjuggler {};
 
  plotjuggler-msgs = self.callPackage ./plotjuggler-msgs {};
@@ -1672,11 +1736,17 @@ self: super: {
 
  polygon-utils = self.callPackage ./polygon-utils {};
 
+ popf = self.callPackage ./popf {};
+
+ pose-broadcaster = self.callPackage ./pose-broadcaster {};
+
  pose-cov-ops = self.callPackage ./pose-cov-ops {};
 
  position-controllers = self.callPackage ./position-controllers {};
 
  proxsuite = self.callPackage ./proxsuite {};
+
+ ptz-action-server-msgs = self.callPackage ./ptz-action-server-msgs {};
 
  py-binding-tools = self.callPackage ./py-binding-tools {};
 
@@ -1729,6 +1799,8 @@ self: super: {
  random-numbers = self.callPackage ./random-numbers {};
 
  range-sensor-broadcaster = self.callPackage ./range-sensor-broadcaster {};
+
+ raspimouse-description = self.callPackage ./raspimouse-description {};
 
  rc-common-msgs = self.callPackage ./rc-common-msgs {};
 
@@ -2214,9 +2286,13 @@ self: super: {
 
  rslidar-msg = self.callPackage ./rslidar-msg {};
 
+ rslidar-sdk = self.callPackage ./rslidar-sdk {};
+
  rt-manipulators-cpp = self.callPackage ./rt-manipulators-cpp {};
 
  rt-manipulators-examples = self.callPackage ./rt-manipulators-examples {};
+
+ rt-usb-9axisimu-driver = self.callPackage ./rt-usb-9axisimu-driver {};
 
  rtabmap = self.callPackage ./rtabmap {};
 
@@ -2280,6 +2356,26 @@ self: super: {
 
  rviz-visual-tools = self.callPackage ./rviz-visual-tools {};
 
+ sbg-driver = self.callPackage ./sbg-driver {};
+
+ scenario-execution-control = self.callPackage ./scenario-execution-control {};
+
+ scenario-execution-gazebo = self.callPackage ./scenario-execution-gazebo {};
+
+ scenario-execution-interfaces = self.callPackage ./scenario-execution-interfaces {};
+
+ scenario-execution-nav2 = self.callPackage ./scenario-execution-nav2 {};
+
+ scenario-execution-os = self.callPackage ./scenario-execution-os {};
+
+ scenario-execution-py-trees-ros = self.callPackage ./scenario-execution-py-trees-ros {};
+
+ scenario-execution-ros = self.callPackage ./scenario-execution-ros {};
+
+ scenario-execution-rviz = self.callPackage ./scenario-execution-rviz {};
+
+ scenario-execution-x11 = self.callPackage ./scenario-execution-x11 {};
+
  sdformat-test-files = self.callPackage ./sdformat-test-files {};
 
  sdformat-urdf = self.callPackage ./sdformat-urdf {};
@@ -2304,6 +2400,12 @@ self: super: {
 
  shared-queues-vendor = self.callPackage ./shared-queues-vendor {};
 
+ sick-safetyscanners2 = self.callPackage ./sick-safetyscanners2 {};
+
+ sick-safetyscanners2-interfaces = self.callPackage ./sick-safetyscanners2-interfaces {};
+
+ sick-safetyscanners-base = self.callPackage ./sick-safetyscanners-base {};
+
  sick-safevisionary-base = self.callPackage ./sick-safevisionary-base {};
 
  sick-safevisionary-driver = self.callPackage ./sick-safevisionary-driver {};
@@ -2315,6 +2417,8 @@ self: super: {
  sick-scan-xd = self.callPackage ./sick-scan-xd {};
 
  simple-actions = self.callPackage ./simple-actions {};
+
+ simple-grasping = self.callPackage ./simple-grasping {};
 
  simple-launch = self.callPackage ./simple-launch {};
 
@@ -2478,6 +2582,8 @@ self: super: {
 
  theora-image-transport = self.callPackage ./theora-image-transport {};
 
+ tile-map = self.callPackage ./tile-map {};
+
  tinyspline-vendor = self.callPackage ./tinyspline-vendor {};
 
  tinyxml2-vendor = self.callPackage ./tinyxml2-vendor {};
@@ -2544,9 +2650,15 @@ self: super: {
 
  turtlebot3-simulations = self.callPackage ./turtlebot3-simulations {};
 
+ turtlebot4-base = self.callPackage ./turtlebot4-base {};
+
+ turtlebot4-bringup = self.callPackage ./turtlebot4-bringup {};
+
  turtlebot4-description = self.callPackage ./turtlebot4-description {};
 
  turtlebot4-desktop = self.callPackage ./turtlebot4-desktop {};
+
+ turtlebot4-diagnostics = self.callPackage ./turtlebot4-diagnostics {};
 
  turtlebot4-gz-bringup = self.callPackage ./turtlebot4-gz-bringup {};
 
@@ -2560,7 +2672,13 @@ self: super: {
 
  turtlebot4-node = self.callPackage ./turtlebot4-node {};
 
+ turtlebot4-robot = self.callPackage ./turtlebot4-robot {};
+
+ turtlebot4-setup = self.callPackage ./turtlebot4-setup {};
+
  turtlebot4-simulator = self.callPackage ./turtlebot4-simulator {};
+
+ turtlebot4-tests = self.callPackage ./turtlebot4-tests {};
 
  turtlebot4-viz = self.callPackage ./turtlebot4-viz {};
 
@@ -2683,6 +2801,8 @@ self: super: {
  warehouse-ros = self.callPackage ./warehouse-ros {};
 
  warehouse-ros-sqlite = self.callPackage ./warehouse-ros-sqlite {};
+
+ web-video-server = self.callPackage ./web-video-server {};
 
  webots-ros2 = self.callPackage ./webots-ros2 {};
 

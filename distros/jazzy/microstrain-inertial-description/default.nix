@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, xacro }:
 buildRosPackage {
   pname = "ros-jazzy-microstrain-inertial-description";
-  version = "4.3.0-r1";
+  version = "4.5.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/microstrain_inertial-release/archive/release/jazzy/microstrain_inertial_description/4.3.0-1.tar.gz";
-    name = "4.3.0-1.tar.gz";
-    sha256 = "6cbce3c03dc5266050139fb901259add75fdbd7ea73444ff94dd90104e0686e0";
+    url = "https://github.com/ros2-gbp/microstrain_inertial-release/archive/release/jazzy/microstrain_inertial_description/4.5.0-1.tar.gz";
+    name = "4.5.0-1.tar.gz";
+    sha256 = "dd54a70ee71d13539d6ab5ad0be57a0616fa6bb44431b02c656ddeb7841bd4db";
   };
 
   buildType = "ament_cmake";

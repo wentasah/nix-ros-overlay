@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-copyright, ament-cmake-core, ament-cmake-lint-cmake, ament-cmake-test, ament-cmake-vendor-package, ament-cmake-xmllint, gz-cmake-vendor, gz-math-vendor, gz-tools-vendor, protobuf, python3, python3Packages, pythonPackages, tinyxml-2 }:
 buildRosPackage {
   pname = "ros-rolling-gz-msgs-vendor";
-  version = "0.1.2-r1";
+  version = "0.2.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/gz_msgs_vendor-release/archive/release/rolling/gz_msgs_vendor/0.1.2-1.tar.gz";
-    name = "0.1.2-1.tar.gz";
-    sha256 = "03d8d633cc8e9cb70f916f15b299f2dbd2fe53c2466f01b041a2e875a1c36522";
+    url = "https://github.com/ros2-gbp/gz_msgs_vendor-release/archive/release/rolling/gz_msgs_vendor/0.2.1-1.tar.gz";
+    name = "0.2.1-1.tar.gz";
+    sha256 = "0283dc1b05719ef3240abfd097eee3507689b7cdc3f55550cf3ec56d6a2b43d7";
   };
 
   buildType = "ament_cmake";
@@ -20,7 +20,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package ];
 
   meta = {
-    description = "Vendor package for: gz-msgs10 10.3.0
+    description = "Vendor package for: gz-msgs11 11.0.1
 
     Gazebo Messages: Protobuf messages and functions for robot applications";
     license = with lib.licenses; [ asl20 ];

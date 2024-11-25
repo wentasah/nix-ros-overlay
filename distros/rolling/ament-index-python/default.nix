@@ -2,19 +2,19 @@
 # Copyright 2024 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, pythonPackages }:
+{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-mypy, ament-pep257, ament-xmllint, pythonPackages }:
 buildRosPackage {
   pname = "ros-rolling-ament-index-python";
-  version = "1.9.0-r1";
+  version = "1.10.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_index-release/archive/release/rolling/ament_index_python/1.9.0-1.tar.gz";
-    name = "1.9.0-1.tar.gz";
-    sha256 = "83a8217228a28e5e46905295fb13b8a566d88754230bef3dd2bf1c31b2ff9f0c";
+    url = "https://github.com/ros2-gbp/ament_index-release/archive/release/rolling/ament_index_python/1.10.1-1.tar.gz";
+    name = "1.10.1-1.tar.gz";
+    sha256 = "96cfdb67df3607a726ba854b79d1af3d018aa2a02d0fe0a4ed46744d3730fb6d";
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 pythonPackages.pytest ];
+  checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 ament-xmllint pythonPackages.pytest ];
 
   meta = {
     description = "Python API to access the ament resource index.";

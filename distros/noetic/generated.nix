@@ -28,6 +28,8 @@ self: super: {
 
  actionlib-tutorials = self.callPackage ./actionlib-tutorials {};
 
+ adi-3dtof-image-stitching = self.callPackage ./adi-3dtof-image-stitching {};
+
  adi-tmc-coe = self.callPackage ./adi-tmc-coe {};
 
  adi-tmcl = self.callPackage ./adi-tmcl {};
@@ -934,6 +936,12 @@ self: super: {
 
  etsi-its-rviz-plugins = self.callPackage ./etsi-its-rviz-plugins {};
 
+ etsi-its-vam-ts-coding = self.callPackage ./etsi-its-vam-ts-coding {};
+
+ etsi-its-vam-ts-conversion = self.callPackage ./etsi-its-vam-ts-conversion {};
+
+ etsi-its-vam-ts-msgs = self.callPackage ./etsi-its-vam-ts-msgs {};
+
  eus-assimp = self.callPackage ./eus-assimp {};
 
  eus-nlopt = self.callPackage ./eus-nlopt {};
@@ -1181,6 +1189,8 @@ self: super: {
  gazebo-model-attachment-plugin = self.callPackage ./gazebo-model-attachment-plugin {};
 
  gazebo-msgs = self.callPackage ./gazebo-msgs {};
+
+ gazebo-noisy-depth-camera = self.callPackage ./gazebo-noisy-depth-camera {};
 
  gazebo-plugins = self.callPackage ./gazebo-plugins {};
 

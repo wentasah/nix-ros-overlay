@@ -25,6 +25,17 @@ in {
 
   gazebo = self.gazebo_11;
 
+  geometric-shapes = rosSuper.geometric-shapes.overrideAttrs({
+      postPatch ? "", ...
+  }: {
+      # Remove workaround for Ubuntu-specific dependency hell issue
+      postPatch = postPatch + ''
+        substituteInPlace CMakeLists.txt --replace-fail \
+          'find_package(octomap 1.9.7...<1.10.0 REQUIRED)' \
+          'find_package(octomap REQUIRED)'
+      '';
+  });
+
   google-benchmark-vendor = lib.patchExternalProjectGit rosSuper.google-benchmark-vendor {
     url = "https://github.com/google/benchmark.git";
     rev = "344117638c8ff7e239044fd0fa7085839fc03021";
@@ -32,13 +43,13 @@ in {
   };
 
   gz-cmake-vendor = lib.patchGzAmentVendorGit rosSuper.gz-cmake-vendor {
-    version = "3.5.3";
-    hash = "sha256-fnN3Fmp7F5W0JixJUEp2v/OnXzmRidS5ujmSYxIRWto=";
+    version = "4.1.0";
+    hash = "sha256-GyVDbJM3qdFSdp+Kw8z1vB6ipOkB0+4TYWLV+FhIsj4=";
   };
 
   gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor {
-    version = "5.6.0";
-    hash = "sha256-vM+/V2F+Nr/LReqcMAmAbgAyaph/vMZVb0BO0MAUp6I=";
+    version = "6.0.0";
+    hash = "sha256-Oo4dGN2vsVaElKf/KYjjJq6tlYLRPr0/uh6urGxvDdc=";
   }).overrideAttrs ({
     nativeBuildInputs ? [], ...
   }: {
@@ -53,36 +64,36 @@ in {
   };
 
   gz-fuel-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-fuel-tools-vendor {
-    version = "9.1.0";
-    hash = "sha256-txeIzj2vmvL5NDu6O07c7LwcCWE26OFEzvyc9TBrJAw=";
+    version = "10.0.0";
+    hash = "sha256-9WskZnci7D09aW32lzmdtlhRBM+hcmhG6iNgf3OC1js=";
   };
 
   gz-gui-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-gui-vendor {
-    version = "8.3.0";
-    hash = "sha256-V0zaL6qrd510hMECCr3/mMkyqf4yu2aaKLRZ6Rw0s/4=";
+    version = "9.0.0";
+    hash = "sha256-/YJW6XmdGwbyd5Nx3wcTqnRlpwE1unVGaNX91qfZmiM=";
   }).overrideAttrs ({
     postInstall ? "", ...
   }: {
     # "RPATH of binary libGrid3D.so contains a forbidden reference to
     # /build/" (see https://github.com/gazebosim/gz-gui/issues/627).
     postInstall = postInstall + ''
-      ${self.patchelf}/bin/patchelf --remove-rpath $out/opt/gz_gui_vendor/lib64/gz-gui-8/plugins/libGrid3D.so
+      ${self.patchelf}/bin/patchelf --remove-rpath $out/lib64/gz-gui-9/plugins/libGrid3D.so
     '';
   });
 
   gz-launch-vendor = lib.patchGzAmentVendorGit rosSuper.gz-launch-vendor {
-    version = "7.1.0";
-    hash = "sha256-En3V8i/Ie8+KnSHGlm9Bap7REdLhYBaVHVbOM+/Pzno=";
+    version = "8.0.0";
+    hash = "sha256-K2W2SSlhJvF9mxEMNa7tZa3/3/LIvxZMGeVb0Mi6Vso=";
   };
 
   gz-math-vendor = lib.patchGzAmentVendorGit rosSuper.gz-math-vendor {
-    version = "7.5.0";
-    hash = "sha256-TEadejtPCR3FAUbyAAME28tmqaxypPTJDYidjZ3FPIY=";
+    version = "8.0.0";
+    hash = "sha256-3+846hhsaBaiFLIURlXQx6Z1+VYfp9UZgjdl96JvrRw=";
   };
 
   gz-msgs-vendor = lib.patchGzAmentVendorGit rosSuper.gz-msgs-vendor {
-    version = "10.3.0";
-    hash = "sha256-PQT8EpTxafldnKG3hDSXw2P22gLRg2EfMllrzaTaDEw=";
+    version = "11.0.1";
+    hash = "sha256-bOHw1CvQDGB8CaJnZF3CwsdeQJyn6LOvufRxbH8ufZc=";
   };
 
   gz-ogre-next-vendor = (lib.patchAmentVendorGit rosSuper.gz-ogre-next-vendor {
@@ -94,43 +105,63 @@ in {
   });
 
   gz-physics-vendor = lib.patchGzAmentVendorGit rosSuper.gz-physics-vendor {
-    version = "7.3.0";
-    hash = "sha256-PTalEQc9C/QsYMO+XK7aOzZUzC01jxiW6bjdItB5hlM=";
+    version = "8.0.0";
+    hash = "sha256-PjwrJG3xvRYrkHDTaBUgoaW8NglEYDPuJrk4QjJjTHU=";
   };
 
   gz-plugin-vendor = lib.patchGzAmentVendorGit rosSuper.gz-plugin-vendor {
-    version = "2.0.3";
-    hash = "sha256-9t6vcnBbfRWu6ptmqYAhmWKDoKAaK631JD9u1C0G0mY=";
+    version = "3.0.0";
+    hash = "sha256-h2Dx0KcFmJlS67q0v1zbd9nQkTCKgHkxt5KKTT5v+fw=";
   };
 
   gz-rendering-vendor = lib.patchGzAmentVendorGit rosSuper.gz-rendering-vendor {
-    version = "8.2.0";
-    hash = "sha256-eaWkZKHu566Rub7YSO2lnKdj8YQbhl86v+JR4zrgtjs=";
+    version = "9.0.0";
+    hash = "sha256-e3OPLeqV6OgjnQrbpwRj59e7Z0BqN2wOee/gAaMHfqU=";
   };
 
   gz-sensors-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sensors-vendor {
-    version = "8.2.0";
-    hash = "sha256-j/8kS+Bvaim2gtsZcp+/u8CAE+N24/5qZhciFR0Q8+M=";
+    version = "9.0.0";
+    hash = "sha256-8Ato7/YRL7JebbVPASD6VF9lf/Uyq26MIg2l+jQ4GDk=";
   };
 
   gz-sim-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sim-vendor {
-    version = "8.6.0";
-    hash = "sha256-zSiPHEh3h2J8hGL342tde5U9FLaGnWs72WD9BqyPf6E=";
+    version = "9.0.0";
+    hash = "sha256-gsWKknqcTiJc4YHIkmg1YGItwHG1As2OUnpPBQIwqj8=";
   };
 
-  gz-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor {
+  gz-tools-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor {
     version = "2.0.1";
     hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";
-  };
+  }).overrideAttrs({
+    nativeBuildInputs ? [],
+    propagatedNativeBuildInputs ? [],
+    qtWrapperArgs ? [],
+    postFixup ? "", ...
+  }: {
+    nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook ];
+    propagatedNativeBuildInputs = propagatedNativeBuildInputs ++ [
+      self.qt5.qtquickcontrols2
+      self.qt5.qtgraphicaleffects
+      self.pkg-config
+    ];
+    qtWrapperArgs = qtWrapperArgs ++ [
+      # Gazebo is currently broken on Wayland
+      # https://gazebosim.org/docs/ionic/troubleshooting/#wayland-issues
+      "--set-default QT_QPA_PLATFORM xcb"
+    ];
+    postFixup = postFixup + ''
+      wrapQtApp "$out/bin/gz"
+    '';
+  });
 
   gz-transport-vendor = lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
-    version = "13.4.0";
-    hash = "sha256-2Akd3vKr07IdgoJppvUV1nZlHE4RdQfI2R18ihHTDHk=";
+    version = "14.0.0";
+    hash = "sha256-zoGphy2cpmqJsnyS1LNVm4eGtHCWkAwIblga4RdVj4k=";
   };
 
   gz-utils-vendor = lib.patchGzAmentVendorGit rosSuper.gz-utils-vendor {
-    version = "2.2.0";
-    hash = "sha256-dNoDOZtk/zseHuOM5mOPHkXKU7wqxxKrFnh7e09bjRA=";
+    version = "3.0.0";
+    hash = "sha256-maq0iGCGbrjVGwBNNIYYSAKXxszwlAJS4FLrGNxsA5c=";
   };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
@@ -160,8 +191,37 @@ in {
   };
 
   mcap-vendor = lib.patchVendorUrl rosSuper.mcap-vendor {
-    url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.1.0.tar.gz";
-    hash = "sha256-HLKuny6RDusuk7OrcidE0YBbnaRXZOT9iHA7ZpQTNQ0=";
+    url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.4.0.tar.gz";
+    hash = "sha256-ZP8+URGfN//Pr53uy9mHp8tNTZA110o/03czlaRw/aE=";
+  };
+
+  moveit-core = rosSuper.moveit-core.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Remove workaround for Ubuntu-specific dependency hell issue
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail \
+        'find_package(octomap 1.9.7...<1.10.0 REQUIRED)' \
+        'find_package(octomap REQUIRED)'
+    '';
+  });
+
+  moveit-ros-occupancy-map-monitor = rosSuper.moveit-ros-occupancy-map-monitor.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Remove workaround for Ubuntu-specific dependency hell issue
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail \
+        'find_package(octomap 1.9.7...<1.10.0 REQUIRED)' \
+        'find_package(octomap REQUIRED)'
+    '';
+  });
+
+  nlohmann-json-schema-validator-vendor = lib.patchExternalProjectGit rosSuper.nlohmann-json-schema-validator-vendor {
+    url = "https://github.com/pboettch/json-schema-validator.git";
+    rev = "5ef4f903af055550e06955973a193e17efded896";
+    revVariable = "nlohmann_json_schema_validator_version";
+    fetchgitArgs.hash = "sha256-b02OFUx0BxUA6HN6IaacSg1t3RP4o7NND7X0U635W8U=";
   };
 
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
@@ -184,9 +244,23 @@ in {
     '';
   };
 
+  rviz-rendering = rosSuper.rviz-rendering.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    postPatch = postPatch + ''
+      substituteInPlace src/rviz_rendering/render_system.cpp \
+        --replace-fail /opt/rviz_ogre_vendor ""
+    '';
+  });
+
   sdformat-vendor = lib.patchGzAmentVendorGit rosSuper.sdformat-vendor {
-    version = "14.5.0";
-    hash = "sha256-nGBLnQP0TTKDVbYGyx23Fcs79UCJveajsll2LvyLJwQ=";
+    version = "15.1.0";
+    hash = "sha256-59spzVnuKamIKFIItEx0K5+otuef1LVHp0U7u0UaA8o=";
+  };
+
+  shared-queues-vendor = lib.patchVendorUrl rosSuper.shared-queues-vendor {
+    url = "https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
+    hash = "sha256-TyFt3d78GidhDGD17KgjAaZl/qvAcGJP8lmu4EOxpYg=";
   };
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({

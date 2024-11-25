@@ -48,6 +48,7 @@
     rev,
     originalRev ? rev,
     originalUrl ? url,
+    revVariable ? "",
     file ? "CMakeLists.txt",
     fetchgitArgs ? {}
   }: pkg.overrideAttrs ({
@@ -59,6 +60,7 @@
           { print "URL \"" path "\""; foundUrl=1; next } \
           { print }
         $0 ~ "GIT_TAG[[:blank:]]+" originalRev { print; foundRev=1 }
+        $0 ~ "set\\(" revVariable "[[:blank:]]+\"?" originalRev "\"?\\)" { print; foundRev=1 }
         END {
           if (!foundUrl) print "patchExternalProjectGit: did not find URL: " originalUrl > "/dev/stderr"
           if (!foundRev) print "patchExternalProjectGit: did not find revision: " originalRev > "/dev/stderr"
@@ -69,6 +71,7 @@
       awk -i inplace \
         -v originalUrl=${lib.escapeShellArg originalUrl} \
         -v originalRev=${lib.escapeShellArg originalRev} \
+        -v revVariable=${lib.escapeShellArg revVariable} \
         -v path=${lib.escapeShellArg (self.fetchgit ({ inherit url rev; } // fetchgitArgs))} \
         ${lib.escapeShellArg script} \
         ${lib.escapeShellArg file}
@@ -125,30 +128,22 @@
       fetchgitArgs.hash = hash;
       inherit tarSourceArgs;
     };
-  in
-    patchedPkg.overrideAttrs ({
-      pname, postPatch ? "", ...
-    }: {
-      dontFixCmake = true;      # don't replace $out/opt with $out/var/empty
-      postPatch = postPatch + ''
-        cat >> CMakeLists.txt <<'EOF'
-        if(NOT ''${LIB_VER} VERSION_EQUAL "${version}")
-          message(FATAL_ERROR "Mismatch in ${pname} version (Nix: ${version}, upstream: ''${LIB_VER}). Fix this in overrides.nix.")
-        endif()
-        EOF
-      '';
-    });
-
-  patchBoostPython = pkg: pkg.overrideAttrs ({
-    postPatch ? "", ...
+  in patchedPkg.overrideAttrs ({
+    pname, postPatch ? "", ...
   }: {
-    postPatch = let
-      pythonVersion = rosSelf.python.sourceVersion;
-      pythonLib = "python${pythonVersion.major}${pythonVersion.minor}";
-    in ''
-      sed -i CMakeLists.txt \
-        -e '/Boost [^)]*/s/python[^ )]*/${pythonLib}/'
-    '' + postPatch;
+    postPatch = postPatch + ''
+      # Use standard installation paths rather than /opt
+      substituteInPlace CMakeLists.txt \
+        --replace-fail 'opt/''${PROJECT_NAME}/extra_cmake' 'share/extra_cmake'
+      substituteInPlace *-extras.cmake.in \
+        --replace-fail 'opt/@PROJECT_NAME@/extra_cmake' 'share/extra_cmake'
+
+      cat >> CMakeLists.txt <<'EOF'
+      if(NOT ''${LIB_VER} VERSION_EQUAL "${version}")
+        message(FATAL_ERROR "Mismatch in ${pname} version (Nix: ${version}, upstream: ''${LIB_VER}). Fix this in overrides.nix.")
+      endif()
+      EOF
+    '';
   });
 
   # Many ROS packages claim to have a dependency on Boost signals when they

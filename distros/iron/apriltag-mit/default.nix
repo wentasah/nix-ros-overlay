@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, boost, clang, cmake, eigen, opencv }:
 buildRosPackage {
   pname = "ros-iron-apriltag-mit";
-  version = "1.2.2-r1";
+  version = "2.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/apriltag_mit-release/archive/release/iron/apriltag_mit/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "a57fd69d037c713ab120ca63ed05dfe8d5a00bfe88bacdb5f2b5bb894d8187cb";
+    url = "https://github.com/ros2-gbp/apriltag_mit-release/archive/release/iron/apriltag_mit/2.0.0-1.tar.gz";
+    name = "2.0.0-1.tar.gz";
+    sha256 = "54665f0fd4a78fb376c6b25446ca99d3cc3d05073c069c855a63294562ce69c0";
   };
 
   buildType = "cmake";
