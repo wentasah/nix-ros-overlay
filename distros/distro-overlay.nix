@@ -72,6 +72,9 @@ let
   overrides = rosSelf: rosSuper: with rosSelf.lib; {
     # ROS package overrides/fixups
 
+    inherit (self.python3Packages) eigenpy;
+    inherit (self) hpp-fcl pinocchio;
+
     gazebo-ros = rosSuper.gazebo-ros.overrideAttrs ({ ... }:{
       setupHook = ./gazebo-ros-setup-hook.sh;
     });
