@@ -87,6 +87,18 @@ let
       '';
     });
 
+    lanelet2-maps = rosSuper.lanelet2-maps.overrideAttrs ({
+      postPatch ? "", version, ...
+    }: {
+      # This package doesn't provide any library, but exports one. And cmake of its users complains:
+      # Imported target "lanelet2_maps::lanelet2_maps" includes non-existent path
+      # "/nix/store/...-ros-jazzy-lanelet2-maps-1.2.1-r1/include"
+      postPatch = postPatch + ''
+        sed -i -e '/^mrt_add_library/,/^ *)/d' CMakeLists.txt
+        cat CMakeLists.txt
+      '';
+    });
+
     mavlink = rosSuper.mavlink.overrideAttrs ({
       postPatch ? "", ...
     }: {
