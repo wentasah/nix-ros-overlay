@@ -1,4 +1,6 @@
 { stdenv, lib, python3Packages, rosDistro, rosVersion }:
+let
+  updateAttrsForRos = (
 { buildType ? "catkin"
   # Too difficult to fix all the problems with the tests in each package
 , doCheck ? false
@@ -17,8 +19,7 @@
 , ...
 }@args:
 
-(if buildType == "ament_python" then python3Packages.buildPythonPackage
-else stdenv.mkDerivation) (args // {
+args // {
   inherit doCheck dontWrapQtApps separateDebugInfo;
 
   # Disable warnings that cause "Log limit exceeded" errors on Hydra in lots of
@@ -67,4 +68,19 @@ else stdenv.mkDerivation) (args // {
       wrapPythonProgramsIn "$libpkgdir" "$out $pythonPath"
     done
   '';
-})
+});
+  buildRosPackage = fn:
+    let
+      buildType = (fn {}).buildType or "catkin";
+    in
+      if buildType == "ament_python"
+      then
+        # buildPythonPackage does not support finalAttrs
+        python3Packages.buildPythonPackage (updateAttrsForRos (fn {}))
+      else
+        (stdenv.mkDerivation fn).overrideAttrs updateAttrsForRos;
+in
+fnOrAttrs:
+if builtins.isFunction fnOrAttrs
+then buildRosPackage fnOrAttrs
+else buildRosPackage (_: fnOrAttrs)
