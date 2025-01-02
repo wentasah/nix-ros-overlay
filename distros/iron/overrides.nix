@@ -23,19 +23,6 @@ in with lib; {
     fetchgitArgs.hash = "sha256-nLBnxPbPKiLCFF2TJgD/eJKJJfzktVBW3SRW2m3WK/s=";
   };
 
-  fastrtps = rosSuper.fastrtps.overrideAttrs ({
-    patches ? [], nativeBuildInputs ? [], buildInputs ? [], ...
-  }: {
-    patches = patches ++ [
-      (self.fetchpatch {
-        url = "https://github.com/christophebedard/Fast-DDS/commit/6a66ccebe51122ce6c32e448518d594377e9ab10.patch";
-        hash = "sha256-96nGJEdFzkroUi/1933iFLgIsyBd4lKdTwCyY8m0XJc=";
-      })
-    ];
-    nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
-    buildInputs = buildInputs ++ [ self.lttng-ust ];
-  });
-
   gazebo = self.gazebo_11;
 
   google-benchmark-vendor = lib.patchExternalProjectGit rosSuper.google-benchmark-vendor {
