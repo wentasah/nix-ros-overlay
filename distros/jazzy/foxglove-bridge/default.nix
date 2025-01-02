@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, ament-lint-auto, asio, nlohmann_json, openssl, rclcpp, rclcpp-components, resource-retriever, ros-environment, rosgraph-msgs, rosx-introspection, std-msgs, std-srvs, websocketpp, zlib }:
 buildRosPackage {
   pname = "ros-jazzy-foxglove-bridge";
-  version = "0.8.0-r1";
+  version = "0.8.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/foxglove_bridge-release/archive/release/jazzy/foxglove_bridge/0.8.0-1.tar.gz";
-    name = "0.8.0-1.tar.gz";
-    sha256 = "02bb93f8766363311f2bc8cfcf0290041d38c91339fc7b0522dee91de2f7d022";
+    url = "https://github.com/ros2-gbp/foxglove_bridge-release/archive/release/jazzy/foxglove_bridge/0.8.2-1.tar.gz";
+    name = "0.8.2-1.tar.gz";
+    sha256 = "4c93261dad4a6d0a5f8f6da51416a0042a0c24d88184b81a208fc762ba7ef6f1";
   };
 
   buildType = "ament_cmake";

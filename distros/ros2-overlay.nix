@@ -1,6 +1,10 @@
 self:
 rosSelf: rosSuper: with rosSelf.lib; {
 
+  # TODO: remove once https://github.com/ros/rosdistro/pull/43895 is merged
+  python = rosSelf.python3;
+  pythonPackages = rosSelf.python.pkgs;
+
   ament-cmake-core = rosSuper.ament-cmake-core.overrideAttrs ({
     propagatedBuildInputs ? [],
     nativeBuildInputs ? [], ...
@@ -28,6 +32,22 @@ rosSelf: rosSuper: with rosSelf.lib; {
         --replace-fail '/opt/@PROJECT_NAME@' ""
       substituteInPlace cmake/templates/vendor_package_cmake_prefix.dsv.in \
         --replace-fail 'opt/@PROJECT_NAME@' ""
+    '';
+  });
+
+  backward-ros = rosSuper.backward-ros.overrideAttrs ({ postPatch ? "", ... }: {
+
+    # The `--as-needed` flag directs the linker to search all libraries specified
+    # during its invocation to identify which ones contain the symbols required by the binary.
+    #
+    # Due to the nixpkgs binutils wrapper and the reliance to `propagatedBuildInputs`,
+    # the overlay often propagates an excessive number of libraries.
+    #
+    # As a result, the `--as-needed` flag can significantly increase the time the linker
+    # spends searching through these libraries, potentially causing builds to fail to complete.
+
+    postPatch = postPatch + ''
+     sed '/-Wl,--as-needed/d' -i cmake/BackwardConfigAment.cmake
     '';
   });
 
@@ -259,4 +279,11 @@ rosSelf: rosSuper: with rosSelf.lib; {
       broken = true;
     };
   });
+
+  zmqpp-vendor = patchExternalProjectGit rosSuper.zmqpp-vendor {
+    url = "https://github.com/zeromq/zmqpp.git";
+    originalRev = "master";
+    rev = "da73a138f290274cfd604b3f05a908956390a66e";
+    fetchgitArgs.hash = "sha256-UZyJpBEOf/Ys+i2tiBTjv4PlM5fHjjNLWuGhpgcmYyM=";
+  };
 }

@@ -28,12 +28,6 @@ let
     python3 = pythonOverridesFor rosSelf.rosPython or self.python3;
     python3Packages = rosSelf.python3.pkgs;
 
-    # While `python` in Nixpkgs is typically Python 2, this overlay has
-    # historically set it to Python 3 during the ROS transition. Keep it that
-    # way for compatibility.
-    python = rosSelf.python3;
-    pythonPackages = rosSelf.python.pkgs;
-
     boost = self.boost.override {
       python = rosSelf.python;
       enablePython = true;
@@ -152,7 +146,10 @@ let
       ];
     });
 
-    plotjuggler = rosSuper.plotjuggler.overrideAttrs ({
+    plotjuggler = (rosSuper.plotjuggler.override {
+      # plotjuggler is not yet compatible with newer versions
+      protobuf = self.protobuf_23;
+    }).overrideAttrs ({
       nativeBuildInputs ? [], ...
     }: {
       dontWrapQtApps = false;

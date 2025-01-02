@@ -268,6 +268,10 @@ self: super: {
 
  camera-info-manager = self.callPackage ./camera-info-manager {};
 
+ camera-info-manager-py = self.callPackage ./camera-info-manager-py {};
+
+ camera-ros = self.callPackage ./camera-ros {};
+
  can-msgs = self.callPackage ./can-msgs {};
 
  canopen = self.callPackage ./canopen {};
@@ -398,6 +402,8 @@ self: super: {
 
  dual-arm-panda-moveit-config = self.callPackage ./dual-arm-panda-moveit-config {};
 
+ dual-laser-merger = self.callPackage ./dual-laser-merger {};
+
  dummy-map-server = self.callPackage ./dummy-map-server {};
 
  dummy-robot-bringup = self.callPackage ./dummy-robot-bringup {};
@@ -499,6 +505,8 @@ self: super: {
  eigen-stl-containers = self.callPackage ./eigen-stl-containers {};
 
  eigenpy = self.callPackage ./eigenpy {};
+
+ eiquadprog = self.callPackage ./eiquadprog {};
 
  event-camera-codecs = self.callPackage ./event-camera-codecs {};
 
@@ -652,12 +660,6 @@ self: super: {
 
  game-controller-spl-interfaces = self.callPackage ./game-controller-spl-interfaces {};
 
- gc-spl = self.callPackage ./gc-spl {};
-
- gc-spl-2022 = self.callPackage ./gc-spl-2022 {};
-
- gc-spl-interfaces = self.callPackage ./gc-spl-interfaces {};
-
  generate-parameter-library = self.callPackage ./generate-parameter-library {};
 
  generate-parameter-library-example = self.callPackage ./generate-parameter-library-example {};
@@ -683,6 +685,8 @@ self: super: {
  gmock-vendor = self.callPackage ./gmock-vendor {};
 
  google-benchmark-vendor = self.callPackage ./google-benchmark-vendor {};
+
+ gpio-controllers = self.callPackage ./gpio-controllers {};
 
  gps-msgs = self.callPackage ./gps-msgs {};
 
@@ -751,6 +755,8 @@ self: super: {
  hardware-interface-testing = self.callPackage ./hardware-interface-testing {};
 
  hash-library-vendor = self.callPackage ./hash-library-vendor {};
+
+ hatchbed-common = self.callPackage ./hatchbed-common {};
 
  heaphook = self.callPackage ./heaphook {};
 
@@ -980,6 +986,8 @@ self: super: {
 
  linux-isolate-process = self.callPackage ./linux-isolate-process {};
 
+ log-view = self.callPackage ./log-view {};
+
  logging-demo = self.callPackage ./logging-demo {};
 
  lttngpy = self.callPackage ./lttngpy {};
@@ -997,6 +1005,8 @@ self: super: {
  marine-acoustic-msgs = self.callPackage ./marine-acoustic-msgs {};
 
  marine-sensor-msgs = self.callPackage ./marine-sensor-msgs {};
+
+ marker-msgs = self.callPackage ./marker-msgs {};
 
  marti-can-msgs = self.callPackage ./marti-can-msgs {};
 
@@ -1025,6 +1035,8 @@ self: super: {
  mavros-msgs = self.callPackage ./mavros-msgs {};
 
  mcap-vendor = self.callPackage ./mcap-vendor {};
+
+ mecanum-drive-controller = self.callPackage ./mecanum-drive-controller {};
 
  menge-vendor = self.callPackage ./menge-vendor {};
 
@@ -1550,14 +1562,6 @@ self: super: {
 
  rcdiscover = self.callPackage ./rcdiscover {};
 
- rcgcd-spl-14 = self.callPackage ./rcgcd-spl-14 {};
-
- rcgcd-spl-14-conversion = self.callPackage ./rcgcd-spl-14-conversion {};
-
- rcgcrd-spl-4 = self.callPackage ./rcgcrd-spl-4 {};
-
- rcgcrd-spl-4-conversion = self.callPackage ./rcgcrd-spl-4-conversion {};
-
  rcl = self.callPackage ./rcl {};
 
  rcl-action = self.callPackage ./rcl-action {};
@@ -1628,8 +1632,6 @@ self: super: {
 
  rmf-charger-msgs = self.callPackage ./rmf-charger-msgs {};
 
- rmf-charging-schedule = self.callPackage ./rmf-charging-schedule {};
-
  rmf-cmake-uncrustify = self.callPackage ./rmf-cmake-uncrustify {};
 
  rmf-demos = self.callPackage ./rmf-demos {};
@@ -1665,6 +1667,8 @@ self: super: {
  rmf-obstacle-msgs = self.callPackage ./rmf-obstacle-msgs {};
 
  rmf-reservation-msgs = self.callPackage ./rmf-reservation-msgs {};
+
+ rmf-reservation-node = self.callPackage ./rmf-reservation-node {};
 
  rmf-robot-sim-common = self.callPackage ./rmf-robot-sim-common {};
 
@@ -1886,6 +1890,8 @@ self: super: {
 
  rosbag2-tests = self.callPackage ./rosbag2-tests {};
 
+ rosbag2-to-video = self.callPackage ./rosbag2-to-video {};
+
  rosbag2-transport = self.callPackage ./rosbag2-transport {};
 
  rosbridge-library = self.callPackage ./rosbridge-library {};
@@ -2083,6 +2089,8 @@ self: super: {
  septentrio-gnss-driver = self.callPackage ./septentrio-gnss-driver {};
 
  serial-driver = self.callPackage ./serial-driver {};
+
+ service-load-balancing = self.callPackage ./service-load-balancing {};
 
  service-msgs = self.callPackage ./service-msgs {};
 
@@ -2336,7 +2344,27 @@ self: super: {
 
  turtlesim-msgs = self.callPackage ./turtlesim-msgs {};
 
+ tuw-airskin-msgs = self.callPackage ./tuw-airskin-msgs {};
+
+ tuw-geo-msgs = self.callPackage ./tuw-geo-msgs {};
+
  tuw-geometry = self.callPackage ./tuw-geometry {};
+
+ tuw-geometry-msgs = self.callPackage ./tuw-geometry-msgs {};
+
+ tuw-graph-msgs = self.callPackage ./tuw-graph-msgs {};
+
+ tuw-msgs = self.callPackage ./tuw-msgs {};
+
+ tuw-multi-robot-msgs = self.callPackage ./tuw-multi-robot-msgs {};
+
+ tuw-nav-msgs = self.callPackage ./tuw-nav-msgs {};
+
+ tuw-object-map-msgs = self.callPackage ./tuw-object-map-msgs {};
+
+ tuw-object-msgs = self.callPackage ./tuw-object-msgs {};
+
+ tuw-std-msgs = self.callPackage ./tuw-std-msgs {};
 
  tvm-vendor = self.callPackage ./tvm-vendor {};
 
@@ -2391,6 +2419,8 @@ self: super: {
  ur-msgs = self.callPackage ./ur-msgs {};
 
  ur-robot-driver = self.callPackage ./ur-robot-driver {};
+
+ ur-simulation-gz = self.callPackage ./ur-simulation-gz {};
 
  urdf = self.callPackage ./urdf {};
 
@@ -2487,6 +2517,14 @@ self: super: {
  xacro = self.callPackage ./xacro {};
 
  yaml-cpp-vendor = self.callPackage ./yaml-cpp-vendor {};
+
+ yasmin = self.callPackage ./yasmin {};
+
+ yasmin-demos = self.callPackage ./yasmin-demos {};
+
+ yasmin-msgs = self.callPackage ./yasmin-msgs {};
+
+ yasmin-ros = self.callPackage ./yasmin-ros {};
 
  zbar-ros = self.callPackage ./zbar-ros {};
 

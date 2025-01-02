@@ -26,6 +26,8 @@ self: super: {
 
  adaptive-component = self.callPackage ./adaptive-component {};
 
+ adi-3dtof-image-stitching = self.callPackage ./adi-3dtof-image-stitching {};
+
  adi-tmcl = self.callPackage ./adi-tmcl {};
 
  admittance-controller = self.callPackage ./admittance-controller {};
@@ -296,7 +298,11 @@ self: super: {
 
  autoware-control-msgs = self.callPackage ./autoware-control-msgs {};
 
+ autoware-internal-debug-msgs = self.callPackage ./autoware-internal-debug-msgs {};
+
  autoware-internal-msgs = self.callPackage ./autoware-internal-msgs {};
+
+ autoware-internal-perception-msgs = self.callPackage ./autoware-internal-perception-msgs {};
 
  autoware-lanelet2-extension = self.callPackage ./autoware-lanelet2-extension {};
 
@@ -327,6 +333,12 @@ self: super: {
  aws-robomaker-small-warehouse-world = self.callPackage ./aws-robomaker-small-warehouse-world {};
 
  aws-sdk-cpp-vendor = self.callPackage ./aws-sdk-cpp-vendor {};
+
+ axis-camera = self.callPackage ./axis-camera {};
+
+ axis-description = self.callPackage ./axis-description {};
+
+ axis-msgs = self.callPackage ./axis-msgs {};
 
  backward-ros = self.callPackage ./backward-ros {};
 
@@ -377,6 +389,8 @@ self: super: {
  camera-calibration-parsers = self.callPackage ./camera-calibration-parsers {};
 
  camera-info-manager = self.callPackage ./camera-info-manager {};
+
+ camera-info-manager-py = self.callPackage ./camera-info-manager-py {};
 
  camera-ros = self.callPackage ./camera-ros {};
 
@@ -456,13 +470,13 @@ self: super: {
 
  clearpath-mecanum-drive-controller = self.callPackage ./clearpath-mecanum-drive-controller {};
 
+ clearpath-motor-msgs = self.callPackage ./clearpath-motor-msgs {};
+
  clearpath-mounts-description = self.callPackage ./clearpath-mounts-description {};
 
  clearpath-msgs = self.callPackage ./clearpath-msgs {};
 
  clearpath-nav2-demos = self.callPackage ./clearpath-nav2-demos {};
-
- clearpath-platform = self.callPackage ./clearpath-platform {};
 
  clearpath-platform-description = self.callPackage ./clearpath-platform-description {};
 
@@ -682,6 +696,8 @@ self: super: {
 
  ds-dbw-msgs = self.callPackage ./ds-dbw-msgs {};
 
+ dual-laser-merger = self.callPackage ./dual-laser-merger {};
+
  dummy-map-server = self.callPackage ./dummy-map-server {};
 
  dummy-robot-bringup = self.callPackage ./dummy-robot-bringup {};
@@ -792,6 +808,8 @@ self: super: {
 
  eigenpy = self.callPackage ./eigenpy {};
 
+ eiquadprog = self.callPackage ./eiquadprog {};
+
  ess-imu-driver2 = self.callPackage ./ess-imu-driver2 {};
 
  etsi-its-cam-coding = self.callPackage ./etsi-its-cam-coding {};
@@ -822,6 +840,12 @@ self: super: {
 
  etsi-its-denm-msgs = self.callPackage ./etsi-its-denm-msgs {};
 
+ etsi-its-mapem-ts-coding = self.callPackage ./etsi-its-mapem-ts-coding {};
+
+ etsi-its-mapem-ts-conversion = self.callPackage ./etsi-its-mapem-ts-conversion {};
+
+ etsi-its-mapem-ts-msgs = self.callPackage ./etsi-its-mapem-ts-msgs {};
+
  etsi-its-messages = self.callPackage ./etsi-its-messages {};
 
  etsi-its-msgs = self.callPackage ./etsi-its-msgs {};
@@ -831,6 +855,12 @@ self: super: {
  etsi-its-primitives-conversion = self.callPackage ./etsi-its-primitives-conversion {};
 
  etsi-its-rviz-plugins = self.callPackage ./etsi-its-rviz-plugins {};
+
+ etsi-its-spatem-ts-coding = self.callPackage ./etsi-its-spatem-ts-coding {};
+
+ etsi-its-spatem-ts-conversion = self.callPackage ./etsi-its-spatem-ts-conversion {};
+
+ etsi-its-spatem-ts-msgs = self.callPackage ./etsi-its-spatem-ts-msgs {};
 
  etsi-its-vam-ts-coding = self.callPackage ./etsi-its-vam-ts-coding {};
 
@@ -1113,6 +1143,8 @@ self: super: {
  hardware-interface-testing = self.callPackage ./hardware-interface-testing {};
 
  hash-library-vendor = self.callPackage ./hash-library-vendor {};
+
+ hatchbed-common = self.callPackage ./hatchbed-common {};
 
  heaphook = self.callPackage ./heaphook {};
 
@@ -2194,6 +2226,8 @@ self: super: {
 
  position-controllers = self.callPackage ./position-controllers {};
 
+ proto2ros = self.callPackage ./proto2ros {};
+
  proxsuite = self.callPackage ./proxsuite {};
 
  psdk-interfaces = self.callPackage ./psdk-interfaces {};
@@ -2659,6 +2693,8 @@ self: super: {
  rosbag2-test-common = self.callPackage ./rosbag2-test-common {};
 
  rosbag2-tests = self.callPackage ./rosbag2-tests {};
+
+ rosbag2-to-video = self.callPackage ./rosbag2-to-video {};
 
  rosbag2-transport = self.callPackage ./rosbag2-transport {};
 
@@ -3278,9 +3314,13 @@ self: super: {
 
  tuw-airskin-msgs = self.callPackage ./tuw-airskin-msgs {};
 
+ tuw-geo-msgs = self.callPackage ./tuw-geo-msgs {};
+
  tuw-geometry = self.callPackage ./tuw-geometry {};
 
  tuw-geometry-msgs = self.callPackage ./tuw-geometry-msgs {};
+
+ tuw-graph-msgs = self.callPackage ./tuw-graph-msgs {};
 
  tuw-msgs = self.callPackage ./tuw-msgs {};
 
@@ -3288,7 +3328,11 @@ self: super: {
 
  tuw-nav-msgs = self.callPackage ./tuw-nav-msgs {};
 
+ tuw-object-map-msgs = self.callPackage ./tuw-object-map-msgs {};
+
  tuw-object-msgs = self.callPackage ./tuw-object-msgs {};
+
+ tuw-std-msgs = self.callPackage ./tuw-std-msgs {};
 
  tvm-vendor = self.callPackage ./tvm-vendor {};
 
@@ -3345,6 +3389,8 @@ self: super: {
  ur-msgs = self.callPackage ./ur-msgs {};
 
  ur-robot-driver = self.callPackage ./ur-robot-driver {};
+
+ ur-simulation-gz = self.callPackage ./ur-simulation-gz {};
 
  urdf = self.callPackage ./urdf {};
 
@@ -3470,7 +3516,17 @@ self: super: {
 
  yaml-cpp-vendor = self.callPackage ./yaml-cpp-vendor {};
 
+ yasmin = self.callPackage ./yasmin {};
+
+ yasmin-demos = self.callPackage ./yasmin-demos {};
+
+ yasmin-msgs = self.callPackage ./yasmin-msgs {};
+
+ yasmin-ros = self.callPackage ./yasmin-ros {};
+
  zbar-ros = self.callPackage ./zbar-ros {};
+
+ zed-msgs = self.callPackage ./zed-msgs {};
 
  zenoh-bridge-dds = self.callPackage ./zenoh-bridge-dds {};
 

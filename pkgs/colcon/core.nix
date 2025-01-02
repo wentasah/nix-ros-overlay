@@ -29,11 +29,11 @@ let
 
   package = buildPythonPackage rec {
     pname = "colcon-core";
-    version = "0.18.3";
+    version = "0.18.4";
 
     src = fetchPypi {
       inherit pname version;
-      hash = "sha256-iz3PCxQLKFGpFpxgs+0sp4puSP7I7Oze76KHpnFfLhc=";
+      hash = "sha256-Oewm3WbVxppfQDEjnJMlgGn2H6Pfb4h0SjcAc9JpGh0=";
     };
 
     propagatedBuildInputs = [
@@ -70,7 +70,7 @@ let
     };
 
     meta = with lib; {
-      description = "Command line tool to build sets of software packages.";
+      description = "Command line tool to build sets of software packages";
       homepage = "https://colcon.readthedocs.io";
       license = licenses.asl20;
       maintainers = with maintainers; [ lopsided98 ];

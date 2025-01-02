@@ -48,8 +48,8 @@ in {
   };
 
   gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor {
-    version = "5.6.0";
-    hash = "sha256-vM+/V2F+Nr/LReqcMAmAbgAyaph/vMZVb0BO0MAUp6I=";
+    version = "5.7.0";
+    hash = "sha256-RBu49rxjzo4mc7ma4WpabUxUT7cvabJRinR98it10r4=";
   }).overrideAttrs ({
     nativeBuildInputs ? [], ...
   }: {
@@ -252,8 +252,8 @@ in {
   };
 
   sdformat-vendor = lib.patchGzAmentVendorGit rosSuper.sdformat-vendor {
-    version = "14.5.0";
-    hash = "sha256-nGBLnQP0TTKDVbYGyx23Fcs79UCJveajsll2LvyLJwQ=";
+    version = "14.6.0";
+    hash = "sha256-rRX8A6jZWR8iz4oMqWtG2ZP1XnpDsUnbktlF8q9z47M=";
   };
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({

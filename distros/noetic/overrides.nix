@@ -1,7 +1,7 @@
 # Top level package set
 self:
 # Distro package set
-rosSelf: rosSuper: let 
+rosSelf: rosSuper: let
   lib = rosSelf.lib;
 in {
   angles = rosSuper.angles.overrideAttrs ({
@@ -185,6 +185,8 @@ in rosSuper.lib.genAttrs [
   "dual-quaternions"
   "dynamixel-sdk"
   "fkie-master-discovery"
+  "gazebo-plugins"
+  "gazebo-ros"
   "gps-common"
   "image-cb-detector"
   "joint-trajectory-action-tools"
@@ -192,6 +194,7 @@ in rosSuper.lib.genAttrs [
   "jsk-network-tools"
   "laser-geometry"
   "mavros"
+  "mbf-abstract-nav"
   "pr2-computer-monitor"
   "pr2-controller-manager"
   "pr2-power-board"
@@ -203,15 +206,28 @@ in rosSuper.lib.genAttrs [
   "rosserial-python"
   "rosserial-xbee"
   "route-network"
+  "rqt-action"
   "rqt-bag"
+  "rqt-bag-plugins"
+  "rqt-dep"
   "rqt-graph"
   "rqt-gui"
   "rqt-gui-py"
+  "rqt-launch"
   "rqt-msg"
   "rqt-plot"
   "rqt-py-common"
+  "rqt-py-console"
+  "rqt-pose-view"
+  "rqt-publisher"
   "rqt-robot-steering"
+  "rqt-service-caller"
   "rqt-shell"
+  "rqt-srv"
+  "rqt-top"
+  "rqt-topic"
+  "rqt-nav-view"
+  "rviz"
   "turtlebot3-autorace-camera"
   "turtlebot3-example"
   "turtlebot3-teleop"
