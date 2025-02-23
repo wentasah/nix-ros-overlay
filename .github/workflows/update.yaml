@@ -38,7 +38,8 @@ jobs:
               echo "password=${SUPERFLORE_GITHUB_TOKEN}"
             }; f'
           pwd
-          ls -l
+          ls -lR maintainers
+          ./maintainers/scripts/update-ament-vendor.sh -1
           superflore-gen-nix --dry-run \
             --tar-archive-dir "${{ runner.temp }}/tar" \
             --output-repository-path . \
