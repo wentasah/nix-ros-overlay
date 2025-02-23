@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash --pure
+#! nix-shell -i bash --pure --keep NIX_PATH
 #! nix-shell -p nix-eval-jobs jq nix findutils coreutils bash moreutils
 
 # Scrip to generate/update vendored-source.json files needed by
