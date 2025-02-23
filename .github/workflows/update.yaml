@@ -8,13 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: develop
       - uses: cachix/install-nix-action@v22
-      - uses: cachix/cachix-action@v12
+      - uses: cachix/cachix-action@v15
         with:
-          name: ros
-          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+          name: wentasah
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - name: Cache tars
+        uses: actions/cache@v4
+        with:
+          key: tars-${{ github.run_id }} # Use run_id to update the cache
+          restore-keys: tars             # Use the latest cache (without run_id)
+          path: |
+            ~/.ros/tar
       - name: Install Superflore
         run: |
           nix-env -f . -iA python3Packages.rosdep superflore
@@ -34,7 +39,7 @@ jobs:
               echo "password=${SUPERFLORE_GITHUB_TOKEN}"
             }; f'
           superflore-gen-nix --dry-run \
-            --tar-archive-dir "${{ runner.temp }}/tar" \
+            --tar-archive-dir ~/.ros/tar \
             --output-repository-path . \
             --upstream-branch develop \
             --all
