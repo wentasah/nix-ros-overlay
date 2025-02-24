@@ -39,7 +39,7 @@ jobs:
             --tar-archive-dir "${{ runner.temp }}/tar" \
             --output-repository-path . \
             --upstream-branch develop \
-            --ros-distro jazzy --only gz_math_vendor
+            --ros-distro jazzy
       - name: Update ament_vendor info
         run: |
           NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
