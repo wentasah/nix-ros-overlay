@@ -35,13 +35,16 @@ jobs:
               echo "username=lopsided98"
               echo "password=${SUPERFLORE_GITHUB_TOKEN}"
             }; f'
-          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
           superflore-gen-nix --dry-run \
             --tar-archive-dir "${{ runner.temp }}/tar" \
             --output-repository-path . \
             --upstream-branch develop \
             --ros-distro jazzy --only gz_math_vendor
+      - name: Update ament_vendor info
+        run: |
           NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
           git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
+      - name: Create PR
+        run: |
           superflore-gen-nix --pr-only \
             --output-repository-path .
