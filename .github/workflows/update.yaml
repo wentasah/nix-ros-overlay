@@ -46,10 +46,10 @@ jobs:
             --output-repository-path . \
             --upstream-branch develop \
             --ros-distro jazzy
-      - name: Update ament_vendor info
-        run: |
-          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
-          git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
+#       - name: Update ament_vendor info
+#         run: |
+#           NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
+#           git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
       - name: Create PR
         run: |
           superflore-gen-nix --pr-only \
