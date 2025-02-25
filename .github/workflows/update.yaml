@@ -42,10 +42,13 @@ jobs:
             --output-repository-path . \
             --upstream-branch develop \
             --ros-distro jazzy
-#       - name: Update ament_vendor info
-#         run: |
-#           NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
-#           git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
+      - name: Update ament_vendor info
+        run: |
+          # permittedInsecurePackages needed for updating of some gz-*-vendor packages
+          mkdir -p ~/.config/nixpkgs
+          echo '{ permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ]; }' > ~/.config/nixpkgs/config.nix
+          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
+          git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
       - name: Create PR
         env:
           # Don't use secrets.GITHUB_TOKEN because it prevents the PR from

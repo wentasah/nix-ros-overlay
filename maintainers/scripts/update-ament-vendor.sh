@@ -24,6 +24,8 @@ nix-eval-jobs --expr '(import ./. {}).rosPackages' |
     jq -r 'select(.inputDrvs|objects|keys|any(contains("ament-cmake-vendor-package"))).attr' |
     # In serial execution, wait for the complete package list to be ready before continuing
     if [[ $MAX_PROCS = 1 ]]; then sponge; else cat; fi |
-    # Try (re)generating all vendored-source.json files, warn (but not fail) about packages without updateAmentVendor
-    xargs --verbose --max-procs="$MAX_PROCS" -IATTR \
-          bash -xc 'echo =================================; $(nix-build --expr "with import ./. {}; rosPackages.ATTR.updateAmentVendor or (writeShellScript \"update-error\" \"echo Warning: ATTR cannot be updated\")")'
+    # Try to (re)generate all vendored-source.json files. Warn (but
+    # not fail) about packages without updateAmentVendor and fail if
+    # updateAmentVendor fails.
+    xargs --verbose --max-procs="$MAX_PROCS" \
+          bash -c '$(nix-build --expr "with import ./. {}; rosPackages.$0.updateAmentVendor or (builtins.warn \"$0 cannot be updated\" (writeShellScript \"nop\" \"\"))")'
