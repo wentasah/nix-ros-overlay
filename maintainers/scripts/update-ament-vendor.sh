@@ -26,4 +26,4 @@ nix-eval-jobs --expr '(import ./. {}).rosPackages' |
     if [[ $MAX_PROCS = 1 ]]; then sponge; else cat; fi |
     # Try (re)generating all vendored-source.json files, warn (but not fail) about packages without updateAmentVendor
     xargs --verbose --max-procs="$MAX_PROCS" -IATTR \
-          bash -xc '$(nix-build --expr "with import ./. {}; rosPackages.ATTR.updateAmentVendor or (writeShellScript \"update-error\" \"echo Warning: ATTR cannot be updated\")")'
+          bash -xc 'echo =================================; $(nix-build --expr "with import ./. {}; rosPackages.ATTR.updateAmentVendor or (writeShellScript \"update-error\" \"echo Warning: ATTR cannot be updated\")")'
