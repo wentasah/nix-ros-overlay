@@ -24,10 +24,6 @@ jobs:
           nix-env -f . -iA python3Packages.rosdep superflore
       - name: Update overlay
         env:
-          # Don't use secrets.GITHUB_TOKEN because it prevents the PR from
-          # triggering a build
-          # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#about-workflow-events
-          SUPERFLORE_GITHUB_TOKEN: ${{ secrets.SUPERFLORE_GITHUB_TOKEN }}
           ROS_OS_OVERRIDE: nixos
           ROSDEP_SOURCE_PATH: rosdep-sources
         run: |
@@ -51,6 +47,11 @@ jobs:
 #           NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
 #           git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
       - name: Create PR
+        env:
+          # Don't use secrets.GITHUB_TOKEN because it prevents the PR from
+          # triggering a build
+          # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#about-workflow-events
+          SUPERFLORE_GITHUB_TOKEN: ${{ secrets.SUPERFLORE_GITHUB_TOKEN }}
         run: |
           superflore-gen-nix --pr-only \
             --output-repository-path .
