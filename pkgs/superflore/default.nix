@@ -8,10 +8,11 @@ buildPythonPackage rec {
   version = "unstable-2024-03-22";
 
   src = fetchFromGitHub {
-    owner = "lopsided98";
-    repo = pname;
-    rev = "f3b2aceae47ced2d0a0af868cd4cce2b6de5effa";
-    hash = "sha256-YRgzRuMvG7AXHkTFO87GLBobaQArO6gxpacifDq1CPo=";
+    owner = "wentasah";
+    repo = "superflore";
+    rev = "21bf33dbf9eb0e3a703f60fb0a09751918e3aae6";
+    hash = "sha256-WkV+kquzrhCYLZuSwr2iNqVJMoyOTE1n+OKPChnmxQ0=";
+    # date = "2025-02-25T22:55:55+01:00";
   };
 
   propagatedBuildInputs = [
