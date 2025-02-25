@@ -27,5 +27,5 @@ nix-eval-jobs --expr '(import ./. {}).rosPackages' |
     # Try to (re)generate all vendored-source.json files. Warn (but
     # not fail) about packages without updateAmentVendor and fail if
     # updateAmentVendor fails.
-    xargs --verbose --max-procs="$MAX_PROCS" \
+    xargs --verbose --max-procs="$MAX_PROCS" -n1 \
           bash -c '$(nix-build --expr "with import ./. {}; rosPackages.$0.updateAmentVendor or (builtins.warn \"$0 cannot be updated\" (writeShellScript \"nop\" \"\"))")'
