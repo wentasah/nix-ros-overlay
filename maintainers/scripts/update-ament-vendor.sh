@@ -1,6 +1,6 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash --pure --keep NIX_PATH
-#! nix-shell -p nix-eval-jobs jq nix findutils coreutils bash moreutils
+#! nix-shell -p nix-eval-jobs jq nix findutils coreutils bash moreutils cachix
 
 # Scrip to generate/update vendored-source.json files needed by
 # patchAmentVendorGit.
@@ -28,4 +28,4 @@ nix-eval-jobs --expr '(import ./. {}).rosPackages' |
     # not fail) about packages without updateAmentVendor and fail if
     # updateAmentVendor fails.
     xargs --verbose --max-procs="$MAX_PROCS" -n1 \
-          bash -c '$(nix-build --expr "with import ./. {}; rosPackages.$0.updateAmentVendor or (builtins.warn \"$0 cannot be updated\" (writeShellScript \"nop\" \"\"))")'
+          bash -c '$(nix-build --expr "with import ./. {}; rosPackages.$0.updateAmentVendor or (builtins.warn \"$0 cannot be updated\" (writeShellScript \"nop\" \"\"))"|tee -a to-upload)'
