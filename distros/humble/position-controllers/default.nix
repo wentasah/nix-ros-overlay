@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, controller-manager, forward-command-controller, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, ros2-control-test-assets }:
 buildRosPackage {
   pname = "ros-humble-position-controllers";
-  version = "2.41.0-r1";
+  version = "2.42.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/position_controllers/2.41.0-1.tar.gz";
-    name = "2.41.0-1.tar.gz";
-    sha256 = "cf2f6dff9cde4d8336cb42c1db732d00200a09bb45f94daeea68c8f5a378d7e8";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/position_controllers/2.42.1-1.tar.gz";
+    name = "2.42.1-1.tar.gz";
+    sha256 = "0dcde352d51d6dac7289b6f7b66581f9c60310b0d440bf22a746174c551a2499";
   };
 
   buildType = "ament_cmake";

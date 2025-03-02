@@ -186,8 +186,6 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
- automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
-
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
  automotive-navigation-msgs = self.callPackage ./automotive-navigation-msgs {};
@@ -269,6 +267,8 @@ self: super: {
  bondpy = self.callPackage ./bondpy {};
 
  boost-geometry-util = self.callPackage ./boost-geometry-util {};
+
+ boost-sml-vendor = self.callPackage ./boost-sml-vendor {};
 
  builtin-interfaces = self.callPackage ./builtin-interfaces {};
 
@@ -430,6 +430,8 @@ self: super: {
 
  dynamixel-hardware = self.callPackage ./dynamixel-hardware {};
 
+ dynamixel-interfaces = self.callPackage ./dynamixel-interfaces {};
+
  dynamixel-sdk = self.callPackage ./dynamixel-sdk {};
 
  dynamixel-sdk-custom-interfaces = self.callPackage ./dynamixel-sdk-custom-interfaces {};
@@ -584,7 +586,7 @@ self: super: {
 
  fastcdr = self.callPackage ./fastcdr {};
 
- fastrtps = self.callPackage ./fastrtps {};
+ fastdds = self.callPackage ./fastdds {};
 
  fastrtps-cmake-module = self.callPackage ./fastrtps-cmake-module {};
 
@@ -779,6 +781,8 @@ self: super: {
  hatchbed-common = self.callPackage ./hatchbed-common {};
 
  heaphook = self.callPackage ./heaphook {};
+
+ hebi-cpp-api = self.callPackage ./hebi-cpp-api {};
 
  hls-lfcd-lds-driver = self.callPackage ./hls-lfcd-lds-driver {};
 
@@ -1102,6 +1106,8 @@ self: super: {
 
  mola-demos = self.callPackage ./mola-demos {};
 
+ mola-gnss-to-markers = self.callPackage ./mola-gnss-to-markers {};
+
  mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
 
  mola-input-euroc-dataset = self.callPackage ./mola-input-euroc-dataset {};
@@ -1413,8 +1419,6 @@ self: super: {
  pal-statistics = self.callPackage ./pal-statistics {};
 
  pal-statistics-msgs = self.callPackage ./pal-statistics-msgs {};
-
- pangolin = self.callPackage ./pangolin {};
 
  parallel-gripper-controller = self.callPackage ./parallel-gripper-controller {};
 
@@ -1770,15 +1774,13 @@ self: super: {
 
  rmw-dds-common = self.callPackage ./rmw-dds-common {};
 
- rmw-fastrtps-cpp = self.callPackage ./rmw-fastrtps-cpp {};
-
- rmw-fastrtps-dynamic-cpp = self.callPackage ./rmw-fastrtps-dynamic-cpp {};
-
- rmw-fastrtps-shared-cpp = self.callPackage ./rmw-fastrtps-shared-cpp {};
+ rmw-desert = self.callPackage ./rmw-desert {};
 
  rmw-implementation = self.callPackage ./rmw-implementation {};
 
  rmw-implementation-cmake = self.callPackage ./rmw-implementation-cmake {};
+
+ rmw-security-common = self.callPackage ./rmw-security-common {};
 
  rmw-zenoh-cpp = self.callPackage ./rmw-zenoh-cpp {};
 
@@ -1959,8 +1961,6 @@ self: super: {
  rosidl-default-runtime = self.callPackage ./rosidl-default-runtime {};
 
  rosidl-dynamic-typesupport = self.callPackage ./rosidl-dynamic-typesupport {};
-
- rosidl-dynamic-typesupport-fastrtps = self.callPackage ./rosidl-dynamic-typesupport-fastrtps {};
 
  rosidl-generator-c = self.callPackage ./rosidl-generator-c {};
 
@@ -2250,6 +2250,8 @@ self: super: {
 
  swri-transform-util = self.callPackage ./swri-transform-util {};
 
+ synapticon-ros2-control = self.callPackage ./synapticon-ros2-control {};
+
  system-fingerprint = self.callPackage ./system-fingerprint {};
 
  system-modes = self.callPackage ./system-modes {};
@@ -2488,8 +2490,6 @@ self: super: {
 
  velodyne = self.callPackage ./velodyne {};
 
- velodyne-description = self.callPackage ./velodyne-description {};
-
  velodyne-driver = self.callPackage ./velodyne-driver {};
 
  velodyne-laserscan = self.callPackage ./velodyne-laserscan {};
@@ -2497,8 +2497,6 @@ self: super: {
  velodyne-msgs = self.callPackage ./velodyne-msgs {};
 
  velodyne-pointcloud = self.callPackage ./velodyne-pointcloud {};
-
- velodyne-simulator = self.callPackage ./velodyne-simulator {};
 
  vision-msgs = self.callPackage ./vision-msgs {};
 
@@ -2528,9 +2526,13 @@ self: super: {
 
  webots-ros2-control = self.callPackage ./webots-ros2-control {};
 
+ webots-ros2-crazyflie = self.callPackage ./webots-ros2-crazyflie {};
+
  webots-ros2-driver = self.callPackage ./webots-ros2-driver {};
 
  webots-ros2-epuck = self.callPackage ./webots-ros2-epuck {};
+
+ webots-ros2-husarion = self.callPackage ./webots-ros2-husarion {};
 
  webots-ros2-importer = self.callPackage ./webots-ros2-importer {};
 
