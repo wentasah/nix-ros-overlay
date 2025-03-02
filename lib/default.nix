@@ -140,6 +140,7 @@
         '';
       in self.writeShellScript "update-${pkg.pname}" ''
         set -eo pipefail
+        echo ============== Updating ${pkg.pname} ==============
         NIX_BUILD_SHELL=${self.runtimeShell} nix-shell --pure ${sourceDrvPath} --run ${updateScript}
       '';
     };
