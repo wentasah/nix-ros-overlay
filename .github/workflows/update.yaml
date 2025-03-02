@@ -48,7 +48,7 @@ jobs:
           # permittedInsecurePackages needed for updating of some gz-*-vendor packages
           mkdir -p ~/.config/nixpkgs
           echo '{ permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ]; }' > ~/.config/nixpkgs/config.nix
-          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh -1
+          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh
           git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
       - name: Create PR
         env:
