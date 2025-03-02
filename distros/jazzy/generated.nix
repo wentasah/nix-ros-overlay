@@ -182,8 +182,6 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
- automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
-
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
  automotive-navigation-msgs = self.callPackage ./automotive-navigation-msgs {};
@@ -374,8 +372,6 @@ self: super: {
 
  clearpath-ros2-socketcan-interface = self.callPackage ./clearpath-ros2-socketcan-interface {};
 
- clearpath-sensors-description = self.callPackage ./clearpath-sensors-description {};
-
  clearpath-viz = self.callPackage ./clearpath-viz {};
 
  clips-vendor = self.callPackage ./clips-vendor {};
@@ -554,6 +550,8 @@ self: super: {
 
  dynamixel-hardware = self.callPackage ./dynamixel-hardware {};
 
+ dynamixel-interfaces = self.callPackage ./dynamixel-interfaces {};
+
  dynamixel-sdk = self.callPackage ./dynamixel-sdk {};
 
  dynamixel-sdk-custom-interfaces = self.callPackage ./dynamixel-sdk-custom-interfaces {};
@@ -677,6 +675,12 @@ self: super: {
  etsi-its-denm-conversion = self.callPackage ./etsi-its-denm-conversion {};
 
  etsi-its-denm-msgs = self.callPackage ./etsi-its-denm-msgs {};
+
+ etsi-its-denm-ts-coding = self.callPackage ./etsi-its-denm-ts-coding {};
+
+ etsi-its-denm-ts-conversion = self.callPackage ./etsi-its-denm-ts-conversion {};
+
+ etsi-its-denm-ts-msgs = self.callPackage ./etsi-its-denm-ts-msgs {};
 
  etsi-its-mapem-ts-coding = self.callPackage ./etsi-its-mapem-ts-coding {};
 
@@ -995,6 +999,8 @@ self: super: {
  hash-library-vendor = self.callPackage ./hash-library-vendor {};
 
  heaphook = self.callPackage ./heaphook {};
+
+ hebi-cpp-api = self.callPackage ./hebi-cpp-api {};
 
  hls-lfcd-lds-driver = self.callPackage ./hls-lfcd-lds-driver {};
 
@@ -1323,6 +1329,8 @@ self: super: {
  mola-common = self.callPackage ./mola-common {};
 
  mola-demos = self.callPackage ./mola-demos {};
+
+ mola-gnss-to-markers = self.callPackage ./mola-gnss-to-markers {};
 
  mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
 
@@ -1664,6 +1672,10 @@ self: super: {
 
  novatel-gps-msgs = self.callPackage ./novatel-gps-msgs {};
 
+ novatel-oem7-driver = self.callPackage ./novatel-oem7-driver {};
+
+ novatel-oem7-msgs = self.callPackage ./novatel-oem7-msgs {};
+
  ntpd-driver = self.callPackage ./ntpd-driver {};
 
  ntrip-client = self.callPackage ./ntrip-client {};
@@ -1725,8 +1737,6 @@ self: super: {
  pal-statistics = self.callPackage ./pal-statistics {};
 
  pal-statistics-msgs = self.callPackage ./pal-statistics-msgs {};
-
- pangolin = self.callPackage ./pangolin {};
 
  parallel-gripper-controller = self.callPackage ./parallel-gripper-controller {};
 
@@ -2682,6 +2692,8 @@ self: super: {
 
  swri-transform-util = self.callPackage ./swri-transform-util {};
 
+ synapticon-ros2-control = self.callPackage ./synapticon-ros2-control {};
+
  system-fingerprint = self.callPackage ./system-fingerprint {};
 
  system-modes = self.callPackage ./system-modes {};
@@ -2950,8 +2962,6 @@ self: super: {
 
  velodyne = self.callPackage ./velodyne {};
 
- velodyne-description = self.callPackage ./velodyne-description {};
-
  velodyne-driver = self.callPackage ./velodyne-driver {};
 
  velodyne-laserscan = self.callPackage ./velodyne-laserscan {};
@@ -2959,8 +2969,6 @@ self: super: {
  velodyne-msgs = self.callPackage ./velodyne-msgs {};
 
  velodyne-pointcloud = self.callPackage ./velodyne-pointcloud {};
-
- velodyne-simulator = self.callPackage ./velodyne-simulator {};
 
  vision-msgs = self.callPackage ./vision-msgs {};
 
@@ -2990,9 +2998,13 @@ self: super: {
 
  webots-ros2-control = self.callPackage ./webots-ros2-control {};
 
+ webots-ros2-crazyflie = self.callPackage ./webots-ros2-crazyflie {};
+
  webots-ros2-driver = self.callPackage ./webots-ros2-driver {};
 
  webots-ros2-epuck = self.callPackage ./webots-ros2-epuck {};
+
+ webots-ros2-husarion = self.callPackage ./webots-ros2-husarion {};
 
  webots-ros2-importer = self.callPackage ./webots-ros2-importer {};
 
