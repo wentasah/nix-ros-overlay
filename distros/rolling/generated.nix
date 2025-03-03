@@ -1774,8 +1774,6 @@ self: super: {
 
  rmw-dds-common = self.callPackage ./rmw-dds-common {};
 
- rmw-desert = self.callPackage ./rmw-desert {};
-
  rmw-implementation = self.callPackage ./rmw-implementation {};
 
  rmw-implementation-cmake = self.callPackage ./rmw-implementation-cmake {};
