@@ -1774,7 +1774,11 @@ self: super: {
 
  rmw-dds-common = self.callPackage ./rmw-dds-common {};
 
- rmw-desert = self.callPackage ./rmw-desert {};
+ rmw-fastrtps-cpp = self.callPackage ./rmw-fastrtps-cpp {};
+
+ rmw-fastrtps-dynamic-cpp = self.callPackage ./rmw-fastrtps-dynamic-cpp {};
+
+ rmw-fastrtps-shared-cpp = self.callPackage ./rmw-fastrtps-shared-cpp {};
 
  rmw-implementation = self.callPackage ./rmw-implementation {};
 
