@@ -156,6 +156,7 @@ in with lib; {
        --replace-fail '"import numpy"' "" \
        --replace-fail 'numpy.get_include()' "'${python.pkgs.numpy}/${python.sitePackages}/numpy/_core/include'"
     '';
+    setupHook = ./rosidl-generator-py-setup-hook.sh;
   });
 
   rviz-ogre-vendor = (patchVendorUrl rosSuper.rviz-ogre-vendor {

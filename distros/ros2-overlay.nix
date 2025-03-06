@@ -198,10 +198,6 @@ rosSelf: rosSuper: with rosSelf.lib; {
     '';
   });
 
-  rosidl-generator-py = rosSuper.rosidl-generator-py.overrideAttrs ({ ... }: {
-    setupHook = ./rosidl-generator-py-setup-hook.sh;
-  });
-
   rosidl-default-generators = rosSuper.rosidl-default-generators.overrideAttrs ({
     propagatedBuildInputs ? [], ...
   }: {
