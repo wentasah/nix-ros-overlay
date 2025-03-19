@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, clearpath-manipulators-description, clearpath-mounts-description, clearpath-platform-description, clearpath-sensors-description }:
 buildRosPackage {
   pname = "ros-humble-clearpath-description";
-  version = "1.0.0-r1";
+  version = "1.2.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/clearpath-gbp/clearpath_common-release/archive/release/humble/clearpath_description/1.0.0-1.tar.gz";
-    name = "1.0.0-1.tar.gz";
-    sha256 = "bccc7edf6f8513c9b3c7ecb86305dcf0993b1b81eab1ec8a09cb54b1aadeca42";
+    url = "https://github.com/clearpath-gbp/clearpath_common-release/archive/release/humble/clearpath_description/1.2.0-1.tar.gz";
+    name = "1.2.0-1.tar.gz";
+    sha256 = "54fa4dbd450c6f29046f32e3e6774c014fdb2a5bde7505f9fcbfab4c52947952";
   };
 
   buildType = "ament_cmake";

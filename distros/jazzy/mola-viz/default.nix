@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, cmake, mola-kernel, mrpt-libgui, mrpt-libmaps, mrpt-libopengl }:
 buildRosPackage {
   pname = "ros-jazzy-mola-viz";
-  version = "1.4.0-r1";
+  version = "1.6.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_viz/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "703328f8f285996ed16ddfa83560bdfb5bc9461fb7ff70681e2a86c596d7675a";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_viz/1.6.2-1.tar.gz";
+    name = "1.6.2-1.tar.gz";
+    sha256 = "10c53cd65ac34c20b68c35a7ea3756520818689f82cceae3ab3d2e23c91a8eb0";
   };
 
   buildType = "cmake";

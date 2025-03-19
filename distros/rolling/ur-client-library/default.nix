@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, cmake }:
 buildRosPackage {
   pname = "ros-rolling-ur-client-library";
-  version = "1.5.0-r1";
+  version = "1.7.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/Universal_Robots_Client_Library-release/archive/release/rolling/ur_client_library/1.5.0-1.tar.gz";
-    name = "1.5.0-1.tar.gz";
-    sha256 = "b2255a8b76e7e0596ec5f0e4de8c0726dff91125ba8ccbdac17df6e5bf7d6ff3";
+    url = "https://github.com/ros2-gbp/Universal_Robots_Client_Library-release/archive/release/rolling/ur_client_library/1.7.1-1.tar.gz";
+    name = "1.7.1-1.tar.gz";
+    sha256 = "38faebe1417d05274c111839e2aedcbf0800959c04334ce55ac7f9bb8be0fefd";
   };
 
   buildType = "cmake";

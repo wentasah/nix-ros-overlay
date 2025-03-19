@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-python, backward-ros, controller-manager, controller-manager-msgs, force-torque-sensor-broadcaster, geometry-msgs, hardware-interface, joint-state-broadcaster, joint-state-publisher, joint-trajectory-controller, launch, launch-ros, launch-testing-ament-cmake, pluginlib, pose-broadcaster, position-controllers, rclcpp, rclcpp-lifecycle, rclpy, robot-state-publisher, ros2-controllers-test-nodes, rviz2, socat, std-msgs, std-srvs, tf2-geometry-msgs, ur-client-library, ur-controllers, ur-dashboard-msgs, ur-description, ur-msgs, urdf, velocity-controllers, xacro }:
 buildRosPackage {
   pname = "ros-rolling-ur-robot-driver";
-  version = "3.0.0-r1";
+  version = "3.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/rolling/ur_robot_driver/3.0.0-1.tar.gz";
-    name = "3.0.0-1.tar.gz";
-    sha256 = "62b5d5b3c62b7dcdbacd5085ac5c65937e9479076ad34e7282ac49cff9905565";
+    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/rolling/ur_robot_driver/3.1.0-1.tar.gz";
+    name = "3.1.0-1.tar.gz";
+    sha256 = "990841d04e8d54a143a1687bf150627fea8c99054258d0397b52ed7a49f79c14";
   };
 
   buildType = "ament_cmake";

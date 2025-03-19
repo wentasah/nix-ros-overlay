@@ -43,13 +43,13 @@ in {
   };
 
   gz-cmake-vendor = lib.patchGzAmentVendorGit rosSuper.gz-cmake-vendor {
-    version = "3.5.3";
-    hash = "sha256-fnN3Fmp7F5W0JixJUEp2v/OnXzmRidS5ujmSYxIRWto=";
+    version = "3.5.4";
+    hash = "sha256-mP0bBPWWAoUFsUwKn95Eqv1lW3lJdPEu3hhfmiK3mNQ=";
   };
 
   gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor {
-    version = "5.7.0";
-    hash = "sha256-RBu49rxjzo4mc7ma4WpabUxUT7cvabJRinR98it10r4=";
+    version = "5.7.1";
+    hash = "sha256-vNCjCSQYCSUHXKwXnq8vwWXiSK2+cD3yPSLT1FdAWrE=";
   }).overrideAttrs ({
     nativeBuildInputs ? [], ...
   }: {
@@ -64,13 +64,13 @@ in {
   };
 
   gz-fuel-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-fuel-tools-vendor {
-    version = "9.1.0";
-    hash = "sha256-txeIzj2vmvL5NDu6O07c7LwcCWE26OFEzvyc9TBrJAw=";
+    version = "9.1.1";
+    hash = "sha256-XQoBcCtzwzzPypS1kIeTCIbjtxrzaW3JvZLCYbwXAOk=";
   };
 
   gz-gui-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-gui-vendor {
-    version = "8.3.0";
-    hash = "sha256-V0zaL6qrd510hMECCr3/mMkyqf4yu2aaKLRZ6Rw0s/4=";
+    version = "8.4.0";
+    hash = "sha256-gf9XZzAX2g6r9ThIA0v2H2X/+uu9VnwvyvrdL5ZazM0=";
   }).overrideAttrs ({
     postInstall ? "", ...
   }: {
@@ -82,18 +82,18 @@ in {
   });
 
   gz-launch-vendor = lib.patchGzAmentVendorGit rosSuper.gz-launch-vendor {
-    version = "7.1.0";
-    hash = "sha256-En3V8i/Ie8+KnSHGlm9Bap7REdLhYBaVHVbOM+/Pzno=";
+    version = "7.1.1";
+    hash = "sha256-S63DWe/c3cnEztxr3uJc0A4AmuiQk4o6m9yXj0X97Yk=";
   };
 
   gz-math-vendor = lib.patchGzAmentVendorGit rosSuper.gz-math-vendor {
-    version = "7.5.1";
-    hash = "sha256-RxCZiU0h0skVPBSn+PMtkdwEabmTKl+0PYDpl9SQoq8=";
+    version = "7.5.2";
+    hash = "sha256-LwYeyv8nwX06n5ju+ra2uqNMedMSLRumem8qDHXtNns=";
   };
 
   gz-msgs-vendor = lib.patchGzAmentVendorGit rosSuper.gz-msgs-vendor {
-    version = "10.3.1";
-    hash = "sha256-GBEylFQvR2MWOIivW2+MGy//jjewId41mk8qpLfoaYM=";
+    version = "10.3.2";
+    hash = "sha256-gxhRqLzBCaDmK67T5RryDpxbDR3WLgV9DFs7w6ieMxQ=";
   };
 
   gz-ogre-next-vendor = (lib.patchAmentVendorGit rosSuper.gz-ogre-next-vendor {
@@ -105,33 +105,33 @@ in {
   });
 
   gz-physics-vendor = lib.patchGzAmentVendorGit rosSuper.gz-physics-vendor {
-    version = "7.4.0";
-    hash = "sha256-14/P/xoZSqqqf9krgqDKVcO/rTZOEhLni8ZUR3W9ey4=";
+    version = "7.5.0";
+    hash = "sha256-75myTqDeEybvj5rsJxRambLPle1cen6HIatZGbVoXro=";
   };
 
   gz-plugin-vendor = lib.patchGzAmentVendorGit rosSuper.gz-plugin-vendor {
-    version = "2.0.3";
-    hash = "sha256-9t6vcnBbfRWu6ptmqYAhmWKDoKAaK631JD9u1C0G0mY=";
+    version = "2.0.4";
+    hash = "sha256-iL4+EdFFAU55FVqE/CvyTv1zNaXxBWqWx44L0BeG2MU=";
   };
 
   gz-rendering-vendor = lib.patchGzAmentVendorGit rosSuper.gz-rendering-vendor {
-    version = "8.2.1";
-    hash = "sha256-ZHeEC/zvBKROJ/e+6Bdvhut30crhlC5VMsxrpIGIA0M=";
+    version = "8.2.2";
+    hash = "sha256-x+QHn8d+19U12CG1+HEmP0KcM3beY00Vvrc8mrxvAs0=";
   };
 
   gz-sensors-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sensors-vendor {
-    version = "8.2.1";
-    hash = "sha256-wEUJoHbvvImuFbaKk84maw5AoKhoEhdU0uOYVBtHhI0=";
+    version = "8.2.2";
+    hash = "sha256-TRDMCMesJXVSVGA3bnRngtXTi4VVf0y12AJQ79EEMiI=";
   };
 
   gz-sim-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sim-vendor {
-    version = "8.7.0";
-    hash = "sha256-Kalt+UwFiL1D+A5pkM/aZyEmBenqPo9U4jlAmqLze3c=";
+    version = "8.9.0";
+    hash = "sha256-hvhq2XBzcIoupJdJyJzk38LDXoEnd9iBCCiXvPZsPqY=";
   };
 
   gz-tools-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor {
-    version = "2.0.1";
-    hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";
+    version = "2.0.2";
+    hash = "sha256-CY+W1jWIkszKwKuLgKmJpZMXHn0RnueMHFSDhOXIzLg=";
   }).overrideAttrs({
     nativeBuildInputs ? [],
     propagatedNativeBuildInputs ? [],
@@ -154,14 +154,18 @@ in {
     '';
   });
 
-  gz-transport-vendor = lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
-    version = "13.4.0";
-    hash = "sha256-2Akd3vKr07IdgoJppvUV1nZlHE4RdQfI2R18ihHTDHk=";
-  };
+  gz-transport-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
+    version = "13.4.1";
+    hash = "sha256-hCP+yVoyl1c3KNmQ5jKrYvPT1IlAy9JkCh0c0mOF+KM=";
+  }).overrideAttrs({
+    buildInputs ? [], ...
+  }: {
+    buildInputs = buildInputs ++ [ self.libsodium ];
+  });
 
   gz-utils-vendor = lib.patchGzAmentVendorGit rosSuper.gz-utils-vendor {
-    version = "2.2.0";
-    hash = "sha256-dNoDOZtk/zseHuOM5mOPHkXKU7wqxxKrFnh7e09bjRA=";
+    version = "2.2.1";
+    hash = "sha256-utVW8pTP/emEWblTxVb6jzulKdxss+2VfS552MWMqm4=";
   };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
@@ -252,8 +256,8 @@ in {
   };
 
   sdformat-vendor = lib.patchGzAmentVendorGit rosSuper.sdformat-vendor {
-    version = "14.6.0";
-    hash = "sha256-rRX8A6jZWR8iz4oMqWtG2ZP1XnpDsUnbktlF8q9z47M=";
+    version = "14.7.0";
+    hash = "sha256-p2e01bCoMpDhia1yOFa5wIP2ritBiWNT5jYbp/bg1+g=";
   };
 
   urdfdom = rosSuper.urdfdom.overrideAttrs ({

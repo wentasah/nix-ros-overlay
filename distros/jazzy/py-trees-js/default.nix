@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, python3Packages, qt5 }:
 buildRosPackage {
   pname = "ros-jazzy-py-trees-js";
-  version = "0.6.4-r1";
+  version = "0.6.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/py_trees_js-release/archive/release/jazzy/py_trees_js/0.6.4-1.tar.gz";
-    name = "0.6.4-1.tar.gz";
-    sha256 = "900b749558a777ecabb533e83b65257dd1cecae4f6d26aa9996e46951e76f0e3";
+    url = "https://github.com/ros2-gbp/py_trees_js-release/archive/release/jazzy/py_trees_js/0.6.6-1.tar.gz";
+    name = "0.6.6-1.tar.gz";
+    sha256 = "c0558b493a09287eee0d95d45e37cf94317979604ae81342719a196a8279cb2a";
   };
 
   buildType = "ament_python";

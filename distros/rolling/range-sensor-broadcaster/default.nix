@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, controller-interface, controller-manager, generate-parameter-library, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, ros2-control-test-assets, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-range-sensor-broadcaster";
-  version = "4.18.0-r2";
+  version = "4.21.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/range_sensor_broadcaster/4.18.0-2.tar.gz";
-    name = "4.18.0-2.tar.gz";
-    sha256 = "31c226ad5574919febe394e9685751064edd28568ca27eca73bab7e01054738c";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/range_sensor_broadcaster/4.21.0-1.tar.gz";
+    name = "4.21.0-1.tar.gz";
+    sha256 = "438709f4980eb271032afecad707b140ead7f75be177c68f9f45512ef661ecc8";
   };
 
   buildType = "ament_cmake";

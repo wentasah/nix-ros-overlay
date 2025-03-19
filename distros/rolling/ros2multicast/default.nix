@@ -1,20 +1,20 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, ament-xmllint, python3Packages, pythonPackages, ros2cli }:
+{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, ament-xmllint, python3Packages, ros2cli }:
 buildRosPackage {
   pname = "ros-rolling-ros2multicast";
-  version = "0.36.1-r1";
+  version = "0.37.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2cli-release/archive/release/rolling/ros2multicast/0.36.1-1.tar.gz";
-    name = "0.36.1-1.tar.gz";
-    sha256 = "86da0c15420512f6de1bef862ec6ef586945500649c90ba3ff267fc365b25acf";
+    url = "https://github.com/ros2-gbp/ros2cli-release/archive/release/rolling/ros2multicast/0.37.0-1.tar.gz";
+    name = "0.37.0-1.tar.gz";
+    sha256 = "a44c0aeff810bc0f31d978054e7f485f6fcf1821cf889c409afc474a1ce7edcf";
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest-timeout pythonPackages.pytest ];
+  checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest python3Packages.pytest-timeout ];
   propagatedBuildInputs = [ ros2cli ];
 
   meta = {

@@ -1,20 +1,20 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, generate-parameter-library, generate-parameter-library-py, pythonPackages, rclpy }:
+{ lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, generate-parameter-library, generate-parameter-library-py, python3Packages, rclpy }:
 buildRosPackage {
   pname = "ros-rolling-generate-parameter-module-example";
-  version = "0.3.9-r1";
+  version = "0.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/rolling/generate_parameter_module_example/0.3.9-1.tar.gz";
-    name = "0.3.9-1.tar.gz";
-    sha256 = "d5134f618173573120e681ed89f0bcf8151b5dead2c75f884fbc25e9507773d8";
+    url = "https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/rolling/generate_parameter_module_example/0.4.0-1.tar.gz";
+    name = "0.4.0-1.tar.gz";
+    sha256 = "48d35f0e5295c1dd54442c4fc19686e634592c60894717c6ba22ea62c6b341d3";
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 pythonPackages.pytest ];
+  checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ generate-parameter-library generate-parameter-library-py rclpy ];
 
   meta = {

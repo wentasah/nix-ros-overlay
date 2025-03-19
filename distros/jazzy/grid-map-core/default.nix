@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, eigen, grid-map-cmake-helpers }:
 buildRosPackage {
   pname = "ros-jazzy-grid-map-core";
-  version = "2.2.0-r1";
+  version = "2.2.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/grid_map-release/archive/release/jazzy/grid_map_core/2.2.0-1.tar.gz";
-    name = "2.2.0-1.tar.gz";
-    sha256 = "1f0f2c9c7da9ead84e6d86cd84e7f3a00bc55767dfd4b3e05cb8cc28e61cf80f";
+    url = "https://github.com/ros2-gbp/grid_map-release/archive/release/jazzy/grid_map_core/2.2.1-1.tar.gz";
+    name = "2.2.1-1.tar.gz";
+    sha256 = "44d418e4f3a2a841174ba43d44c90ed4ad017e5a70a0e9661ebd98bec3d478d0";
   };
 
   buildType = "ament_cmake";

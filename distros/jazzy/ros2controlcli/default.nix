@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, controller-manager, controller-manager-msgs, python3Packages, rcl-interfaces, rclpy, ros2cli, ros2node, ros2param, rosidl-runtime-py }:
 buildRosPackage {
   pname = "ros-jazzy-ros2controlcli";
-  version = "4.21.0-r1";
+  version = "4.27.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/ros2controlcli/4.21.0-1.tar.gz";
-    name = "4.21.0-1.tar.gz";
-    sha256 = "9dfa6e64a2cc9541194e13e286d63a7dd497d28ff0f949f6e7a45950902b6bb4";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/ros2controlcli/4.27.0-1.tar.gz";
+    name = "4.27.0-1.tar.gz";
+    sha256 = "54c2087c3edbbff0874b311fafe75fd28d7d3e98e1a84d6d5ece3ffcd69bc963";
   };
 
   buildType = "ament_python";

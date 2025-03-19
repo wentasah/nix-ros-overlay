@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-cmake-xmllint, ament-lint-auto, ament-lint-common, cmake, ros-environment }:
 buildRosPackage {
   pname = "ros-jazzy-mola-demos";
-  version = "1.4.0-r1";
+  version = "1.6.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_demos/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "decfd0a2f88ab07459a5763a578396b144b44721954a145e67611f14636fdafd";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_demos/1.6.2-1.tar.gz";
+    name = "1.6.2-1.tar.gz";
+    sha256 = "fe84c40ea8bdf777fc237b0cd51b356ce487bbb979f4243da9e70c28d00e8e6f";
   };
 
   buildType = "ament_cmake";

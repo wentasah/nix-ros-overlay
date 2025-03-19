@@ -1,7 +1,8 @@
 # Top level package set
 self:
+self.lib.composeManyExtensions [
 # Distro package set
-rosSelf: rosSuper: let
+(rosSelf: rosSuper: let
   lib = rosSelf.lib;
 in {
   angles = rosSuper.angles.overrideAttrs ({
@@ -26,6 +27,15 @@ in {
     }) ];
   });
 
+  # Many packages fail to compile with Boost 1.87
+  boost = rosSelf.boost186;
+
+  # Apply the same override as in distro-overlay.nix
+  boost186 = self.boost186.override {
+    python = rosSelf.python;
+    enablePython = true;
+  };
+
   eigenpy = rosSuper.eigenpy.overrideAttrs ({
     cmakeFlags ? [], ...
   }: {
@@ -49,6 +59,21 @@ in {
     nativeBuildInputs ? [], ...
   } : {
     nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
+  });
+
+  joy = rosSuper.joy.overrideAttrs ({ ... }: {
+    # Boost.Math 1.87 requires C++14
+    NIX_CFLAGS_COMPILE = ["-std=c++14"];
+  });
+
+  laser-geometry = rosSuper.laser-geometry.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt \
+        --replace-fail 'set(CMAKE_CXX_STANDARD 11)' 'set(CMAKE_CXX_STANDARD 14)'
+    '';
   });
 
   libfranka = rosSuper.libfranka.overrideAttrs ({
@@ -101,6 +126,61 @@ in {
     }) ];
   });
 
+  nav-2d-utils = rosSuper.nav-2d-utils.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  nav-core-adapter = rosSuper.nav-core-adapter.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  nav-core-adapters = rosSuper.nav-core-adapters.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  nav-core2 = rosSuper.nav-core2.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  nav-grid-iterators = rosSuper.nav-grid-iterators.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  nav-grid-server = rosSuper.nav-grid-server.overrideAttrs ({
+    buildInputs ? [], postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail '-std=c++11' '-std=c++14'
+    '';
+    buildInputs = buildInputs ++ [ self.yaml-cpp ];
+  });
+
   novatel-oem7-driver = (lib.patchExternalProjectGit rosSuper.novatel-oem7-driver {
     url = "https://github.com/novatel/novatel_edie";
     originalRev = "origin/dev-ros_install_prefix";
@@ -120,13 +200,34 @@ in {
         hash = "sha256-tEp4/1loFpjHKpNYuDz32iSzXJdrXGWmfJuBkO8d95w=";
         stripLen = 1;
       })
+      # Add logic for missing pcl/point_traits.h in newer PCL
+      (self.fetchpatch {
+        url = "https://github.com/ros-perception/perception_pcl/commit/85334c39256530cf27abf6accbc7b55e18a2da02.patch";
+        hash = "sha256-Xot4vmukT76Jivt0qZC/fNr8B1XQiPrDKbjet8v0DNs=";
+        stripLen = 1;
+      })
     ];
+  });
+
+  octomap = rosSuper.octomap.overrideAttrs ({ ... }: {
+    NIX_CFLAGS_COMPILE = [ "-Wno-error=template-id-cdtor" ];
   });
 
   pybind11-catkin = lib.patchVendorUrl rosSuper.pybind11-catkin {
     url = "https://github.com/pybind/pybind11/archive/v2.10.3.zip";
     sha256 = "sha256-IBlmph3IJvGxh5okozF6HskhSpGMjrA1vi8ww+nPvcs=";
   };
+
+  robot-state-publisher = rosSuper.robot-state-publisher.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    # Use C++14 for Boost.Math compatibility
+    # https://github.com/ros/robot_state_publisher/pull/190
+    patches = patches ++ [ (self.fetchpatch {
+      url = "https://github.com/ros/robot_state_publisher/commit/8478b2aface9e4349f8a0bce61eb74dbfd9bfb63.patch";
+      hash = "sha256-BQt6HoOBMM5bJCADve19uH1RSLLNQlG9aR6g1p58WPw=";
+    }) ];
+  });
 
   rosconsole = rosSuper.rosconsole.overrideAttrs ({
     patches ? [], ...
@@ -154,10 +255,29 @@ in {
     }) ];
   });
 
+  rviz = rosSuper.rviz.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    # Replace boost::filesystem::extension()
+    patches = patches ++ [ (self.fetchpatch {
+      url = "https://github.com/ros-visualization/rviz/commit/250c0c2875758953f98f3b1982d11b55f527b295.patch";
+      hash = "sha256-dr1dPSStGFPimac/LaDmPfojFl+iIc6lz2lIhXf9rTE=";
+    }) ];
+  });
+
   rviz-map-plugin = rosSuper.rviz-map-plugin.overrideAttrs ({
     buildInputs ? [], ...
   } : {
     buildInputs = buildInputs ++ [ self.opencl-clhpp ];
+  });
+
+  simple-message = rosSuper.simple-message.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail "set(CMAKE_CXX_STANDARD 11)" "set(CMAKE_CXX_STANDARD 14)"
+    '';
   });
 
   sophus = rosSuper.sophus.overrideAttrs ({
@@ -167,10 +287,33 @@ in {
       substituteInPlace CMakeLists.txt --replace-fail " -Werror" ""
     '';
   });
-} //
+
+  tf = rosSuper.tf.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # Boost.Math 1.87 requires C++14
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt \
+        --replace-fail COMPILER_SUPPORTS_CXX11 COMPILER_SUPPORTS_CXX14 \
+        --replace-fail '-std=c++11' '-std=c++14'
+    '';
+  });
+
+  tf2 = rosSuper.tf2.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [ (self.fetchpatch {
+      # Add missing #include for boost::tuple
+      url = "https://github.com/ros/geometry2/commit/08b4cc720bf95428a30a54d9e9a8257849a93c61.patch";
+      hash = "sha256-pxeJ1gE3kMaN3I4DH9E65dBrhQonuw7WKStEBfLWzY4=";
+      stripLen = 1;
+    }) ];
+  });
+
+})
 # distutils was removed from standard library in Python 3.12, but many packages
 # still depend on it.
-(let
+(rosSelf: rosSuper: let
   addDistutils = pkg: pkg.overrideAttrs ({
     nativeBuildInputs ? [], ...
   }: {
@@ -233,3 +376,4 @@ in rosSuper.lib.genAttrs [
   "turtlebot3-teleop"
   "unique-id"
 ] (name: addDistutils rosSuper.${name}))
+]

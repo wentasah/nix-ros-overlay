@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, eigen3-cmake-module, moveit-common, moveit-core, moveit-msgs, rclcpp, tf2-eigen }:
 buildRosPackage {
   pname = "ros-humble-pilz-industrial-motion-planner-testutils";
-  version = "2.5.6-r1";
+  version = "2.5.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/humble/pilz_industrial_motion_planner_testutils/2.5.6-1.tar.gz";
-    name = "2.5.6-1.tar.gz";
-    sha256 = "a4a817fd690ce761526071727d39db36084203ff5ec6ae2ca82bf74bc34e554b";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/humble/pilz_industrial_motion_planner_testutils/2.5.8-1.tar.gz";
+    name = "2.5.8-1.tar.gz";
+    sha256 = "2f7cbab20690e9ad5c84dc6fe07047b655d468ef3e421c4a600612a1bed4a527";
   };
 
   buildType = "ament_cmake";

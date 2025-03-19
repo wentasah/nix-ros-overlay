@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, boost, clang, cmake, doxygen, eigen, eigenpy, git, hpp-fcl, python3, python3Packages, ros-environment, urdfdom }:
 buildRosPackage {
   pname = "ros-rolling-pinocchio";
-  version = "3.3.0-r1";
+  version = "3.4.0-r3";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/pinocchio-release/archive/release/rolling/pinocchio/3.3.0-1.tar.gz";
-    name = "3.3.0-1.tar.gz";
-    sha256 = "968a0cee179dc4ebbd6774428f3cca4f6cc8779e2844388b7b13dffb1eaf1dd5";
+    url = "https://github.com/ros2-gbp/pinocchio-release/archive/release/rolling/pinocchio/3.4.0-3.tar.gz";
+    name = "3.4.0-3.tar.gz";
+    sha256 = "c0390cec01c261e7728b5c3386a58c50c24b5ddd5d522dc4bdb05c1c3fe0e79b";
   };
 
   buildType = "cmake";

@@ -43,8 +43,8 @@ in {
   };
 
   gz-cmake-vendor = lib.patchGzAmentVendorGit rosSuper.gz-cmake-vendor {
-    version = "4.1.0";
-    hash = "sha256-GyVDbJM3qdFSdp+Kw8z1vB6ipOkB0+4TYWLV+FhIsj4=";
+    version = "4.1.1";
+    hash = "sha256-BWgRm+3UW65Cu7TqXtFFG05JlYF52dbpAsIE8aDnJM0=";
   };
 
   gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor {
@@ -87,13 +87,13 @@ in {
   };
 
   gz-math-vendor = lib.patchGzAmentVendorGit rosSuper.gz-math-vendor {
-    version = "8.0.0";
-    hash = "sha256-3+846hhsaBaiFLIURlXQx6Z1+VYfp9UZgjdl96JvrRw=";
+    version = "8.1.0";
+    hash = "sha256-3jQk98HJ0ru2Q4fTqoiaPRaIHaWQKQlnqj+gN2PLxkE=";
   };
 
   gz-msgs-vendor = lib.patchGzAmentVendorGit rosSuper.gz-msgs-vendor {
-    version = "11.0.1";
-    hash = "sha256-bOHw1CvQDGB8CaJnZF3CwsdeQJyn6LOvufRxbH8ufZc=";
+    version = "11.0.2";
+    hash = "sha256-PUhFOmVPRiOVWfOjAU8z8dcxKPdcoTrgRwDGXP/vsUs=";
   };
 
   gz-ogre-next-vendor = (lib.patchAmentVendorGit rosSuper.gz-ogre-next-vendor {
@@ -130,8 +130,8 @@ in {
   };
 
   gz-tools-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor {
-    version = "2.0.1";
-    hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";
+    version = "2.0.2";
+    hash = "sha256-CY+W1jWIkszKwKuLgKmJpZMXHn0RnueMHFSDhOXIzLg=";
   }).overrideAttrs({
     nativeBuildInputs ? [],
     propagatedNativeBuildInputs ? [],
@@ -154,14 +154,18 @@ in {
     '';
   });
 
-  gz-transport-vendor = lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
+  gz-transport-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor {
     version = "14.0.0";
     hash = "sha256-zoGphy2cpmqJsnyS1LNVm4eGtHCWkAwIblga4RdVj4k=";
-  };
+  }).overrideAttrs({
+    buildInputs ? [], ...
+  }: {
+    buildInputs = buildInputs ++ [ self.libsodium ];
+  });
 
   gz-utils-vendor = lib.patchGzAmentVendorGit rosSuper.gz-utils-vendor {
-    version = "3.0.0";
-    hash = "sha256-maq0iGCGbrjVGwBNNIYYSAKXxszwlAJS4FLrGNxsA5c=";
+    version = "3.1.0";
+    hash = "sha256-pbbFO/4h3Tos+uigPC8XHWzv+Yuyd6EdzLWQPdmXaN8=";
   };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({

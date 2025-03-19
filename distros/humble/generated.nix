@@ -1,5 +1,5 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 self: super: {
@@ -206,6 +206,8 @@ self: super: {
 
  apriltag-ros = self.callPackage ./apriltag-ros {};
 
+ apriltag-tools = self.callPackage ./apriltag-tools {};
+
  aruco = self.callPackage ./aruco {};
 
  aruco-msgs = self.callPackage ./aruco-msgs {};
@@ -304,6 +306,8 @@ self: super: {
 
  autoware-internal-perception-msgs = self.callPackage ./autoware-internal-perception-msgs {};
 
+ autoware-internal-planning-msgs = self.callPackage ./autoware-internal-planning-msgs {};
+
  autoware-lanelet2-extension = self.callPackage ./autoware-lanelet2-extension {};
 
  autoware-lanelet2-extension-python = self.callPackage ./autoware-lanelet2-extension-python {};
@@ -369,6 +373,8 @@ self: super: {
  bond-core = self.callPackage ./bond-core {};
 
  bondcpp = self.callPackage ./bondcpp {};
+
+ bondpy = self.callPackage ./bondpy {};
 
  boost-geometry-util = self.callPackage ./boost-geometry-util {};
 
@@ -493,6 +499,8 @@ self: super: {
  clearpath-viz = self.callPackage ./clearpath-viz {};
 
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
+
+ coal = self.callPackage ./coal {};
 
  cob-actions = self.callPackage ./cob-actions {};
 
@@ -714,6 +722,10 @@ self: super: {
 
  dynamic-edt-3d = self.callPackage ./dynamic-edt-3d {};
 
+ dynamixel-hardware-interface = self.callPackage ./dynamixel-hardware-interface {};
+
+ dynamixel-interfaces = self.callPackage ./dynamixel-interfaces {};
+
  dynamixel-sdk = self.callPackage ./dynamixel-sdk {};
 
  dynamixel-sdk-custom-interfaces = self.callPackage ./dynamixel-sdk-custom-interfaces {};
@@ -839,6 +851,12 @@ self: super: {
  etsi-its-denm-conversion = self.callPackage ./etsi-its-denm-conversion {};
 
  etsi-its-denm-msgs = self.callPackage ./etsi-its-denm-msgs {};
+
+ etsi-its-denm-ts-coding = self.callPackage ./etsi-its-denm-ts-coding {};
+
+ etsi-its-denm-ts-conversion = self.callPackage ./etsi-its-denm-ts-conversion {};
+
+ etsi-its-denm-ts-msgs = self.callPackage ./etsi-its-denm-ts-msgs {};
 
  etsi-its-mapem-ts-coding = self.callPackage ./etsi-its-mapem-ts-coding {};
 
@@ -1008,7 +1026,27 @@ self: super: {
 
  foxglove-msgs = self.callPackage ./foxglove-msgs {};
 
+ franka-bringup = self.callPackage ./franka-bringup {};
+
  franka-description = self.callPackage ./franka-description {};
+
+ franka-example-controllers = self.callPackage ./franka-example-controllers {};
+
+ franka-fr3-moveit-config = self.callPackage ./franka-fr3-moveit-config {};
+
+ franka-gazebo-bringup = self.callPackage ./franka-gazebo-bringup {};
+
+ franka-gripper = self.callPackage ./franka-gripper {};
+
+ franka-hardware = self.callPackage ./franka-hardware {};
+
+ franka-msgs = self.callPackage ./franka-msgs {};
+
+ franka-robot-state-broadcaster = self.callPackage ./franka-robot-state-broadcaster {};
+
+ franka-ros2 = self.callPackage ./franka-ros2 {};
+
+ franka-semantic-components = self.callPackage ./franka-semantic-components {};
 
  fri-configuration-controller = self.callPackage ./fri-configuration-controller {};
 
@@ -1060,6 +1098,8 @@ self: super: {
 
  generate-parameter-library-example = self.callPackage ./generate-parameter-library-example {};
 
+ generate-parameter-library-example-external = self.callPackage ./generate-parameter-library-example-external {};
+
  generate-parameter-library-py = self.callPackage ./generate-parameter-library-py {};
 
  generate-parameter-module-example = self.callPackage ./generate-parameter-module-example {};
@@ -1081,6 +1121,8 @@ self: super: {
  gmock-vendor = self.callPackage ./gmock-vendor {};
 
  google-benchmark-vendor = self.callPackage ./google-benchmark-vendor {};
+
+ gpio-controllers = self.callPackage ./gpio-controllers {};
 
  gps-msgs = self.callPackage ./gps-msgs {};
 
@@ -1224,6 +1266,8 @@ self: super: {
 
  imu-transformer = self.callPackage ./imu-transformer {};
 
+ integration-launch-testing = self.callPackage ./integration-launch-testing {};
+
  interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
  interactive-markers = self.callPackage ./interactive-markers {};
@@ -1255,6 +1299,8 @@ self: super: {
  irobot-create-nodes = self.callPackage ./irobot-create-nodes {};
 
  irobot-create-toolbox = self.callPackage ./irobot-create-toolbox {};
+
+ jacro = self.callPackage ./jacro {};
 
  joint-group-impedance-controller = self.callPackage ./joint-group-impedance-controller {};
 
@@ -1294,6 +1340,8 @@ self: super: {
 
  kinova-gen3-7dof-robotiq-2f-85-moveit-config = self.callPackage ./kinova-gen3-7dof-robotiq-2f-85-moveit-config {};
 
+ kinova-gen3-lite-moveit-config = self.callPackage ./kinova-gen3-lite-moveit-config {};
+
  kitti-metrics-eval = self.callPackage ./kitti-metrics-eval {};
 
  kobuki-core = self.callPackage ./kobuki-core {};
@@ -1301,6 +1349,10 @@ self: super: {
  kobuki-ros-interfaces = self.callPackage ./kobuki-ros-interfaces {};
 
  kobuki-velocity-smoother = self.callPackage ./kobuki-velocity-smoother {};
+
+ kompass = self.callPackage ./kompass {};
+
+ kompass-interfaces = self.callPackage ./kompass-interfaces {};
 
  kortex-api = self.callPackage ./kortex-api {};
 
@@ -1600,6 +1652,8 @@ self: super: {
 
  mola-demos = self.callPackage ./mola-demos {};
 
+ mola-gnss-to-markers = self.callPackage ./mola-gnss-to-markers {};
+
  mola-imu-preintegration = self.callPackage ./mola-imu-preintegration {};
 
  mola-input-euroc-dataset = self.callPackage ./mola-input-euroc-dataset {};
@@ -1626,13 +1680,15 @@ self: super: {
 
  mola-msgs = self.callPackage ./mola-msgs {};
 
- mola-navstate-fg = self.callPackage ./mola-navstate-fg {};
-
- mola-navstate-fuse = self.callPackage ./mola-navstate-fuse {};
-
  mola-pose-list = self.callPackage ./mola-pose-list {};
 
  mola-relocalization = self.callPackage ./mola-relocalization {};
+
+ mola-state-estimation = self.callPackage ./mola-state-estimation {};
+
+ mola-state-estimation-simple = self.callPackage ./mola-state-estimation-simple {};
+
+ mola-state-estimation-smoother = self.callPackage ./mola-state-estimation-smoother {};
 
  mola-test-datasets = self.callPackage ./mola-test-datasets {};
 
@@ -1928,6 +1984,8 @@ self: super: {
 
  nodl-to-policy = self.callPackage ./nodl-to-policy {};
 
+ nonpersistent-voxel-layer = self.callPackage ./nonpersistent-voxel-layer {};
+
  novatel-gps-driver = self.callPackage ./novatel-gps-driver {};
 
  novatel-gps-msgs = self.callPackage ./novatel-gps-msgs {};
@@ -2194,6 +2252,8 @@ self: super: {
 
  pmb2-navigation = self.callPackage ./pmb2-navigation {};
 
+ pmb2-rgbd-sensors = self.callPackage ./pmb2-rgbd-sensors {};
+
  pmb2-robot = self.callPackage ./pmb2-robot {};
 
  pmb2-simulation = self.callPackage ./pmb2-simulation {};
@@ -2249,6 +2309,10 @@ self: super: {
  py-trees-ros = self.callPackage ./py-trees-ros {};
 
  py-trees-ros-interfaces = self.callPackage ./py-trees-ros-interfaces {};
+
+ py-trees-ros-tutorials = self.callPackage ./py-trees-ros-tutorials {};
+
+ py-trees-ros-viewer = self.callPackage ./py-trees-ros-viewer {};
 
  pybind11-json-vendor = self.callPackage ./pybind11-json-vendor {};
 
@@ -2528,6 +2592,8 @@ self: super: {
 
  rmw-dds-common = self.callPackage ./rmw-dds-common {};
 
+ rmw-desert = self.callPackage ./rmw-desert {};
+
  rmw-fastrtps-cpp = self.callPackage ./rmw-fastrtps-cpp {};
 
  rmw-fastrtps-dynamic-cpp = self.callPackage ./rmw-fastrtps-dynamic-cpp {};
@@ -2537,6 +2603,8 @@ self: super: {
  rmw-implementation = self.callPackage ./rmw-implementation {};
 
  rmw-implementation-cmake = self.callPackage ./rmw-implementation-cmake {};
+
+ rmw-zenoh-cpp = self.callPackage ./rmw-zenoh-cpp {};
 
  robot-calibration = self.callPackage ./robot-calibration {};
 
@@ -2772,6 +2840,8 @@ self: super: {
 
  rqt-controller-manager = self.callPackage ./rqt-controller-manager {};
 
+ rqt-dotgraph = self.callPackage ./rqt-dotgraph {};
+
  rqt-gauges = self.callPackage ./rqt-gauges {};
 
  rqt-graph = self.callPackage ./rqt-graph {};
@@ -2896,7 +2966,11 @@ self: super: {
 
  sbg-driver = self.callPackage ./sbg-driver {};
 
+ scenario-execution = self.callPackage ./scenario-execution {};
+
  scenario-execution-control = self.callPackage ./scenario-execution-control {};
+
+ scenario-execution-coverage = self.callPackage ./scenario-execution-coverage {};
 
  scenario-execution-gazebo = self.callPackage ./scenario-execution-gazebo {};
 
@@ -3084,6 +3158,8 @@ self: super: {
 
  swri-transform-util = self.callPackage ./swri-transform-util {};
 
+ synapticon-ros2-control = self.callPackage ./synapticon-ros2-control {};
+
  sync-parameter-server = self.callPackage ./sync-parameter-server {};
 
  system-fingerprint = self.callPackage ./system-fingerprint {};
@@ -3175,6 +3251,8 @@ self: super: {
  tiago-moveit-config = self.callPackage ./tiago-moveit-config {};
 
  tiago-navigation = self.callPackage ./tiago-navigation {};
+
+ tiago-rgbd-sensors = self.callPackage ./tiago-rgbd-sensors {};
 
  tiago-robot = self.callPackage ./tiago-robot {};
 
@@ -3416,6 +3494,8 @@ self: super: {
 
  urg-node-msgs = self.callPackage ./urg-node-msgs {};
 
+ urinterfaces = self.callPackage ./urinterfaces {};
+
  usb-cam = self.callPackage ./usb-cam {};
 
  v4l2-camera = self.callPackage ./v4l2-camera {};
@@ -3480,9 +3560,13 @@ self: super: {
 
  webots-ros2-control = self.callPackage ./webots-ros2-control {};
 
+ webots-ros2-crazyflie = self.callPackage ./webots-ros2-crazyflie {};
+
  webots-ros2-driver = self.callPackage ./webots-ros2-driver {};
 
  webots-ros2-epuck = self.callPackage ./webots-ros2-epuck {};
+
+ webots-ros2-husarion = self.callPackage ./webots-ros2-husarion {};
 
  webots-ros2-importer = self.callPackage ./webots-ros2-importer {};
 
@@ -3524,11 +3608,15 @@ self: super: {
 
  yasmin-ros = self.callPackage ./yasmin-ros {};
 
+ yasmin-viewer = self.callPackage ./yasmin-viewer {};
+
  zbar-ros = self.callPackage ./zbar-ros {};
 
  zed-msgs = self.callPackage ./zed-msgs {};
 
  zenoh-bridge-dds = self.callPackage ./zenoh-bridge-dds {};
+
+ zenoh-cpp-vendor = self.callPackage ./zenoh-cpp-vendor {};
 
  zlib-point-cloud-transport = self.callPackage ./zlib-point-cloud-transport {};
 

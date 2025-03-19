@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, lifecycle-msgs, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-humble-controller-manager-msgs";
-  version = "2.46.0-r1";
+  version = "2.48.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_manager_msgs/2.46.0-1.tar.gz";
-    name = "2.46.0-1.tar.gz";
-    sha256 = "47deaad262e24efb0a4c2d2f7969ef7e250f11f01bb909f4c7789251511ed78c";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_manager_msgs/2.48.0-1.tar.gz";
+    name = "2.48.0-1.tar.gz";
+    sha256 = "b6903c6bbf0bb42346694cd5eb5ba9a78484e6458ac14e82266d20cc60f0d749";
   };
 
   buildType = "ament_cmake";

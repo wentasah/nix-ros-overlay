@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, builtin-interfaces, geometry-msgs, rclcpp, rosidl-default-generators, sensor-msgs, std-msgs, vision-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-depthai-ros-msgs";
-  version = "2.10.3-r1";
+  version = "2.11.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/luxonis/depthai-ros-release/archive/release/jazzy/depthai_ros_msgs/2.10.3-1.tar.gz";
-    name = "2.10.3-1.tar.gz";
-    sha256 = "99c238adcf26b6f4b2744c52d62169be9d9b05cad788a091eaac6cb21b2d1b4f";
+    url = "https://github.com/luxonis/depthai-ros-release/archive/release/jazzy/depthai_ros_msgs/2.11.0-1.tar.gz";
+    name = "2.11.0-1.tar.gz";
+    sha256 = "68b881325e63e9f54d1dcbede3604a4930c00b2da65e1e593d13c828fa3288a2";
   };
 
   buildType = "ament_cmake";

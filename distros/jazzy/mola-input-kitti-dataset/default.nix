@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, cmake, mola-common, mola-kernel, mrpt-libmaps }:
 buildRosPackage {
   pname = "ros-jazzy-mola-input-kitti-dataset";
-  version = "1.4.0-r1";
+  version = "1.6.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_input_kitti_dataset/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "41508ffcd99adab96611193c01da2ed6c477a107d833a012c4889ed63841d221";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_input_kitti_dataset/1.6.2-1.tar.gz";
+    name = "1.6.2-1.tar.gz";
+    sha256 = "6c1b52488d8a0e4cb686fd7ad3da78149ef598e3f5899c424f82257fe38c1fad";
   };
 
   buildType = "cmake";

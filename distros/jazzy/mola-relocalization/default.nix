@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, cmake, mola-common, mola-pose-list, mola-test-datasets, mp2p-icp, mrpt-libmaps, mrpt-libobs, mrpt-libslam }:
 buildRosPackage {
   pname = "ros-jazzy-mola-relocalization";
-  version = "1.4.0-r1";
+  version = "1.6.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_relocalization/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "270804f06b118aba1336b3c21ee17d255e8f365e4975157cca2e4ebaabb236d1";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_relocalization/1.6.2-1.tar.gz";
+    name = "1.6.2-1.tar.gz";
+    sha256 = "af20c49ce7f351138dc4ddd1fb4d57d80920913367d85d7c266f2a52b0a27d5b";
   };
 
   buildType = "cmake";

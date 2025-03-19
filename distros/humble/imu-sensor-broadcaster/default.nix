@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, ament-lint-auto, ament-lint-common, backward-ros, controller-interface, controller-manager, generate-parameter-library, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, ros2-control-test-assets, sensor-msgs }:
 buildRosPackage {
   pname = "ros-humble-imu-sensor-broadcaster";
-  version = "2.39.0-r1";
+  version = "2.42.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/imu_sensor_broadcaster/2.39.0-1.tar.gz";
-    name = "2.39.0-1.tar.gz";
-    sha256 = "4f7cbe220dc1086f666440a08f3ca14b0938f5f4326b49015b34f90c261a061f";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/imu_sensor_broadcaster/2.42.1-1.tar.gz";
+    name = "2.42.1-1.tar.gz";
+    sha256 = "644034e0350a158962c33a0ae91a53b6ad7a4909896558cfbf9c8dbfd6742ddc";
   };
 
   buildType = "ament_cmake";

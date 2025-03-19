@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, controller-manager, forward-command-controller, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, ros2-control-test-assets }:
 buildRosPackage {
   pname = "ros-jazzy-position-controllers";
-  version = "4.18.0-r1";
+  version = "4.21.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/position_controllers/4.18.0-1.tar.gz";
-    name = "4.18.0-1.tar.gz";
-    sha256 = "e357aa461b5e1e063150bb41fba5e71be309b6873641fce4691a9dc0609f6814";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/position_controllers/4.21.0-1.tar.gz";
+    name = "4.21.0-1.tar.gz";
+    sha256 = "78ea27f0a0129435169b633f34bb37c6dc308a4a5c1e48fdd2799302b36ba4a6";
   };
 
   buildType = "ament_cmake";

@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, cv-bridge, image-transport, libogg, libtheora, opencv, pkg-config, pluginlib, rclcpp, rcutils, rosidl-default-generators, rosidl-default-runtime, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-theora-image-transport";
-  version = "4.0.3-r1";
+  version = "4.0.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/theora_image_transport/4.0.3-1.tar.gz";
-    name = "4.0.3-1.tar.gz";
-    sha256 = "dd48ef6845b03d656e190c5bcbee49c581dd04a9be5182bacf9d6fe11098c6e6";
+    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/theora_image_transport/4.0.4-1.tar.gz";
+    name = "4.0.4-1.tar.gz";
+    sha256 = "0ab8abc3f2c12a983077de679f1b690b5acae200c151979324a6af947d5a8223";
   };
 
   buildType = "ament_cmake";

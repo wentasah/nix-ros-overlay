@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, cmake, mola-common, mrpt-libbase, mrpt-libgui, mrpt-libmaps, mrpt-libobs, mrpt-libposes, mrpt-libtclap, ros-environment, tbb_2021_11 }:
 buildRosPackage {
   pname = "ros-humble-mp2p-icp";
-  version = "1.6.4-r1";
+  version = "1.6.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mp2p_icp-release/archive/release/humble/mp2p_icp/1.6.4-1.tar.gz";
-    name = "1.6.4-1.tar.gz";
-    sha256 = "d42b16647e20d9807969b8f8be5e96a0c91e00362620a6e4e0f9de60d3967206";
+    url = "https://github.com/ros2-gbp/mp2p_icp-release/archive/release/humble/mp2p_icp/1.6.6-1.tar.gz";
+    name = "1.6.6-1.tar.gz";
+    sha256 = "7ae171688fe14a2690bb923ccd594d3098a441b5c785c36f714c1a66bacf6536";
   };
 
   buildType = "cmake";

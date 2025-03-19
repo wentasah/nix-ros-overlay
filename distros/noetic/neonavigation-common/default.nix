@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, catkin, roscpp, roslint, rostest, std-msgs, std-srvs }:
 buildRosPackage {
   pname = "ros-noetic-neonavigation-common";
-  version = "0.17.2-r1";
+  version = "0.17.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/at-wat/neonavigation-release/archive/release/noetic/neonavigation_common/0.17.2-1.tar.gz";
-    name = "0.17.2-1.tar.gz";
-    sha256 = "e3e34168b467448d245fe27948a61b004c04e8b358e9d7dca3b974093c060618";
+    url = "https://github.com/at-wat/neonavigation-release/archive/release/noetic/neonavigation_common/0.17.5-1.tar.gz";
+    name = "0.17.5-1.tar.gz";
+    sha256 = "9432ad5d041ec942afe02fa4adc92da606ae6749aaacb98a749a25bcabfebbbc";
   };
 
   buildType = "catkin";

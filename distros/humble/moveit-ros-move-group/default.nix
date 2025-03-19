@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, moveit-common, moveit-core, moveit-kinematics, moveit-resources-fanuc-moveit-config, moveit-ros-occupancy-map-monitor, moveit-ros-planning, pluginlib, rclcpp, rclcpp-action, std-srvs, tf2, tf2-geometry-msgs, tf2-ros }:
 buildRosPackage {
   pname = "ros-humble-moveit-ros-move-group";
-  version = "2.5.6-r1";
+  version = "2.5.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/humble/moveit_ros_move_group/2.5.6-1.tar.gz";
-    name = "2.5.6-1.tar.gz";
-    sha256 = "9cb49561cfe69e84a9237c30a56f5160c25b32d4271cd60984a5f0818ef61fe0";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/humble/moveit_ros_move_group/2.5.8-1.tar.gz";
+    name = "2.5.8-1.tar.gz";
+    sha256 = "d418fc5ad93db0bb4794b910385a92b2f46d503b39444e8d89700d53f9aed253";
   };
 
   buildType = "ament_cmake";

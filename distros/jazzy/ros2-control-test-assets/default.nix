@@ -1,16 +1,16 @@
 
-# Copyright 2024 Open Source Robotics Foundation
+# Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
 { lib, buildRosPackage, fetchurl, ament-cmake }:
 buildRosPackage {
   pname = "ros-jazzy-ros2-control-test-assets";
-  version = "4.21.0-r1";
+  version = "4.27.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/ros2_control_test_assets/4.21.0-1.tar.gz";
-    name = "4.21.0-1.tar.gz";
-    sha256 = "2e9b39cac35a9ba2b87ee955955d6833ff42743be0447580056e92c96057dfe2";
+    url = "https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/ros2_control_test_assets/4.27.0-1.tar.gz";
+    name = "4.27.0-1.tar.gz";
+    sha256 = "b82601e88d15ad1670510778212914c8b7512a9eabc1b2fb06dddcdf0e969ded";
   };
 
   buildType = "ament_cmake";
