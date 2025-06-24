@@ -17,6 +17,16 @@
     in {
       legacyPackages = pkgs.rosPackages;
 
+      apps = {
+        update-overlay = {
+          type = "app";
+          program = let
+            update-overlay = pkgs.callPackage ./maintainers/scripts/update-overlay.nix { };
+          in
+            "${update-overlay}/bin/update-overlay";
+        };
+      };
+
       devShells = {
         example-turtlebot3-gazebo = import ./examples/turtlebot3-gazebo.nix { inherit pkgs; };
         example-ros2-basic = import ./examples/ros2-basic.nix { inherit pkgs; };

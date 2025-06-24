@@ -135,3 +135,11 @@ This means all the system dependencies of `<package>` were available, so its Nix
 **Q: Why do some packages fail to build?**
 
 There are thousands of ROS packages, so it is infeasible to make sure every package builds. I generally aim to keep at least 80-90% of the packages in a distribution successfully building, but this percentage tends to decrease as distributions get older and develop incompatibilities with newer software. If a package you need does not build, please open an issue or try to fix it yourself. In many cases, build failures occur due to bugs in the packages themselves, and should be fixed upstream. In other cases, overrides may need to be added to this overlay to fix the auto-generated expressions.
+
+**Q: Can I update the overlay more often than once a week?**
+
+You can update the overlay locally by running:
+```
+nix run .#update-overlay
+
+```
