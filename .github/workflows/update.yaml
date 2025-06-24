@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: cachix/install-nix-action@v22
-      - uses: cachix/cachix-action@v16
-        with:
-          name: wentasah
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      # - uses: cachix/cachix-action@v16
+      #   with:
+      #     name: wentasah
+      #     authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Cache tars
         uses: actions/cache@v4
         with:
@@ -45,16 +45,16 @@ jobs:
             --output-repository-path . \
             --upstream-branch develop \
             --all
-      - name: Update ament_vendor info
-        continue-on-error: true
-        run: |
-          # permittedInsecurePackages is needed for updating some gz-*-vendor packages.
-          # Note that this runs without access to SUPERFLORE_GITHUB_TOKEN.
-          mkdir -p ~/.config/nixpkgs
-          echo '{ permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ]; }' > ~/.config/nixpkgs/config.nix
-          NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh || ret=$?
-          git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
-          exit $ret
+      # - name: Update ament_vendor info
+      #   continue-on-error: true
+      #   run: |
+      #     # permittedInsecurePackages is needed for updating some gz-*-vendor packages.
+      #     # Note that this runs without access to SUPERFLORE_GITHUB_TOKEN.
+      #     mkdir -p ~/.config/nixpkgs
+      #     echo '{ permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ]; }' > ~/.config/nixpkgs/config.nix
+      #     NIX_PATH=nixpkgs=$PWD ./maintainers/scripts/update-ament-vendor.sh || ret=$?
+      #     git commit -m 'Update vendored-source.json files' $(find -name vendored-source.json) || :
+      #     exit $ret
       - name: Create PR
         env:
           # Don't use secrets.GITHUB_TOKEN because it prevents the PR from
