@@ -44,7 +44,7 @@ jobs:
             --tar-archive-dir ~/.ros/tar \
             --output-repository-path . \
             --upstream-branch ament-vendor-auto-update-test \
-            --all
+            --ros-distro kilted
       # - name: Update ament_vendor info
       #   continue-on-error: true
       #   run: |
