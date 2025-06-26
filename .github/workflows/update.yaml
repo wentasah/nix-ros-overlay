@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: develop
+        # with:
+        #   ref: develop
       - uses: cachix/install-nix-action@v22
       - uses: cachix/cachix-action@v12
         with:
