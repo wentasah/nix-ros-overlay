@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, mola-common, mola-kernel, mrpt-libmaps }:
 buildRosPackage {
   pname = "ros-rolling-mola-input-paris-luco-dataset";
-  version = "1.6.3-r1";
+  version = "1.9.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mola-release/archive/release/rolling/mola_input_paris_luco_dataset/1.6.3-1.tar.gz";
-    name = "1.6.3-1.tar.gz";
-    sha256 = "a36224ab1701066aa702edf75c5cda457774f9bd77e003f549b0a4b763432ac1";
+    url = "https://github.com/ros2-gbp/mola-release/archive/release/rolling/mola_input_paris_luco_dataset/1.9.0-1.tar.gz";
+    name = "1.9.0-1.tar.gz";
+    sha256 = "cf5a8184dd31f46387f36db94fb562857a068e9a8ddfcf90c2b788e558ea5a15";
   };
 
   buildType = "cmake";

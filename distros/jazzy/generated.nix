@@ -178,6 +178,10 @@ self: super: {
 
  aruco = self.callPackage ./aruco {};
 
+ aruco-markers = self.callPackage ./aruco-markers {};
+
+ aruco-markers-msgs = self.callPackage ./aruco-markers-msgs {};
+
  aruco-msgs = self.callPackage ./aruco-msgs {};
 
  aruco-opencv = self.callPackage ./aruco-opencv {};
@@ -189,6 +193,8 @@ self: super: {
  asio-cmake-module = self.callPackage ./asio-cmake-module {};
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
+
+ at-sonde-ros-driver = self.callPackage ./at-sonde-ros-driver {};
 
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
@@ -209,6 +215,8 @@ self: super: {
  autoware-control-msgs = self.callPackage ./autoware-control-msgs {};
 
  autoware-internal-debug-msgs = self.callPackage ./autoware-internal-debug-msgs {};
+
+ autoware-internal-localization-msgs = self.callPackage ./autoware-internal-localization-msgs {};
 
  autoware-internal-metric-msgs = self.callPackage ./autoware-internal-metric-msgs {};
 
@@ -237,6 +245,30 @@ self: super: {
  autoware-sensing-msgs = self.callPackage ./autoware-sensing-msgs {};
 
  autoware-system-msgs = self.callPackage ./autoware-system-msgs {};
+
+ autoware-utils = self.callPackage ./autoware-utils {};
+
+ autoware-utils-debug = self.callPackage ./autoware-utils-debug {};
+
+ autoware-utils-diagnostics = self.callPackage ./autoware-utils-diagnostics {};
+
+ autoware-utils-geometry = self.callPackage ./autoware-utils-geometry {};
+
+ autoware-utils-logging = self.callPackage ./autoware-utils-logging {};
+
+ autoware-utils-math = self.callPackage ./autoware-utils-math {};
+
+ autoware-utils-pcl = self.callPackage ./autoware-utils-pcl {};
+
+ autoware-utils-rclcpp = self.callPackage ./autoware-utils-rclcpp {};
+
+ autoware-utils-system = self.callPackage ./autoware-utils-system {};
+
+ autoware-utils-tf = self.callPackage ./autoware-utils-tf {};
+
+ autoware-utils-uuid = self.callPackage ./autoware-utils-uuid {};
+
+ autoware-utils-visualization = self.callPackage ./autoware-utils-visualization {};
 
  autoware-v2x-msgs = self.callPackage ./autoware-v2x-msgs {};
 
@@ -288,6 +320,8 @@ self: super: {
 
  boost-sml-vendor = self.callPackage ./boost-sml-vendor {};
 
+ broll = self.callPackage ./broll {};
+
  builtin-interfaces = self.callPackage ./builtin-interfaces {};
 
  camera-aravis2 = self.callPackage ./camera-aravis2 {};
@@ -306,6 +340,8 @@ self: super: {
 
  can-msgs = self.callPackage ./can-msgs {};
 
+ canboat-vendor = self.callPackage ./canboat-vendor {};
+
  canopen = self.callPackage ./canopen {};
 
  canopen-402-driver = self.callPackage ./canopen-402-driver {};
@@ -317,6 +353,10 @@ self: super: {
  canopen-fake-slaves = self.callPackage ./canopen-fake-slaves {};
 
  canopen-interfaces = self.callPackage ./canopen-interfaces {};
+
+ canopen-inventus-driver = self.callPackage ./canopen-inventus-driver {};
+
+ canopen-inventus-interfaces = self.callPackage ./canopen-inventus-interfaces {};
 
  canopen-master-driver = self.callPackage ./canopen-master-driver {};
 
@@ -364,6 +404,8 @@ self: super: {
 
  clearpath-desktop = self.callPackage ./clearpath-desktop {};
 
+ clearpath-diagnostics = self.callPackage ./clearpath-diagnostics {};
+
  clearpath-generator-common = self.callPackage ./clearpath-generator-common {};
 
  clearpath-generator-gz = self.callPackage ./clearpath-generator-gz {};
@@ -410,6 +452,8 @@ self: super: {
 
  cob-srvs = self.callPackage ./cob-srvs {};
 
+ coin-d4-driver = self.callPackage ./coin-d4-driver {};
+
  color-names = self.callPackage ./color-names {};
 
  color-util = self.callPackage ./color-util {};
@@ -434,8 +478,6 @@ self: super: {
 
  controller-interface = self.callPackage ./controller-interface {};
 
- controller-manager = self.callPackage ./controller-manager {};
-
  controller-manager-msgs = self.callPackage ./controller-manager-msgs {};
 
  costmap-queue = self.callPackage ./costmap-queue {};
@@ -451,6 +493,16 @@ self: super: {
  crane-plus-gazebo = self.callPackage ./crane-plus-gazebo {};
 
  crane-plus-moveit-config = self.callPackage ./crane-plus-moveit-config {};
+
+ crazyflie = self.callPackage ./crazyflie {};
+
+ crazyflie-examples = self.callPackage ./crazyflie-examples {};
+
+ crazyflie-interfaces = self.callPackage ./crazyflie-interfaces {};
+
+ crazyflie-py = self.callPackage ./crazyflie-py {};
+
+ crazyflie-sim = self.callPackage ./crazyflie-sim {};
 
  create3-coverage = self.callPackage ./create3-coverage {};
 
@@ -818,6 +870,22 @@ self: super: {
 
  ffmpeg-image-transport-tools = self.callPackage ./ffmpeg-image-transport-tools {};
 
+ ffw = self.callPackage ./ffw {};
+
+ ffw-bringup = self.callPackage ./ffw-bringup {};
+
+ ffw-description = self.callPackage ./ffw-description {};
+
+ ffw-joint-trajectory-command-broadcaster = self.callPackage ./ffw-joint-trajectory-command-broadcaster {};
+
+ ffw-joystick-controller = self.callPackage ./ffw-joystick-controller {};
+
+ ffw-moveit-config = self.callPackage ./ffw-moveit-config {};
+
+ ffw-spring-actuator-controller = self.callPackage ./ffw-spring-actuator-controller {};
+
+ ffw-teleop = self.callPackage ./ffw-teleop {};
+
  fields2cover = self.callPackage ./fields2cover {};
 
  filters = self.callPackage ./filters {};
@@ -1096,6 +1164,8 @@ self: super: {
 
  imu-transformer = self.callPackage ./imu-transformer {};
 
+ insight-gui = self.callPackage ./insight-gui {};
+
  interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
  interactive-markers = self.callPackage ./interactive-markers {};
@@ -1234,6 +1304,8 @@ self: super: {
 
  leo-desktop = self.callPackage ./leo-desktop {};
 
+ leo-filters = self.callPackage ./leo-filters {};
+
  leo-fw = self.callPackage ./leo-fw {};
 
  leo-gz-bringup = self.callPackage ./leo-gz-bringup {};
@@ -1253,8 +1325,6 @@ self: super: {
  leo-viz = self.callPackage ./leo-viz {};
 
  lgsvl-msgs = self.callPackage ./lgsvl-msgs {};
-
- libcaer = self.callPackage ./libcaer {};
 
  libcaer-driver = self.callPackage ./libcaer-driver {};
 
@@ -1289,6 +1359,8 @@ self: super: {
  lifecycle-py = self.callPackage ./lifecycle-py {};
 
  linux-isolate-process = self.callPackage ./linux-isolate-process {};
+
+ lms1xx = self.callPackage ./lms1xx {};
 
  log-view = self.callPackage ./log-view {};
 
@@ -1372,6 +1444,8 @@ self: super: {
 
  mobileye-560-660-msgs = self.callPackage ./mobileye-560-660-msgs {};
 
+ mocap-optitrack = self.callPackage ./mocap-optitrack {};
+
  mola = self.callPackage ./mola {};
 
  mola-bridge-ros2 = self.callPackage ./mola-bridge-ros2 {};
@@ -1397,6 +1471,8 @@ self: super: {
  mola-input-rawlog = self.callPackage ./mola-input-rawlog {};
 
  mola-input-rosbag2 = self.callPackage ./mola-input-rosbag2 {};
+
+ mola-input-video = self.callPackage ./mola-input-video {};
 
  mola-kernel = self.callPackage ./mola-kernel {};
 
@@ -1620,6 +1696,8 @@ self: super: {
 
  nao-sensor-msgs = self.callPackage ./nao-sensor-msgs {};
 
+ naoqi-libqi = self.callPackage ./naoqi-libqi {};
+
  nav2-amcl = self.callPackage ./nav2-amcl {};
 
  nav2-behavior-tree = self.callPackage ./nav2-behavior-tree {};
@@ -1770,6 +1848,8 @@ self: super: {
 
  open-manipulator-bringup = self.callPackage ./open-manipulator-bringup {};
 
+ open-manipulator-collision = self.callPackage ./open-manipulator-collision {};
+
  open-manipulator-description = self.callPackage ./open-manipulator-description {};
 
  open-manipulator-gui = self.callPackage ./open-manipulator-gui {};
@@ -1869,6 +1949,8 @@ self: super: {
  phidgets-msgs = self.callPackage ./phidgets-msgs {};
 
  phidgets-spatial = self.callPackage ./phidgets-spatial {};
+
+ phidgets-stepper = self.callPackage ./phidgets-stepper {};
 
  phidgets-temperature = self.callPackage ./phidgets-temperature {};
 
@@ -2011,6 +2093,8 @@ self: super: {
  r2r-spl-7 = self.callPackage ./r2r-spl-7 {};
 
  radar-msgs = self.callPackage ./radar-msgs {};
+
+ rai-interfaces = self.callPackage ./rai-interfaces {};
 
  random-numbers = self.callPackage ./random-numbers {};
 
@@ -2240,6 +2324,8 @@ self: super: {
 
  rmw-implementation-cmake = self.callPackage ./rmw-implementation-cmake {};
 
+ rmw-stats-shim = self.callPackage ./rmw-stats-shim {};
+
  rmw-zenoh-cpp = self.callPackage ./rmw-zenoh-cpp {};
 
  robot-calibration = self.callPackage ./robot-calibration {};
@@ -2380,6 +2466,8 @@ self: super: {
 
  rosbag2-storage = self.callPackage ./rosbag2-storage {};
 
+ rosbag2-storage-broll = self.callPackage ./rosbag2-storage-broll {};
+
  rosbag2-storage-default-plugins = self.callPackage ./rosbag2-storage-default-plugins {};
 
  rosbag2-storage-mcap = self.callPackage ./rosbag2-storage-mcap {};
@@ -2405,6 +2493,10 @@ self: super: {
  rosbridge-suite = self.callPackage ./rosbridge-suite {};
 
  rosbridge-test-msgs = self.callPackage ./rosbridge-test-msgs {};
+
+ rosgraph-monitor = self.callPackage ./rosgraph-monitor {};
+
+ rosgraph-monitor-msgs = self.callPackage ./rosgraph-monitor-msgs {};
 
  rosgraph-msgs = self.callPackage ./rosgraph-msgs {};
 
@@ -2624,8 +2716,6 @@ self: super: {
 
  scenario-execution-os = self.callPackage ./scenario-execution-os {};
 
- scenario-execution-py-trees-ros = self.callPackage ./scenario-execution-py-trees-ros {};
-
  scenario-execution-ros = self.callPackage ./scenario-execution-ros {};
 
  scenario-execution-rviz = self.callPackage ./scenario-execution-rviz {};
@@ -2682,6 +2772,8 @@ self: super: {
 
  simulation = self.callPackage ./simulation {};
 
+ simulation-interfaces = self.callPackage ./simulation-interfaces {};
+
  slam-toolbox = self.callPackage ./slam-toolbox {};
 
  slg-msgs = self.callPackage ./slg-msgs {};
@@ -2699,6 +2791,8 @@ self: super: {
  smclib = self.callPackage ./smclib {};
 
  snowbot-operating-system = self.callPackage ./snowbot-operating-system {};
+
+ so-arm-100-hardware = self.callPackage ./so-arm-100-hardware {};
 
  soccer-geometry-msgs = self.callPackage ./soccer-geometry-msgs {};
 
@@ -2777,8 +2871,6 @@ self: super: {
  swri-route-util = self.callPackage ./swri-route-util {};
 
  swri-serial-util = self.callPackage ./swri-serial-util {};
-
- swri-system-util = self.callPackage ./swri-system-util {};
 
  swri-transform-util = self.callPackage ./swri-transform-util {};
 
@@ -2898,6 +2990,8 @@ self: super: {
 
  tricycle-steering-controller = self.callPackage ./tricycle-steering-controller {};
 
+ tsid = self.callPackage ./tsid {};
+
  turbojpeg-compressed-image-transport = self.callPackage ./turbojpeg-compressed-image-transport {};
 
  turtle-nest = self.callPackage ./turtle-nest {};
@@ -2907,6 +3001,24 @@ self: super: {
  turtle-tf2-py = self.callPackage ./turtle-tf2-py {};
 
  turtlebot3 = self.callPackage ./turtlebot3 {};
+
+ turtlebot3-applications = self.callPackage ./turtlebot3-applications {};
+
+ turtlebot3-applications-msgs = self.callPackage ./turtlebot3-applications-msgs {};
+
+ turtlebot3-aruco-tracker = self.callPackage ./turtlebot3-aruco-tracker {};
+
+ turtlebot3-automatic-parking = self.callPackage ./turtlebot3-automatic-parking {};
+
+ turtlebot3-automatic-parking-vision = self.callPackage ./turtlebot3-automatic-parking-vision {};
+
+ turtlebot3-autorace = self.callPackage ./turtlebot3-autorace {};
+
+ turtlebot3-autorace-camera = self.callPackage ./turtlebot3-autorace-camera {};
+
+ turtlebot3-autorace-detect = self.callPackage ./turtlebot3-autorace-detect {};
+
+ turtlebot3-autorace-mission = self.callPackage ./turtlebot3-autorace-mission {};
 
  turtlebot3-bringup = self.callPackage ./turtlebot3-bringup {};
 
@@ -2918,7 +3030,25 @@ self: super: {
 
  turtlebot3-fake-node = self.callPackage ./turtlebot3-fake-node {};
 
+ turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
+
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
+
+ turtlebot3-manipulation-bringup = self.callPackage ./turtlebot3-manipulation-bringup {};
+
+ turtlebot3-manipulation-cartographer = self.callPackage ./turtlebot3-manipulation-cartographer {};
+
+ turtlebot3-manipulation-description = self.callPackage ./turtlebot3-manipulation-description {};
+
+ turtlebot3-manipulation-hardware = self.callPackage ./turtlebot3-manipulation-hardware {};
+
+ turtlebot3-manipulation-moveit-config = self.callPackage ./turtlebot3-manipulation-moveit-config {};
+
+ turtlebot3-manipulation-navigation2 = self.callPackage ./turtlebot3-manipulation-navigation2 {};
+
+ turtlebot3-manipulation-teleop = self.callPackage ./turtlebot3-manipulation-teleop {};
 
  turtlebot3-msgs = self.callPackage ./turtlebot3-msgs {};
 
@@ -2926,9 +3056,13 @@ self: super: {
 
  turtlebot3-node = self.callPackage ./turtlebot3-node {};
 
+ turtlebot3-panorama = self.callPackage ./turtlebot3-panorama {};
+
  turtlebot3-simulations = self.callPackage ./turtlebot3-simulations {};
 
  turtlebot3-teleop = self.callPackage ./turtlebot3-teleop {};
+
+ turtlebot3-yolo-object-detection = self.callPackage ./turtlebot3-yolo-object-detection {};
 
  turtlebot4-base = self.callPackage ./turtlebot4-base {};
 
@@ -3165,6 +3299,8 @@ self: super: {
  zenoh-bridge-dds = self.callPackage ./zenoh-bridge-dds {};
 
  zenoh-cpp-vendor = self.callPackage ./zenoh-cpp-vendor {};
+
+ zenoh-security-tools = self.callPackage ./zenoh-security-tools {};
 
  zlib-point-cloud-transport = self.callPackage ./zlib-point-cloud-transport {};
 

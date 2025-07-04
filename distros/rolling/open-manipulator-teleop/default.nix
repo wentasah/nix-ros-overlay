@@ -2,24 +2,22 @@
 # Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, rclcpp, rclpy }:
+{ lib, buildRosPackage, fetchurl, control-msgs, rclpy, sensor-msgs, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-teleop";
-  version = "3.2.1-r1";
+  version = "4.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_teleop/3.2.1-1.tar.gz";
-    name = "3.2.1-1.tar.gz";
-    sha256 = "2c0f6692448882c0f796ec98639fb7bdec70f1d207075c8703096f428492fcf9";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_teleop/4.0.1-1.tar.gz";
+    name = "4.0.1-1.tar.gz";
+    sha256 = "13419235858582fb66d044fe8c73046e697c60afbbcf523b987c19b85530f37b";
   };
 
-  buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rclcpp rclpy ];
-  nativeBuildInputs = [ ament-cmake ];
+  buildType = "ament_python";
+  propagatedBuildInputs = [ control-msgs rclpy sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
-    description = "OpenMANIPULATOR teleop ROS 2 package.";
+    description = "OpenManipulator teleoperation package";
     license = with lib.licenses; [ asl20 ];
   };
 }

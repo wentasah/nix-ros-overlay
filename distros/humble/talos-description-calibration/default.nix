@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-auto, ament-cmake-python, xacro }:
 buildRosPackage {
   pname = "ros-humble-talos-description-calibration";
-  version = "2.0.1-r1";
+  version = "2.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/pal-gbp/talos_robot-release/archive/release/humble/talos_description_calibration/2.0.1-1.tar.gz";
-    name = "2.0.1-1.tar.gz";
-    sha256 = "229e1719fd8bee043663ab3e22bbf6a2a70e34357674323461d0ed4cd46d7c2d";
+    url = "https://github.com/pal-gbp/talos_robot-release/archive/release/humble/talos_description_calibration/2.1.0-1.tar.gz";
+    name = "2.1.0-1.tar.gz";
+    sha256 = "e93d38e81b90175979023d98a9418a9ad87fcb7b83033464134976c197057fba";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-copyright, ament-cmake-core, ament-cmake-lint-cmake, ament-cmake-test, ament-uncrustify }:
 buildRosPackage {
   pname = "ros-rolling-ament-cmake-uncrustify";
-  version = "0.19.2-r1";
+  version = "0.20.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_cmake_uncrustify/0.19.2-1.tar.gz";
-    name = "0.19.2-1.tar.gz";
-    sha256 = "600dcc82e081f427ec0b40d79188aa0fd981c63f29d1464daa0c7edd0e92817f";
+    url = "https://github.com/ros2-gbp/ament_lint-release/archive/release/rolling/ament_cmake_uncrustify/0.20.1-1.tar.gz";
+    name = "0.20.1-1.tar.gz";
+    sha256 = "30bd4caec36a7a1169c050536bb68c9d040a8d8951f08d540dec3a0f954e8257";
   };
 
   buildType = "ament_cmake";

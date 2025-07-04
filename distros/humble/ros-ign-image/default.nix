@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-index-cpp, ros-gz-image }:
 buildRosPackage {
   pname = "ros-humble-ros-ign-image";
-  version = "0.244.16-r2";
+  version = "0.244.20-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/humble/ros_ign_image/0.244.16-2.tar.gz";
-    name = "0.244.16-2.tar.gz";
-    sha256 = "a0de586bdef935995cc6d9e9d439c598f0b8a7c52bd2355d5d287dea957b5b58";
+    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/humble/ros_ign_image/0.244.20-1.tar.gz";
+    name = "0.244.20-1.tar.gz";
+    sha256 = "ed222874b547a3fb1000e5d295adce8d878c7728bcf616d0a9ed792991cdc6ef";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, pmb2-bringup, pmb2-controller-configuration, pmb2-description }:
 buildRosPackage {
   pname = "ros-humble-pmb2-robot";
-  version = "5.7.0-r1";
+  version = "5.9.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/pal-gbp/pmb2_robot-gbp/archive/release/humble/pmb2_robot/5.7.0-1.tar.gz";
-    name = "5.7.0-1.tar.gz";
-    sha256 = "fd85400824adabbc3a99d3b9db00b94640f614941774220a39a9539be7075ef4";
+    url = "https://github.com/pal-gbp/pmb2_robot-gbp/archive/release/humble/pmb2_robot/5.9.0-1.tar.gz";
+    name = "5.9.0-1.tar.gz";
+    sha256 = "fbd13ccfe9f2a725c25f97689c02697b9ca206d80a4e6586911fa1048eb85d1d";
   };
 
   buildType = "ament_cmake";

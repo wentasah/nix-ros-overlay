@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-auto, omni-base-gazebo }:
 buildRosPackage {
   pname = "ros-humble-omni-base-simulation";
-  version = "2.4.0-r1";
+  version = "2.9.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/pal-gbp/omni_base_simulation-release/archive/release/humble/omni_base_simulation/2.4.0-1.tar.gz";
-    name = "2.4.0-1.tar.gz";
-    sha256 = "9d8344a16020a23fb96392909353abef23756d8d5971cd44f701fda821bc1f7b";
+    url = "https://github.com/pal-gbp/omni_base_simulation-release/archive/release/humble/omni_base_simulation/2.9.0-1.tar.gz";
+    name = "2.9.0-1.tar.gz";
+    sha256 = "26cd0c9526fe863760ca741539984aa5990f69d072271211e460f9226a7cbe28";
   };
 
   buildType = "ament_cmake";

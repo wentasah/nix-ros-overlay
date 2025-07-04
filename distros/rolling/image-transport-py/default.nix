@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-python, ament-cmake-ros, ament-lint-auto, ament-lint-common, image-transport, pybind11-vendor, python3, rclcpp, rpyutils, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-image-transport-py";
-  version = "6.1.0-r1";
+  version = "6.2.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_common-release/archive/release/rolling/image_transport_py/6.1.0-1.tar.gz";
-    name = "6.1.0-1.tar.gz";
-    sha256 = "20c73696e3498093c4566d414f2f25914bb3ab7a0d285c5a02cc23f22e41c68f";
+    url = "https://github.com/ros2-gbp/image_common-release/archive/release/rolling/image_transport_py/6.2.1-1.tar.gz";
+    name = "6.2.1-1.tar.gz";
+    sha256 = "960e139aebecb0ef59d409249c5536a6c5c1c65b21036d350222e98007f4595e";
   };
 
   buildType = "ament_cmake";
