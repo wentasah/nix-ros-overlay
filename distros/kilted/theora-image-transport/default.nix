@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, cv-bridge, image-transport, libogg, libtheora, opencv, pkg-config, pluginlib, rclcpp, rcutils, rosidl-default-generators, rosidl-default-runtime, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-kilted-theora-image-transport";
-  version = "5.0.2-r2";
+  version = "5.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/kilted/theora_image_transport/5.0.2-2.tar.gz";
-    name = "5.0.2-2.tar.gz";
-    sha256 = "fa887806f96b06f4603619316b6aa521b9097cc3f1889f3bca83ef673cfdd8f2";
+    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/kilted/theora_image_transport/5.1.0-1.tar.gz";
+    name = "5.1.0-1.tar.gz";
+    sha256 = "2a170ec982fabddd372d65cf3232bf3da16ea9f79199640a6f92e55df6b8aa69";
   };
 
   buildType = "ament_cmake";

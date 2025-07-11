@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, angles, backward-ros, control-msgs, control-toolbox, controller-interface, generate-parameter-library, hardware-interface, kdl-parser, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, rsl, tl-expected, urdf }:
 buildRosPackage {
   pname = "ros-jazzy-om-gravity-compensation-controller";
-  version = "4.0.1-r1";
+  version = "4.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/om_gravity_compensation_controller/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "efcffa1324653cf4c5da6b272b9c02dc3256fe0251bcccd9cabc16022546915d";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/om_gravity_compensation_controller/4.0.5-1.tar.gz";
+    name = "4.0.5-1.tar.gz";
+    sha256 = "5ff4030cd1b2aa5f329b8b94c0505b67f3234f8a1e1e52fbb8d4d225eb244135";
   };
 
   buildType = "ament_cmake";

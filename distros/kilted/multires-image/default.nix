@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, geometry-msgs, mapviz, pluginlib, qt5, rclcpp, rclpy, swri-math-util, swri-transform-util, tf2 }:
 buildRosPackage {
   pname = "ros-kilted-multires-image";
-  version = "2.5.6-r1";
+  version = "2.5.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/kilted/multires_image/2.5.6-1.tar.gz";
-    name = "2.5.6-1.tar.gz";
-    sha256 = "d9a7c821b240847a2b18791ce3adad3b3cac01aa4d425f8cb6d09e5a5cc477bb";
+    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/kilted/multires_image/2.5.7-1.tar.gz";
+    name = "2.5.7-1.tar.gz";
+    sha256 = "e4d5c6d22e60df396a9b6e86c3a60e0d9d187998d8b061b19c5a401c50386dc9";
   };
 
   buildType = "ament_cmake";

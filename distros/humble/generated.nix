@@ -2034,8 +2034,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nerian-stereo = self.callPackage ./nerian-stereo {};

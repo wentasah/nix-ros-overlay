@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, om-gravity-compensation-controller, om-joint-trajectory-command-broadcaster, om-spring-actuator-controller, open-manipulator-bringup, open-manipulator-collision, open-manipulator-description, open-manipulator-gui, open-manipulator-moveit-config, open-manipulator-playground, open-manipulator-teleop }:
 buildRosPackage {
   pname = "ros-jazzy-open-manipulator";
-  version = "4.0.1-r1";
+  version = "4.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "5e3135364b18a11c5476581c192ce1cd2013e82b40ab97f966b132030e5cf8de";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator/4.0.5-1.tar.gz";
+    name = "4.0.5-1.tar.gz";
+    sha256 = "70af83aa8268d8651abaac9b4790d071b260cf6fc2b5d1606e578a40c1a42ec3";
   };
 
   buildType = "ament_cmake";

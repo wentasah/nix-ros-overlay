@@ -1778,8 +1778,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  network-bridge = self.callPackage ./network-bridge {};
@@ -2203,6 +2201,8 @@ self: super: {
  realsense2-description = self.callPackage ./realsense2-description {};
 
  realtime-tools = self.callPackage ./realtime-tools {};
+
+ reductstore-agent = self.callPackage ./reductstore-agent {};
 
  resource-retriever = self.callPackage ./resource-retriever {};
 

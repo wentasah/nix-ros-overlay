@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, ament-cmake-gtest, ament-cmake-pytest, ament-cmake-ros-core, ament-lint-auto, ament-lint-common, launch, launch-testing, launch-testing-ament-cmake, mimick-vendor, osrf-testing-tools-cpp, performance-test-fixture, python3Packages }:
 buildRosPackage {
   pname = "ros-kilted-rcutils";
-  version = "6.9.5-r2";
+  version = "6.9.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rcutils-release/archive/release/kilted/rcutils/6.9.5-2.tar.gz";
-    name = "6.9.5-2.tar.gz";
-    sha256 = "c53d7c1f50e2b795f78817d03a384a0bc876f9844808aebeba6cc514d952fe63";
+    url = "https://github.com/ros2-gbp/rcutils-release/archive/release/kilted/rcutils/6.9.6-1.tar.gz";
+    name = "6.9.6-1.tar.gz";
+    sha256 = "56859ce7a38d8e2ea457de3b3ee0eee88d3b676186595f3b19698bafd4df5871";
   };
 
   buildType = "ament_cmake";

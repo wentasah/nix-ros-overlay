@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, controller-interface, generate-parameter-library, hardware-interface, pluginlib, rclcpp, rclcpp-lifecycle, urdf }:
 buildRosPackage {
   pname = "ros-rolling-om-spring-actuator-controller";
-  version = "4.0.1-r1";
+  version = "4.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/om_spring_actuator_controller/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "d3cb033846632f700500a82ba72506dfcdbfcb5acd86bf6f129903b5bdf1bc7d";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/om_spring_actuator_controller/4.0.5-1.tar.gz";
+    name = "4.0.5-1.tar.gz";
+    sha256 = "d98a4593a80601544fb3b3c3cb3fe9057a5654037694dd0b6b0278aa142633a8";
   };
 
   buildType = "ament_cmake";
