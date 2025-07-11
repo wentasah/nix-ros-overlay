@@ -258,8 +258,6 @@ self: super: {
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
 
- behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
-
  bicycle-steering-controller = self.callPackage ./bicycle-steering-controller {};
 
  bno055 = self.callPackage ./bno055 {};
@@ -1428,8 +1426,6 @@ self: super: {
 
  navigation2 = self.callPackage ./navigation2 {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nlohmann-json-schema-validator-vendor = self.callPackage ./nlohmann-json-schema-validator-vendor {};
@@ -1669,6 +1665,8 @@ self: super: {
  pose-cov-ops = self.callPackage ./pose-cov-ops {};
 
  position-controllers = self.callPackage ./position-controllers {};
+
+ protobuf-comm = self.callPackage ./protobuf-comm {};
 
  proxsuite = self.callPackage ./proxsuite {};
 

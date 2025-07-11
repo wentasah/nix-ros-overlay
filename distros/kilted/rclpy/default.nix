@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, action-msgs, ament-cmake, ament-cmake-gtest, ament-cmake-pytest, ament-index-python, ament-lint-auto, ament-lint-common, builtin-interfaces, lifecycle-msgs, pybind11-vendor, python3, python3Packages, rcl, rcl-action, rcl-interfaces, rcl-lifecycle, rcl-logging-interface, rcl-yaml-param-parser, rcpputils, rcutils, rmw, rmw-implementation, rmw-implementation-cmake, rosgraph-msgs, rosidl-generator-py, rosidl-runtime-c, rpyutils, service-msgs, test-msgs, type-description-interfaces, unique-identifier-msgs }:
 buildRosPackage {
   pname = "ros-kilted-rclpy";
-  version = "9.1.0-r2";
+  version = "9.1.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rclpy-release/archive/release/kilted/rclpy/9.1.0-2.tar.gz";
-    name = "9.1.0-2.tar.gz";
-    sha256 = "d8ae8761b01c8d2d26c5730ab4098600bfca118f81241c6d61650b3440d7a0b4";
+    url = "https://github.com/ros2-gbp/rclpy-release/archive/release/kilted/rclpy/9.1.1-1.tar.gz";
+    name = "9.1.1-1.tar.gz";
+    sha256 = "347e671e08952e8b51ba7b4590a87584f9cd10455840aaca41bff72bf0e13664";
   };
 
   buildType = "ament_cmake";

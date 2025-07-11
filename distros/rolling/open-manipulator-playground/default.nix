@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, moveit-ros-planning-interface, rclcpp }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-playground";
-  version = "4.0.1-r1";
+  version = "4.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_playground/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "deffd45f237b586658051946829eb6dfcd17bc5e74d7e075f7876d880b62eb74";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_playground/4.0.5-1.tar.gz";
+    name = "4.0.5-1.tar.gz";
+    sha256 = "29ab22a777e8e3ca1d1e6266f7dec1052bf8a809ed583dff2d7aa927b0857549";
   };
 
   buildType = "ament_cmake";

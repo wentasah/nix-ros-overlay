@@ -288,8 +288,6 @@ self: super: {
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
 
- behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
-
  bicycle-steering-controller = self.callPackage ./bicycle-steering-controller {};
 
  bno055 = self.callPackage ./bno055 {};
@@ -363,6 +361,8 @@ self: super: {
  class-loader = self.callPackage ./class-loader {};
 
  classic-bags = self.callPackage ./classic-bags {};
+
+ clips-vendor = self.callPackage ./clips-vendor {};
 
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
 
@@ -1394,8 +1394,6 @@ self: super: {
 
  nav-msgs = self.callPackage ./nav-msgs {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nlohmann-json-schema-validator-vendor = self.callPackage ./nlohmann-json-schema-validator-vendor {};
@@ -1727,6 +1725,8 @@ self: super: {
  rcutils = self.callPackage ./rcutils {};
 
  realtime-tools = self.callPackage ./realtime-tools {};
+
+ reductstore-agent = self.callPackage ./reductstore-agent {};
 
  resource-retriever = self.callPackage ./resource-retriever {};
 

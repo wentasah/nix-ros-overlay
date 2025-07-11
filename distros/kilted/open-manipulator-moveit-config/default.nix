@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, controller-manager, joint-state-publisher, joint-state-publisher-gui, moveit-configs-utils, moveit-kinematics, moveit-planners, moveit-ros-move-group, moveit-ros-visualization, moveit-ros-warehouse, moveit-setup-assistant, moveit-simple-controller-manager, open-manipulator-description, robot-state-publisher, rviz-common, rviz-default-plugins, rviz2, tf2-ros, warehouse-ros-sqlite, xacro }:
 buildRosPackage {
   pname = "ros-kilted-open-manipulator-moveit-config";
-  version = "4.0.1-r1";
+  version = "4.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_moveit_config/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "3d00d075921ae6ad77f60c6b7ca14bfc28c8c8d2e0a8653a2f3626b04244081e";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_moveit_config/4.0.5-1.tar.gz";
+    name = "4.0.5-1.tar.gz";
+    sha256 = "5c69d554589b41765b00eac41bc0aa419b2da0674631bc9d1c37cfb45569f0cf";
   };
 
   buildType = "ament_cmake";
