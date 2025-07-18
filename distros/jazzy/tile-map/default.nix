@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, glew, jsoncpp, mapviz, pluginlib, qt5, rclcpp, swri-math-util, swri-transform-util, tf2, yaml-cpp }:
 buildRosPackage {
   pname = "ros-jazzy-tile-map";
-  version = "2.5.6-r1";
+  version = "2.5.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/jazzy/tile_map/2.5.6-1.tar.gz";
-    name = "2.5.6-1.tar.gz";
-    sha256 = "9494b197d9300a89e08672b0abb38ed444524856aea44956b5ef5a23c4c1e91c";
+    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/jazzy/tile_map/2.5.8-1.tar.gz";
+    name = "2.5.8-1.tar.gz";
+    sha256 = "151719dcc869dd773318dec41c7d34a40317e48424cf454ceeb3b511d00daa57";
   };
 
   buildType = "ament_cmake";

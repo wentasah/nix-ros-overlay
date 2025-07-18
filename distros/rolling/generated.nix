@@ -288,8 +288,6 @@ self: super: {
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
 
- behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
-
  bicycle-steering-controller = self.callPackage ./bicycle-steering-controller {};
 
  bno055 = self.callPackage ./bno055 {};
@@ -363,6 +361,8 @@ self: super: {
  class-loader = self.callPackage ./class-loader {};
 
  classic-bags = self.callPackage ./classic-bags {};
+
+ clips-vendor = self.callPackage ./clips-vendor {};
 
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
 
@@ -1394,8 +1394,6 @@ self: super: {
 
  nav-msgs = self.callPackage ./nav-msgs {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nlohmann-json-schema-validator-vendor = self.callPackage ./nlohmann-json-schema-validator-vendor {};
@@ -1594,6 +1592,8 @@ self: super: {
 
  position-controllers = self.callPackage ./position-controllers {};
 
+ protobuf-comm = self.callPackage ./protobuf-comm {};
+
  proxsuite = self.callPackage ./proxsuite {};
 
  py-binding-tools = self.callPackage ./py-binding-tools {};
@@ -1727,6 +1727,8 @@ self: super: {
  rcutils = self.callPackage ./rcutils {};
 
  realtime-tools = self.callPackage ./realtime-tools {};
+
+ reductstore-agent = self.callPackage ./reductstore-agent {};
 
  resource-retriever = self.callPackage ./resource-retriever {};
 
@@ -2203,6 +2205,32 @@ self: super: {
  rt-usb-9axisimu-driver = self.callPackage ./rt-usb-9axisimu-driver {};
 
  rtabmap = self.callPackage ./rtabmap {};
+
+ rtabmap-conversions = self.callPackage ./rtabmap-conversions {};
+
+ rtabmap-demos = self.callPackage ./rtabmap-demos {};
+
+ rtabmap-examples = self.callPackage ./rtabmap-examples {};
+
+ rtabmap-launch = self.callPackage ./rtabmap-launch {};
+
+ rtabmap-msgs = self.callPackage ./rtabmap-msgs {};
+
+ rtabmap-odom = self.callPackage ./rtabmap-odom {};
+
+ rtabmap-python = self.callPackage ./rtabmap-python {};
+
+ rtabmap-ros = self.callPackage ./rtabmap-ros {};
+
+ rtabmap-rviz-plugins = self.callPackage ./rtabmap-rviz-plugins {};
+
+ rtabmap-slam = self.callPackage ./rtabmap-slam {};
+
+ rtabmap-sync = self.callPackage ./rtabmap-sync {};
+
+ rtabmap-util = self.callPackage ./rtabmap-util {};
+
+ rtabmap-viz = self.callPackage ./rtabmap-viz {};
 
  rtcm-msgs = self.callPackage ./rtcm-msgs {};
 

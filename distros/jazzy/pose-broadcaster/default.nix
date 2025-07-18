@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, controller-interface, controller-manager, generate-parameter-library, geometry-msgs, hardware-interface-testing, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, ros2-control-cmake, ros2-control-test-assets, tf2-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-pose-broadcaster";
-  version = "4.27.1-r1";
+  version = "4.28.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/pose_broadcaster/4.27.1-1.tar.gz";
-    name = "4.27.1-1.tar.gz";
-    sha256 = "1e2133d31469720aace989041d6cb77401096009fc17b485510ad82737c3ff5c";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/pose_broadcaster/4.28.0-1.tar.gz";
+    name = "4.28.0-1.tar.gz";
+    sha256 = "368e7126e79e13c852ea8fd0617d8e0b5f84b3247c6b34b9f75ccaeb4d5c602d";
   };
 
   buildType = "ament_cmake";

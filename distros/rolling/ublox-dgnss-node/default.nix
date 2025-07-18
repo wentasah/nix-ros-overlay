@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-copyright, ament-cmake-cppcheck, ament-cmake-uncrustify, ament-lint-auto, ament-lint-common, libusb1, pkg-config, rclcpp, rclcpp-components, rtcm-msgs, std-msgs, ublox-ubx-interfaces, ublox-ubx-msgs }:
 buildRosPackage {
   pname = "ros-rolling-ublox-dgnss-node";
-  version = "0.5.7-r1";
+  version = "0.5.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ublox_dgnss-release/archive/release/rolling/ublox_dgnss_node/0.5.7-1.tar.gz";
-    name = "0.5.7-1.tar.gz";
-    sha256 = "05f9c6a3bbeff6e2ead6a4980464645e29a934675be690925796ce5288bace1e";
+    url = "https://github.com/ros2-gbp/ublox_dgnss-release/archive/release/rolling/ublox_dgnss_node/0.5.8-1.tar.gz";
+    name = "0.5.8-1.tar.gz";
+    sha256 = "1f13e9e684dd1e4399f28c440921bbecd9d40f6b868a37f48959c5eec107040b";
   };
 
   buildType = "ament_cmake";

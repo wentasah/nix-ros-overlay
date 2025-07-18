@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-black, ament-cmake-clang-format, ament-cmake-ros, ament-lint-auto, ament-lint-common, rclcpp, rclcpp-components, spinnaker-camera-driver }:
 buildRosPackage {
   pname = "ros-jazzy-spinnaker-synchronized-camera-driver";
-  version = "3.0.2-r1";
+  version = "3.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/flir_camera_driver-release/archive/release/jazzy/spinnaker_synchronized_camera_driver/3.0.2-1.tar.gz";
-    name = "3.0.2-1.tar.gz";
-    sha256 = "f4904b4a063a224397217579389dbec0b48423760603531ef5f03d4e4aefeaa4";
+    url = "https://github.com/ros2-gbp/flir_camera_driver-release/archive/release/jazzy/spinnaker_synchronized_camera_driver/3.0.3-1.tar.gz";
+    name = "3.0.3-1.tar.gz";
+    sha256 = "183f85a87121e582082fb0f44f7b6f0f6c9bf305210521a6acc9a21864b930e3";
   };
 
   buildType = "ament_cmake";
