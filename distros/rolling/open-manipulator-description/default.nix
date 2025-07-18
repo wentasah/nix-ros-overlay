@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, joint-state-publisher, joint-state-publisher-gui, robot-state-publisher, rviz2 }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-description";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_description/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "c346746c31f232e028b08d5080f013f98cae7bb2547166f4904ab8360487ff4e";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_description/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "92d5d5c2dedb7ab33f7a21f0378a646d4f3ce4e2ea33bbe8080d9969d1e2af1d";
   };
 
   buildType = "ament_cmake";

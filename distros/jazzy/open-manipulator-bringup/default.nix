@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, dynamixel-hardware-interface, gz-ros2-control, open-manipulator-description, rclpy, robot-state-publisher, ros-gz-bridge, ros-gz-image, ros-gz-sim, ros2-control, ros2-controllers, rviz2, xacro }:
 buildRosPackage {
   pname = "ros-jazzy-open-manipulator-bringup";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator_bringup/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "b9a787f9b3ffd4892326e1ca4333ea0103afc4513f47ffc5bb04fdf00db66dc9";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator_bringup/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "9e51050846e4c99a5ac25f60de568a9532bfce270af87acf890a77fcd7d5d6ba";
   };
 
   buildType = "ament_python";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, nav2-bringup }:
 buildRosPackage {
   pname = "ros-humble-turtlebot3-navigation2";
-  version = "2.3.1-r1";
+  version = "2.3.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/turtlebot3-release/archive/release/humble/turtlebot3_navigation2/2.3.1-1.tar.gz";
-    name = "2.3.1-1.tar.gz";
-    sha256 = "1b4b759b4f01806acd9ac37b008ff2e6a5a06c4c9cb1783108538c1900d5d0a6";
+    url = "https://github.com/ros2-gbp/turtlebot3-release/archive/release/humble/turtlebot3_navigation2/2.3.3-1.tar.gz";
+    name = "2.3.3-1.tar.gz";
+    sha256 = "9846d1eaff0f34dfac927dfa1cfb180e3ff021d3eaa2382643f2d978f2ed8d46";
   };
 
   buildType = "ament_cmake";

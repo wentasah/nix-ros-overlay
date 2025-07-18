@@ -1338,6 +1338,8 @@ self: super: {
 
  intra-process-demo = self.callPackage ./intra-process-demo {};
 
+ inuros2 = self.callPackage ./inuros2 {};
+
  inverse-dynamics-solver = self.callPackage ./inverse-dynamics-solver {};
 
  io-context = self.callPackage ./io-context {};
@@ -2033,8 +2035,6 @@ self: super: {
  ndt-omp = self.callPackage ./ndt-omp {};
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
-
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
 
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
@@ -3449,6 +3449,16 @@ self: super: {
  turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
 
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-home-service-challenge = self.callPackage ./turtlebot3-home-service-challenge {};
+
+ turtlebot3-home-service-challenge-aruco = self.callPackage ./turtlebot3-home-service-challenge-aruco {};
+
+ turtlebot3-home-service-challenge-core = self.callPackage ./turtlebot3-home-service-challenge-core {};
+
+ turtlebot3-home-service-challenge-manipulator = self.callPackage ./turtlebot3-home-service-challenge-manipulator {};
+
+ turtlebot3-home-service-challenge-tools = self.callPackage ./turtlebot3-home-service-challenge-tools {};
 
  turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
 

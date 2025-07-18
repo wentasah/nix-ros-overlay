@@ -440,6 +440,8 @@ self: super: {
 
  clearpath-viz = self.callPackage ./clearpath-viz {};
 
+ clips-executive = self.callPackage ./clips-executive {};
+
  clips-vendor = self.callPackage ./clips-vendor {};
 
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
@@ -519,6 +521,36 @@ self: super: {
  cudnn-cmake-module = self.callPackage ./cudnn-cmake-module {};
 
  cv-bridge = self.callPackage ./cv-bridge {};
+
+ cx-ament-index-plugin = self.callPackage ./cx-ament-index-plugin {};
+
+ cx-bringup = self.callPackage ./cx-bringup {};
+
+ cx-clips-env-manager = self.callPackage ./cx-clips-env-manager {};
+
+ cx-config-plugin = self.callPackage ./cx-config-plugin {};
+
+ cx-example-plugin = self.callPackage ./cx-example-plugin {};
+
+ cx-executive-plugin = self.callPackage ./cx-executive-plugin {};
+
+ cx-file-load-plugin = self.callPackage ./cx-file-load-plugin {};
+
+ cx-msgs = self.callPackage ./cx-msgs {};
+
+ cx-plugin = self.callPackage ./cx-plugin {};
+
+ cx-protobuf-plugin = self.callPackage ./cx-protobuf-plugin {};
+
+ cx-ros-comm-gen = self.callPackage ./cx-ros-comm-gen {};
+
+ cx-ros-msgs-plugin = self.callPackage ./cx-ros-msgs-plugin {};
+
+ cx-tf2-pose-tracker-plugin = self.callPackage ./cx-tf2-pose-tracker-plugin {};
+
+ cx-tutorial-agents = self.callPackage ./cx-tutorial-agents {};
+
+ cx-utils = self.callPackage ./cx-utils {};
 
  cyclonedds = self.callPackage ./cyclonedds {};
 
@@ -1778,8 +1810,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  network-bridge = self.callPackage ./network-bridge {};
@@ -2038,6 +2068,8 @@ self: super: {
 
  position-controllers = self.callPackage ./position-controllers {};
 
+ protobuf-comm = self.callPackage ./protobuf-comm {};
+
  proxsuite = self.callPackage ./proxsuite {};
 
  ptz-action-server-msgs = self.callPackage ./ptz-action-server-msgs {};
@@ -2203,6 +2235,8 @@ self: super: {
  realsense2-description = self.callPackage ./realsense2-description {};
 
  realtime-tools = self.callPackage ./realtime-tools {};
+
+ reductstore-agent = self.callPackage ./reductstore-agent {};
 
  resource-retriever = self.callPackage ./resource-retriever {};
 
@@ -3031,6 +3065,16 @@ self: super: {
  turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
 
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-home-service-challenge = self.callPackage ./turtlebot3-home-service-challenge {};
+
+ turtlebot3-home-service-challenge-aruco = self.callPackage ./turtlebot3-home-service-challenge-aruco {};
+
+ turtlebot3-home-service-challenge-core = self.callPackage ./turtlebot3-home-service-challenge-core {};
+
+ turtlebot3-home-service-challenge-manipulator = self.callPackage ./turtlebot3-home-service-challenge-manipulator {};
+
+ turtlebot3-home-service-challenge-tools = self.callPackage ./turtlebot3-home-service-challenge-tools {};
 
  turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
 

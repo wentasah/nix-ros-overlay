@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, builtin-interfaces, controller-manager, diff-drive-controller, geometry-msgs, joint-state-broadcaster, nav-msgs, python3Packages, rclpy, robot-state-publisher, rviz2, sensor-msgs, std-msgs, tf2-ros, webots-ros2-control, webots-ros2-driver, webots-ros2-msgs }:
 buildRosPackage {
   pname = "ros-kilted-webots-ros2-epuck";
-  version = "2025.0.0-r2";
+  version = "2025.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2_epuck/2025.0.0-2.tar.gz";
-    name = "2025.0.0-2.tar.gz";
-    sha256 = "6474966f981570a0e6fc8593843e479f3053734fa329d191c54c15e2159ef3d6";
+    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2_epuck/2025.0.1-1.tar.gz";
+    name = "2025.0.1-1.tar.gz";
+    sha256 = "77fb737b548d57a827ea63a1992cd02889e397080a89e25482d2f49f2468526b";
   };
 
   buildType = "ament_python";

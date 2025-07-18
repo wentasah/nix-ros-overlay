@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-gmock, ament-cmake-ros, ament-lint-auto, ament-lint-common, control-msgs, controller-interface, controller-manager, generate-parameter-library, geometry-msgs, hardware-interface, hardware-interface-testing, nav-msgs, pluginlib, rclcpp, rclcpp-lifecycle, rcpputils, realtime-tools, ros2-control-test-assets, sensor-msgs, std-srvs, tf2, tf2-geometry-msgs, tf2-msgs, visualization-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-ffw-swerve-drive-controller";
-  version = "1.1.5-r1";
+  version = "1.1.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ai_worker-release/archive/release/jazzy/ffw_swerve_drive_controller/1.1.5-1.tar.gz";
-    name = "1.1.5-1.tar.gz";
-    sha256 = "8c33dd6b66b44cc03dc59547c22a31e0e429c0ce298d0de6da2fd08244ab5514";
+    url = "https://github.com/ros2-gbp/ai_worker-release/archive/release/jazzy/ffw_swerve_drive_controller/1.1.8-1.tar.gz";
+    name = "1.1.8-1.tar.gz";
+    sha256 = "dcaa43e53ef91339a180699f43d734c074ed09a33d26a6fe0dedf99b181d1717";
   };
 
   buildType = "ament_cmake";

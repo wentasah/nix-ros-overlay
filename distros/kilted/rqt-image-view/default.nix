@@ -2,19 +2,20 @@
 # Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, cv-bridge, geometry-msgs, image-transport, qt-gui-cpp, qt5, rclcpp, rqt-gui, rqt-gui-cpp, sensor-msgs }:
+{ lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, cv-bridge, geometry-msgs, image-transport, qt-gui-cpp, qt5, rclcpp, rqt-gui, rqt-gui-cpp, sensor-msgs }:
 buildRosPackage {
   pname = "ros-kilted-rqt-image-view";
-  version = "1.3.0-r2";
+  version = "1.3.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rqt_image_view-release/archive/release/kilted/rqt_image_view/1.3.0-2.tar.gz";
-    name = "1.3.0-2.tar.gz";
-    sha256 = "69b994694e0ec29060787d082438438bc2f07fca96b448fe95e5f89a8c171521";
+    url = "https://github.com/ros2-gbp/rqt_image_view-release/archive/release/kilted/rqt_image_view/1.3.1-1.tar.gz";
+    name = "1.3.1-1.tar.gz";
+    sha256 = "e41908f839cd929d1b2e6048c565af092a168743a10a2d852530156ad7c72ab2";
   };
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake qt5.qtbase ];
+  checkInputs = [ ament-lint-auto ament-lint-common ];
   propagatedBuildInputs = [ cv-bridge geometry-msgs image-transport qt-gui-cpp rclcpp rqt-gui rqt-gui-cpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
 

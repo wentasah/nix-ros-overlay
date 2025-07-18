@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-core, ament-cmake-python, ament-cmake-ros-core, ament-index-python, ament-lint-auto, ament-lint-common, python3, rcutils, rosidl-cli, rosidl-cmake, rosidl-generator-type-description, rosidl-parser, rosidl-pycommon, rosidl-typesupport-interface }:
 buildRosPackage {
   pname = "ros-kilted-rosidl-generator-c";
-  version = "4.9.4-r2";
+  version = "5.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/kilted/rosidl_generator_c/4.9.4-2.tar.gz";
-    name = "4.9.4-2.tar.gz";
-    sha256 = "2bc6a82172d57c6627bfcd99e2a9a1f3e35325b1c09ee53da1871abc3f975572";
+    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/kilted/rosidl_generator_c/5.0.0-1.tar.gz";
+    name = "5.0.0-1.tar.gz";
+    sha256 = "52ad23ea9c72b4355e416e1cfed171cc142d0605cf29f9d0a7e99af05bfb8c8f";
   };
 
   buildType = "ament_cmake";
