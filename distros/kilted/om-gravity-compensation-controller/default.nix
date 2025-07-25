@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, angles, backward-ros, control-msgs, control-toolbox, controller-interface, generate-parameter-library, hardware-interface, kdl-parser, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, rsl, tl-expected, urdf }:
 buildRosPackage {
   pname = "ros-kilted-om-gravity-compensation-controller";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/om_gravity_compensation_controller/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "770e97fe1d28a09139f650d0a7fcb4ba832ba8c4a778fa492590cf4be76982ee";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/om_gravity_compensation_controller/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "eeca8690fc6e805d678cc6a6c7fb935bda05fce710cec9657b3bd0f7bdc8964d";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, leo, leo-bringup, leo-filters, leo-fw }:
 buildRosPackage {
   pname = "ros-rolling-leo-robot";
-  version = "2.2.0-r1";
+  version = "2.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/rolling/leo_robot/2.2.0-1.tar.gz";
-    name = "2.2.0-1.tar.gz";
-    sha256 = "2738136a2ef01e2b562824adea0fe503a713335c22863e31172bbe87b3339548";
+    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/rolling/leo_robot/2.4.0-1.tar.gz";
+    name = "2.4.0-1.tar.gz";
+    sha256 = "1fe37e5b078367e0608ad63cb2a932817bb658b8fd7765a841b470618baad1f7";
   };
 
   buildType = "ament_cmake";

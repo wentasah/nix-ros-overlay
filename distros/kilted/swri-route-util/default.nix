@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, geometry-msgs, marti-common-msgs, marti-nav-msgs, rclcpp, swri-geometry-util, swri-math-util, swri-transform-util, tf2-geometry-msgs, visualization-msgs }:
 buildRosPackage {
   pname = "ros-kilted-swri-route-util";
-  version = "3.8.5-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_route_util/3.8.5-1.tar.gz";
-    name = "3.8.5-1.tar.gz";
-    sha256 = "dcf991771d0e25d9cb860b7b347285f159f653c28187fe32de3689bee840e4cb";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_route_util/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "7cc5b9e928ac273be4e1e4150b1681ca5b3fb5b4f44cb74d808a896103e50d30";
   };
 
   buildType = "ament_cmake";
