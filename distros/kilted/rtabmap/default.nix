@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, cv-bridge, gtsam, libg2o, libpointmatcher, octomap, pcl, proj, qt-gui-cpp, sqlite, zlib }:
 buildRosPackage {
   pname = "ros-kilted-rtabmap";
-  version = "0.22.0-r1";
+  version = "0.22.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rtabmap-release/archive/release/kilted/rtabmap/0.22.0-1.tar.gz";
-    name = "0.22.0-1.tar.gz";
-    sha256 = "cb8a695442d7dc4b2f894c9f102559420aa05a47c59c07e6135e3c927d086feb";
+    url = "https://github.com/ros2-gbp/rtabmap-release/archive/release/kilted/rtabmap/0.22.1-1.tar.gz";
+    name = "0.22.1-1.tar.gz";
+    sha256 = "552b9bbf3475fcebfb38e9be5ff449357fd13b8bd46f6d6d66da2530d5a9aedb";
   };
 
   buildType = "cmake";

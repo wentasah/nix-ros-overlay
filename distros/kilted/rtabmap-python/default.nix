@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, python3Packages }:
 buildRosPackage {
   pname = "ros-kilted-rtabmap-python";
-  version = "0.22.0-r2";
+  version = "0.22.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_python/0.22.0-2.tar.gz";
-    name = "0.22.0-2.tar.gz";
-    sha256 = "76950ee7ccaf86c61c833359eb2316a25a1c13f3758b47fd8ae5f7f8504406ad";
+    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_python/0.22.1-1.tar.gz";
+    name = "0.22.1-1.tar.gz";
+    sha256 = "2b3ce89cabd556d2bda87b13f26676a0518dd7c2d01eb8813eba3871d4b991ef";
   };
 
   buildType = "ament_python";
