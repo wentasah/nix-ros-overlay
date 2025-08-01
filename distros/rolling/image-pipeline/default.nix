@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-lint-cmake, ament-cmake-xmllint, ament-lint-auto, camera-calibration, depth-image-proc, image-proc, image-publisher, image-rotate, image-view, stereo-image-proc }:
 buildRosPackage {
   pname = "ros-rolling-image-pipeline";
-  version = "7.0.0-r1";
+  version = "7.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_pipeline-release/archive/release/rolling/image_pipeline/7.0.0-1.tar.gz";
-    name = "7.0.0-1.tar.gz";
-    sha256 = "b44f412d6b5d00081674cdddfe0578369a980664403fcc50230af1bc59ccccad";
+    url = "https://github.com/ros2-gbp/image_pipeline-release/archive/release/rolling/image_pipeline/7.1.0-1.tar.gz";
+    name = "7.1.0-1.tar.gz";
+    sha256 = "c805d8da4e51028c31f2d01847a007a2ab95e34b02c2a9a09d01a1ee5fead5c8";
   };
 
   buildType = "ament_cmake";

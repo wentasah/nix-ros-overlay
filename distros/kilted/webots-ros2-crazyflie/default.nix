@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-pep257, builtin-interfaces, python3Packages, rclpy, tf-transformations, webots-ros2-driver }:
 buildRosPackage {
   pname = "ros-kilted-webots-ros2-crazyflie";
-  version = "2025.0.0-r2";
+  version = "2025.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2_crazyflie/2025.0.0-2.tar.gz";
-    name = "2025.0.0-2.tar.gz";
-    sha256 = "8f2f1f25ec1560567aeca8d4c11045be2327ef832972216cde80fcf0ec21d2d3";
+    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2_crazyflie/2025.0.1-1.tar.gz";
+    name = "2025.0.1-1.tar.gz";
+    sha256 = "d073f75b2884b3c8ab675dadaa3f0a0011125646860a4e1e9110a2d5c1e54151";
   };
 
   buildType = "ament_python";

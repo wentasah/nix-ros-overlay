@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-cmake-ros, ament-lint-auto, ament-lint-common, boost, ceres-solver, diagnostic-updater, eigen, fuse-constraints, fuse-core, fuse-graphs, fuse-models, fuse-msgs, fuse-variables, geometry-msgs, gtest-vendor, launch, launch-pytest, launch-ros, nav-msgs, pluginlib, rclcpp, rclcpp-components, std-srvs }:
 buildRosPackage {
   pname = "ros-kilted-fuse-optimizers";
-  version = "1.2.2-r1";
+  version = "1.2.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_optimizers/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "55b0da9c9b876e99b1e950f81d262e23263ddab690f0f58530ee84df6eb45ad0";
+    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_optimizers/1.2.4-1.tar.gz";
+    name = "1.2.4-1.tar.gz";
+    sha256 = "86d777d737fe000e59a20872626ff01278309f8015fa10c8d9eded71aa7a0be1";
   };
 
   buildType = "ament_cmake";

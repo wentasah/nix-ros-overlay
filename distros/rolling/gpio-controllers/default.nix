@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, control-msgs, controller-interface, controller-manager, generate-parameter-library, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, ros2-control-cmake, ros2-control-test-assets }:
 buildRosPackage {
   pname = "ros-rolling-gpio-controllers";
-  version = "5.2.0-r1";
+  version = "5.5.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/gpio_controllers/5.2.0-1.tar.gz";
-    name = "5.2.0-1.tar.gz";
-    sha256 = "a33fea21fbb3e816a47810a21485d15ce7577af8e1b682e53e5d95d001777474";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/gpio_controllers/5.5.0-1.tar.gz";
+    name = "5.5.0-1.tar.gz";
+    sha256 = "324e39cd6215e7277e29038837792c031bc605a11ba4599e9031f35f8f1d3fab";
   };
 
   buildType = "ament_cmake";

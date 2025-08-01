@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-lint-cmake, ament-cmake-xmllint, ament-lint-auto, cmake, mvsim, teleop-twist-keyboard }:
 buildRosPackage {
   pname = "ros-kilted-mrpt-tutorials";
-  version = "2.2.1-r2";
+  version = "2.2.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mrpt_navigation-release/archive/release/kilted/mrpt_tutorials/2.2.1-2.tar.gz";
-    name = "2.2.1-2.tar.gz";
-    sha256 = "0d8731fb8bdef97619dd305e2a323ee75cc5e86f28687c71b9e7be5de91b4a56";
+    url = "https://github.com/ros2-gbp/mrpt_navigation-release/archive/release/kilted/mrpt_tutorials/2.2.4-1.tar.gz";
+    name = "2.2.4-1.tar.gz";
+    sha256 = "790cd9223e4c9cf53189238f61b6689107281ec78859c90c167ecb0b3966e3af";
   };
 
   buildType = "ament_cmake";

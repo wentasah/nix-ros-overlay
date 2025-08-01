@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, glew, jsoncpp, mapviz, pluginlib, qt5, rclcpp, swri-math-util, swri-transform-util, tf2, yaml-cpp }:
 buildRosPackage {
   pname = "ros-rolling-tile-map";
-  version = "2.5.6-r1";
+  version = "2.5.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/rolling/tile_map/2.5.6-1.tar.gz";
-    name = "2.5.6-1.tar.gz";
-    sha256 = "7eb3f4100c961ac8c828e09ad52759e5f9a26b0dde4939f44a9706ea21943070";
+    url = "https://github.com/ros2-gbp/mapviz-release/archive/release/rolling/tile_map/2.5.8-1.tar.gz";
+    name = "2.5.8-1.tar.gz";
+    sha256 = "db11470bf1c7d3689e713a5fdce35fea177e62ed7a63392073ff73089303c42b";
   };
 
   buildType = "ament_cmake";

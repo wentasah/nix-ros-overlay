@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-index-python, geometry-msgs, python-qt-binding, rclpy, rqt-gui, rqt-gui-py }:
 buildRosPackage {
   pname = "ros-kilted-rqt-robot-steering";
-  version = "1.0.1-r3";
+  version = "3.0.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rqt_robot_steering-release/archive/release/kilted/rqt_robot_steering/1.0.1-3.tar.gz";
-    name = "1.0.1-3.tar.gz";
-    sha256 = "fc019a9293d47ae14266fe5872296d54083f6340a6c134685fed862abd92273f";
+    url = "https://github.com/ros2-gbp/rqt_robot_steering-release/archive/release/kilted/rqt_robot_steering/3.0.0-1.tar.gz";
+    name = "3.0.0-1.tar.gz";
+    sha256 = "3927137d42241610f69b5cba2fbc970b0087581b54fd4bbc7ac16927ec5e8f06";
   };
 
   buildType = "ament_python";

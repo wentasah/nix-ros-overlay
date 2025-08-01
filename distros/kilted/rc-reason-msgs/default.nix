@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, geometry-msgs, rc-common-msgs, rosidl-default-generators, rosidl-default-runtime, shape-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-kilted-rc-reason-msgs";
-  version = "0.4.0-r3";
+  version = "0.5.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rc_reason_clients-release/archive/release/kilted/rc_reason_msgs/0.4.0-3.tar.gz";
-    name = "0.4.0-3.tar.gz";
-    sha256 = "e6a4ff92e4c201280329e23fd6eab2dce71d98ae5e3b1ad5917f39f7e2efcefe";
+    url = "https://github.com/ros2-gbp/rc_reason_clients-release/archive/release/kilted/rc_reason_msgs/0.5.0-1.tar.gz";
+    name = "0.5.0-1.tar.gz";
+    sha256 = "7bbd7ee45d667c9b670e4f923fca238d6df280a507435e9efd648020ce9ce8de";
   };
 
   buildType = "ament_cmake";

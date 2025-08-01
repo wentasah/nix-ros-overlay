@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-ros, ament-lint-auto, ament-lint-common, eigen, fuse-constraints, fuse-core, fuse-msgs, fuse-variables, geometry-msgs, gtest-vendor, qt5, rviz-common, rviz-rendering, tf2-geometry-msgs }:
 buildRosPackage {
   pname = "ros-rolling-fuse-viz";
-  version = "1.2.3-r1";
+  version = "1.3.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/fuse-release/archive/release/rolling/fuse_viz/1.2.3-1.tar.gz";
-    name = "1.2.3-1.tar.gz";
-    sha256 = "d5e19d9d7d986c97d6d1d74bb11a90d4697d0defc5346d31c95c4cfb805f69e9";
+    url = "https://github.com/ros2-gbp/fuse-release/archive/release/rolling/fuse_viz/1.3.0-1.tar.gz";
+    name = "1.3.0-1.tar.gz";
+    sha256 = "5be60abff462a16e79653d77aed8ad3059625c4759260ced48f78828983c5fa2";
   };
 
   buildType = "ament_cmake";

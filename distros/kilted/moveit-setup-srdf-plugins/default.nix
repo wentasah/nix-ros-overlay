@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-gtest, ament-cmake-ros, moveit-resources-fanuc-description, moveit-setup-framework, pluginlib }:
 buildRosPackage {
   pname = "ros-kilted-moveit-setup-srdf-plugins";
-  version = "2.14.0-r1";
+  version = "2.13.2-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_setup_srdf_plugins/2.14.0-1.tar.gz";
-    name = "2.14.0-1.tar.gz";
-    sha256 = "01e2b3f593688a4593e90f67dde0fedcfd91e843291a63c799cc16ff1631abdb";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_setup_srdf_plugins/2.13.2-2.tar.gz";
+    name = "2.13.2-2.tar.gz";
+    sha256 = "58a18d89154083daeb7cf9a29e99151ab16a46c80edfe1be74fa52a51771f32d";
   };
 
   buildType = "ament_cmake";
