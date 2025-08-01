@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-lint-auto, ament-lint-common, launch, launch-ros, launch-testing, launch-testing-ament-cmake, launch-testing-ros, opencv, rclcpp, rclcpp-components, rmw-implementation-cmake, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-image-tools";
-  version = "0.37.1-r1";
+  version = "0.37.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/image_tools/0.37.1-1.tar.gz";
-    name = "0.37.1-1.tar.gz";
-    sha256 = "c565f16546c30bc2fbd931cafd759dda621a54f93ab566abc97695e9d355628b";
+    url = "https://github.com/ros2-gbp/demos-release/archive/release/rolling/image_tools/0.37.2-1.tar.gz";
+    name = "0.37.2-1.tar.gz";
+    sha256 = "463d2ce5fda6d8913330a6f5c4b04edb951805601aae884638e9b7411cddb20e";
   };
 
   buildType = "ament_cmake";

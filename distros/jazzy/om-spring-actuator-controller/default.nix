@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, controller-interface, generate-parameter-library, hardware-interface, pluginlib, rclcpp, rclcpp-lifecycle, urdf }:
 buildRosPackage {
   pname = "ros-jazzy-om-spring-actuator-controller";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/om_spring_actuator_controller/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "63727a39b3a679e3e4c44d952d724100a66408aa5059761a532a5253df26cb87";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/om_spring_actuator_controller/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "3dda80e8db87a728639f97734134c64b15e05d4b50801a6b46a6e5856d804b72";
   };
 
   buildType = "ament_cmake";

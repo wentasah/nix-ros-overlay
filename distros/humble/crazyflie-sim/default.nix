@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-cmake-python, ament-copyright, ament-flake8, ament-pep257, crazyflie-interfaces, python3Packages, rclpy }:
 buildRosPackage {
   pname = "ros-humble-crazyflie-sim";
-  version = "1.0.2-r1";
+  version = "1.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/crazyswarm2-release/archive/release/humble/crazyflie_sim/1.0.2-1.tar.gz";
-    name = "1.0.2-1.tar.gz";
-    sha256 = "90b20cc66a3be9bbdcabf14a7c81e38c743ae7ef010152ae654ae3baec8ccd18";
+    url = "https://github.com/ros2-gbp/crazyswarm2-release/archive/release/humble/crazyflie_sim/1.0.3-1.tar.gz";
+    name = "1.0.3-1.tar.gz";
+    sha256 = "d31c150fa0c3014b34a063e79ad1f799dc7906e501130477b100d1610af6f4d2";
   };
 
   buildType = "ament_cmake";

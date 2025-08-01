@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-copyright, ament-cmake-lint-cmake, ament-cmake-uncrustify, ament-cmake-xmllint, ament-lint-auto, generate-parameter-library, geometry-msgs, nav-msgs, rclcpp, rclcpp-components, sensor-msgs, std-srvs, tf2, tf2-ros, yaml-cpp }:
 buildRosPackage {
   pname = "ros-kilted-leo-filters";
-  version = "2.2.0-r1";
+  version = "2.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_filters/2.2.0-1.tar.gz";
-    name = "2.2.0-1.tar.gz";
-    sha256 = "5b49d5e3e9d5b05f6e08923a7039a364a197449e6beddea67b256f4121e363c1";
+    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_filters/2.4.0-1.tar.gz";
+    name = "2.4.0-1.tar.gz";
+    sha256 = "8578a86dca3d19223a76b95b671cdc42cdb68a7f776048f48d54eb72973baaf2";
   };
 
   buildType = "ament_cmake";

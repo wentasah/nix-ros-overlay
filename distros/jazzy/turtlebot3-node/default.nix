@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, dynamixel-sdk, geometry-msgs, message-filters, nav-msgs, rclcpp, rcutils, sensor-msgs, std-msgs, std-srvs, tf2, tf2-ros, turtlebot3-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-turtlebot3-node";
-  version = "2.3.1-r1";
+  version = "2.3.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/turtlebot3-release/archive/release/jazzy/turtlebot3_node/2.3.1-1.tar.gz";
-    name = "2.3.1-1.tar.gz";
-    sha256 = "0172e48bab7d4351da31e7f846f7fd327220bd8dc6a78b03a80472da1a725723";
+    url = "https://github.com/ros2-gbp/turtlebot3-release/archive/release/jazzy/turtlebot3_node/2.3.3-1.tar.gz";
+    name = "2.3.3-1.tar.gz";
+    sha256 = "2313640fd9bcdd4c573f0c500c0e4b0d1557c1b81fb4d8fbe290e6f868113ee1";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-cmake-ros, ament-lint-auto, ament-lint-common, fuse-constraints, fuse-core, fuse-graphs, fuse-msgs, fuse-variables, geometry-msgs, gtest-vendor, nav-msgs, pluginlib, rclcpp, tf2, tf2-geometry-msgs, tf2-ros }:
 buildRosPackage {
   pname = "ros-kilted-fuse-publishers";
-  version = "1.2.2-r1";
+  version = "1.2.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_publishers/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "d0cf87bc8547cd6f96930b4edc7a1068cb88f2dd912d9df3af3be9aa5e40e369";
+    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_publishers/1.2.4-1.tar.gz";
+    name = "1.2.4-1.tar.gz";
+    sha256 = "320b180c337360d7b704dc019ca830dd2d4bfd9e73de771cfaaff3a5bd4edc2b";
   };
 
   buildType = "ament_cmake";

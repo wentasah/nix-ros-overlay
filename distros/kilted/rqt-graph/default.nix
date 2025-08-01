@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-index-python, ament-pep257, ament-xmllint, python-qt-binding, python3Packages, qt-dotgraph, rclpy, rqt-gui, rqt-gui-py }:
 buildRosPackage {
   pname = "ros-kilted-rqt-graph";
-  version = "1.7.0-r2";
+  version = "1.7.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rqt_graph-release/archive/release/kilted/rqt_graph/1.7.0-2.tar.gz";
-    name = "1.7.0-2.tar.gz";
-    sha256 = "92f04d8eeb648c3c0a445f1facaaaadc190c225d7231e1eb71519bf882313af3";
+    url = "https://github.com/ros2-gbp/rqt_graph-release/archive/release/kilted/rqt_graph/1.7.1-1.tar.gz";
+    name = "1.7.1-1.tar.gz";
+    sha256 = "65fa697b13c203296165bd872c61ffcddc9bde9b52a37da790a929d1844133d4";
   };
 
   buildType = "ament_python";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, control-toolbox, controller-interface, controller-manager, generate-parameter-library, geometry-msgs, hardware-interface, hardware-interface-testing, nav-msgs, pluginlib, rclcpp, rclcpp-lifecycle, rcpputils, realtime-tools, ros2-control-cmake, ros2-control-test-assets, tf2, tf2-msgs }:
 buildRosPackage {
   pname = "ros-kilted-diff-drive-controller";
-  version = "5.2.0-r1";
+  version = "5.5.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/kilted/diff_drive_controller/5.2.0-1.tar.gz";
-    name = "5.2.0-1.tar.gz";
-    sha256 = "89745a77cce8df1f7570c7d81ed364d93b7f44f540d874648e5eb2ab45a4ddc6";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/kilted/diff_drive_controller/5.5.0-2.tar.gz";
+    name = "5.5.0-2.tar.gz";
+    sha256 = "0d22fa53a975a4de3e768bd0c2894be84aaab9e4015070f6d5b92eab91e3b580";
   };
 
   buildType = "ament_cmake";

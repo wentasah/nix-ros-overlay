@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, libpng, libusb1, ncurses }:
 buildRosPackage {
   pname = "ros-kilted-rc-genicam-api";
-  version = "2.6.5-r2";
+  version = "2.8.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rc_genicam_api-release/archive/release/kilted/rc_genicam_api/2.6.5-2.tar.gz";
-    name = "2.6.5-2.tar.gz";
-    sha256 = "f61cc8fe34a6bad1b4ff78076c570c76b37fb3fb83ccfa674f7428be8987485d";
+    url = "https://github.com/ros2-gbp/rc_genicam_api-release/archive/release/kilted/rc_genicam_api/2.8.1-1.tar.gz";
+    name = "2.8.1-1.tar.gz";
+    sha256 = "a0ca0fa43deb62119975ddb54b5e44db28f843f7b83bec1654e97fa4376c2935";
   };
 
   buildType = "cmake";

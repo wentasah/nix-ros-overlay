@@ -28,6 +28,8 @@ self: super: {
 
  adi-3dtof-image-stitching = self.callPackage ./adi-3dtof-image-stitching {};
 
+ adi-iio = self.callPackage ./adi-iio {};
+
  adi-tmcl = self.callPackage ./adi-tmcl {};
 
  admittance-controller = self.callPackage ./admittance-controller {};
@@ -236,6 +238,8 @@ self: super: {
 
  as2-behaviors-platform = self.callPackage ./as2-behaviors-platform {};
 
+ as2-behaviors-swarm-flocking = self.callPackage ./as2-behaviors-swarm-flocking {};
+
  as2-behaviors-trajectory-generation = self.callPackage ./as2-behaviors-trajectory-generation {};
 
  as2-cli = self.callPackage ./as2-cli {};
@@ -285,6 +289,10 @@ self: super: {
  asio-cmake-module = self.callPackage ./asio-cmake-module {};
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
+
+ automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
+
+ automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
 
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
@@ -1316,6 +1324,8 @@ self: super: {
 
  image-view = self.callPackage ./image-view {};
 
+ imu-calib = self.callPackage ./imu-calib {};
+
  imu-complementary-filter = self.callPackage ./imu-complementary-filter {};
 
  imu-filter-madgwick = self.callPackage ./imu-filter-madgwick {};
@@ -1337,6 +1347,8 @@ self: super: {
  interactive-markers = self.callPackage ./interactive-markers {};
 
  intra-process-demo = self.callPackage ./intra-process-demo {};
+
+ inuros2 = self.callPackage ./inuros2 {};
 
  inverse-dynamics-solver = self.callPackage ./inverse-dynamics-solver {};
 
@@ -2034,8 +2046,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nerian-stereo = self.callPackage ./nerian-stereo {};
@@ -2723,6 +2733,8 @@ self: super: {
  robotraconteur = self.callPackage ./robotraconteur {};
 
  ros2-control = self.callPackage ./ros2-control {};
+
+ ros2-control-cmake = self.callPackage ./ros2-control-cmake {};
 
  ros2-control-test-assets = self.callPackage ./ros2-control-test-assets {};
 
@@ -3449,6 +3461,16 @@ self: super: {
  turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
 
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-home-service-challenge = self.callPackage ./turtlebot3-home-service-challenge {};
+
+ turtlebot3-home-service-challenge-aruco = self.callPackage ./turtlebot3-home-service-challenge-aruco {};
+
+ turtlebot3-home-service-challenge-core = self.callPackage ./turtlebot3-home-service-challenge-core {};
+
+ turtlebot3-home-service-challenge-manipulator = self.callPackage ./turtlebot3-home-service-challenge-manipulator {};
+
+ turtlebot3-home-service-challenge-tools = self.callPackage ./turtlebot3-home-service-challenge-tools {};
 
  turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
 

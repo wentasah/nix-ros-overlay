@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, imu-filter-madgwick, realsense2-camera, rtabmap-odom, rtabmap-rviz-plugins, rtabmap-slam, rtabmap-util, rtabmap-viz, tf2-ros, velodyne }:
 buildRosPackage {
   pname = "ros-humble-rtabmap-examples";
-  version = "0.22.0-r1";
+  version = "0.22.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/humble/rtabmap_examples/0.22.0-1.tar.gz";
-    name = "0.22.0-1.tar.gz";
-    sha256 = "961d12a0d30b9a2aa555b4b753f983672ec4579f1da6d84cc49905979b318263";
+    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/humble/rtabmap_examples/0.22.1-1.tar.gz";
+    name = "0.22.1-1.tar.gz";
+    sha256 = "e374a321e899d3efc7b55b7a1581c5178e7166c3a27c11c4a9eb37fa1261d8b2";
   };
 
   buildType = "ament_cmake";

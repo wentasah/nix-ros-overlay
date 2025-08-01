@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, geometry-msgs, rclcpp, rclcpp-lifecycle, sensor-msgs }:
 buildRosPackage {
   pname = "ros-rolling-coin-d4-driver";
-  version = "1.0.0-r1";
+  version = "1.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/coin_d4_driver-release/archive/release/rolling/coin_d4_driver/1.0.0-1.tar.gz";
-    name = "1.0.0-1.tar.gz";
-    sha256 = "031fff26c3141209a7844e4ffd7658838db1032e9c49a4eda033cc05f2e57b6c";
+    url = "https://github.com/ros2-gbp/coin_d4_driver-release/archive/release/rolling/coin_d4_driver/1.0.1-1.tar.gz";
+    name = "1.0.1-1.tar.gz";
+    sha256 = "9cbaf1fa2d933fbe0123f591cccfaf07c76c85928d468b41264aadd6d9acc340";
   };
 
   buildType = "ament_cmake";
