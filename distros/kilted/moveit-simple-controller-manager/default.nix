@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, control-msgs, moveit-common, moveit-core, pluginlib, rclcpp, rclcpp-action }:
 buildRosPackage {
   pname = "ros-kilted-moveit-simple-controller-manager";
-  version = "2.14.0-r1";
+  version = "2.13.2-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_simple_controller_manager/2.14.0-1.tar.gz";
-    name = "2.14.0-1.tar.gz";
-    sha256 = "0127e3a366c0cebb595ca4743d47ad798f321da0402d36d9a70407a6ebbd15e7";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_simple_controller_manager/2.13.2-2.tar.gz";
+    name = "2.13.2-2.tar.gz";
+    sha256 = "57d3b35d411be52a9c4f88c3732ed2ca4b92a3c37973466f2df7ef35d2028993";
   };
 
   buildType = "ament_cmake";

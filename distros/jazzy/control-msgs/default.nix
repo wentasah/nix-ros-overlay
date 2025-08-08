@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, action-msgs, ament-cmake, ament-lint-auto, ament-lint-common, builtin-interfaces, geometry-msgs, rosidl-default-generators, rosidl-default-runtime, sensor-msgs, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-control-msgs";
-  version = "5.4.1-r1";
+  version = "5.5.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/control_msgs-release/archive/release/jazzy/control_msgs/5.4.1-1.tar.gz";
-    name = "5.4.1-1.tar.gz";
-    sha256 = "30c0d1e00ffa92f801ff3644185662f684e946027cc4e889b45539fe12d27e49";
+    url = "https://github.com/ros2-gbp/control_msgs-release/archive/release/jazzy/control_msgs/5.5.0-1.tar.gz";
+    name = "5.5.0-1.tar.gz";
+    sha256 = "34d192fc32059d51237b0e1e30229fae18579334364edb650dd9617703522bd2";
   };
 
   buildType = "ament_cmake";

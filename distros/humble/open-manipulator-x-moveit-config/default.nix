@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, controller-manager, joint-state-publisher, joint-state-publisher-gui, moveit-configs-utils, moveit-kinematics, moveit-planners, moveit-ros-move-group, moveit-ros-visualization, moveit-ros-warehouse, moveit-setup-assistant, moveit-simple-controller-manager, open-manipulator-x-description, robot-state-publisher, rviz-common, rviz-default-plugins, rviz2, tf2-ros, xacro }:
 buildRosPackage {
   pname = "ros-humble-open-manipulator-x-moveit-config";
-  version = "3.0.2-r1";
+  version = "3.0.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/humble/open_manipulator_x_moveit_config/3.0.2-1.tar.gz";
-    name = "3.0.2-1.tar.gz";
-    sha256 = "e1efb37949843a05d5cd5393b25563426ae022b079f96e43541fc311b6ee7195";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/humble/open_manipulator_x_moveit_config/3.0.4-1.tar.gz";
+    name = "3.0.4-1.tar.gz";
+    sha256 = "f53dc5a78f0b7c2f9f7c7820ad9621674cac8b5fa33d53f0583397255efb94f9";
   };
 
   buildType = "ament_cmake";

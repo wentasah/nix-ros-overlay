@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, om-gravity-compensation-controller, om-joint-trajectory-command-broadcaster, om-spring-actuator-controller, open-manipulator-bringup, open-manipulator-collision, open-manipulator-description, open-manipulator-gui, open-manipulator-moveit-config, open-manipulator-playground, open-manipulator-teleop }:
 buildRosPackage {
   pname = "ros-kilted-open-manipulator";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "aafaf1b628de50ffaddbb98929fd1b3955898e64008a4f1669e4c3b5cf0ca95c";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "622dba141537e42a026939116ff45fde24441ed49f81e80f54ea75fe6eecabed";
   };
 
   buildType = "ament_cmake";

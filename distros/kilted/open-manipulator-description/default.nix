@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, joint-state-publisher, joint-state-publisher-gui, robot-state-publisher, rviz2 }:
 buildRosPackage {
   pname = "ros-kilted-open-manipulator-description";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_description/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "82fca6a9ca9e23a804d0277fceff584155c4d0fa79193f7a5d1c62510af369a5";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_description/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "9fe6b14e3c2b77aa50a9e12b5a48c30ec81de403e09f232b894e73ecf261548c";
   };
 
   buildType = "ament_cmake";

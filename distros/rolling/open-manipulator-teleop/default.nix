@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, control-msgs, rclpy, sensor-msgs, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-teleop";
-  version = "4.0.1-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_teleop/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "13419235858582fb66d044fe8c73046e697c60afbbcf523b987c19b85530f37b";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_teleop/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "4ba4a4877d7e5ccc13623438886115040bdb6291523a8196a622ff6db78a23d5";
   };
 
   buildType = "ament_python";

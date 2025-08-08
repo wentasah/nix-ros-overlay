@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, python3, python3Packages, qt5, tinyxml2-vendor }:
 buildRosPackage {
   pname = "ros-kilted-turtle-nest";
-  version = "1.1.0-r1";
+  version = "1.1.0-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/turtle_nest-release/archive/release/kilted/turtle_nest/1.1.0-1.tar.gz";
-    name = "1.1.0-1.tar.gz";
-    sha256 = "ce1175f5ee23ab88745e9bc4580db68b97f22e3ae240c0852112d1de355879bc";
+    url = "https://github.com/ros2-gbp/turtle_nest-release/archive/release/kilted/turtle_nest/1.1.0-2.tar.gz";
+    name = "1.1.0-2.tar.gz";
+    sha256 = "f294858ba16425cd7fe17e9d21e894c0ce098f3efefdb694247b27997024239a";
   };
 
   buildType = "ament_cmake";
