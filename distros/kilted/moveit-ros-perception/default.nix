@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, cv-bridge, eigen, freeglut, glew, image-transport, libGL, libGLU, llvmPackages, message-filters, moveit-common, moveit-core, moveit-msgs, moveit-ros-occupancy-map-monitor, moveit-ros-planning, object-recognition-msgs, pluginlib, rclcpp, sensor-msgs, tf2, tf2-eigen, tf2-geometry-msgs, tf2-ros, urdf }:
 buildRosPackage {
   pname = "ros-kilted-moveit-ros-perception";
-  version = "2.14.0-r1";
+  version = "2.13.2-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_ros_perception/2.14.0-1.tar.gz";
-    name = "2.14.0-1.tar.gz";
-    sha256 = "c6fb708eefc265e6754b7537ed46d16236365e86ae64f36cbe689f3f9dd39526";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_ros_perception/2.13.2-2.tar.gz";
+    name = "2.13.2-2.tar.gz";
+    sha256 = "3cd44654fa99d57931eb8b75f7f44dc7fcfeb1969cb96a5cc9f6503378c1c4df";
   };
 
   buildType = "ament_cmake";

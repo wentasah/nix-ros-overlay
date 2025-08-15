@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-cmake-ros, ament-lint-auto, ament-lint-common, ceres-solver, fuse-core, gtest-vendor, libsForQt5, pluginlib, qt5, rclcpp }:
 buildRosPackage {
   pname = "ros-kilted-fuse-loss";
-  version = "1.2.2-r1";
+  version = "1.2.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_loss/1.2.2-1.tar.gz";
-    name = "1.2.2-1.tar.gz";
-    sha256 = "a7f1f67d491069feff041a9ac78bc2e44c37c96c33e2398b8e4ac4ee063f4ebf";
+    url = "https://github.com/ros2-gbp/fuse-release/archive/release/kilted/fuse_loss/1.2.4-1.tar.gz";
+    name = "1.2.4-1.tar.gz";
+    sha256 = "10bac47c5e4bbf7bdf5ebde89bec5edd7105056d64181978fefda795c56b5e25";
   };
 
   buildType = "ament_cmake";

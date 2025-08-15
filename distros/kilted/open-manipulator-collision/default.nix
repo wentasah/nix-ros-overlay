@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, eigen, fcl, kdl-parser, rclcpp, sensor-msgs, std-msgs, urdf, visualization-msgs }:
 buildRosPackage {
   pname = "ros-kilted-open-manipulator-collision";
-  version = "4.0.1-r1";
+  version = "4.0.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_collision/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "e4c4ba5d44dc454e8b42e840ee35e30ffd9a98e45f52546077247b4b5efdf9e7";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/kilted/open_manipulator_collision/4.0.7-1.tar.gz";
+    name = "4.0.7-1.tar.gz";
+    sha256 = "412fa4369aef531a7d37e841480437f5f1ca8b743d2a301873cb47af9c7a0b5c";
   };
 
   buildType = "ament_cmake";

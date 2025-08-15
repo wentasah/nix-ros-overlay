@@ -2,20 +2,19 @@
 # Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, ros-environment }:
+{ lib, buildRosPackage, fetchurl, ament-cmake }:
 buildRosPackage {
   pname = "ros-humble-etsi-its-cam-ts-coding";
-  version = "3.2.1-r1";
+  version = "3.3.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/etsi_its_messages-release/archive/release/humble/etsi_its_cam_ts_coding/3.2.1-1.tar.gz";
-    name = "3.2.1-1.tar.gz";
-    sha256 = "68438061057d2bc9bed15d49ad5fa05685d8de73ccdd4ddbb57732ec85f29831";
+    url = "https://github.com/ros2-gbp/etsi_its_messages-release/archive/release/humble/etsi_its_cam_ts_coding/3.3.0-1.tar.gz";
+    name = "3.3.0-1.tar.gz";
+    sha256 = "0b25477a462de74f78c9f6a8e5f751482a7730cddb7c4d3bfb1f03b39a47061f";
   };
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ros-environment ];
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {

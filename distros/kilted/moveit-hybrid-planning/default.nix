@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, controller-manager, moveit-common, moveit-configs-utils, moveit-core, moveit-msgs, moveit-planners-ompl, moveit-resources-panda-moveit-config, moveit-ros-planning, moveit-ros-planning-interface, moveit-simple-controller-manager, pluginlib, position-controllers, rclcpp, rclcpp-action, rclcpp-components, robot-state-publisher, ros-testing, rviz2, std-msgs, std-srvs, tf2-ros, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-kilted-moveit-hybrid-planning";
-  version = "2.14.0-r1";
+  version = "2.13.2-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_hybrid_planning/2.14.0-1.tar.gz";
-    name = "2.14.0-1.tar.gz";
-    sha256 = "ce8bc6d3b62696fdf9f5de3b9054391ec5d3a19d53eba5660b1a88b988261bd8";
+    url = "https://github.com/ros2-gbp/moveit2-release/archive/release/kilted/moveit_hybrid_planning/2.13.2-2.tar.gz";
+    name = "2.13.2-2.tar.gz";
+    sha256 = "5cc79812a6eb2da3c590c2fca3991d87c9fe93495ba7a7d8c19b08eaef269819";
   };
 
   buildType = "ament_cmake";

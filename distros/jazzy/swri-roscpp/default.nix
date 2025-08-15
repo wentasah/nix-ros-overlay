@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, diagnostic-msgs, diagnostic-updater, gtest, marti-common-msgs, nav-msgs, rclcpp, ros-environment, rosidl-cmake, rosidl-default-generators, rosidl-default-runtime, std-msgs, std-srvs }:
 buildRosPackage {
   pname = "ros-jazzy-swri-roscpp";
-  version = "3.8.5-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/jazzy/swri_roscpp/3.8.5-1.tar.gz";
-    name = "3.8.5-1.tar.gz";
-    sha256 = "3a1dae1ac042a0e6cd869efa6750f48a274fa835f8e5bae0363e307917b90666";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/jazzy/swri_roscpp/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "94a2cdae4adfe13c17498171c664770d7527b7e345ce9bdfa62d9226af4af640";
   };
 
   buildType = "ament_cmake";

@@ -194,6 +194,10 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
+ automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
+
+ automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
+
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
  automotive-navigation-msgs = self.callPackage ./automotive-navigation-msgs {};
@@ -288,8 +292,6 @@ self: super: {
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
 
- behaviortree-cpp-v3 = self.callPackage ./behaviortree-cpp-v3 {};
-
  bicycle-steering-controller = self.callPackage ./bicycle-steering-controller {};
 
  bno055 = self.callPackage ./bno055 {};
@@ -364,6 +366,10 @@ self: super: {
 
  classic-bags = self.callPackage ./classic-bags {};
 
+ clips-executive = self.callPackage ./clips-executive {};
+
+ clips-vendor = self.callPackage ./clips-vendor {};
+
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
 
  coal = self.callPackage ./coal {};
@@ -398,11 +404,45 @@ self: super: {
 
  controller-interface = self.callPackage ./controller-interface {};
 
+ controller-manager = self.callPackage ./controller-manager {};
+
  controller-manager-msgs = self.callPackage ./controller-manager-msgs {};
 
  cudnn-cmake-module = self.callPackage ./cudnn-cmake-module {};
 
  cv-bridge = self.callPackage ./cv-bridge {};
+
+ cx-ament-index-plugin = self.callPackage ./cx-ament-index-plugin {};
+
+ cx-bringup = self.callPackage ./cx-bringup {};
+
+ cx-clips-env-manager = self.callPackage ./cx-clips-env-manager {};
+
+ cx-config-plugin = self.callPackage ./cx-config-plugin {};
+
+ cx-example-plugin = self.callPackage ./cx-example-plugin {};
+
+ cx-executive-plugin = self.callPackage ./cx-executive-plugin {};
+
+ cx-file-load-plugin = self.callPackage ./cx-file-load-plugin {};
+
+ cx-msgs = self.callPackage ./cx-msgs {};
+
+ cx-plugin = self.callPackage ./cx-plugin {};
+
+ cx-protobuf-plugin = self.callPackage ./cx-protobuf-plugin {};
+
+ cx-ros-comm-gen = self.callPackage ./cx-ros-comm-gen {};
+
+ cx-ros-msgs-plugin = self.callPackage ./cx-ros-msgs-plugin {};
+
+ cx-ros-param-plugin = self.callPackage ./cx-ros-param-plugin {};
+
+ cx-tf2-pose-tracker-plugin = self.callPackage ./cx-tf2-pose-tracker-plugin {};
+
+ cx-tutorial-agents = self.callPackage ./cx-tutorial-agents {};
+
+ cx-utils = self.callPackage ./cx-utils {};
 
  cyclonedds = self.callPackage ./cyclonedds {};
 
@@ -910,6 +950,8 @@ self: super: {
 
  kdl-parser = self.callPackage ./kdl-parser {};
 
+ kdl-parser-py = self.callPackage ./kdl-parser-py {};
+
  key-teleop = self.callPackage ./key-teleop {};
 
  keyboard-handler = self.callPackage ./keyboard-handler {};
@@ -1048,6 +1090,8 @@ self: super: {
 
  libpointmatcher = self.callPackage ./libpointmatcher {};
 
+ librealsense2 = self.callPackage ./librealsense2 {};
+
  libstatistics-collector = self.callPackage ./libstatistics-collector {};
 
  libyaml-vendor = self.callPackage ./libyaml-vendor {};
@@ -1059,6 +1103,8 @@ self: super: {
  lifecycle-py = self.callPackage ./lifecycle-py {};
 
  linux-isolate-process = self.callPackage ./linux-isolate-process {};
+
+ live555-vendor = self.callPackage ./live555-vendor {};
 
  log-view = self.callPackage ./log-view {};
 
@@ -1394,8 +1440,6 @@ self: super: {
 
  nav-msgs = self.callPackage ./nav-msgs {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nlohmann-json-schema-validator-vendor = self.callPackage ./nlohmann-json-schema-validator-vendor {};
@@ -1444,6 +1488,8 @@ self: super: {
 
  om-spring-actuator-controller = self.callPackage ./om-spring-actuator-controller {};
 
+ omni-wheel-drive-controller = self.callPackage ./omni-wheel-drive-controller {};
+
  ompl = self.callPackage ./ompl {};
 
  open-manipulator = self.callPackage ./open-manipulator {};
@@ -1487,6 +1533,8 @@ self: super: {
  pal-statistics = self.callPackage ./pal-statistics {};
 
  pal-statistics-msgs = self.callPackage ./pal-statistics-msgs {};
+
+ pangolin = self.callPackage ./pangolin {};
 
  parallel-gripper-controller = self.callPackage ./parallel-gripper-controller {};
 
@@ -1594,6 +1642,8 @@ self: super: {
 
  position-controllers = self.callPackage ./position-controllers {};
 
+ protobuf-comm = self.callPackage ./protobuf-comm {};
+
  proxsuite = self.callPackage ./proxsuite {};
 
  py-binding-tools = self.callPackage ./py-binding-tools {};
@@ -1609,8 +1659,6 @@ self: super: {
  py-trees-ros-tutorials = self.callPackage ./py-trees-ros-tutorials {};
 
  py-trees-ros-viewer = self.callPackage ./py-trees-ros-viewer {};
-
- pybind11-json-vendor = self.callPackage ./pybind11-json-vendor {};
 
  pybind11-vendor = self.callPackage ./pybind11-vendor {};
 
@@ -1726,7 +1774,15 @@ self: super: {
 
  rcutils = self.callPackage ./rcutils {};
 
+ realsense2-camera = self.callPackage ./realsense2-camera {};
+
+ realsense2-camera-msgs = self.callPackage ./realsense2-camera-msgs {};
+
+ realsense2-description = self.callPackage ./realsense2-description {};
+
  realtime-tools = self.callPackage ./realtime-tools {};
+
+ reductstore-agent = self.callPackage ./reductstore-agent {};
 
  resource-retriever = self.callPackage ./resource-retriever {};
 
@@ -1762,15 +1818,11 @@ self: super: {
 
  rmf-demos-tasks = self.callPackage ./rmf-demos-tasks {};
 
- rmf-dev = self.callPackage ./rmf-dev {};
-
  rmf-dispenser-msgs = self.callPackage ./rmf-dispenser-msgs {};
 
  rmf-door-msgs = self.callPackage ./rmf-door-msgs {};
 
  rmf-fleet-adapter = self.callPackage ./rmf-fleet-adapter {};
-
- rmf-fleet-adapter-python = self.callPackage ./rmf-fleet-adapter-python {};
 
  rmf-fleet-msgs = self.callPackage ./rmf-fleet-msgs {};
 
@@ -1883,6 +1935,8 @@ self: super: {
  robotiq-description = self.callPackage ./robotiq-description {};
 
  robotraconteur = self.callPackage ./robotraconteur {};
+
+ robotraconteur-companion = self.callPackage ./robotraconteur-companion {};
 
  ros2-control = self.callPackage ./ros2-control {};
 
@@ -2203,6 +2257,32 @@ self: super: {
  rt-usb-9axisimu-driver = self.callPackage ./rt-usb-9axisimu-driver {};
 
  rtabmap = self.callPackage ./rtabmap {};
+
+ rtabmap-conversions = self.callPackage ./rtabmap-conversions {};
+
+ rtabmap-demos = self.callPackage ./rtabmap-demos {};
+
+ rtabmap-examples = self.callPackage ./rtabmap-examples {};
+
+ rtabmap-launch = self.callPackage ./rtabmap-launch {};
+
+ rtabmap-msgs = self.callPackage ./rtabmap-msgs {};
+
+ rtabmap-odom = self.callPackage ./rtabmap-odom {};
+
+ rtabmap-python = self.callPackage ./rtabmap-python {};
+
+ rtabmap-ros = self.callPackage ./rtabmap-ros {};
+
+ rtabmap-rviz-plugins = self.callPackage ./rtabmap-rviz-plugins {};
+
+ rtabmap-slam = self.callPackage ./rtabmap-slam {};
+
+ rtabmap-sync = self.callPackage ./rtabmap-sync {};
+
+ rtabmap-util = self.callPackage ./rtabmap-util {};
+
+ rtabmap-viz = self.callPackage ./rtabmap-viz {};
 
  rtcm-msgs = self.callPackage ./rtcm-msgs {};
 

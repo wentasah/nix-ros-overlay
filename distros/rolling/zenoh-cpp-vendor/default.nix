@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-vendor-package, cargo, clang, git }:
 buildRosPackage {
   pname = "ros-rolling-zenoh-cpp-vendor";
-  version = "0.8.1-r1";
+  version = "0.8.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rmw_zenoh-release/archive/release/rolling/zenoh_cpp_vendor/0.8.1-1.tar.gz";
-    name = "0.8.1-1.tar.gz";
-    sha256 = "b77bfd737118caf77f78bc9d71b9804e6c97b8aa8f68cc21bc48e53ca05408f0";
+    url = "https://github.com/ros2-gbp/rmw_zenoh-release/archive/release/rolling/zenoh_cpp_vendor/0.8.2-1.tar.gz";
+    name = "0.8.2-1.tar.gz";
+    sha256 = "acd66eb38372a5dc7792ee5cdba4edd48b5ff41ae80cca875de0b678b3103e8b";
   };
 
   buildType = "ament_cmake";
