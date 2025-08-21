@@ -44,7 +44,7 @@ let
           # CMakeLists.txt sets MRPT_VERSION_TO_DOWNLOAD to the
           # version from package.xml
           rev = head (splitString "-" pkg.version); # Ignore ROS release such as "-r1".
-          fetchgitArgs.hash = "sha256-w9LxOtbXw01B2i4aqbhAIjjDwHzC+OvZbcZG/Pyn71Q=";
+          fetchgitArgs.hash = "sha256-zCPHSd9bzSstaN5vtNFOeqEvXQXNCxdWU5VPEED27H0=";
         };
     in rosSuper.lib.genAttrs [
       "mrpt-apps"
