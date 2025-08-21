@@ -192,6 +192,63 @@ in {
     ];
   });
 
+  # v3.10.1 has some CMake issues.
+  # v3.10.6 also. But that one is patchable.
+  plotjuggler = rosSuper.plotjuggler.overrideAttrs (
+    {
+      buildInputs ? [ ],
+      postPatch ? "",
+      ...
+    }:
+    let
+      version = "3.10.7";
+    in
+    {
+      inherit version;
+      src = self.fetchFromGitHub {
+        owner = "facontidavide";
+        repo = "plotjuggler";
+        tag = version;
+        hash = "sha256-tjU/rlwI3pG3wBIQZkayVts0mS04WSJqcaqriqZFx+U=";
+      };
+      postPatch =
+        postPatch
+        + ''
+          (
+            echo "function(find_or_download_data_tamer)"
+            echo "  find_package(data_tamer_cpp REQUIRED)"
+            echo "  add_library(data_tamer::parser ALIAS data_tamer_cpp::data_tamer)"
+            echo "  add_library(data_tamer_parser ALIAS data_tamer_cpp::data_tamer)"
+            echo "endfunction()"
+          ) > cmake/find_or_download_data_tamer.cmake
+        '';
+      buildInputs = buildInputs ++ [
+        self.libbfd
+        self.lua
+        self.nlohmann_json
+        self.lz4
+        rosSelf.data-tamer-cpp
+        rosSelf.mcap-vendor
+      ];
+    }
+  );
+
+
+  python-qt-binding = rosSuper.python-qt-binding.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      (self.fetchpatch {
+        url = "https://github.com/ros-visualization/python_qt_binding/commit/e78372fd63eda527c9fad5fcdab8ca31eb3f36d2.patch";
+        hash = "sha256-8+58ggPUJmEQIS9C4RzT4PhK1pT9ms98nppn3ZA8AEo=";
+      })
+      (self.fetchpatch {
+        url = "https://github.com/ros-visualization/python_qt_binding/commit/ee4d43bcdb0c5c5d40f81dea3de6185298ab34a7.patch";
+        hash = "sha256-+n7wqQ9jDybwxVeUEjOQSQJh7nnU8JXv5DNCoK/5Sm4=";
+      })
+    ];
+  });
+
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     tarSourceArgs.hook = let
       version = "1.79";
