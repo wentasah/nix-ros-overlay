@@ -51,6 +51,44 @@ rosSelf: rosSuper: with rosSelf.lib; {
     '';
   });
 
+  # Cartographer is unmaintained upstream:
+  # https://github.com/cartographer-project/cartographer?tab=readme-ov-file#a-note-for-ros-users
+  cartographer = rosSuper.cartographer.overrideAttrs ({
+    nativeBuildInputs ? [],
+    postPatch ? "", ...
+  }: {
+    nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
+
+    # Add ABSL_ prefix to thread annotation macros. See
+    # https://github.com/abseil/abseil-cpp/commit/6acb60c161f1203e6eca929b87f2041da7714bfe
+    # Note that the mentioned ABSL_LEGACY_THREAD_ANNOTATIONS is no
+    # longer available so we have to patch all call sites.
+    postPatch = ''
+      sed -i -Ee 's/\<(LOCKS_EXCLUDED|EXCLUSIVE_LOCKS_REQUIRED|GUARDED_BY)\>/ABSL_\1/g' \
+          $(find -name \*.h -o -name \*.cc )
+    '';
+  });
+
+  cartographer-ros = rosSuper.cartographer-ros.overrideAttrs ({
+    patches ? [],
+    postPatch ? "", ...
+  }: {
+    patches = patches ++ [
+      # Fix compilation with glog >= 0.7.0 (https://github.com/ros2/cartographer_ros/pull/76)
+      (self.fetchpatch {
+        url = "https://github.com/ros2/cartographer_ros/commit/58cd253615606efbf0bf69d16a932d35aadef1f7.patch";
+        hash = "sha256-rmolyUYIWPT37kYITDW4cRO0XJNdIYs6AoUWgWVb8PU=";
+        stripLen = 1;
+      })
+    ];
+
+    # Add ABSL_ prefix to thread annotation macros. See details above.
+    postPatch = ''
+      sed -i -Ee 's/\<(LOCKS_EXCLUDED|EXCLUSIVE_LOCKS_REQUIRED|GUARDED_BY)\>/ABSL_\1/g' \
+          $(find -name \*.h -o -name \*.cpp )
+    '';
+  });
+
   cyclonedds = rosSuper.cyclonedds.overrideAttrs ({
     cmakeFlags ? [], ...
   }: {
@@ -127,8 +165,8 @@ rosSelf: rosSuper: with rosSelf.lib; {
     patches = patches ++ [
       # Fix compilation with Boost 1.87
       (self.fetchpatch {
-        url = "https://github.com/fzi-forschungszentrum-informatik/Lanelet2/pull/399/commits/cf65e2d05f30a088731128e445df6f3ea523885d.patch";
-        hash = "sha256-aPO7mkS6DlSQIgcb6kJAZrwMWCkvWESM54feKtpeWO8=";
+        url = "https://github.com/fzi-forschungszentrum-informatik/Lanelet2/pull/399/commits/ab7d2f4dee299563c6313336c070ed99635aba3f.patch";
+        hash = "sha256-RKTjYPlnFY4JPGMa4YfyHUEY9X/Y1UpkNzB7AHmk4p0=";
         stripLen = 1;
       })
     ];
