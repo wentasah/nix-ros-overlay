@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-python, ament-lint-auto, ament-lint-common, boost, crazyflie-interfaces, eigen, geometry-msgs, libusb1, motion-capture-tracking-interfaces, rclcpp, ros-environment, sensor-msgs, std-srvs, tf-transformations, tf2-ros }:
 buildRosPackage {
   pname = "ros-jazzy-crazyflie";
-  version = "1.0.1-r1";
+  version = "1.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/crazyswarm2-release/archive/release/jazzy/crazyflie/1.0.1-1.tar.gz";
-    name = "1.0.1-1.tar.gz";
-    sha256 = "c0089f4da147b5d51bbad7b753af522ffe798f0e0fbfe235c5262881e12e54db";
+    url = "https://github.com/ros2-gbp/crazyswarm2-release/archive/release/jazzy/crazyflie/1.0.3-1.tar.gz";
+    name = "1.0.3-1.tar.gz";
+    sha256 = "eed7be4932002633c0b8bd9334b4b829e1cdb61d05f145e9af78b221cb2f8e0a";
   };
 
   buildType = "ament_cmake";

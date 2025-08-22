@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, eigen3-cmake-module, geometry-msgs, moveit-core, moveit-msgs, moveit-ros-planning, moveit-ros-planning-interface, qt5, rclcpp, sensor-msgs, std-msgs }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-gui";
-  version = "4.0.1-r1";
+  version = "4.0.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_gui/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "21e8ac419f66ca2486faedf2492326b4adc72a292658f61623bdc6072ff059f0";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_gui/4.0.7-1.tar.gz";
+    name = "4.0.7-1.tar.gz";
+    sha256 = "bd419baddb16cff02ed5f4ea5918738f16bb4e1e2a029d74c7a5ff12281df660";
   };
 
   buildType = "ament_cmake";

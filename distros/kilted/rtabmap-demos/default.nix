@@ -2,20 +2,20 @@
 # Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, rtabmap-odom, rtabmap-rviz-plugins, rtabmap-slam, rtabmap-util, rtabmap-viz }:
+{ lib, buildRosPackage, fetchurl, ament-cmake, nav2-bringup, rtabmap-odom, rtabmap-rviz-plugins, rtabmap-slam, rtabmap-util, rtabmap-viz }:
 buildRosPackage {
   pname = "ros-kilted-rtabmap-demos";
-  version = "0.22.0-r2";
+  version = "0.22.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_demos/0.22.0-2.tar.gz";
-    name = "0.22.0-2.tar.gz";
-    sha256 = "f568a1aae33adcef5b26587369a46553f9f80a078a1e497880afc377364f9e79";
+    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_demos/0.22.1-1.tar.gz";
+    name = "0.22.1-1.tar.gz";
+    sha256 = "af2e74efa672bfa27af754956a62fce5cd3370448b850472fcce64b79c56b626";
   };
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rtabmap-odom rtabmap-rviz-plugins rtabmap-slam rtabmap-util rtabmap-viz ];
+  propagatedBuildInputs = [ nav2-bringup rtabmap-odom rtabmap-rviz-plugins rtabmap-slam rtabmap-util rtabmap-viz ];
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {

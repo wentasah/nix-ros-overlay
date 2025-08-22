@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, angles, geometry-msgs, laser-geometry, launch, launch-testing, map-msgs, message-filters, nav-msgs, nav2-common, nav2-lifecycle-manager, nav2-map-server, nav2-msgs, nav2-util, nav2-voxel-grid, pluginlib, rclcpp, rclcpp-lifecycle, sensor-msgs, std-msgs, std-srvs, tf2, tf2-geometry-msgs, tf2-ros, tf2-sensor-msgs, visualization-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-nav2-costmap-2d";
-  version = "1.3.7-r1";
+  version = "1.3.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_costmap_2d/1.3.7-1.tar.gz";
-    name = "1.3.7-1.tar.gz";
-    sha256 = "ce1bb02eb3bc03a5bb08342736829868325312da61f4dc8a3ba4486f00b805ce";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_costmap_2d/1.3.8-1.tar.gz";
+    name = "1.3.8-1.tar.gz";
+    sha256 = "3106998fc0b4b7edfcc1e3f97691af459428759b2d550477dead9d1448ee148b";
   };
 
   buildType = "ament_cmake";

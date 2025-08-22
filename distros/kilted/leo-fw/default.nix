@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-black, ament-cmake-copyright, ament-cmake-lint-cmake, ament-cmake-mypy, ament-cmake-python, ament-cmake-uncrustify, ament-cmake-xmllint, ament-index-python, ament-lint-auto, geometry-msgs, leo-msgs, nav-msgs, python3Packages, rclcpp, rclcpp-components, rclpy, ros2cli, sensor-msgs, std-msgs, std-srvs }:
 buildRosPackage {
   pname = "ros-kilted-leo-fw";
-  version = "2.2.0-r1";
+  version = "2.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_fw/2.2.0-1.tar.gz";
-    name = "2.2.0-1.tar.gz";
-    sha256 = "3e86ecea3581667bff8d0b9c8db9479436e2cf42de3459d1622614776ebd0655";
+    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_fw/2.4.0-1.tar.gz";
+    name = "2.4.0-1.tar.gz";
+    sha256 = "bb7743487ca9bf0dcc12750c98952ed055a4f585fcc01bff5637f95bf64bf189";
   };
 
   buildType = "ament_cmake";

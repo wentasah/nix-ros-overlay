@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-pytest, ament-cmake-python, ament-index-python, ament-lint-auto, python3Packages }:
 buildRosPackage {
   pname = "ros-kilted-xacro";
-  version = "2.0.13-r2";
+  version = "2.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/xacro-release/archive/release/kilted/xacro/2.0.13-2.tar.gz";
-    name = "2.0.13-2.tar.gz";
-    sha256 = "3b3428896bd62636b6a3cb21f44925ec1be8023b875c8f2a0c6c880b1ddf7e20";
+    url = "https://github.com/ros2-gbp/xacro-release/archive/release/kilted/xacro/2.1.0-1.tar.gz";
+    name = "2.1.0-1.tar.gz";
+    sha256 = "d9ab5d959f60d75460d7dc4426d4cfbbfc4beb0294900d8d6166d5e3ae5e6c7e";
   };
 
   buildType = "ament_cmake";

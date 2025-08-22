@@ -196,6 +196,10 @@ self: super: {
 
  at-sonde-ros-driver = self.callPackage ./at-sonde-ros-driver {};
 
+ automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
+
+ automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
+
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
  automotive-navigation-msgs = self.callPackage ./automotive-navigation-msgs {};
@@ -440,7 +444,11 @@ self: super: {
 
  clearpath-viz = self.callPackage ./clearpath-viz {};
 
+ clips-executive = self.callPackage ./clips-executive {};
+
  clips-vendor = self.callPackage ./clips-vendor {};
+
+ cm-executors = self.callPackage ./cm-executors {};
 
  cmake-generate-parameter-module-example = self.callPackage ./cmake-generate-parameter-module-example {};
 
@@ -477,6 +485,8 @@ self: super: {
  control-toolbox = self.callPackage ./control-toolbox {};
 
  controller-interface = self.callPackage ./controller-interface {};
+
+ controller-manager = self.callPackage ./controller-manager {};
 
  controller-manager-msgs = self.callPackage ./controller-manager-msgs {};
 
@@ -519,6 +529,38 @@ self: super: {
  cudnn-cmake-module = self.callPackage ./cudnn-cmake-module {};
 
  cv-bridge = self.callPackage ./cv-bridge {};
+
+ cx-ament-index-plugin = self.callPackage ./cx-ament-index-plugin {};
+
+ cx-bringup = self.callPackage ./cx-bringup {};
+
+ cx-clips-env-manager = self.callPackage ./cx-clips-env-manager {};
+
+ cx-config-plugin = self.callPackage ./cx-config-plugin {};
+
+ cx-example-plugin = self.callPackage ./cx-example-plugin {};
+
+ cx-executive-plugin = self.callPackage ./cx-executive-plugin {};
+
+ cx-file-load-plugin = self.callPackage ./cx-file-load-plugin {};
+
+ cx-msgs = self.callPackage ./cx-msgs {};
+
+ cx-plugin = self.callPackage ./cx-plugin {};
+
+ cx-protobuf-plugin = self.callPackage ./cx-protobuf-plugin {};
+
+ cx-ros-comm-gen = self.callPackage ./cx-ros-comm-gen {};
+
+ cx-ros-msgs-plugin = self.callPackage ./cx-ros-msgs-plugin {};
+
+ cx-ros-param-plugin = self.callPackage ./cx-ros-param-plugin {};
+
+ cx-tf2-pose-tracker-plugin = self.callPackage ./cx-tf2-pose-tracker-plugin {};
+
+ cx-tutorial-agents = self.callPackage ./cx-tutorial-agents {};
+
+ cx-utils = self.callPackage ./cx-utils {};
 
  cyclonedds = self.callPackage ./cyclonedds {};
 
@@ -808,6 +850,18 @@ self: super: {
 
  event-camera-renderer = self.callPackage ./event-camera-renderer {};
 
+ ewellix-description = self.callPackage ./ewellix-description {};
+
+ ewellix-interfaces = self.callPackage ./ewellix-interfaces {};
+
+ ewellix-lift-common = self.callPackage ./ewellix-lift-common {};
+
+ ewellix-moveit-config = self.callPackage ./ewellix-moveit-config {};
+
+ ewellix-sim = self.callPackage ./ewellix-sim {};
+
+ ewellix-viz = self.callPackage ./ewellix-viz {};
+
  example-interfaces = self.callPackage ./example-interfaces {};
 
  examples-rclcpp-async-client = self.callPackage ./examples-rclcpp-async-client {};
@@ -881,6 +935,8 @@ self: super: {
  ffw-joystick-controller = self.callPackage ./ffw-joystick-controller {};
 
  ffw-moveit-config = self.callPackage ./ffw-moveit-config {};
+
+ ffw-robot-manager = self.callPackage ./ffw-robot-manager {};
 
  ffw-spring-actuator-controller = self.callPackage ./ffw-spring-actuator-controller {};
 
@@ -1120,6 +1176,12 @@ self: super: {
 
  hpp-fcl = self.callPackage ./hpp-fcl {};
 
+ husarion-components-description = self.callPackage ./husarion-components-description {};
+
+ husarion-ugv-description = self.callPackage ./husarion-ugv-description {};
+
+ husarion-ugv-msgs = self.callPackage ./husarion-ugv-msgs {};
+
  ibeo-msgs = self.callPackage ./ibeo-msgs {};
 
  iceoryx-binding-c = self.callPackage ./iceoryx-binding-c {};
@@ -1166,6 +1228,8 @@ self: super: {
 
  imu-transformer = self.callPackage ./imu-transformer {};
 
+ insight-gui = self.callPackage ./insight-gui {};
+
  interactive-marker-twist-server = self.callPackage ./interactive-marker-twist-server {};
 
  interactive-markers = self.callPackage ./interactive-markers {};
@@ -1203,6 +1267,8 @@ self: super: {
  joint-state-publisher = self.callPackage ./joint-state-publisher {};
 
  joint-state-publisher-gui = self.callPackage ./joint-state-publisher-gui {};
+
+ joint-state-topic-hardware-interface = self.callPackage ./joint-state-topic-hardware-interface {};
 
  joint-trajectory-controller = self.callPackage ./joint-trajectory-controller {};
 
@@ -1359,6 +1425,8 @@ self: super: {
  lifecycle-py = self.callPackage ./lifecycle-py {};
 
  linux-isolate-process = self.callPackage ./linux-isolate-process {};
+
+ live555-vendor = self.callPackage ./live555-vendor {};
 
  lms1xx = self.callPackage ./lms1xx {};
 
@@ -1778,8 +1846,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  network-bridge = self.callPackage ./network-bridge {};
@@ -1842,6 +1908,8 @@ self: super: {
 
  om-spring-actuator-controller = self.callPackage ./om-spring-actuator-controller {};
 
+ omni-wheel-drive-controller = self.callPackage ./omni-wheel-drive-controller {};
+
  ompl = self.callPackage ./ompl {};
 
  open-manipulator = self.callPackage ./open-manipulator {};
@@ -1899,6 +1967,8 @@ self: super: {
  pal-statistics = self.callPackage ./pal-statistics {};
 
  pal-statistics-msgs = self.callPackage ./pal-statistics-msgs {};
+
+ pangolin = self.callPackage ./pangolin {};
 
  parallel-gripper-controller = self.callPackage ./parallel-gripper-controller {};
 
@@ -2037,6 +2107,8 @@ self: super: {
  pose-cov-ops = self.callPackage ./pose-cov-ops {};
 
  position-controllers = self.callPackage ./position-controllers {};
+
+ protobuf-comm = self.callPackage ./protobuf-comm {};
 
  proxsuite = self.callPackage ./proxsuite {};
 
@@ -2204,6 +2276,8 @@ self: super: {
 
  realtime-tools = self.callPackage ./realtime-tools {};
 
+ reductstore-agent = self.callPackage ./reductstore-agent {};
+
  resource-retriever = self.callPackage ./resource-retriever {};
 
  rig-reconfigure = self.callPackage ./rig-reconfigure {};
@@ -2343,6 +2417,8 @@ self: super: {
  robotiq-description = self.callPackage ./robotiq-description {};
 
  robotraconteur = self.callPackage ./robotraconteur {};
+
+ robotraconteur-companion = self.callPackage ./robotraconteur-companion {};
 
  ros2-control = self.callPackage ./ros2-control {};
 
@@ -2551,6 +2627,32 @@ self: super: {
  rosidl-typesupport-introspection-c = self.callPackage ./rosidl-typesupport-introspection-c {};
 
  rosidl-typesupport-introspection-cpp = self.callPackage ./rosidl-typesupport-introspection-cpp {};
+
+ rosidlcpp = self.callPackage ./rosidlcpp {};
+
+ rosidlcpp-generator-c = self.callPackage ./rosidlcpp-generator-c {};
+
+ rosidlcpp-generator-core = self.callPackage ./rosidlcpp-generator-core {};
+
+ rosidlcpp-generator-cpp = self.callPackage ./rosidlcpp-generator-cpp {};
+
+ rosidlcpp-generator-py = self.callPackage ./rosidlcpp-generator-py {};
+
+ rosidlcpp-generator-type-description = self.callPackage ./rosidlcpp-generator-type-description {};
+
+ rosidlcpp-parser = self.callPackage ./rosidlcpp-parser {};
+
+ rosidlcpp-typesupport-c = self.callPackage ./rosidlcpp-typesupport-c {};
+
+ rosidlcpp-typesupport-cpp = self.callPackage ./rosidlcpp-typesupport-cpp {};
+
+ rosidlcpp-typesupport-fastrtps-c = self.callPackage ./rosidlcpp-typesupport-fastrtps-c {};
+
+ rosidlcpp-typesupport-fastrtps-cpp = self.callPackage ./rosidlcpp-typesupport-fastrtps-cpp {};
+
+ rosidlcpp-typesupport-introspection-c = self.callPackage ./rosidlcpp-typesupport-introspection-c {};
+
+ rosidlcpp-typesupport-introspection-cpp = self.callPackage ./rosidlcpp-typesupport-introspection-cpp {};
 
  rosx-introspection = self.callPackage ./rosx-introspection {};
 
@@ -3031,6 +3133,16 @@ self: super: {
  turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
 
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-home-service-challenge = self.callPackage ./turtlebot3-home-service-challenge {};
+
+ turtlebot3-home-service-challenge-aruco = self.callPackage ./turtlebot3-home-service-challenge-aruco {};
+
+ turtlebot3-home-service-challenge-core = self.callPackage ./turtlebot3-home-service-challenge-core {};
+
+ turtlebot3-home-service-challenge-manipulator = self.callPackage ./turtlebot3-home-service-challenge-manipulator {};
+
+ turtlebot3-home-service-challenge-tools = self.callPackage ./turtlebot3-home-service-challenge-tools {};
 
  turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
 

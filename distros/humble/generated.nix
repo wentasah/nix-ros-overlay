@@ -28,6 +28,8 @@ self: super: {
 
  adi-3dtof-image-stitching = self.callPackage ./adi-3dtof-image-stitching {};
 
+ adi-iio = self.callPackage ./adi-iio {};
+
  adi-tmcl = self.callPackage ./adi-tmcl {};
 
  admittance-controller = self.callPackage ./admittance-controller {};
@@ -236,6 +238,8 @@ self: super: {
 
  as2-behaviors-platform = self.callPackage ./as2-behaviors-platform {};
 
+ as2-behaviors-swarm-flocking = self.callPackage ./as2-behaviors-swarm-flocking {};
+
  as2-behaviors-trajectory-generation = self.callPackage ./as2-behaviors-trajectory-generation {};
 
  as2-cli = self.callPackage ./as2-cli {};
@@ -286,11 +290,19 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
+ automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
+
+ automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
+
  automotive-autonomy-msgs = self.callPackage ./automotive-autonomy-msgs {};
 
  automotive-navigation-msgs = self.callPackage ./automotive-navigation-msgs {};
 
  automotive-platform-msgs = self.callPackage ./automotive-platform-msgs {};
+
+ autoware-adapi-adaptors = self.callPackage ./autoware-adapi-adaptors {};
+
+ autoware-adapi-specs = self.callPackage ./autoware-adapi-specs {};
 
  autoware-adapi-v1-msgs = self.callPackage ./autoware-adapi-v1-msgs {};
 
@@ -298,11 +310,57 @@ self: super: {
 
  autoware-auto-msgs = self.callPackage ./autoware-auto-msgs {};
 
+ autoware-behavior-velocity-planner = self.callPackage ./autoware-behavior-velocity-planner {};
+
+ autoware-behavior-velocity-planner-common = self.callPackage ./autoware-behavior-velocity-planner-common {};
+
+ autoware-behavior-velocity-stop-line-module = self.callPackage ./autoware-behavior-velocity-stop-line-module {};
+
  autoware-cmake = self.callPackage ./autoware-cmake {};
 
  autoware-common-msgs = self.callPackage ./autoware-common-msgs {};
 
+ autoware-component-interface-specs = self.callPackage ./autoware-component-interface-specs {};
+
  autoware-control-msgs = self.callPackage ./autoware-control-msgs {};
+
+ autoware-core = self.callPackage ./autoware-core {};
+
+ autoware-core-api = self.callPackage ./autoware-core-api {};
+
+ autoware-core-control = self.callPackage ./autoware-core-control {};
+
+ autoware-core-localization = self.callPackage ./autoware-core-localization {};
+
+ autoware-core-map = self.callPackage ./autoware-core-map {};
+
+ autoware-core-perception = self.callPackage ./autoware-core-perception {};
+
+ autoware-core-planning = self.callPackage ./autoware-core-planning {};
+
+ autoware-core-sensing = self.callPackage ./autoware-core-sensing {};
+
+ autoware-core-vehicle = self.callPackage ./autoware-core-vehicle {};
+
+ autoware-crop-box-filter = self.callPackage ./autoware-crop-box-filter {};
+
+ autoware-default-adapi = self.callPackage ./autoware-default-adapi {};
+
+ autoware-downsample-filters = self.callPackage ./autoware-downsample-filters {};
+
+ autoware-ekf-localizer = self.callPackage ./autoware-ekf-localizer {};
+
+ autoware-euclidean-cluster-object-detector = self.callPackage ./autoware-euclidean-cluster-object-detector {};
+
+ autoware-geography-utils = self.callPackage ./autoware-geography-utils {};
+
+ autoware-global-parameter-loader = self.callPackage ./autoware-global-parameter-loader {};
+
+ autoware-gnss-poser = self.callPackage ./autoware-gnss-poser {};
+
+ autoware-ground-filter = self.callPackage ./autoware-ground-filter {};
+
+ autoware-gyro-odometer = self.callPackage ./autoware-gyro-odometer {};
 
  autoware-internal-debug-msgs = self.callPackage ./autoware-internal-debug-msgs {};
 
@@ -316,25 +374,99 @@ self: super: {
 
  autoware-internal-planning-msgs = self.callPackage ./autoware-internal-planning-msgs {};
 
+ autoware-interpolation = self.callPackage ./autoware-interpolation {};
+
+ autoware-kalman-filter = self.callPackage ./autoware-kalman-filter {};
+
  autoware-lanelet2-extension = self.callPackage ./autoware-lanelet2-extension {};
 
  autoware-lanelet2-extension-python = self.callPackage ./autoware-lanelet2-extension-python {};
+
+ autoware-lanelet2-map-visualizer = self.callPackage ./autoware-lanelet2-map-visualizer {};
+
+ autoware-lanelet2-utils = self.callPackage ./autoware-lanelet2-utils {};
 
  autoware-lint-common = self.callPackage ./autoware-lint-common {};
 
  autoware-localization-msgs = self.callPackage ./autoware-localization-msgs {};
 
+ autoware-localization-util = self.callPackage ./autoware-localization-util {};
+
+ autoware-map-height-fitter = self.callPackage ./autoware-map-height-fitter {};
+
+ autoware-map-loader = self.callPackage ./autoware-map-loader {};
+
  autoware-map-msgs = self.callPackage ./autoware-map-msgs {};
+
+ autoware-map-projection-loader = self.callPackage ./autoware-map-projection-loader {};
+
+ autoware-marker-utils = self.callPackage ./autoware-marker-utils {};
+
+ autoware-mission-planner = self.callPackage ./autoware-mission-planner {};
+
+ autoware-motion-utils = self.callPackage ./autoware-motion-utils {};
+
+ autoware-motion-velocity-obstacle-stop-module = self.callPackage ./autoware-motion-velocity-obstacle-stop-module {};
+
+ autoware-motion-velocity-planner = self.callPackage ./autoware-motion-velocity-planner {};
+
+ autoware-motion-velocity-planner-common = self.callPackage ./autoware-motion-velocity-planner-common {};
 
  autoware-msgs = self.callPackage ./autoware-msgs {};
 
+ autoware-ndt-scan-matcher = self.callPackage ./autoware-ndt-scan-matcher {};
+
+ autoware-node = self.callPackage ./autoware-node {};
+
+ autoware-object-recognition-utils = self.callPackage ./autoware-object-recognition-utils {};
+
+ autoware-objects-of-interest-marker-interface = self.callPackage ./autoware-objects-of-interest-marker-interface {};
+
+ autoware-osqp-interface = self.callPackage ./autoware-osqp-interface {};
+
+ autoware-path-generator = self.callPackage ./autoware-path-generator {};
+
  autoware-perception-msgs = self.callPackage ./autoware-perception-msgs {};
+
+ autoware-perception-objects-converter = self.callPackage ./autoware-perception-objects-converter {};
+
+ autoware-planning-factor-interface = self.callPackage ./autoware-planning-factor-interface {};
 
  autoware-planning-msgs = self.callPackage ./autoware-planning-msgs {};
 
+ autoware-planning-test-manager = self.callPackage ./autoware-planning-test-manager {};
+
+ autoware-planning-topic-converter = self.callPackage ./autoware-planning-topic-converter {};
+
+ autoware-point-types = self.callPackage ./autoware-point-types {};
+
+ autoware-pose-initializer = self.callPackage ./autoware-pose-initializer {};
+
+ autoware-pyplot = self.callPackage ./autoware-pyplot {};
+
+ autoware-qp-interface = self.callPackage ./autoware-qp-interface {};
+
+ autoware-route-handler = self.callPackage ./autoware-route-handler {};
+
  autoware-sensing-msgs = self.callPackage ./autoware-sensing-msgs {};
 
+ autoware-signal-processing = self.callPackage ./autoware-signal-processing {};
+
+ autoware-simple-pure-pursuit = self.callPackage ./autoware-simple-pure-pursuit {};
+
+ autoware-stop-filter = self.callPackage ./autoware-stop-filter {};
+
  autoware-system-msgs = self.callPackage ./autoware-system-msgs {};
+
+ autoware-test-node = self.callPackage ./autoware-test-node {};
+
+ autoware-test-utils = self.callPackage ./autoware-test-utils {};
+
+ autoware-testing = self.callPackage ./autoware-testing {};
+
+ autoware-trajectory = self.callPackage ./autoware-trajectory {};
+
+ autoware-twist2accel = self.callPackage ./autoware-twist2accel {};
 
  autoware-utils = self.callPackage ./autoware-utils {};
 
@@ -362,7 +494,13 @@ self: super: {
 
  autoware-v2x-msgs = self.callPackage ./autoware-v2x-msgs {};
 
+ autoware-vehicle-info-utils = self.callPackage ./autoware-vehicle-info-utils {};
+
  autoware-vehicle-msgs = self.callPackage ./autoware-vehicle-msgs {};
+
+ autoware-vehicle-velocity-converter = self.callPackage ./autoware-vehicle-velocity-converter {};
+
+ autoware-velocity-smoother = self.callPackage ./autoware-velocity-smoother {};
 
  avt-vimba-camera = self.callPackage ./avt-vimba-camera {};
 
@@ -1274,6 +1412,12 @@ self: super: {
 
  human-description = self.callPackage ./human-description {};
 
+ husarion-components-description = self.callPackage ./husarion-components-description {};
+
+ husarion-ugv-description = self.callPackage ./husarion-ugv-description {};
+
+ husarion-ugv-msgs = self.callPackage ./husarion-ugv-msgs {};
+
  ibeo-msgs = self.callPackage ./ibeo-msgs {};
 
  iceoryx-binding-c = self.callPackage ./iceoryx-binding-c {};
@@ -1316,6 +1460,8 @@ self: super: {
 
  image-view = self.callPackage ./image-view {};
 
+ imu-calib = self.callPackage ./imu-calib {};
+
  imu-complementary-filter = self.callPackage ./imu-complementary-filter {};
 
  imu-filter-madgwick = self.callPackage ./imu-filter-madgwick {};
@@ -1337,6 +1483,8 @@ self: super: {
  interactive-markers = self.callPackage ./interactive-markers {};
 
  intra-process-demo = self.callPackage ./intra-process-demo {};
+
+ inuros2 = self.callPackage ./inuros2 {};
 
  inverse-dynamics-solver = self.callPackage ./inverse-dynamics-solver {};
 
@@ -2034,8 +2182,6 @@ self: super: {
 
  neo-nav2-bringup = self.callPackage ./neo-nav2-bringup {};
 
- neo-simulation2 = self.callPackage ./neo-simulation2 {};
-
  neobotix-usboard-msgs = self.callPackage ./neobotix-usboard-msgs {};
 
  nerian-stereo = self.callPackage ./nerian-stereo {};
@@ -2722,7 +2868,11 @@ self: super: {
 
  robotraconteur = self.callPackage ./robotraconteur {};
 
+ robotraconteur-companion = self.callPackage ./robotraconteur-companion {};
+
  ros2-control = self.callPackage ./ros2-control {};
+
+ ros2-control-cmake = self.callPackage ./ros2-control-cmake {};
 
  ros2-control-test-assets = self.callPackage ./ros2-control-test-assets {};
 
@@ -3096,6 +3246,8 @@ self: super: {
 
  sdformat-test-files = self.callPackage ./sdformat-test-files {};
 
+ sdformat-urdf = self.callPackage ./sdformat-urdf {};
+
  sdl2-vendor = self.callPackage ./sdl2-vendor {};
 
  self-test = self.callPackage ./self-test {};
@@ -3449,6 +3601,16 @@ self: super: {
  turtlebot3-follower = self.callPackage ./turtlebot3-follower {};
 
  turtlebot3-gazebo = self.callPackage ./turtlebot3-gazebo {};
+
+ turtlebot3-home-service-challenge = self.callPackage ./turtlebot3-home-service-challenge {};
+
+ turtlebot3-home-service-challenge-aruco = self.callPackage ./turtlebot3-home-service-challenge-aruco {};
+
+ turtlebot3-home-service-challenge-core = self.callPackage ./turtlebot3-home-service-challenge-core {};
+
+ turtlebot3-home-service-challenge-manipulator = self.callPackage ./turtlebot3-home-service-challenge-manipulator {};
+
+ turtlebot3-home-service-challenge-tools = self.callPackage ./turtlebot3-home-service-challenge-tools {};
 
  turtlebot3-manipulation = self.callPackage ./turtlebot3-manipulation {};
 

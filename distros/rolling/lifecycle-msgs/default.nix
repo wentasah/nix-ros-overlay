@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-rolling-lifecycle-msgs";
-  version = "2.4.1-r1";
+  version = "2.4.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/rolling/lifecycle_msgs/2.4.1-1.tar.gz";
-    name = "2.4.1-1.tar.gz";
-    sha256 = "66f90da6a641bda87cc12fc70e64945b38c9653f786a6463cf8110f25f438cb9";
+    url = "https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/rolling/lifecycle_msgs/2.4.2-1.tar.gz";
+    name = "2.4.2-1.tar.gz";
+    sha256 = "4a0816148b3d33e9f0196b15ef6c1ddb904c238afbb3f524951681d06f49a2e8";
   };
 
   buildType = "ament_cmake";
