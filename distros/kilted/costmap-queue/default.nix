@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, nav2-common, nav2-costmap-2d, rclcpp }:
 buildRosPackage {
   pname = "ros-kilted-costmap-queue";
-  version = "1.4.0-r1";
+  version = "1.4.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/costmap_queue/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "58fce19b988362799a64a88e85c566415006e616381224f089b4532f86ff064f";
+    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/costmap_queue/1.4.1-1.tar.gz";
+    name = "1.4.1-1.tar.gz";
+    sha256 = "ace57d4b0fdfaa0f8fc83cf748d330dd67092bbb70069d5aef7483c500a6fee0";
   };
 
   buildType = "ament_cmake";

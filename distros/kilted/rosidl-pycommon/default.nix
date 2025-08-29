@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, ament-flake8, ament-mypy, ament-pep257, ament-xmllint, python3Packages, rosidl-parser }:
 buildRosPackage {
   pname = "ros-kilted-rosidl-pycommon";
-  version = "4.9.4-r2";
+  version = "4.9.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/kilted/rosidl_pycommon/4.9.4-2.tar.gz";
-    name = "4.9.4-2.tar.gz";
-    sha256 = "1958e0f9d9e0b49f9dc14239d10d212210bde4c722bb180955a1a4205aa4e50f";
+    url = "https://github.com/ros2-gbp/rosidl-release/archive/release/kilted/rosidl_pycommon/4.9.5-1.tar.gz";
+    name = "4.9.5-1.tar.gz";
+    sha256 = "18ea3ab736c20224f40cd76c027bdb6b9b62ba15618462e384fcf7d30f3766f7";
   };
 
   buildType = "ament_python";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-index-cpp, camera-calibration-parsers, cv-bridge, eigen, image-geometry, image-transport, message-filters, opencv, pkg-config, rcl-interfaces, rclcpp, rclcpp-components, rclpy, swri-geometry-util, swri-math-util, swri-opencv-util, tf2 }:
 buildRosPackage {
   pname = "ros-jazzy-swri-image-util";
-  version = "3.8.5-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/jazzy/swri_image_util/3.8.5-1.tar.gz";
-    name = "3.8.5-1.tar.gz";
-    sha256 = "b786193336e2edd002c5241cec1cf16409e787cd1ba16948be2ad38329df4369";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/jazzy/swri_image_util/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "f61321767a1739f57636073cadcbe99daec2cf28a258fd1415da9b5f261ceeed";
   };
 
   buildType = "ament_cmake";

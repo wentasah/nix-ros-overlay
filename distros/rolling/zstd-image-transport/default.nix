@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, image-transport, zlib }:
 buildRosPackage {
   pname = "ros-rolling-zstd-image-transport";
-  version = "5.0.3-r1";
+  version = "6.2.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/rolling/zstd_image_transport/5.0.3-1.tar.gz";
-    name = "5.0.3-1.tar.gz";
-    sha256 = "75d8df4a3ccd1398d5488ad15f2c1894a0dca335f405dc859c8cc797f549288f";
+    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/rolling/zstd_image_transport/6.2.0-1.tar.gz";
+    name = "6.2.0-1.tar.gz";
+    sha256 = "ea488ba1dd09414187dcc131237fe04839e401a8bd60ca78f202c326f99a30bb";
   };
 
   buildType = "ament_cmake";

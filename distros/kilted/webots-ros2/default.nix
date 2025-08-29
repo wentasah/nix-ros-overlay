@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-copyright, builtin-interfaces, python3Packages, rclpy, std-msgs, webots-ros2-control, webots-ros2-crazyflie, webots-ros2-driver, webots-ros2-epuck, webots-ros2-husarion, webots-ros2-importer, webots-ros2-mavic, webots-ros2-msgs, webots-ros2-tesla, webots-ros2-tests, webots-ros2-tiago, webots-ros2-turtlebot, webots-ros2-universal-robot }:
 buildRosPackage {
   pname = "ros-kilted-webots-ros2";
-  version = "2025.0.0-r2";
+  version = "2025.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2/2025.0.0-2.tar.gz";
-    name = "2025.0.0-2.tar.gz";
-    sha256 = "271794fe11b443ecd46fc4d5309dece054b654614f384ac44c4c50cbe9e38ebf";
+    url = "https://github.com/ros2-gbp/webots_ros2-release/archive/release/kilted/webots_ros2/2025.0.1-1.tar.gz";
+    name = "2025.0.1-1.tar.gz";
+    sha256 = "2c276a93c016bf8ef265e73469447d9ff236b84deb23a73cb66fa941475d2c63";
   };
 
   buildType = "ament_python";
