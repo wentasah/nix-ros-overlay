@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, eigen, eigen3-cmake-module, geometry-msgs, kdl-parser, nlopt, pkg-config, rclcpp, urdf }:
 buildRosPackage {
   pname = "ros-kilted-trac-ik-lib";
-  version = "2.1.0-r1";
+  version = "2.1.1-r2";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/trac_ik-release/archive/release/kilted/trac_ik_lib/2.1.0-1.tar.gz";
-    name = "2.1.0-1.tar.gz";
-    sha256 = "bf06793f7fba044960fb3a81b4591427703392da231bcf070792b01314cfe5dc";
+    url = "https://github.com/ros2-gbp/trac_ik-release/archive/release/kilted/trac_ik_lib/2.1.1-2.tar.gz";
+    name = "2.1.1-2.tar.gz";
+    sha256 = "62906911ef0026fb7a90abb239454f080d3c0b4da14c60fbbf3a95b0ae29b30d";
   };
 
   buildType = "ament_cmake";

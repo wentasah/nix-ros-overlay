@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-clang-format, ament-lint-auto, ament-lint-common, apriltag-msgs, cv-bridge, image-transport, rclcpp, rclcpp-components, ros-environment, sensor-msgs }:
 buildRosPackage {
   pname = "ros-kilted-apriltag-draw";
-  version = "3.0.2-r1";
+  version = "3.0.3-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/apriltag_detector-release/archive/release/kilted/apriltag_draw/3.0.2-1.tar.gz";
-    name = "3.0.2-1.tar.gz";
-    sha256 = "4513c7858497f498c4533bb2a1bf717899112f3a34eed9862374101b4aceba1b";
+    url = "https://github.com/ros2-gbp/apriltag_detector-release/archive/release/kilted/apriltag_draw/3.0.3-1.tar.gz";
+    name = "3.0.3-1.tar.gz";
+    sha256 = "b8350836f265743a2f2d65b3ba9cae0cea44a4aa53d704cedff9c0855427fd8f";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, geometry-msgs, rcl-interfaces, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-ros-gz-interfaces";
-  version = "1.0.15-r1";
+  version = "1.0.16-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/jazzy/ros_gz_interfaces/1.0.15-1.tar.gz";
-    name = "1.0.15-1.tar.gz";
-    sha256 = "4825c80defbcaaa7db13edca0cc378bb2c66af654e38cce442061cdfdeebdccc";
+    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/jazzy/ros_gz_interfaces/1.0.16-1.tar.gz";
+    name = "1.0.16-1.tar.gz";
+    sha256 = "866680edae25787f2adffe7362ab94e1cccd07153171ae8ecb3727e3455ed8b2";
   };
 
   buildType = "ament_cmake";

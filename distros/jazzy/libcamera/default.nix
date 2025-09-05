@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, git, libyaml, meson, openssl, pkg-config, python3, python3Packages, udev }:
 buildRosPackage {
   pname = "ros-jazzy-libcamera";
-  version = "0.5.1-r1";
+  version = "0.5.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/libcamera-release/archive/release/jazzy/libcamera/0.5.1-1.tar.gz";
-    name = "0.5.1-1.tar.gz";
-    sha256 = "cb090f65d95ff3ae25409e4a6586ffab86e8aa334bcb1422e79900ff2c730425";
+    url = "https://github.com/ros2-gbp/libcamera-release/archive/release/jazzy/libcamera/0.5.2-1.tar.gz";
+    name = "0.5.2-1.tar.gz";
+    sha256 = "e670a5b5e3acacde2cff606f81b39dab0f39deb0004445ed33a1ae97491bb7b8";
   };
 
   buildType = "meson";
@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "An open source camera stack and framework for Linux, Android, and ChromeOS";
-    license = with lib.licenses; [ "LGPL-2.1-only" ];
+    license = with lib.licenses; [ asl20 "BSD-2-Clause" bsd3 "GPL-2.0-or-later" "LGPL-2.1-or-later" ];
   };
 }

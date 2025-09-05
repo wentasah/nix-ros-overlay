@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, geometry-msgs, nav2-common, nav2-util, rclcpp, rclcpp-components }:
 buildRosPackage {
   pname = "ros-jazzy-nav2-velocity-smoother";
-  version = "1.3.7-r1";
+  version = "1.3.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_velocity_smoother/1.3.7-1.tar.gz";
-    name = "1.3.7-1.tar.gz";
-    sha256 = "1a290cbd4d35b85773558b6a4b5fbb9514f3f0e5c29021508db202cf1161ff72";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_velocity_smoother/1.3.8-1.tar.gz";
+    name = "1.3.8-1.tar.gz";
+    sha256 = "c0aed77ecea4156ffe0c99ec64499f29f397791f83fc84526fed93815e4012c3";
   };
 
   buildType = "ament_cmake";

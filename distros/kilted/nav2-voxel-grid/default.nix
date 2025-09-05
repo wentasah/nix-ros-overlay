@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, nav2-common, rclcpp }:
 buildRosPackage {
   pname = "ros-kilted-nav2-voxel-grid";
-  version = "1.4.0-r1";
+  version = "1.4.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_voxel_grid/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "93e0149c37376fd39afaff59cb75378ebfb3a3aa8fe18e96d263a1d9108cf8e4";
+    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_voxel_grid/1.4.1-1.tar.gz";
+    name = "1.4.1-1.tar.gz";
+    sha256 = "46a38322ccb509b3ac81a11ddf1054fa59e114b9caa8c63ae05011a1d88aa587";
   };
 
   buildType = "ament_cmake";

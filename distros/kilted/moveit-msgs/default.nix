@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, action-msgs, ament-cmake, ament-lint-auto, ament-lint-cmake, geometry-msgs, object-recognition-msgs, octomap-msgs, rosidl-default-generators, rosidl-default-runtime, sensor-msgs, shape-msgs, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-kilted-moveit-msgs";
-  version = "2.6.0-r2";
+  version = "2.7.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/moveit_msgs-release/archive/release/kilted/moveit_msgs/2.6.0-2.tar.gz";
-    name = "2.6.0-2.tar.gz";
-    sha256 = "82ad0eaa13034e68ac405fc9879db1e185cdf1659d8f41a6f051d6aedcb599a8";
+    url = "https://github.com/ros2-gbp/moveit_msgs-release/archive/release/kilted/moveit_msgs/2.7.1-1.tar.gz";
+    name = "2.7.1-1.tar.gz";
+    sha256 = "86cc0027ec403bba0f559d46aa390dbcc605519ff978f07f517159f4ee758b07";
   };
 
   buildType = "ament_cmake";

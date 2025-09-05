@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, builtin-interfaces, geometry-msgs, orocos-kdl-vendor, python-orocos-kdl-vendor, rclcpp, tf2, tf2-ros, tf2-ros-py }:
 buildRosPackage {
   pname = "ros-rolling-tf2-kdl";
-  version = "0.42.2-r1";
+  version = "0.44.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/rolling/tf2_kdl/0.42.2-1.tar.gz";
-    name = "0.42.2-1.tar.gz";
-    sha256 = "dab387ed6dffc4d62329d00dd65ddb0ac5c249509b5f4f2fc6cc0da1597b9b7b";
+    url = "https://github.com/ros2-gbp/geometry2-release/archive/release/rolling/tf2_kdl/0.44.0-1.tar.gz";
+    name = "0.44.0-1.tar.gz";
+    sha256 = "0bcc00fed261f0c6bb6f48b227d1407f3d47849bd5e881a57275f2561c94d35b";
   };
 
   buildType = "ament_cmake";

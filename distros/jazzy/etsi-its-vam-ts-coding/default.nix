@@ -2,20 +2,19 @@
 # Copyright 2025 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 
-{ lib, buildRosPackage, fetchurl, ament-cmake, ros-environment }:
+{ lib, buildRosPackage, fetchurl, ament-cmake }:
 buildRosPackage {
   pname = "ros-jazzy-etsi-its-vam-ts-coding";
-  version = "3.2.1-r1";
+  version = "3.3.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/etsi_its_messages-release/archive/release/jazzy/etsi_its_vam_ts_coding/3.2.1-1.tar.gz";
-    name = "3.2.1-1.tar.gz";
-    sha256 = "491df67a3849e22f92fb8f912016375e33e07441efbc404169ac0e1b79030707";
+    url = "https://github.com/ros2-gbp/etsi_its_messages-release/archive/release/jazzy/etsi_its_vam_ts_coding/3.3.0-1.tar.gz";
+    name = "3.3.0-1.tar.gz";
+    sha256 = "fb667bb16893ff9b23ba81476a9d1a0a3528ec47e7351fb3601af17e2a1cec6a";
   };
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ros-environment ];
   nativeBuildInputs = [ ament-cmake ];
 
   meta = {

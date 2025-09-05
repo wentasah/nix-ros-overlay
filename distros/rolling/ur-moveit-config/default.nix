@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, moveit-configs-utils, moveit-kinematics, moveit-planners, moveit-planners-chomp, moveit-ros-move-group, moveit-ros-visualization, moveit-servo, moveit-simple-controller-manager, ur-description, warehouse-ros-sqlite, xacro }:
 buildRosPackage {
   pname = "ros-rolling-ur-moveit-config";
-  version = "4.0.3-r1";
+  version = "4.1.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/rolling/ur_moveit_config/4.0.3-1.tar.gz";
-    name = "4.0.3-1.tar.gz";
-    sha256 = "16052961560d99dd4664caca35795a03ae3a63025bd088ace3234990f414b266";
+    url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release/archive/release/rolling/ur_moveit_config/4.1.0-1.tar.gz";
+    name = "4.1.0-1.tar.gz";
+    sha256 = "c411e00b52b280f50263d6a9f3e5802fe6e3f67110ec1e5e6f346bcacadcf1b8";
   };
 
   buildType = "ament_cmake";

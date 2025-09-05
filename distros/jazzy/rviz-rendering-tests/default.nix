@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-cppcheck, ament-cmake-cpplint, ament-cmake-gmock, ament-cmake-gtest, ament-cmake-lint-cmake, ament-cmake-uncrustify, ament-cmake-xmllint, ament-index-cpp, ament-lint-auto, qt5, resource-retriever, rviz-rendering }:
 buildRosPackage {
   pname = "ros-jazzy-rviz-rendering-tests";
-  version = "14.1.12-r1";
+  version = "14.1.14-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/rviz-release/archive/release/jazzy/rviz_rendering_tests/14.1.12-1.tar.gz";
-    name = "14.1.12-1.tar.gz";
-    sha256 = "b24de55a0a2c439a5f172f822a59902741e7dd3fe105fab7d2678710ce5e50bd";
+    url = "https://github.com/ros2-gbp/rviz-release/archive/release/jazzy/rviz_rendering_tests/14.1.14-1.tar.gz";
+    name = "14.1.14-1.tar.gz";
+    sha256 = "97cc5ee7a7f39d02d2a785bfec53c8625a3a5624051432c03a9adeb9096069ed";
   };
 
   buildType = "ament_cmake";

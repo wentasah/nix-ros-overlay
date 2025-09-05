@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake }:
 buildRosPackage {
   pname = "ros-kilted-swri-dbw-interface";
-  version = "3.8.4-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_dbw_interface/3.8.4-1.tar.gz";
-    name = "3.8.4-1.tar.gz";
-    sha256 = "220d565891ea2fb3fb0a257d9602c9444c079f612d1abd4db9e24e4ec86d0274";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_dbw_interface/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "b727526dbe257d825c25825b058451b461e3c4aeeff81b2f1e18de1b449487f0";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, geometry-msgs, rosidl-default-generators, rosidl-default-runtime }:
 buildRosPackage {
   pname = "ros-rolling-shape-msgs";
-  version = "5.7.0-r1";
+  version = "5.8.2-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/shape_msgs/5.7.0-1.tar.gz";
-    name = "5.7.0-1.tar.gz";
-    sha256 = "91699165c64105ab17203363e9a501515eed09c32237168099a1a4251cd59e12";
+    url = "https://github.com/ros2-gbp/common_interfaces-release/archive/release/rolling/shape_msgs/5.8.2-1.tar.gz";
+    name = "5.8.2-1.tar.gz";
+    sha256 = "8ce0e553dc5ea521451baa1f0ab6951dc5f6fa01923f36093ecb21d37b79b72f";
   };
 
   buildType = "ament_cmake";

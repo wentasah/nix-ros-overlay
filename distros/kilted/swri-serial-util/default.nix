@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake }:
 buildRosPackage {
   pname = "ros-kilted-swri-serial-util";
-  version = "3.8.4-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_serial_util/3.8.4-1.tar.gz";
-    name = "3.8.4-1.tar.gz";
-    sha256 = "663e2142414f42307daf53d59edb5c6f5806bb3eb0d9613e281e7f5d5f1066b3";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_serial_util/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "6b915782213db7f4209e759df899d57411fe1aa5237ebd2d0a41a29c0231b37b";
   };
 
   buildType = "ament_cmake";
