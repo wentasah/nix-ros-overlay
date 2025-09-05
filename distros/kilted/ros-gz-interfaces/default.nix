@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-common, builtin-interfaces, geometry-msgs, rcl-interfaces, rosidl-default-generators, rosidl-default-runtime, std-msgs }:
 buildRosPackage {
   pname = "ros-kilted-ros-gz-interfaces";
-  version = "2.1.9-r1";
+  version = "2.1.10-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/kilted/ros_gz_interfaces/2.1.9-1.tar.gz";
-    name = "2.1.9-1.tar.gz";
-    sha256 = "4eaa191a1a90e022fb6d52740bca0e1d67f00a6322786382dae7aaa063fd6288";
+    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/kilted/ros_gz_interfaces/2.1.10-1.tar.gz";
+    name = "2.1.10-1.tar.gz";
+    sha256 = "9eeca83a6a884dc3af941305f37b8c5b15c40f3987871565a45d40ebd984f8fe";
   };
 
   buildType = "ament_cmake";

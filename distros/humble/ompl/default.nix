@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, boost, cmake, eigen, flann, pkg-config }:
 buildRosPackage {
   pname = "ros-humble-ompl";
-  version = "1.7.0-r3";
+  version = "1.7.0-r4";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ompl-release/archive/release/humble/ompl/1.7.0-3.tar.gz";
-    name = "1.7.0-3.tar.gz";
-    sha256 = "50ef6808e3f4260f31f252c7e685728321488aa6c44fb29f7dc08d6dbd87c1cd";
+    url = "https://github.com/ros2-gbp/ompl-release/archive/release/humble/ompl/1.7.0-4.tar.gz";
+    name = "1.7.0-4.tar.gz";
+    sha256 = "c81602d084e8b44fe1345ec5bde679b7ed1b122ee277f156bc916a5b19e1b17e";
   };
 
   buildType = "cmake";

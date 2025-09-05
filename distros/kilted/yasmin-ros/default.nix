@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-python, ament-copyright, ament-flake8, ament-pep257, python3Packages, rclcpp, rclcpp-action, rclpy, ros-environment, yasmin }:
 buildRosPackage {
   pname = "ros-kilted-yasmin-ros";
-  version = "3.2.0-r2";
+  version = "3.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/yasmin-release/archive/release/kilted/yasmin_ros/3.2.0-2.tar.gz";
-    name = "3.2.0-2.tar.gz";
-    sha256 = "cacf232d51f70c8afa0f4f19207565ee99089b8783edb901cc5b481205e88ab3";
+    url = "https://github.com/ros2-gbp/yasmin-release/archive/release/kilted/yasmin_ros/3.4.0-1.tar.gz";
+    name = "3.4.0-1.tar.gz";
+    sha256 = "04b30f237de0de6073be6bab9e3bab6c722c56bd3593f3048eb0a44d9b19f9a9";
   };
 
   buildType = "ament_cmake";

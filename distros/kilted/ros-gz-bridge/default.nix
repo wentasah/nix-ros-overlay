@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, actuator-msgs, ament-cmake, ament-cmake-gtest, ament-cmake-python, ament-lint-auto, ament-lint-common, geometry-msgs, gps-msgs, gz-msgs-vendor, gz-transport-vendor, launch, launch-ros, launch-testing, launch-testing-ament-cmake, nav-msgs, pkg-config, rclcpp, rclcpp-components, ros-gz-interfaces, rosgraph-msgs, rosidl-pycommon, sensor-msgs, std-msgs, tf2-msgs, trajectory-msgs, vision-msgs, yaml-cpp-vendor }:
 buildRosPackage {
   pname = "ros-kilted-ros-gz-bridge";
-  version = "2.1.9-r1";
+  version = "2.1.10-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/kilted/ros_gz_bridge/2.1.9-1.tar.gz";
-    name = "2.1.9-1.tar.gz";
-    sha256 = "c5129dcaf284743b7cf6a8e1bd4b09d7ca5005ffc5f5fd3e3230f38b5990d913";
+    url = "https://github.com/ros2-gbp/ros_ign-release/archive/release/kilted/ros_gz_bridge/2.1.10-1.tar.gz";
+    name = "2.1.10-1.tar.gz";
+    sha256 = "11909664fe608f284bb8caeba01c14ecc9f441fa14484196ceafb55398f1601b";
   };
 
   buildType = "ament_cmake";

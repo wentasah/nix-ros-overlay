@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, cmake, elfutils }:
 buildRosPackage {
   pname = "ros-kilted-backward-ros";
-  version = "1.0.7-r2";
+  version = "1.0.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/backward_ros-release/archive/release/kilted/backward_ros/1.0.7-2.tar.gz";
-    name = "1.0.7-2.tar.gz";
-    sha256 = "dfada86410d4fe74aeccf037d62715031b8ba3789be9e162f63dc3b182458686";
+    url = "https://github.com/ros2-gbp/backward_ros-release/archive/release/kilted/backward_ros/1.0.8-1.tar.gz";
+    name = "1.0.8-1.tar.gz";
+    sha256 = "019a01c86bc7128874a58ec72a2b3414b41f6af1b57ea50fa87cfb7f9a6b735b";
   };
 
   buildType = "cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-cmake-pytest, ament-lint-auto, ament-lint-common, angles, nav-2d-msgs, nav-2d-utils, nav2-common, nav2-core, nav2-costmap-2d, nav2-msgs, nav2-util, pluginlib, rclcpp, rclcpp-action, std-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-nav2-controller";
-  version = "1.3.7-r1";
+  version = "1.3.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_controller/1.3.7-1.tar.gz";
-    name = "1.3.7-1.tar.gz";
-    sha256 = "b063979cf367e65c981b49322157651674c09ec31bac33484e1c6455cd38b67e";
+    url = "https://github.com/SteveMacenski/navigation2-release/archive/release/jazzy/nav2_controller/1.3.8-1.tar.gz";
+    name = "1.3.8-1.tar.gz";
+    sha256 = "19b942c103ae256680c270f7c01e23d0a74fa213d98a44fb4875f6e7b563658f";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, eigen, fcl, kdl-parser, rclcpp, sensor-msgs, std-msgs, urdf, visualization-msgs }:
 buildRosPackage {
   pname = "ros-rolling-open-manipulator-collision";
-  version = "4.0.1-r1";
+  version = "4.0.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_collision/4.0.1-1.tar.gz";
-    name = "4.0.1-1.tar.gz";
-    sha256 = "55e02d218fd77adc27f0f23e385cc1fb0ccbfd2ad6624f407f280f64e3cd3754";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/rolling/open_manipulator_collision/4.0.7-1.tar.gz";
+    name = "4.0.7-1.tar.gz";
+    sha256 = "a2dc2868c4ba2a61c14385e8ddb3e9cd9542ce02027eff88048c37feed27062e";
   };
 
   buildType = "ament_cmake";

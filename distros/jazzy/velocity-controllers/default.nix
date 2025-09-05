@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, backward-ros, controller-manager, forward-command-controller, hardware-interface, hardware-interface-testing, pluginlib, rclcpp, ros2-control-cmake, ros2-control-test-assets }:
 buildRosPackage {
   pname = "ros-jazzy-velocity-controllers";
-  version = "4.27.0-r1";
+  version = "4.31.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/velocity_controllers/4.27.0-1.tar.gz";
-    name = "4.27.0-1.tar.gz";
-    sha256 = "0d7f645ff64cf4ac7f73d9e752dfb0d82ab81e1747d9e110019cafa44e86b976";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/velocity_controllers/4.31.0-1.tar.gz";
+    name = "4.31.0-1.tar.gz";
+    sha256 = "7f8ca48a2314a09c872b5f74aa6afb043183f7572b13a0da0ca4de9054000893";
   };
 
   buildType = "ament_cmake";

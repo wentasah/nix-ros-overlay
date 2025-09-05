@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, cv-bridge, opencv, swri-math-util }:
 buildRosPackage {
   pname = "ros-kilted-swri-opencv-util";
-  version = "3.8.4-r1";
+  version = "3.8.7-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_opencv_util/3.8.4-1.tar.gz";
-    name = "3.8.4-1.tar.gz";
-    sha256 = "062f64e30123acb0aa1fdf065ece62f1a73077430b9e55ecc5a30aff15cfb4c4";
+    url = "https://github.com/ros2-gbp/marti_common-release/archive/release/kilted/swri_opencv_util/3.8.7-1.tar.gz";
+    name = "3.8.7-1.tar.gz";
+    sha256 = "d5eb2119d9d6a95efbff15523ec98724f5393cbdf30664debab74daee3308bee";
   };
 
   buildType = "ament_cmake";

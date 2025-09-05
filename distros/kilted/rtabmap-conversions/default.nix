@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, cv-bridge, geometry-msgs, image-geometry, laser-geometry, pcl-conversions, rclcpp, rclcpp-components, ros-environment, rtabmap, rtabmap-msgs, sensor-msgs, std-msgs, tf2, tf2-eigen, tf2-geometry-msgs }:
 buildRosPackage {
   pname = "ros-kilted-rtabmap-conversions";
-  version = "0.22.0-r2";
+  version = "0.22.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_conversions/0.22.0-2.tar.gz";
-    name = "0.22.0-2.tar.gz";
-    sha256 = "d55b4a47771b6dfff352e9a86ce0346ffe77fbbc30d5e8e78af8f3de38443d5b";
+    url = "https://github.com/introlab/rtabmap_ros-release/archive/release/kilted/rtabmap_conversions/0.22.1-1.tar.gz";
+    name = "0.22.1-1.tar.gz";
+    sha256 = "bf590889beb1f91da3fb1557d1d5c8a84c098e78c47fdf97ec0dcf1dadafe3d3";
   };
 
   buildType = "ament_cmake";

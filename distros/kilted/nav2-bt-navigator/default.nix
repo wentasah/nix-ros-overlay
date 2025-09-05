@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-index-cpp, ament-lint-auto, ament-lint-common, geometry-msgs, nav-msgs, nav2-behavior-tree, nav2-common, nav2-core, nav2-msgs, nav2-util, pluginlib, rclcpp, rclcpp-action, rclcpp-components, rclcpp-lifecycle, tf2-ros }:
 buildRosPackage {
   pname = "ros-kilted-nav2-bt-navigator";
-  version = "1.4.0-r1";
+  version = "1.4.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_bt_navigator/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "649c02bbe031cace1b9714600dd23c45a7d5454cf8de389b71db86a7aad86a35";
+    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_bt_navigator/1.4.1-1.tar.gz";
+    name = "1.4.1-1.tar.gz";
+    sha256 = "ab6fb036cda8d8425a2d0eeab70ecf2aea95d3f0cb6d154360eb74201ac55ed5";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-auto, ament-cmake-gmock, ament-cmake-gtest, ament-cmake-pytest, ament-cmake-python, ament-lint-auto, ament-lint-common, boost, pal-statistics-msgs, rclcpp, rclcpp-lifecycle, rclpy }:
 buildRosPackage {
   pname = "ros-rolling-pal-statistics";
-  version = "2.6.3-r1";
+  version = "2.6.4-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/pal_statistics-release/archive/release/rolling/pal_statistics/2.6.3-1.tar.gz";
-    name = "2.6.3-1.tar.gz";
-    sha256 = "ac1e4018c0b35eddba5a0dd6a1dba8738c747267569029142caa60f1410de602";
+    url = "https://github.com/ros2-gbp/pal_statistics-release/archive/release/rolling/pal_statistics/2.6.4-1.tar.gz";
+    name = "2.6.4-1.tar.gz";
+    sha256 = "e3d83e73c0fc58fc7ffa9735f2c5a6d3c7d0d57bbc3d709a268614702c0274ea";
   };
 
   buildType = "ament_cmake";

@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gtest, ament-lint-auto, ament-lint-common, angles, geometry-msgs, nav2-common, nav2-controller, nav2-core, nav2-costmap-2d, nav2-msgs, nav2-regulated-pure-pursuit-controller, nav2-util, pluginlib, rcl-interfaces, rclcpp, rclcpp-lifecycle, tf2, tf2-ros }:
 buildRosPackage {
   pname = "ros-kilted-nav2-rotation-shim-controller";
-  version = "1.4.0-r1";
+  version = "1.4.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_rotation_shim_controller/1.4.0-1.tar.gz";
-    name = "1.4.0-1.tar.gz";
-    sha256 = "da32a858251f181f7a140dc5d945843b32993f5d2062914e59c8684eb5bfef15";
+    url = "https://github.com/ros2-gbp/navigation2-release/archive/release/kilted/nav2_rotation_shim_controller/1.4.1-1.tar.gz";
+    name = "1.4.1-1.tar.gz";
+    sha256 = "d90d633e2332aa3bf837c4fbe90dabe9201c76d0b07954f9debe0de99cfa1f83";
   };
 
   buildType = "ament_cmake";

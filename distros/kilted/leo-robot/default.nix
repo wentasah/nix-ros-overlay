@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, leo, leo-bringup, leo-filters, leo-fw }:
 buildRosPackage {
   pname = "ros-kilted-leo-robot";
-  version = "2.2.0-r1";
+  version = "2.4.0-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_robot/2.2.0-1.tar.gz";
-    name = "2.2.0-1.tar.gz";
-    sha256 = "bd7e6600d9362559620ada44157c561d90da1c65b49f3032b6eacdc41b460c7e";
+    url = "https://github.com/ros2-gbp/leo_robot-release/archive/release/kilted/leo_robot/2.4.0-1.tar.gz";
+    name = "2.4.0-1.tar.gz";
+    sha256 = "6786c8beca2b4aded24c54b9c3a015c158e7e9a031ef9aa53fa9373c525e2699";
   };
 
   buildType = "ament_cmake";
