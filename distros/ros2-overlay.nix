@@ -181,8 +181,8 @@ rosSelf: rosSuper: with rosSelf.lib; {
     patches = patches ++ [
       # Fix compilation with Boost 1.87
       (self.fetchpatch {
-        url = "https://github.com/fzi-forschungszentrum-informatik/Lanelet2/pull/399/commits/cf65e2d05f30a088731128e445df6f3ea523885d.patch";
-        hash = "sha256-aPO7mkS6DlSQIgcb6kJAZrwMWCkvWESM54feKtpeWO8=";
+        url = "https://github.com/fzi-forschungszentrum-informatik/Lanelet2/pull/399/commits/ab7d2f4dee299563c6313336c070ed99635aba3f.patch";
+        hash = "sha256-RKTjYPlnFY4JPGMa4YfyHUEY9X/Y1UpkNzB7AHmk4p0=";
         stripLen = 1;
       })
     ];
