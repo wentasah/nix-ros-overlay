@@ -234,7 +234,7 @@ in {
       };
     in {
     postPatch = postPatch + ''
-      ln -s ${zenoh-c-source.outPath}/Cargo.lock Cargo.lock
+      ln -s ${zenoh-c-source}/Cargo.lock Cargo.lock
     '';
     nativeBuildInputs = nativeBuildInputs ++ [
       self.rustPlatform.cargoSetupHook
@@ -242,7 +242,7 @@ in {
       self.rustc
     ];
     cargoDeps = self.rustPlatform.importCargoLock {
-      lockFile = "${zenoh-c-source.outPath}/Cargo.lock";
+      lockFile = "${zenoh-c-source}/Cargo.lock";
       outputHashes = {
         "zenoh-1.5.0" = "sha256-hOvA6fpmToaF4qaDsL+wzvWSYRrkT8emIw/EdtCz9yE=";
       };
