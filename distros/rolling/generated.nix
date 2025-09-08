@@ -194,6 +194,8 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
+ at-sonde-ros-driver = self.callPackage ./at-sonde-ros-driver {};
+
  automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
 
  automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
@@ -359,6 +361,8 @@ self: super: {
  cascade-lifecycle-msgs = self.callPackage ./cascade-lifecycle-msgs {};
 
  catch-ros2 = self.callPackage ./catch-ros2 {};
+
+ chained-filter-controller = self.callPackage ./chained-filter-controller {};
 
  chomp-motion-planner = self.callPackage ./chomp-motion-planner {};
 
@@ -1247,6 +1251,8 @@ self: super: {
  motion-capture-tracking = self.callPackage ./motion-capture-tracking {};
 
  motion-capture-tracking-interfaces = self.callPackage ./motion-capture-tracking-interfaces {};
+
+ motion-primitives-controllers = self.callPackage ./motion-primitives-controllers {};
 
  mouse-teleop = self.callPackage ./mouse-teleop {};
 
@@ -2299,8 +2305,6 @@ self: super: {
  rviz-2d-overlay-msgs = self.callPackage ./rviz-2d-overlay-msgs {};
 
  rviz-2d-overlay-plugins = self.callPackage ./rviz-2d-overlay-plugins {};
-
- rviz-assimp-vendor = self.callPackage ./rviz-assimp-vendor {};
 
  rviz-common = self.callPackage ./rviz-common {};
 

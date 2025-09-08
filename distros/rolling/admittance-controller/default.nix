@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-cmake-gmock, angles, backward-ros, control-msgs, control-toolbox, controller-interface, controller-manager, generate-parameter-library, geometry-msgs, hardware-interface, hardware-interface-testing, kinematics-interface, kinematics-interface-kdl, pluginlib, rclcpp, rclcpp-lifecycle, realtime-tools, ros2-control-cmake, ros2-control-test-assets, tf2, tf2-eigen, tf2-geometry-msgs, tf2-kdl, tf2-ros, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-rolling-admittance-controller";
-  version = "5.5.0-r1";
+  version = "5.6.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/admittance_controller/5.5.0-1.tar.gz";
-    name = "5.5.0-1.tar.gz";
-    sha256 = "4eba39cff237b5cca50e7399f8f4768de9d8818cf1c8e5342df56b6fa8cb9f31";
+    url = "https://github.com/ros2-gbp/ros2_controllers-release/archive/release/rolling/admittance_controller/5.6.1-1.tar.gz";
+    name = "5.6.1-1.tar.gz";
+    sha256 = "a4865fc87b2d7918c73049cb573774cdefa5d57a4623aef60c73aba6903943a2";
   };
 
   buildType = "ament_cmake";

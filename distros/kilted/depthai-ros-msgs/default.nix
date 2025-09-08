@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, builtin-interfaces, geometry-msgs, rclcpp, rosidl-default-generators, sensor-msgs, std-msgs, vision-msgs }:
 buildRosPackage {
   pname = "ros-kilted-depthai-ros-msgs";
-  version = "3.0.4-r1";
+  version = "3.0.5-r1";
 
   src = fetchurl {
-    url = "https://github.com/luxonis/depthai-ros-release/archive/release/kilted/depthai_ros_msgs/3.0.4-1.tar.gz";
-    name = "3.0.4-1.tar.gz";
-    sha256 = "6e2a45ad3ddb41b362c405345d8829129c90ff7e04549f6cf1e54b6b8eee5768";
+    url = "https://github.com/luxonis/depthai-ros-release/archive/release/kilted/depthai_ros_msgs/3.0.5-1.tar.gz";
+    name = "3.0.5-1.tar.gz";
+    sha256 = "d966573098784df440199a78b10e34572c706f86254fa726fce74cde53c89ae5";
   };
 
   buildType = "ament_cmake";

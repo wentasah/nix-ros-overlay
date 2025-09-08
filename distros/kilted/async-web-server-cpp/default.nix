@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake-ros, boost, launch-testing, openssl, python3Packages }:
 buildRosPackage {
   pname = "ros-kilted-async-web-server-cpp";
-  version = "2.0.0-r6";
+  version = "2.0.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/async_web_server_cpp-release/archive/release/kilted/async_web_server_cpp/2.0.0-6.tar.gz";
-    name = "2.0.0-6.tar.gz";
-    sha256 = "ac39cf39cb405341d3450a432b9d2db1a7b4331c52361e60446a2a05fed6ed2b";
+    url = "https://github.com/ros2-gbp/async_web_server_cpp-release/archive/release/kilted/async_web_server_cpp/2.0.1-1.tar.gz";
+    name = "2.0.1-1.tar.gz";
+    sha256 = "aca33bff93fc594339358ee8975ada2703104bfbc6b5c2d2135e21364be8a53a";
   };
 
   buildType = "catkin";

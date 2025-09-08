@@ -290,6 +290,8 @@ self: super: {
 
  async-web-server-cpp = self.callPackage ./async-web-server-cpp {};
 
+ at-sonde-ros-driver = self.callPackage ./at-sonde-ros-driver {};
+
  automatika-embodied-agents = self.callPackage ./automatika-embodied-agents {};
 
  automatika-ros-sugar = self.callPackage ./automatika-ros-sugar {};
