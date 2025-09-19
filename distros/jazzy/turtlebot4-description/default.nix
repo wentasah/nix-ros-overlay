@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, irobot-create-description, joint-state-publisher, robot-state-publisher, urdf }:
 buildRosPackage {
   pname = "ros-jazzy-turtlebot4-description";
-  version = "2.0.1-r1";
+  version = "2.1.1-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/turtlebot4-release/archive/release/jazzy/turtlebot4_description/2.0.1-1.tar.gz";
-    name = "2.0.1-1.tar.gz";
-    sha256 = "0c3011a39fec353c0aa1419afdb48f1d37d4d0948544cbf35fce8270c7ff2456";
+    url = "https://github.com/ros2-gbp/turtlebot4-release/archive/release/jazzy/turtlebot4_description/2.1.1-1.tar.gz";
+    name = "2.1.1-1.tar.gz";
+    sha256 = "da534b94c45e781891d217dcb40cb41131d9acd545d795d9e03364855f3e01b5";
   };
 
   buildType = "ament_cmake";

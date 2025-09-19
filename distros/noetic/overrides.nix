@@ -223,14 +223,38 @@ in {
     }) ];
   });
 
-  rviz = rosSuper.rviz.overrideAttrs ({
-    patches ? [], ...
+  rosmon-core = rosSuper.rosmon-core.overrideAttrs ({
+    cmakeFlags ? [], postPatch ? "", ...
   }: {
-    # Replace boost::filesystem::extension()
-    patches = patches ++ [ (self.fetchpatch {
-      url = "https://github.com/ros-visualization/rviz/commit/250c0c2875758953f98f3b1982d11b55f527b295.patch";
-      hash = "sha256-dr1dPSStGFPimac/LaDmPfojFl+iIc6lz2lIhXf9rTE=";
-    }) ];
+    cmakeFlags = cmakeFlags ++ [
+       # Boost.Math requires C++14
+       (lib.cmakeFeature "CMAKE_CXX_STANDARD" "14")
+    ];
+    postPatch = postPatch + ''
+      # use of std::array
+      substituteInPlace src/logger.cpp \
+      --replace-fail \
+          "#include <unistd.h>" \
+          "#include <unistd.h>
+           #include <array>"
+
+      # https://www.boost.org/doc/libs/latest/libs/filesystem/doc/deprecated.html
+      substituteInPlace src/main.cpp \
+        --replace-fail \
+          "it->path().leaf()" \
+          "it->path().filename()" \
+        --replace-fail \
+          "fs::basename(launchFilePath)" \
+          "fs::path(launchFilePath).stem().string()"
+    '';
+  });
+
+  rqt-rosmon = rosSuper.rqt-rosmon.overrideAttrs ({
+    cmakeFlags ? [], ...
+  }: {
+    cmakeFlags = cmakeFlags ++ [
+      (lib.cmakeFeature "CMAKE_CXX_STANDARD" "14")
+    ];
   });
 
   rviz-map-plugin = rosSuper.rviz-map-plugin.overrideAttrs ({
@@ -253,17 +277,6 @@ in {
   }: {
     postPatch = postPatch + ''
       substituteInPlace CMakeLists.txt --replace-fail " -Werror" ""
-    '';
-  });
-
-  tf = rosSuper.tf.overrideAttrs ({
-    postPatch ? "", ...
-  }: {
-    # Boost.Math 1.87 requires C++14
-    postPatch = postPatch + ''
-      substituteInPlace CMakeLists.txt \
-        --replace-fail COMPILER_SUPPORTS_CXX11 COMPILER_SUPPORTS_CXX14 \
-        --replace-fail '-std=c++11' '-std=c++14'
     '';
   });
 

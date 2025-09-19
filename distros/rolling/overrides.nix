@@ -42,9 +42,9 @@ in {
     fetchgitArgs.hash = "sha256-gztnxui9Fe/FTieMjdvfJjWHjkImtlsHn6fM1FruyME=";
   };
 
-  gz-cmake-vendor = lib.patchGzAmentVendorGit rosSuper.gz-cmake-vendor { };
+  gz-cmake-vendor = lib.patchAmentVendorGit rosSuper.gz-cmake-vendor { };
 
-  gz-common-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-common-vendor { }).overrideAttrs ({
+  gz-common-vendor = (lib.patchAmentVendorGit rosSuper.gz-common-vendor { }).overrideAttrs ({
     nativeBuildInputs ? [], ...
   }: {
     # https://github.com/gazebo-release/gz_common_vendor/pull/2
@@ -53,7 +53,7 @@ in {
 
   gz-dartsim-vendor = lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor { };
 
-  gz-fuel-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-fuel-tools-vendor { };
+  gz-fuel-tools-vendor = lib.patchAmentVendorGit rosSuper.gz-fuel-tools-vendor { };
 
   gz-gui-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-gui-vendor { }).overrideAttrs ({
     postInstall ? "", ...
@@ -67,25 +67,25 @@ in {
 
   gz-launch-vendor = lib.patchGzAmentVendorGit rosSuper.gz-launch-vendor { };
 
-  gz-math-vendor = lib.patchGzAmentVendorGit rosSuper.gz-math-vendor { };
+  gz-math-vendor = lib.patchAmentVendorGit rosSuper.gz-math-vendor { };
 
-  gz-msgs-vendor = lib.patchGzAmentVendorGit rosSuper.gz-msgs-vendor { };
+  gz-msgs-vendor = lib.patchAmentVendorGit rosSuper.gz-msgs-vendor { };
 
   gz-ogre-next-vendor = (lib.patchAmentVendorGit rosSuper.gz-ogre-next-vendor { }).overrideAttrs({ ... }: {
     dontFixCmake = true;
   });
 
-  gz-physics-vendor = lib.patchGzAmentVendorGit rosSuper.gz-physics-vendor { };
+  gz-physics-vendor = lib.patchAmentVendorGit rosSuper.gz-physics-vendor { };
 
-  gz-plugin-vendor = lib.patchGzAmentVendorGit rosSuper.gz-plugin-vendor { };
+  gz-plugin-vendor = lib.patchAmentVendorGit rosSuper.gz-plugin-vendor { };
 
-  gz-rendering-vendor = lib.patchGzAmentVendorGit rosSuper.gz-rendering-vendor { };
+  gz-rendering-vendor = lib.patchAmentVendorGit rosSuper.gz-rendering-vendor { };
 
-  gz-sensors-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sensors-vendor { };
+  gz-sensors-vendor = lib.patchAmentVendorGit rosSuper.gz-sensors-vendor { };
 
   gz-sim-vendor = lib.patchGzAmentVendorGit rosSuper.gz-sim-vendor { };
 
-  gz-tools-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-tools-vendor { }).overrideAttrs({
+  gz-tools-vendor = (lib.patchAmentVendorGit rosSuper.gz-tools-vendor { }).overrideAttrs({
     nativeBuildInputs ? [],
     propagatedNativeBuildInputs ? [],
     qtWrapperArgs ? [],
@@ -107,13 +107,13 @@ in {
     '';
   });
 
-  gz-transport-vendor = (lib.patchGzAmentVendorGit rosSuper.gz-transport-vendor { }).overrideAttrs({
+  gz-transport-vendor = (lib.patchAmentVendorGit rosSuper.gz-transport-vendor { }).overrideAttrs({
     buildInputs ? [], ...
   }: {
     buildInputs = buildInputs ++ [ self.libsodium ];
   });
 
-  gz-utils-vendor = lib.patchGzAmentVendorGit rosSuper.gz-utils-vendor { };
+  gz-utils-vendor = lib.patchAmentVendorGit rosSuper.gz-utils-vendor { };
 
   iceoryx-hoofs = rosSuper.iceoryx-hoofs.overrideAttrs ({
     patches ? [], ...
@@ -175,6 +175,20 @@ in {
     fetchgitArgs.hash = "sha256-b02OFUx0BxUA6HN6IaacSg1t3RP4o7NND7X0U635W8U=";
   };
 
+  rcutils = rosSuper.rcutils.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = [ # override the patch from ros2-overlay.nix!
+      # Fix linking to libatomic
+      # https://github.com/ros2/rcutils/pull/384
+      (self.fetchpatch {
+        # Version #384 rebased to rolling
+        url = "https://github.com/ros2/rcutils/commit/acdcf805dfd8d3cf77f269ef280077d4226e6e4e.patch";
+        hash = "sha256-RWEgleC72d8qZKeLGQ2XKx6js83MgTvcb1PJ28shrsk=";
+      })
+    ];
+  });
+
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     tarSourceArgs.hook = let
       version = "1.79";
@@ -201,7 +215,7 @@ in {
     '';
   });
 
-  sdformat-vendor = lib.patchGzAmentVendorGit rosSuper.sdformat-vendor { };
+  sdformat-vendor = lib.patchAmentVendorGit rosSuper.sdformat-vendor { };
 
   shared-queues-vendor = lib.patchVendorUrl rosSuper.shared-queues-vendor {
     url = "https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
@@ -213,10 +227,10 @@ in {
   }: {
     patches = patches ++ [
       # Fix CMake relative install dir assumptions
-      # https://github.com/ros/urdfdom/pull/142
+      # https://github.com/ros/urdfdom/pull/224
       (self.fetchpatch {
-        url = "https://github.com/ros/urdfdom/commit/61a7e35cd5abece97259e76aed8504052b2f5b53.patch";
-        hash = "sha256-b3bEbbaSUDkwTEHJ8gVPEb+AR/zuWwLqiAW5g1T1dPU=";
+        url = "https://github.com/ros/urdfdom/commit/229c3ae867ba770dcade50b3ee520d81ff3b0413.patch";
+        hash = "sha256-cfPnSux7qmTDngzwPYIayYIvddhOXfmSsvgKwltFT5Q=";
       })
     ];
   });
@@ -226,11 +240,62 @@ in {
   }: {
     patches = patches ++ [
       # Fix CMake relative install dir assumptions
-      # https://github.com/ros/urdfdom_headers/pull/66
+      # https://github.com/ros/urdfdom_headers/pull/90
       (self.fetchpatch {
-        url = "https://github.com/ros/urdfdom_headers/commit/6e0cea148c3a7123f8367cd48d5709a4490c32f1.patch";
-        hash = "sha256-LC2TACGma/k6+WE9fTkzY98SgJYKsVuj5O9v84Q5mQ4=";
+        url = "https://github.com/ros/urdfdom_headers/commit/90efa6072dc239f78d37288a49f24d8aee1aaad2.patch";
+        hash = "sha256-3q3K+fiINvS9eUrkHS3cgnn8GuA0Nz+FvVBMpsRAcFM=";
       })
     ];
+  });
+
+  zenoh-cpp-vendor = (lib.patchAmentVendorGit rosSuper.zenoh-cpp-vendor {}).overrideAttrs(finalAttrs: {
+    nativeBuildInputs ? [], postPatch ? "", passthru ? {}, ...
+  }: let
+    outputHashes = {
+      "zenoh-1.5.1" = "sha256-EeigSU9l7LCnSkm4/jP0WcdO3Hw9m91zUh8jzVXYhKw=";
+    };
+    zenoh-c-source = finalAttrs.passthru.amentVendorSrcs.zenoh_c_vendor;
+  in {
+    postPatch = postPatch + ''
+      ln -s ${zenoh-c-source}/Cargo.lock Cargo.lock
+    '';
+    nativeBuildInputs = nativeBuildInputs ++ [
+      self.rustPlatform.cargoSetupHook
+      self.rustc
+    ];
+    cargoDeps = self.rustPlatform.importCargoLock {
+      lockFile = "${zenoh-c-source}/Cargo.lock";
+      inherit outputHashes;
+    };
+
+    # Patch the build.rs script to be able to build internal
+    # opaque-types crate without network access.
+    passthru = lib.recursiveUpdate passthru {
+      amentVendorSrcs.zenoh_c_vendor = let
+        src = passthru.amentVendorSrcs.zenoh_c_vendor;
+      in
+        self.applyPatches {
+          inherit src;
+          name = src.rev;
+          patches = [ ./zenoh-cpp-vendor/zenoh-c.patch ];
+        };
+    };
+
+    # Prepare vendored dependencies for internal opaque-types crate.
+    # Execute in subshell to not change variables set by the normal
+    # cargoSetupPostUnpackHook.
+    preBuild = ''
+      (
+        mkdir nix-zenoh-opaque-types
+        cd nix-zenoh-opaque-types
+        cargoDeps=${self.rustPlatform.importCargoLock {
+          lockFile = "${zenoh-c-source}/build-resources/opaque-types/Cargo.lock";
+          inherit outputHashes;
+        }}
+        cargoSetupPostUnpackHook
+      )
+      # Export information for use by our patched build.rs script.
+      export NIX_ZENOH_OPAQUE_TYPES_CARGO_CONFIG=$PWD/nix-zenoh-opaque-types/.cargo/config.toml
+    '';
   });
 }

@@ -23,7 +23,6 @@ rosSelf: rosSuper: with rosSelf.lib; {
     # to worry about collisions with system packages and Nix tooling generally
     # expects standard directories.
     postPatch = postPatch + ''
-      ls -l cmake/templates
       substituteInPlace cmake/ament_vendor.cmake \
         --replace-fail 'opt/''${PROJECT_NAME}' .
       substituteInPlace cmake/templates/vendor_package.dsv.in \
@@ -32,6 +31,23 @@ rosSelf: rosSuper: with rosSelf.lib; {
         --replace-fail '/opt/@PROJECT_NAME@' ""
       substituteInPlace cmake/templates/vendor_package_cmake_prefix.dsv.in \
         --replace-fail 'opt/@PROJECT_NAME@' ""
+    '';
+  });
+
+  # Version of ament-cmake-vendor-package for use in Nix build sandbox
+  # without network access. The unwrapped version is still useful in
+  # e.g. nix-shell.
+  ament-cmake-vendor-package-wrapped = rosSelf.ament-cmake-vendor-package.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    postPatch = postPatch + ''
+      # Rename the macro so that we can wrap it with our wrapper
+      substituteInPlace cmake/ament_vendor.cmake \
+        --replace-fail 'macro(ament_vendor TARGET_NAME)' 'macro(ament_vendor_orig TARGET_NAME)'
+      cp ${./ament_vendor_wrapper.cmake} ament_vendor_wrapper.cmake
+      # Add our wrapper to the list of cmake files
+      substituteInPlace CMakeLists.txt \
+        --replace-fail 'CONFIG_EXTRAS' 'CONFIG_EXTRAS "ament_vendor_wrapper.cmake"'
     '';
   });
 
@@ -188,35 +204,24 @@ rosSelf: rosSuper: with rosSelf.lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ self.ninja ];
   });
 
-  ffmpeg-image-transport-tools = rosSuper.ffmpeg-image-transport-tools.overrideAttrs ({
-    postPatch ? "",
-    buildInputs ? [], ...
-  }: {
-    postPatch = postPatch + ''
-      sed -i -e /^project/r<(echo 'find_package(PkgConfig REQUIRED)
-
-      pkg_check_modules(LIBAV REQUIRED IMPORTED_TARGET
-          libavcodec
-          libswresample
-          libswscale
-          libavutil)
-      ') CMakeLists.txt
-    '';
-    buildInputs = buildInputs ++ [
-      self.pkg-config # FIXME should be in nativeBuildInputs (needed only for humble)
-      self.ffmpeg
-      rosSelf.image-transport
-    ];
-  });
-
-  # Get rid of nlohmann_json vendoring
-  librealsense2 = rosSuper.librealsense2.overrideAttrs ({
+  librealsense2 = (patchExternalProjectGit rosSuper.librealsense2 {
+    file = "CMake/external_libcurl.cmake";
+    originalUrl = ''"https://github.com/curl/curl.git"'';
+    url = "https://github.com/curl/curl.git";
+    originalRev = ''"curl-8_8_0"'';
+    rev = "curl-8_8_0";
+    fetchgitArgs.hash = "sha256-MjB6k8mDJypyuh6BN2hxy2My7/DfImjw+5iI729snBg=";
+  }).overrideAttrs ({
     buildInputs ? [], postPatch ? "", ...
   }: {
     buildInputs = buildInputs ++ [ self.nlohmann_json ];
     postPatch = postPatch + ''
+      # Get rid of nlohmann_json vendoring
       substituteInPlace third-party/CMakeLists.txt \
         --replace-fail 'include(CMake/external_json.cmake)' ""
+      # Don't try to install to $HOME
+      substituteInPlace tools/realsense-viewer/CMakeLists.txt \
+        --replace-fail '$ENV{HOME}/Documents/librealsense2/presets' ''\'''${CMAKE_INSTALL_PREFIX}/share/librealsense2/presets'
     '';
   });
 
@@ -238,19 +243,6 @@ rosSelf: rosSuper: with rosSelf.lib; {
     pythonIncludeDir = "${python}/include/${python.libPrefix}";
     setupHook = ./python-cmake-module-setup-hook.sh;
     outputs = [ "out" "dev" ];
-  });
-
-  rcutils = rosSuper.rcutils.overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      # Fix linking to libatomic
-      # https://github.com/ros2/rcutils/pull/384
-      (self.fetchpatch {
-        url = "https://github.com/ros2/rcutils/commit/05e7336b2160739915be0e2c4a81710806fd2f9c.patch";
-        hash = "sha256-EiO1AJnhvOk81TzFMP4E8NhB+9ymef2oA7l26FZFb1M=";
-      })
-    ];
   });
 
   rig-reconfigure = patchExternalProjectGit rosSuper.rig-reconfigure {

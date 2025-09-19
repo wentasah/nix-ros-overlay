@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, ament-cmake, ament-lint-auto, ament-lint-common, cv-bridge, image-transport }:
 buildRosPackage {
   pname = "ros-jazzy-compressed-image-transport";
-  version = "4.0.4-r1";
+  version = "4.0.6-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/compressed_image_transport/4.0.4-1.tar.gz";
-    name = "4.0.4-1.tar.gz";
-    sha256 = "c62e8e80a37b1d1bb418a40646f7167ee2b4710f8ae093e6938d636a4aca4e66";
+    url = "https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/compressed_image_transport/4.0.6-1.tar.gz";
+    name = "4.0.6-1.tar.gz";
+    sha256 = "b68a6da8db6dd6a53b5a1f46490fe298e8420c7c859f526964904d1d935b5055";
   };
 
   buildType = "ament_cmake";

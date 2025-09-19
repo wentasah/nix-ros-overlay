@@ -5,12 +5,12 @@
 { lib, buildRosPackage, fetchurl, control-msgs, rclpy, sensor-msgs, std-msgs, trajectory-msgs }:
 buildRosPackage {
   pname = "ros-jazzy-open-manipulator-teleop";
-  version = "3.2.2-r1";
+  version = "4.0.8-r1";
 
   src = fetchurl {
-    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator_teleop/3.2.2-1.tar.gz";
-    name = "3.2.2-1.tar.gz";
-    sha256 = "6b63404de69805e453c7f0e3b735d8aef618c8cc06042c9a21409e5b85ff6f39";
+    url = "https://github.com/ros2-gbp/open_manipulator-release/archive/release/jazzy/open_manipulator_teleop/4.0.8-1.tar.gz";
+    name = "4.0.8-1.tar.gz";
+    sha256 = "89209368acfe4c91ddc4b469a2d2d8048ecd84803a942e24fd5502fe547ab8b7";
   };
 
   buildType = "ament_python";

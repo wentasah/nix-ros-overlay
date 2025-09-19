@@ -44,7 +44,7 @@ let
           # CMakeLists.txt sets MRPT_VERSION_TO_DOWNLOAD to the
           # version from package.xml
           rev = head (splitString "-" pkg.version); # Ignore ROS release such as "-r1".
-          fetchgitArgs.hash = "sha256-fwgtoFLlqyw5Qc3MxUC5Ci1+P5phq63wQrq6ZTxSKKg=";
+          fetchgitArgs.hash = "sha256-zCPHSd9bzSstaN5vtNFOeqEvXQXNCxdWU5VPEED27H0=";
         };
     in rosSuper.lib.genAttrs [
       "mrpt-apps"
@@ -140,18 +140,6 @@ let
         fetchgitArgs.hash = "sha256-RYk3zuZrJXPcF27eMhdoZAio4DZ+I+nFaUEg1g/aLNk=";
       })
     ];
-
-    ompl = rosSuper.ompl.overrideAttrs ({
-      patches ? [], ...
-    }: {
-      patches = patches ++ [
-        # Fix pkg-config paths
-        (self.fetchpatch {
-          url = "https://github.com/ompl/ompl/commit/d4e26fc3d86cae0c36941a10bf0307e02526db44.patch";
-          hash = "sha256-sAQLrWHoR/DhHk8TtUEy8E8VXqrvtXl2BGS5UvElJl8=";
-        })
-      ];
-    });
 
     plotjuggler = (rosSuper.plotjuggler.override {
       # plotjuggler is not yet compatible with newer versions
@@ -344,6 +332,16 @@ let
       postFixup = postFixup + ''
         wrapQtApp "$out/lib/rqt_topic/rqt_topic"
       '';
+    });
+
+    rtabmap = self.rtabmap.overrideAttrs ({
+      propagatedBuildInputs ? [], ...
+    }: {
+      inherit (rosSuper.rtabmap)
+        pname
+        version
+        src;
+      propagatedBuildInputs = propagatedBuildInputs ++ [ self.qt5.wrapQtAppsHook self.librealsense self.octomap ];
     });
 
     turtlesim = rosSuper.turtlesim.overrideAttrs ({

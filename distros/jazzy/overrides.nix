@@ -141,9 +141,21 @@ in {
     hash = "sha256-GpzGMpQ02s/X/XEcGoozzMjigrbqvAu81bcb7QG+36E=";
   };
 
+  libpointmatcher = rosSuper.libpointmatcher.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Fix failing build due to deprecated boost::filesystem functions
+      (self.fetchpatch {
+        url = "https://github.com/norlab-ulaval/libpointmatcher/commit/74435b8f434ffd36aab1c7f309facbe2911403df.patch";
+        hash = "sha256-/JaEmFbJrthEpyC4sAHfdn43eHbcSZD78nqgy++OSGM=";
+      })
+    ];
+  });
+
   mcap-vendor = lib.patchVendorUrl rosSuper.mcap-vendor {
-    url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.0.tar.gz";
-    hash = "sha256-Qaz26F11VWxkQH8HfgVJLTHbHwmeByQu8ENkuyk5rPE=";
+    url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.1.tar.gz";
+    hash = "sha256-JCTITBfe8WrEBhWX0rkqLdnHN6qXidUCj1Xz0fmPnac=";
   };
 
   moveit-core = rosSuper.moveit-core.overrideAttrs ({
@@ -192,47 +204,18 @@ in {
     ];
   });
 
-  # v3.10.1 has some CMake issues.
-  # v3.10.6 also. But that one is patchable.
-  plotjuggler = rosSuper.plotjuggler.overrideAttrs (
-    {
-      buildInputs ? [ ],
-      postPatch ? "",
-      ...
-    }:
-    let
-      version = "3.10.7";
-    in
-    {
-      inherit version;
-      src = self.fetchFromGitHub {
-        owner = "facontidavide";
-        repo = "plotjuggler";
-        tag = version;
-        hash = "sha256-tjU/rlwI3pG3wBIQZkayVts0mS04WSJqcaqriqZFx+U=";
-      };
-      postPatch =
-        postPatch
-        + ''
-          (
-            echo "function(find_or_download_data_tamer)"
-            echo "  find_package(data_tamer_cpp REQUIRED)"
-            echo "  add_library(data_tamer::parser ALIAS data_tamer_cpp::data_tamer)"
-            echo "  add_library(data_tamer_parser ALIAS data_tamer_cpp::data_tamer)"
-            echo "endfunction()"
-          ) > cmake/find_or_download_data_tamer.cmake
-        '';
-      buildInputs = buildInputs ++ [
-        self.libbfd
-        self.lua
-        self.nlohmann_json
-        self.lz4
-        rosSelf.data-tamer-cpp
-        rosSelf.mcap-vendor
-      ];
-    }
-  );
-
+  rcutils = rosSuper.rcutils.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Fix linking to libatomic
+      # https://github.com/ros2/rcutils/pull/384
+      (self.fetchpatch {
+        url = "https://github.com/ros2/rcutils/commit/05e7336b2160739915be0e2c4a81710806fd2f9c.patch";
+        hash = "sha256-EiO1AJnhvOk81TzFMP4E8NhB+9ymef2oA7l26FZFb1M=";
+      })
+    ];
+  });
 
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     tarSourceArgs.hook = let
@@ -291,5 +274,68 @@ in {
         hash = "sha256-w6PPKCpbR4dGsudVEz+SO9ylXVayLPRAl3VvpMt4DHo=";
       })
     ];
+  });
+
+  usb-cam = rosSuper.usb-cam.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Remove undocumented pix_fmt (AV_PIX_FMT_XVMC) breaking the build
+      (self.fetchpatch {
+        url = "https://github.com/ros-drivers/usb_cam/commit/1d1970b1a88fb1be3b961073748879900d2b1a70.patch";
+        hash = "sha256-0iWl2DtqdjkyFy7lKa7aLxXjynm4ggNEQLxB45Mqf/Y=";
+      })
+    ];
+  });
+
+  zenoh-cpp-vendor = (lib.patchAmentVendorGit rosSuper.zenoh-cpp-vendor {}).overrideAttrs(finalAttrs: {
+    nativeBuildInputs ? [], postPatch ? "", passthru ? {}, ...
+  }: let
+    outputHashes = {
+      "zenoh-1.5.1" = "sha256-EeigSU9l7LCnSkm4/jP0WcdO3Hw9m91zUh8jzVXYhKw=";
+    };
+    zenoh-c-source = finalAttrs.passthru.amentVendorSrcs.zenoh_c_vendor;
+  in {
+    postPatch = postPatch + ''
+      ln -s ${zenoh-c-source}/Cargo.lock Cargo.lock
+    '';
+    nativeBuildInputs = nativeBuildInputs ++ [
+      self.rustPlatform.cargoSetupHook
+      self.rustc
+    ];
+    cargoDeps = self.rustPlatform.importCargoLock {
+      lockFile = "${zenoh-c-source}/Cargo.lock";
+      inherit outputHashes;
+    };
+
+    # Patch the build.rs script to be able to build internal
+    # opaque-types crate without network access.
+    passthru = lib.recursiveUpdate passthru {
+      amentVendorSrcs.zenoh_c_vendor = let
+        src = passthru.amentVendorSrcs.zenoh_c_vendor;
+      in
+        self.applyPatches {
+          inherit src;
+          name = src.rev;
+          patches = [ ./zenoh-cpp-vendor/zenoh-c.patch ];
+        };
+    };
+
+    # Prepare vendored dependencies for internal opaque-types crate.
+    # Execute in subshell to not change variables set by the normal
+    # cargoSetupPostUnpackHook.
+    preBuild = ''
+      (
+        mkdir nix-zenoh-opaque-types
+        cd nix-zenoh-opaque-types
+        cargoDeps=${self.rustPlatform.importCargoLock {
+          lockFile = "${zenoh-c-source}/build-resources/opaque-types/Cargo.lock";
+          inherit outputHashes;
+        }}
+        cargoSetupPostUnpackHook
+      )
+      # Export information for use by our patched build.rs script.
+      export NIX_ZENOH_OPAQUE_TYPES_CARGO_CONFIG=$PWD/nix-zenoh-opaque-types/.cargo/config.toml
+    '';
   });
 }

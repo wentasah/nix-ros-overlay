@@ -136,21 +136,19 @@ rosSelf: rosSuper: with rosSelf.lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
   });
 
-  roscpp = patchBoostSignals rosSuper.roscpp;
-
-  rosgraph = rosSuper.rosgraph.overrideAttrs ({
+  ompl = rosSuper.ompl.overrideAttrs ({
     patches ? [], ...
   }: {
     patches = patches ++ [
-      # Fix infinite loop with Python 3.11
-      # From https://github.com/ros/ros_comm/pull/2297
+      # Fix pkg-config paths
       (self.fetchpatch {
-        url = "https://github.com/ros/ros_comm/commit/2dc0ee9290012ee4674284f077355a39cc94c459.patch";
-        hash = "sha256-Z96KUsKv1LvEPnTXl+Icz89bEhkxfoETbvPasNPO6AY=";
-        stripLen = 2;
+        url = "https://github.com/ompl/ompl/commit/d4e26fc3d86cae0c36941a10bf0307e02526db44.patch";
+        hash = "sha256-sAQLrWHoR/DhHk8TtUEy8E8VXqrvtXl2BGS5UvElJl8=";
       })
     ];
   });
+
+  roscpp = patchBoostSignals rosSuper.roscpp;
 
   rqt-console = rosSuper.rqt-console.overrideAttrs ({
     postFixup ? "", ...

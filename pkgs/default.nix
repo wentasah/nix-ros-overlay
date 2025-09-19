@@ -1,5 +1,5 @@
 self: super: with self.lib; {
-  inherit (self.python3Packages) bloom; 
+  inherit (self.python3Packages) bloom;
 
   cargo-ament-build = self.callPackage ./cargo-ament-build { };
 
@@ -28,10 +28,13 @@ self: super: with self.lib; {
   gazebo_11 = self.libsForQt5.callPackage ./gazebo { };
   gazebo = self.gazebo_11;
 
+  gz-cmake_2 = self.callPackage ./gazebo/gz-cmake/2.nix { };
   gz-cmake_3 = self.callPackage ./gazebo/gz-cmake/3.nix { };
 
+  gz-math_6 = self.callPackage ./gazebo/gz-math/6.nix { };
   gz-math_7 = self.callPackage ./gazebo/gz-math/7.nix { };
 
+  gz-utils_1 = self.callPackage ./gazebo/gz-utils/1.nix { };
   gz-utils_2 = self.callPackage ./gazebo/gz-utils/2.nix { };
 
   geographiclib = self.callPackage ./geographiclib { };
@@ -151,8 +154,16 @@ self: super: with self.lib; {
   ];
 
   sdformat_9 = self.callPackage ./sdformat/9.nix { };
+  sdformat_12 = self.callPackage ./sdformat/12.nix { };
   sdformat_13 = self.callPackage ./sdformat/13.nix { };
   sdformat = self.sdformat_9;
 
   superflore = self.python3Packages.callPackage ./superflore { };
+
+  vtk = super.vtk.overrideAttrs ({
+    cmakeFlags ? [], nativeBuildInputs ? [], ...
+  }: {
+    cmakeFlags = cmakeFlags ++ ["-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES"];
+    nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook self.qt5.full ];
+  });
 }
