@@ -1,15 +1,15 @@
-{ lib, buildPythonPackage, fetchPypi, attrs, pathspec, six }:
+{ lib, buildPythonPackage, fetchPypi, attrs, pathspec, six, versioneer }:
 
 buildPythonPackage rec {
   pname = "scantree";
-  version = "0.0.1";
+  version = "0.0.4";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-KosWPeDksvnk83+Mrz8LJlFyu/F0ER4b68eVVYGJWzk=";
+    hash = "sha256-Fb1cskSDsE2yxwZTYE6Oo1IumAh9t+OKuEgvBTmEwKw=";
   };
 
-  propagatedBuildInputs = [ attrs pathspec six ];
+  propagatedBuildInputs = [ attrs pathspec six versioneer ];
 
   doCheck = false;
 
