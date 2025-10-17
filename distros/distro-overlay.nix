@@ -131,6 +131,28 @@ let
       ROS_PYTHON_VERSION = if rosSelf.python.isPy3k then 3 else 2;
     });
 
+    mvsim = rosSuper.mvsim.overrideAttrs ({
+      buildInputs ? [], preConfigure ? "", nativeBuildInputs ? [], ...
+    }: let
+      box2d' = self.box2d_2.overrideAttrs ({ patches ? [], ...}: {
+        patches = patches ++ [
+          # Increase the max number of polygon vertices (see
+          # https://github.com/MRPT/mvsim/commit/0fef39465efd58e8b2ca79f1aac9dabc07aaef41)
+          (self.fetchpatch {
+            url = "https://github.com/MRPT/box2d/commit/d084bafc1381be83cee811a50cd1cbe9a28ccc43.patch";
+            hash = "sha256-q2OuAnAQ2D/Jw9mQkEjUWEYhOcwqRZdW8jZg+VNFzlk=";
+          })
+        ];
+      });
+    in {
+      buildInputs = buildInputs ++ [ box2d' ];
+      nativeBuildInputs = nativeBuildInputs ++ [ self.python3Packages.protoletariat ];
+      preConfigure = preConfigure + ''
+        patchShebangs cmake/apply-protol.sh.in
+        sed -i -e '/venv\/bin\/activate/ d' cmake/apply-protol.sh.in
+      '';
+    });
+
     osqp-vendor = pipe rosSuper.osqp-vendor [
       (pkg: pkg.overrideAttrs ({
         preInstall ? "", ...
