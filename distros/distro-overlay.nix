@@ -34,7 +34,9 @@ let
     };
   };
 
-  mrptOverrides = rosSelf: rosSuper:
+  mrptOverrides = self.lib.composeManyExtensions
+    [
+    (rosSelf: rosSuper:
     let
       patchMrptExternalProjectGit = pkg:
         let
@@ -73,7 +75,16 @@ let
       "mrpt-libros-bridge"
       "mrpt-libslam"
       "mrpt-libtclap"
-    ] (name: patchMrptExternalProjectGit rosSuper.${name});
+    ] (name: patchMrptExternalProjectGit rosSuper.${name}))
+
+    (rosSelf: rosSuper: {
+      mrpt-apps = rosSuper.mrpt-apps.overrideAttrs ({ buildInputs ? [], ...}: {
+        buildInputs = buildInputs ++ [
+          rosSelf.octomap
+        ];
+      });
+    })
+  ];
 
   overrides = rosSelf: rosSuper: with rosSelf.lib; {
     # ROS package overrides/fixups
