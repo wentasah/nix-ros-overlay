@@ -20,7 +20,7 @@ jobs:
       with:
         extra_nix_config: |
           max-jobs = 2
-          cores = 2
+          cores = 4
     - uses: cachix/cachix-action@v15
       with:
         name: ros
