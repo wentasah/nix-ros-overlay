@@ -217,6 +217,17 @@ in {
     ];
   });
 
+  ros2topic = rosSuper.ros2topic.overrideAttrs ({ patches ? [], ...}: {
+    patches = patches ++ [
+      # Fix ros2 topic pub --stdin (https://github.com/ros2/ros2cli/pull/1105/)
+      (self.fetchpatch {
+        url = "https://github.com/ros2/ros2cli/pull/1105/commits/0b28b1e57f74002a6569147c9d38e973390ac91c.patch";
+        hash = "sha256-reKi/M4v68PSU+BC/RZBuSWIgyeHxXfk8QUsh64fVJs=";
+        stripLen = 1;
+      })
+    ];
+  });
+
   rviz-ogre-vendor = lib.patchAmentVendorGit rosSuper.rviz-ogre-vendor {
     tarSourceArgs.hook = let
       version = "1.79";
