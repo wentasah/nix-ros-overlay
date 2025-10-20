@@ -212,9 +212,15 @@ in with lib; {
   });
 
   nav2-mppi-controller = rosSuper.nav2-mppi-controller.overrideAttrs({
+    postPatch ? "",
     ...
   }: {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" ];
+    postPatch = postPatch + ''
+      find \( -name '*.hpp' -o -name '*.cpp' \) -print0 | xargs -0 \
+        sed -i -e '/#include <xtensor\/xtensor\.hpp>/ s||#include <xtensor.hpp>|' \
+               -e '/#include <xtensor\/.*\.hpp>/ d'
+    '';
   });
 
   nav2-planner = rosSuper.nav2-planner.overrideAttrs({
