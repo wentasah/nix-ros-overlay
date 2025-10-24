@@ -165,11 +165,4 @@ self: super: with self.lib; {
   sdformat = self.sdformat_9;
 
   superflore = self.python3Packages.callPackage ./superflore { };
-
-  vtk = super.vtk.overrideAttrs ({
-    cmakeFlags ? [], nativeBuildInputs ? [], ...
-  }: {
-    cmakeFlags = cmakeFlags ++ ["-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES"];
-    nativeBuildInputs = nativeBuildInputs ++ [ self.qt5.wrapQtAppsHook self.qt5.full ];
-  });
 }
