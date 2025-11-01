@@ -222,7 +222,27 @@ in with lib; {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds"];
   });
 
-  nav2-mppi-controller = rosSuper.nav2-mppi-controller.overrideAttrs({
+  # nav2-mppi-controller = rosSuper.nav2-mppi-controller.overrideAttrs({
+  #   postPatch ? "", ...
+  # }: {
+  #   postPatch = postPatch + ''
+  #     sed -i -E -e 's|xtensor/[^.]+\.hpp|xtensor.hpp|' $(find -name '*.[ch]pp')
+  #   '';
+  #   makeFlags = [ "-j1" ];
+  #   NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds"];
+  # });
+
+  nav2-mppi-controller = (rosSuper.nav2-mppi-controller.override {
+    xtensor = self.xtensor.overrideAttrs (_: rec {
+      version = "0.25.0";
+      src = self.fetchFromGitHub {
+        owner = "xtensor-stack";
+        repo = "xtensor";
+        rev = version;
+        hash = "sha256-hVfdtYcJ6mzqj0AUu6QF9aVKQGYKd45RngY6UN3yOH4=";
+      };
+    });
+  }).overrideAttrs({
     ...
   }: {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" ];
