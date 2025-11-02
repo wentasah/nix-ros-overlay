@@ -63,6 +63,9 @@ self: super: with self.lib; {
 
     utils1 = self.callPackage ./ignition/utils { };
     utils = self.ignition.utils1;
+
+    sim6 = self.callPackage ./ignition/sim { };
+    sim = sim6;
   };
 
   ogre1_9 = self.callPackage ./ogre/1.9.nix { };
