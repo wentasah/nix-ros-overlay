@@ -18,5 +18,9 @@ jobs:
           branch=$(gh pr list --repo lopsided98/nix-ros-overlay --search 'rosdistro sync in:title' --json headRefName | jq -r '.[].headRefName' | grep '^nix-bot-' | head -n1)
           git config --global user.email bot@github
           git config --global user.name "Github Action"
+          git fetch origin refs/heads/rosdistro-sync
           git fetch https://github.com/lopsided98/nix-ros-overlay.git $branch
-          git push --force origin FETCH_HEAD:refs/heads/rosdistro-sync
+          if ! git merge-base --is-ancestor FETCH_HEAD origin/rosdistro-sync; then
+            # only overwrite the branch if it was not manually extended
+            git push --force origin FETCH_HEAD:refs/heads/rosdistro-sync
+          fi
