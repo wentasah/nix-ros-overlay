@@ -26,8 +26,8 @@ jobs:
           cores = 2
     - uses: cachix/cachix-action@v15
       with:
-        name: ros
-        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+        name: wentasah
+        authToken: "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkNzI0ODlmZC05ZDkzLTQzZTYtOTEyYi03NTc0MWExNmFkZTIiLCJzY29wZXMiOiJjYWNoZSJ9.lXbJZm011rI1sqOH8etmWTgnpQuvq1juDI3GOzvCDok"
         skipPush: true
     # Add second cache after cachix-action to prevent cachix-action
     # from overriding substituters.
@@ -37,8 +37,10 @@ jobs:
         extra-substituters = https://attic.iid.ciirc.cvut.cz/ros?priority=42
         extra-trusted-public-keys = ros:JR95vUYsShSqfA1VTYoFt1Nz6uXasm5QrcOsGry9f6Q=
         EOF
+        nix config show
     - uses: ./.github/actions/nix-ros-build-action
       with:
+        cachix-cache: wentasah
         root-attribute: 'rosPackages.${{ matrix.distro }}'
         system: '${{ matrix.system }}'
         eval-jobs: 4
@@ -46,7 +48,7 @@ jobs:
     - name: "Pin built packages in the cache"
       if: ${{ github.ref_name == 'master' || github.ref_name == 'develop' }}
       run: |
-        cachixCache=ros
+        cachixCache=wentasah
         pinName=${{ format('{0}-{1}-{2}', github.ref_name , matrix.distro, matrix.system) }}
         linkFarm=$(nix-build linkFarm.nix --argstr name "$pinName")
         cachix push $cachixCache $linkFarm
