@@ -158,7 +158,7 @@ let
     });
 
     # TODO: Remove once onetbb appears in the locked nixpkgs version.
-    onetbb = self.tbb_2022;
+    onetbb = self.tbb_2022_0;
   } // (mrptOverrides rosSelf rosSuper);
 
   otherSplices = {
