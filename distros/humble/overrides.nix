@@ -541,6 +541,17 @@ in with lib; {
     nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
   });
 
+  rc-genicam-api = rosSuper.rc-genicam-api.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    # It's no longer needed to ignore "Error on non-existent target in get_target_property."
+    postPatch = postPatch + ''
+      substituteInPlace cmake/configure_link_libs.cmake --replace-fail \
+        "cmake_policy(SET CMP0045 OLD)" \
+        ""
+    '';
+  });
+
   realsense2-camera-msgs = rosSuper.realsense2-camera-msgs.overrideAttrs ({
     version, buildInputs ? [], ...
   }: let
