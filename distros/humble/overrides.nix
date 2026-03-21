@@ -5,6 +5,17 @@ rosSelf: rosSuper: let
   inherit (rosSelf) lib;
 in with lib; {
 
+  agnocast-cie-thread-configurator = rosSuper.agnocast-cie-thread-configurator.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    # ref. https://github.com/autowarefoundation/agnocast/pull/1190
+    patches = patches ++ [(self.fetchpatch {
+      url = "https://github.com/nim65s/agnocast/commit/9cd6be2f64955eb29df71f4ee602d4b470b81a4c.patch?full_index=1";
+      hash = "sha256-DzasTTGfmk9aUbmOy+8FssFFjvyrYUUbuCpQRFaPZS0=";
+      stripLen = 2;
+    })];
+  });
+
   # TODO: Remove after https://github.com/autowarefoundation/agnocast/pull/1188
   # appears in ROS release
   agnocastlib = rosSuper.agnocastlib.overrideAttrs ({
