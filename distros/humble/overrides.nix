@@ -825,5 +825,7 @@ in with lib; {
     '';
   });
 
-  zmqpp-vendor = lib.patchAmentVendorGit rosSuper.zmqpp-vendor { };
+  zmqpp-vendor = lib.patchAmentVendorGit rosSuper.zmqpp-vendor {
+    patchesFor.zmqpp_vendor = [ ./zmqpp-vendor/cmake-version.patch ];
+  };
 }
