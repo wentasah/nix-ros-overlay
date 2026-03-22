@@ -179,9 +179,6 @@ let
       '';
     });
 
-    # TODO: Remove once onetbb appears in the locked nixpkgs version.
-    onetbb = self.tbb_2022;
-
     rtabmap-viz = rosSuper.rtabmap-viz.overrideAttrs ({
       postFixup ? "", ...
     }: {
