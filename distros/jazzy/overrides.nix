@@ -56,6 +56,16 @@ in {
     ];
   });
 
+  ecl-build = rosSuper.ecl-build.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    postPatch = postPatch + ''
+      substituteInPlace cmake/cotire.cmake --replace-fail \
+        "cmake_minimum_required(VERSION 2.8.12)" \
+        "cmake_minimum_required(VERSION 3.5)"
+    '';
+  });
+
   fuse-core = rosSuper.fuse-core.overrideAttrs ({
     patches ? [], ...
   }: {
