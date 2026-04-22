@@ -390,20 +390,6 @@ in {
     '';
   });
 
-  pcl-conversions = rosSuper.pcl-conversions.overrideAttrs ({
-    patches ? [], ...
-  }: {
-    patches = patches ++ [
-      # Fix compile errors in pcl-ros caused by rosidl_buffer introduction
-      # https://github.com/ros-perception/perception_pcl/pull/529
-      (self.fetchpatch2 {
-        url = "https://github.com/ros-perception/perception_pcl/commit/bb5cc41a2491138005bb0f733b0f0e26b8055c50.patch";
-        hash = "sha256-eNkf9YGSlLfcZjCRRCMUM6riNmRKRNzNZkCKbBOqLFs=";
-        stripLen = 1;
-      })
-    ];
-  });
-
   # Switch to Qt6
   python-qt-binding = rosSuper.python-qt-binding.overrideAttrs ({
     patches ? [], propagatedBuildInputs ? [], ...
@@ -461,6 +447,20 @@ in {
         "cmake_policy(SET CMP0045 OLD)" \
         ""
     '';
+  });
+
+  rosidl-buffer = rosSuper.rosidl-buffer.overrideAttrs ({
+    patches ? [], ...
+  }: {
+    patches = patches ++ [
+      # Add std::vector compatible swap() API to rosidl::Buffer
+      # https://github.com/ros2/rosidl/pull/959
+      (self.fetchpatch2 {
+        url = "https://github.com/ros2/rosidl/commit/94cafb543c188e77f03488a96ed5267b1d97efc5.patch?full_index=1";
+        hash = "sha256-YdgvLzI+Vam2jLSN32hV7/v/WuqP9L0gMr0VUXtfNBs=";
+        stripLen = 1;
+      })
+    ];
   });
 
   rosidlcpp-generator-core = rosSuper.rosidlcpp-generator-core.override { fmt = self.fmt_9; };
