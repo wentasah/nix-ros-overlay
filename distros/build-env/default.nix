@@ -89,8 +89,7 @@ let
   })).overrideAttrs ({ buildCommand, passAsFile ? [], ...}: {
     # Hack to allow buildEnv to use propagatedBuildInputs
     buildCommand = null;
-    oldBuildCommand = buildCommand;
-    passAsFile = (if passAsFile == null then [] else passAsFile) ++ [ "oldBuildCommand" ];
+    passAsFile = filter (p: p != "buildCommand") (if passAsFile == null then [] else passAsFile);
 
     propagatedBuildInputs = propagatedPaths.otherPackages;
 
