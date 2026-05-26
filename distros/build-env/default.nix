@@ -95,7 +95,7 @@ let
 
     buildPhase = ''
       runHook preBuild
-      . "$oldBuildCommandPath"
+      . ${builtins.toFile "ros-env-build-command" buildCommand}
       runHook postBuild
     '';
     phases = [ "buildPhase" "fixupPhase" ];
