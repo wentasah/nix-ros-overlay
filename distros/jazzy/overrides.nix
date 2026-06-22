@@ -610,9 +610,16 @@ in {
       fetchgitArgs.hash = "sha256-2tFWccifn0c2lU/U1WNg2FHrBohjx8CXMllPJCevaNk=";
     })
   ]).overrideAttrs ({
-    buildInputs ? [], postPatch ? "", ...
+    buildInputs ? [], postPatch ? "", patches ? [], ...
   }: {
     buildInputs = buildInputs ++ [ self.nlohmann_json ];
+    patches = [
+      # https://github.com/realsenseai/librealsense/issues/15120#issuecomment-4761049530
+      (self.fetchpatch2 {
+        url = "https://github.com/realsenseai/librealsense/commit/5e4e754bd94fd27104261fdc5260c41e1607f556.patch?full_index=1";
+        hash = "sha256-GHykA+h6/Gy+TAKqY7vpjkkGoeSHca1UIvdrQDaEeH4=";
+      })
+    ];
     postPatch = postPatch + ''
       # Get rid of nlohmann_json vendoring
       substituteInPlace third-party/CMakeLists.txt \
@@ -628,9 +635,6 @@ in {
       # If the command below fails, update the above command!
       substituteInPlace CMake/external_fastcdr.cmake \
         --replace-fail '--branch v1.0.25' 'see the comment'
-      # https://github.com/realsenseai/librealsense/issues/15120#issuecomment-4586244495
-      substituteInPlace third-party/realsense-file/CMakeLists.txt \
-        --replace-fail '$<$<COMPILE_LANGUAGE:C>:-include stdint.h>' ""
     '';
   });
 
