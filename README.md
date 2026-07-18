@@ -11,14 +11,14 @@ Want to use ROS, but don't want to run Ubuntu? This project uses the power of [N
 
 ## Current status
 
-| Distro  | master                                           | develop                                            | develop + nixos-unstable                             |
-|:--------|:-------------------------------------------------|:---------------------------------------------------|:-----------------------------------------------------|
-| Humble  | [![humble-master-badge][]][humble-master-link]   | [![humble-develop-badge][]][humble-develop-link]   | [![humble-unstable-badge][]][humble-unstable-link]   |
-| Jazzy   | [![jazzy-master-badge][]][jazzy-master-link]     | [![jazzy-develop-badge][]][jazzy-develop-link]     | [![jazzy-unstable-badge][]][jazzy-unstable-link]     |
-| Kilted  | [![kilted-master-badge][]][kilted-master-link]   | [![kilted-develop-badge][]][kilted-develop-link]   | [![kilted-unstable-badge][]][kilted-unstable-link]   |
-| Lyrical | [![lyrical-master-badge][]][lyrical-master-link] | [![lyrical-develop-badge][]][lyrical-develop-link] | [![lyrical-unstable-badge][]][lyrical-unstable-link] |
-| Rolling | [![rolling-master-badge][]][rolling-master-link] | [![rolling-develop-badge][]][rolling-develop-link] | [![rolling-unstable-badge][]][rolling-unstable-link] |
-|         | ![nixpkgs-master-badge][]                        | ![nixpkgs-develop-badge][]                         |                                                      |
+| Distro  | master                                           | develop                                            | develop + nixos-unstable                             | develop + stable                                 |
+|:--------|:-------------------------------------------------|:---------------------------------------------------|:-----------------------------------------------------|--------------------------------------------------|
+| Humble  | [![humble-master-badge][]][humble-master-link]   | [![humble-develop-badge][]][humble-develop-link]   | [![humble-unstable-badge][]][humble-unstable-link]   |                                                  |
+| Jazzy   | [![jazzy-master-badge][]][jazzy-master-link]     | [![jazzy-develop-badge][]][jazzy-develop-link]     | [![jazzy-unstable-badge][]][jazzy-unstable-link]     |                                                  |
+| Kilted  | [![kilted-master-badge][]][kilted-master-link]   | [![kilted-develop-badge][]][kilted-develop-link]   | [![kilted-unstable-badge][]][kilted-unstable-link]   |                                                  |
+| Lyrical | [![lyrical-master-badge][]][lyrical-master-link] | [![lyrical-develop-badge][]][lyrical-develop-link] | [![lyrical-unstable-badge][]][lyrical-unstable-link] | [![lyrical-stable-badge][]][lyrical-stable-link] |
+| Rolling | [![rolling-master-badge][]][rolling-master-link] | [![rolling-develop-badge][]][rolling-develop-link] | [![rolling-unstable-badge][]][rolling-unstable-link] |                                                  |
+|         | ![nixpkgs-master-badge][]                        | ![nixpkgs-develop-badge][]                         |                                                      |                                                  |
 
 [humble-master-badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fhydra.iid.ciirc.cvut.cz%2Fjobset%2Fnix-ros-overlay%2Fmaster-humble-x86_64%2Fshield
 [humble-master-link]: https://hydra.iid.ciirc.cvut.cz/jobset/nix-ros-overlay/master-humble-x86_64
@@ -52,6 +52,9 @@ Want to use ROS, but don't want to run Ubuntu? This project uses the power of [N
 [lyrical-unstable-link]: https://hydra.iid.ciirc.cvut.cz/jobset/nix-ros-overlay/unstable-lyrical-x86_64
 [rolling-unstable-badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fhydra.iid.ciirc.cvut.cz%2Fjobset%2Fnix-ros-overlay%2Funstable-rolling-x86_64%2Fshield
 [rolling-unstable-link]: https://hydra.iid.ciirc.cvut.cz/jobset/nix-ros-overlay/unstable-rolling-x86_64
+
+[lyrical-stable-badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fhydra.iid.ciirc.cvut.cz%2Fjobset%2Fnix-ros-overlay%2Fstable-lyrical-x86_64%2Fshield
+[lyrical-stable-link]: https://hydra.iid.ciirc.cvut.cz/jobset/nix-ros-overlay/stable-lyrical-x86_64
 
 [nixpkgs-master-badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fnix-ros-overlay.iid.ciirc.cvut.cz%2Fbadge%2Fnixpkgs-date-master.json
 [nixpkgs-develop-badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fnix-ros-overlay.iid.ciirc.cvut.cz%2Fbadge%2Fnixpkgs-date-develop.json
