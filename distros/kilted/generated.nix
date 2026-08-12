@@ -284,8 +284,6 @@ self: super: {
 
  bag2-to-image = self.callPackage ./bag2-to-image {};
 
- battery-state-broadcaster = self.callPackage ./battery-state-broadcaster {};
-
  battery-state-rviz-overlay = self.callPackage ./battery-state-rviz-overlay {};
 
  beckhoff-ads-bringup = self.callPackage ./beckhoff-ads-bringup {};
