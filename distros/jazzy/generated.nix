@@ -492,8 +492,6 @@ self: super: {
 
  bag2-to-image = self.callPackage ./bag2-to-image {};
 
- battery-state-broadcaster = self.callPackage ./battery-state-broadcaster {};
-
  battery-state-rviz-overlay = self.callPackage ./battery-state-rviz-overlay {};
 
  bcr-arm = self.callPackage ./bcr-arm {};
@@ -2953,6 +2951,14 @@ self: super: {
  proto2ros = self.callPackage ./proto2ros {};
 
  protobuf-comm = self.callPackage ./protobuf-comm {};
+
+ prox-mpc-controller = self.callPackage ./prox-mpc-controller {};
+
+ prox-mpc-core = self.callPackage ./prox-mpc-core {};
+
+ prox-mpc-msgs = self.callPackage ./prox-mpc-msgs {};
+
+ prox-mpc-test-models = self.callPackage ./prox-mpc-test-models {};
 
  proxsuite = self.callPackage ./proxsuite {};
 
