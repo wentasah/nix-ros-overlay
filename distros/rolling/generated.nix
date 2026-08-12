@@ -310,8 +310,6 @@ self: super: {
 
  bag2-to-image = self.callPackage ./bag2-to-image {};
 
- battery-state-broadcaster = self.callPackage ./battery-state-broadcaster {};
-
  battery-state-rviz-overlay = self.callPackage ./battery-state-rviz-overlay {};
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
@@ -3001,6 +2999,8 @@ self: super: {
  udp-driver = self.callPackage ./udp-driver {};
 
  udp-msgs = self.callPackage ./udp-msgs {};
+
+ unbag = self.callPackage ./unbag {};
 
  uncrustify-vendor = self.callPackage ./uncrustify-vendor {};
 
