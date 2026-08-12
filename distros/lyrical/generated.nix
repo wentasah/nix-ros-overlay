@@ -310,8 +310,6 @@ self: super: {
 
  bag2-to-image = self.callPackage ./bag2-to-image {};
 
- battery-state-broadcaster = self.callPackage ./battery-state-broadcaster {};
-
  battery-state-rviz-overlay = self.callPackage ./battery-state-rviz-overlay {};
 
  behaviortree-cpp = self.callPackage ./behaviortree-cpp {};
@@ -1904,6 +1902,8 @@ self: super: {
 
  nodl-to-policy = self.callPackage ./nodl-to-policy {};
 
+ nonpersistent-voxel-layer = self.callPackage ./nonpersistent-voxel-layer {};
+
  novatel-gps-driver = self.callPackage ./novatel-gps-driver {};
 
  novatel-gps-msgs = self.callPackage ./novatel-gps-msgs {};
@@ -2003,6 +2003,8 @@ self: super: {
  opennav-following = self.callPackage ./opennav-following {};
 
  openni2-camera = self.callPackage ./openni2-camera {};
+
+ openvdb-vendor = self.callPackage ./openvdb-vendor {};
 
  orocos-kdl-vendor = self.callPackage ./orocos-kdl-vendor {};
 
@@ -3077,6 +3079,8 @@ self: super: {
  sound-play-msgs = self.callPackage ./sound-play-msgs {};
 
  spacenav = self.callPackage ./spacenav {};
+
+ spatio-temporal-voxel-layer = self.callPackage ./spatio-temporal-voxel-layer {};
 
  spdlog-vendor = self.callPackage ./spdlog-vendor {};
 
