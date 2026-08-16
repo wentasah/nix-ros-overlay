@@ -888,6 +888,21 @@ in {
     ];
   });
 
+  nlohmann-json-schema-validator-vendor = (lib.patchExternalProjectGit rosSuper.nlohmann-json-schema-validator-vendor {
+    url = "https://github.com/pboettch/json-schema-validator.git";
+    revVariable = "nlohmann_json_schema_validator_version";
+    rev = "5ef4f903af055550e06955973a193e17efded896";
+    fetchgitArgs.hash = "sha256-b02OFUx0BxUA6HN6IaacSg1t3RP4o7NND7X0U635W8U=";
+  }).overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    postPatch = postPatch + ''
+      substituteInPlace CMakeLists.txt --replace-fail \
+        "CMAKE_ARGS" \
+        "CMAKE_ARGS -DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    '';
+  });
+
   # Fix other off-highway-* packages which need ros-environment
   # https://github.com/bosch-engineering/off_highway_sensor_drivers/pull/24
   off-highway-can = rosSuper.off-highway-can.overrideAttrs ({
