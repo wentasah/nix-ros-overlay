@@ -1092,6 +1092,37 @@ in {
     ];
   });
 
+  rmf-websocket = rosSuper.rmf-websocket.overrideAttrs ({
+    postPatch ? "", ...
+  }: {
+    postPatch = postPatch + ''
+      # boost_system is header-only since Boost 1.69 and has no cmake config
+      # component nor Boost::system target; use the header-only Boost::boost
+      # target instead, ref. the ld08-driver override above
+      substituteInPlace CMakeLists.txt \
+        --replace-fail "Boost::system" "Boost::boost" \
+        --replace-fail "Boost COMPONENTS system REQUIRED" "Boost REQUIRED"
+
+      # boost::asio::io_service was fully removed (it was deprecated in
+      # favour of io_context since Boost 1.66); switch to io_context to
+      # match the nixpkgs websocketpp, which already made this switch
+      substituteInPlace src/rmf_websocket/client/ClientWebSocketEndpoint.hpp \
+        --replace-fail "boost::asio::io_service* io_service," \
+                        "boost::asio::io_context* io_service,"
+      substituteInPlace src/rmf_websocket/client/ClientWebSocketEndpoint.cpp \
+        --replace-fail "asio::io_service* io_service," \
+                        "asio::io_context* io_service," \
+        --replace-fail "get_io_service()" "get_io_context()" \
+        --replace-fail "c->get_io_context().post(_reconnection_cb);" \
+                        "boost::asio::post(c->get_io_context(), _reconnection_cb);"
+      substituteInPlace src/rmf_websocket/BroadcastClient.cpp \
+        --replace-fail "boost::asio::io_service _io_service;" \
+                        "boost::asio::io_context _io_service;" \
+        --replace-fail "_io_service.dispatch(" \
+                        "boost::asio::dispatch(_io_service, "
+    '';
+  });
+
   rtabmap = rosSuper.rtabmap.overrideAttrs ({
     postPatch ? "", ...
   }: {
