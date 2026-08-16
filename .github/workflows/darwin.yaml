@@ -34,3 +34,4 @@ jobs:
         authToken: "${{ secrets.CACHIX_AUTH_TOKEN_ROS_DARWIN }}"
     - run: nix-build -A rosPackages.${{ matrix.distro }}.ros-base
     - run: nix-build -A rosPackages.${{ matrix.distro }}.rviz2
+    - run: nix-build -A rosPackages.${{ matrix.distro }}.desktop
