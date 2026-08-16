@@ -1143,6 +1143,12 @@ in with lib; {
     ];
   });
 
+  rmf-traffic-ros2 = rosSuper.rmf-traffic-ros2.overrideAttrs ({
+    nativeBuildInputs ? [], ...
+  }: {
+    nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
+  });
+
   robotont-driver = rosSuper.robotont-driver.overrideAttrs ({
     postPatch ? "",
     patches ? [], ...
