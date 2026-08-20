@@ -520,16 +520,16 @@ in {
   };
 
   rcutils = rosSuper.rcutils.overrideAttrs ({
-    postPatch ? "", ...
+    patches ? [], ...
   }: lib.optionalAttrs self.stdenv.hostPlatform.isDarwin {
-    # Apple Clang rejects brace-init of an _Atomic scalar ("illegal
-    # initializer type 'atomic_int_least64_t'").
-    # https://github.com/ros2/rcutils/pull/586
-    postPatch = postPatch + ''
-      substituteInPlace src/testing/fault_injection.c --replace-fail \
-        'atomic_int_least64_t g_rcutils_fault_injection_count = {-1};' \
-        'atomic_int_least64_t g_rcutils_fault_injection_count = -1;'
-    '';
+    patches = patches ++ [
+      # Fix atomic initialization
+      # https://github.com/ros2/rcutils/pull/587
+      (self.fetchpatch2 {
+        url = "https://github.com/ros2/rcutils/commit/5ae987010f1534e5336614e5bd66128cb6c134b1.patch?full_index=1";
+        hash = "sha256-KxQoFNx1MzE1wGbfKiaKwuZ6GsftRwzmKVq4YQPAgiU=";
+      })
+    ];
   });
 
   rcl-yaml-param-parser = rosSuper.rcl-yaml-param-parser.overrideAttrs ({
