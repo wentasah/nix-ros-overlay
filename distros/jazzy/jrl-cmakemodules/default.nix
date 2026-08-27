@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "CMake utility toolbox";
-    license = with lib.licenses; [ "GPL-3.0" "LGPL-3.0" bsd3 mit asl20 ];
+    license = with lib.licenses; [ gpl3 lgpl3Only bsd3 mit asl20 ];
   };
 }
