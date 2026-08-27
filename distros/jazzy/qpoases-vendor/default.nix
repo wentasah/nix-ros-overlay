@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "Wrapper around qpOASES to make it available to the ROS ecosystem.";
-    license = with lib.licenses; [ asl20 "LGPL" ];
+    license = with lib.licenses; [ asl20 _unknown_license_LGPL ];
   };
 }

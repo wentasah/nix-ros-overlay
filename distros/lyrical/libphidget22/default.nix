@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "This package wraps the libphidget22 to use it as a ROS dependency";
-    license = with lib.licenses; [ "LGPL" ];
+    license = with lib.licenses; [ _unknown_license_LGPL ];
   };
 }

@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "Interface for using ROS with the <a href=\"http://classic.gazebosim.org/\">Gazebo</a> simulator.";
-    license = with lib.licenses; [ "BSD-&-LGPL-&-Apache-2.0" ];
+    license = with lib.licenses; [ _unknown_license_BSD-_-LGPL-_-Apache-2_0 ];
   };
 }

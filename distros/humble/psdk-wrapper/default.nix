@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "ROS2 wrapper for the DJI PSDK";
-    license = with lib.licenses; [ "MPL" ];
+    license = with lib.licenses; [ _unknown_license_MPL ];
   };
 }

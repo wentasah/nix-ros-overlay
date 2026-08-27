@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "AS2 DJI PSDK aerial platform";
-    license = with lib.licenses; [ "BDS-3" ];
+    license = with lib.licenses; [ _unknown_license_BDS-3 ];
   };
 }

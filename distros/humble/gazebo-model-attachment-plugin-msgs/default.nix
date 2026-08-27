@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Model Attachment Plugin";
-    license = with lib.licenses; [ "Boeing-Proprietary" ];
+    license = with lib.licenses; [ _unknown_license_Boeing-Proprietary ];
   };
 }

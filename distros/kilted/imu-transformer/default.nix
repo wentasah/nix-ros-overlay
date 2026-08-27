@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Node/components to transform sensor_msgs::Imu data from one frame into another.";
-    license = with lib.licenses; [ "GPL" ];
+    license = with lib.licenses; [ _unknown_license_GPL ];
   };
 }

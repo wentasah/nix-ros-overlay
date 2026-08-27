@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Main library of Cloudini, the pointcloud compression library";
-    license = with lib.licenses; [ "Apache" ];
+    license = with lib.licenses; [ _unknown_license_Apache ];
   };
 }

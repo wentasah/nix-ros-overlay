@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Robot-independent Gazebo plugins for sensors, motors and dynamic reconfigurable components.";
-    license = with lib.licenses; [ "BSD-&-Apache-2.0" ];
+    license = with lib.licenses; [ _unknown_license_BSD-_-Apache-2_0 ];
   };
 }

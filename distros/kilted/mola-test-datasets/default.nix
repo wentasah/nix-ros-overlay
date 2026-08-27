@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "Small SLAM dataset extracts used for demos or unit tests in the rest of MOLA packages";
-    license = with lib.licenses; [ bsd3 bsd3 "CC-BY-NC-SA-3.0" "CC-BY-3.0" "CC-BY-3.0" cc-by-nc-sa-40 ];
+    license = with lib.licenses; [ bsd3 bsd3 _unknown_license_CC-BY-NC-SA-3_0 _unknown_license_CC-BY-3_0 _unknown_license_CC-BY-3_0 cc-by-nc-sa-40 ];
   };
 }

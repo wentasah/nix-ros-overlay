@@ -20,6 +20,6 @@ buildRosPackage {
 
   meta = {
     description = "Standalone C++ library for accessing the Schunk five finger hand.";
-    license = with lib.licenses; [ "GPL-3.0-or-later" ];
+    license = with lib.licenses; [ _unknown_license_GPL-3_0-or-later ];
   };
 }

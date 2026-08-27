@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "URDF description for Universal Robots";
-    license = with lib.licenses; [ bsd3 "Universal-Robots-A-S’-Terms-and-Conditions-for-Use-of-Graphical-Documentation" ];
+    license = with lib.licenses; [ bsd3 _unknown_license_Universal-Robots-A-S_-Terms-and-Conditions-for-Use-of-Graphical-Documentation ];
   };
 }

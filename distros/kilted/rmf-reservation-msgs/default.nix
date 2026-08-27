@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Messages for the reservation and queueing system";
-    license = with lib.licenses; [ "Apache" ];
+    license = with lib.licenses; [ _unknown_license_Apache ];
   };
 }

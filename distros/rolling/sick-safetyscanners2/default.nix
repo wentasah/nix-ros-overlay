@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "ROS2 Driver for the SICK safetyscanners";
-    license = with lib.licenses; [ "ALv2" ];
+    license = with lib.licenses; [ _unknown_license_ALv2 ];
   };
 }

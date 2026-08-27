@@ -21,6 +21,6 @@ buildRosPackage {
   meta = {
     description = "Provides an Interface to read the sensor output of a SICK
   Safety Scanner";
-    license = with lib.licenses; [ "ALv2" ];
+    license = with lib.licenses; [ _unknown_license_ALv2 ];
   };
 }

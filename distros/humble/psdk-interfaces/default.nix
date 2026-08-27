@@ -21,6 +21,6 @@ buildRosPackage {
 
   meta = {
     description = "Provides custom message, srv and action types for psdk ros2 wrapper";
-    license = with lib.licenses; [ "MPL" ];
+    license = with lib.licenses; [ _unknown_license_MPL ];
   };
 }
