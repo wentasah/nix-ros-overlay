@@ -96,7 +96,21 @@ in {
 
   gz-gui-vendor = lib.patchAmentVendorGit rosSuper.gz-gui-vendor { };
 
-  gz-launch-vendor = lib.patchAmentVendorGit rosSuper.gz-launch-vendor { };
+  gz-launch-vendor = lib.patchAmentVendorGit rosSuper.gz-launch-vendor {
+    # Related to https://github.com/gazebosim/gz-launch/pull/314.
+    # gz-cmake in rolling was updated to version 6.
+    patchesFor.gz_launch_vendor = [
+      (self.writeText "fix-gz-launch-cmake-version.patch" ''
+        diff --git a/CMakeLists.txt b/CMakeLists.txt
+        index 8eddebb..c9f0dc1 100644
+        --- a/CMakeLists.txt
+        +++ b/CMakeLists.txt
+        @@ -11 +11 @@ project(gz-launch VERSION 9.0.1)
+        -find_package(gz-cmake 5 REQUIRED)
+        +find_package(gz-cmake 6 REQUIRED)
+      '')
+    ];
+  };
 
   gz-math-vendor = lib.patchAmentVendorGit rosSuper.gz-math-vendor { };
 
