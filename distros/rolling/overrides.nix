@@ -397,6 +397,25 @@ in {
 
   mp-units-vendor = lib.patchAmentVendorGit rosSuper.mp-units-vendor {};
 
+  mp2p-icp-core = rosSuper.mp2p-icp-core.overrideAttrs ({
+    propagatedBuildInputs ? [], cmakeFlags ? [], ...
+  }: {
+    # The released mp2p_icp 2.14.1 still builds against MRPT 2.x
+    # (mrpt_libbase & co., CMake targets "mrpt::<component>"), while
+    # mola_imu_preintegration 3.0.0 has already been ported to MRPT 3.x
+    # (mrpt_containers & co., CMake targets "mrpt::mrpt_<component>").
+    # Both MRPT majors install the same "mrpt/..." headers, so they cannot be
+    # combined in a single build.  mola_imu_preintegration is an optional
+    # dependency of mp2p_icp (only used for the advanced deskew methods of
+    # FilterDeskew), so drop it for now.
+    # TODO: Remove this override once mp2p_icp is released against MRPT 3.x
+    # (already migrated on upstream's develop branch).
+    propagatedBuildInputs = lib.remove rosSelf.mola-imu-preintegration propagatedBuildInputs;
+    cmakeFlags = cmakeFlags ++ [
+      "-DCMAKE_DISABLE_FIND_PACKAGE_mola_imu_preintegration=ON"
+    ];
+  });
+
   mp2p-icp-viz = rosSuper.mp2p-icp-viz.overrideAttrs ({
     buildInputs ? [], ...
   }: {
